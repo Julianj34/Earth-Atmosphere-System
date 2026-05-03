@@ -46,6 +46,7 @@ Layer 0 is the external modulator. It can influence the ionosphere, geomagnetic 
 Core question:
 Which external influences are changing the state of the Earth Field System?
 
+---
 Layer 1 – Planetary Body
 
 Role: The Earth as the physical carrier of the system.
@@ -70,6 +71,7 @@ Stable baseline properties such as ocean conductivity are treated as boundary co
 Core question:
 Which planetary base conditions shape the resonance and coupling space?
 
+---
 Layer 2 – Surface / Oceans / Contact Zone
 
 Role: The boundary zone between Earth surface, oceans, land, biosphere, and atmosphere.
@@ -95,6 +97,7 @@ This layer can become elevated even when the atmosphere has not yet activated.
 Core question:
 Is the surface prepared for atmospheric and thunderstorm activation?
 
+---
 Layer 3 – Atmosphere / Weather / Thunderstorms
 
 Role: The dynamic weather and convection layer.
@@ -126,6 +129,7 @@ Layer 3 = actual atmospheric activation
 Core question:
 How strong is the current atmospheric-electrical activity?
 
+---
 Layer 4 – Ionosphere
 
 Role: The upper conductive boundary layer of the Earth-ionosphere resonance system.
@@ -154,6 +158,7 @@ Layer 4 can provide an idealized geometric baseline. Layer 6 uses empirical Schu
 Core question:
 How does the ionosphere modify the resonance and coupling conditions?
 
+---
 Layer 5 – Global Electric Circuit
 
 Role: The electrical macro-architecture of the Earth.
@@ -182,6 +187,7 @@ Layer 5 estimates whether the Global Electric Circuit is near reference, elevate
 Core question:
 How strongly is the global electric circuit currently activated?
 
+---
 Layer 6 – Resonance Field / Schumann Resonance
 
 Role: The observable or modeled electromagnetic resonance pattern of the system.
@@ -234,6 +240,7 @@ SR-4 ≈ 27.3 Hz
 Core question:
 What information about the total Earth Field System is contained in the resonance pattern?
 
+---
 Layer 7 – Earth Field State Engine
 
 Role: The central state engine.
@@ -253,34 +260,29 @@ generate event tags
 save snapshot
 prepare handoff for Layer 8
 
-Layer 7 Stores Per Snapshot
-timestamp
-layer scores
-layer confidence
-trend / delta
-dominant layer
-secondary layer
-weak layers
-coupling scores
-diagnostic features
-system state
-event tags
-notes / uncertainty
-Example System States
-normal_background_state
-surface_prepared_but_atmosphere_not_activated
-atmospheric_driven_resonance_state
-space_weather_driven_ionospheric_state
-mixed_coupled_state
-seasonal_transition_state
-anomalous_resonance_state
-low_confidence_state
-Example Layer-7 Output
-system_state: seasonal_transition_state
-dominant_layer: L2_surface_zone
-state_score: 0.5401
-avg_score: 0.3149
-state_confidence: 0.65
+Layer 7 can classify snapshots into states such as:
+
+| System State | Meaning |
+
+| normal_background_state | The system is close to baseline |
+| surface_prepared_but_atmosphere_not_activated | Surface/ocean conditions are elevated, but the atmosphere has not activated yet |
+| atmospheric_driven_resonance_state | Atmospheric or thunderstorm activity is the dominant driver |
+| space_weather_driven_ionospheric_state | External drivers strongly affect the ionosphere |
+| mixed_coupled_state | Multiple layers are active together |
+| seasonal_transition_state | The system shows transition-like surface or seasonal signals |
+| anomalous_resonance_state | Resonance-field behavior deviates from expected background |
+| low_confidence_state | Too much missing or uncertain data |
+
+---
+
+ Example Layer-7 Output
+
+  json
+  "system_state": "seasonal_transition_state",
+  "dominant_layer": "L2_surface_zone",
+  "state_score": 0.5401,
+  "avg_score": 0.3149,
+  "state_confidence": 0.65
 
 Interpretation:
 
