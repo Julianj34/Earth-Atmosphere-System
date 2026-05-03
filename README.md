@@ -255,7 +255,6 @@ prepare handoff for Layer 8
 
 Layer 7 Stores Per Snapshot
 timestamp
-morning/evening label
 layer scores
 layer confidence
 trend / delta
