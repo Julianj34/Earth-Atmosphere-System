@@ -242,26 +242,17 @@ Layer 7 does not collect new raw data. It converts Layer 0–6 into a standardiz
 
 Function
 run Layer 0–6
-↓
 collect layer scores
-↓
 collect confidence values
-↓
 calculate trends and deltas
-↓
 detect dominant layers
-↓
 detect weak layers
-↓
 evaluate coupling strengths
-↓
 classify system state
-↓
 generate event tags
-↓
 save snapshot
-↓
 prepare handoff for Layer 8
+
 Layer 7 Stores Per Snapshot
 timestamp
 morning/evening label
