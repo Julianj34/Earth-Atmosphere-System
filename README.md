@@ -263,7 +263,7 @@ prepare handoff for Layer 8
 Layer 7 can classify snapshots into states such as:
 
 | System State | Meaning |
-
+|---|---|
 | normal_background_state | The system is close to baseline |
 | surface_prepared_but_atmosphere_not_activated | Surface/ocean conditions are elevated, but the atmosphere has not activated yet |
 | atmospheric_driven_resonance_state | Atmospheric or thunderstorm activity is the dominant driver |
@@ -275,14 +275,16 @@ Layer 7 can classify snapshots into states such as:
 
 ---
 
- Example Layer-7 Output
+## Example Layer-7 Output
 
   json
+ 
   "system_state": "seasonal_transition_state",
   "dominant_layer": "L2_surface_zone",
   "state_score": 0.5401,
   "avg_score": 0.3149,
   "state_confidence": 0.65
+
 
 Interpretation:
 
