@@ -340,7 +340,7 @@ state_seasonal_transition_state
 
 These tags are important for the future Layer-8 analysis.
 
-
+---
 Layer 8 – System Analysis / Research Intelligence Layer
 
 Role: The scientific analysis layer above Layer 7.
