@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-05-10T09:02:34.430262Z",
+  "timestamp": "2026-05-10T11:42:58.560204Z",
   "layer": 3,
   "name": "Atmosphere / Weather / Thunderstorms",
-  "score": 0.1725,
+  "score": 0.1386,
   "level": "quiet",
   "confidence": 1.0,
   "score_basis": "5/5 dynamic components",
@@ -10,22 +10,22 @@
   "missing_components": [],
   "components": {
     "Convection Intensity (CAPE)": {
-      "score": 0.1778,
+      "score": 0.1458,
       "source": "primary",
       "dynamic": true
     },
     "Atm. Instability (LI)": {
-      "score": 0.2306,
+      "score": 0.1417,
       "source": "primary",
       "dynamic": true
     },
     "Thunderstorm Activity": {
-      "score": 0.1821,
+      "score": 0.1536,
       "source": "primary",
       "dynamic": true
     },
     "Schumann Excitation Potential": {
-      "score": 0.2386,
+      "score": 0.2184,
       "source": "derived",
       "dynamic": true
     },
@@ -36,65 +36,49 @@
     }
   },
   "raw_values": {
-    "CAPE_mean_Jkg": 533.3,
-    "LI_mean_K": 3.23,
+    "CAPE_mean_Jkg": 437.5,
+    "LI_mean_K": 4.3,
     "thunder_points_WMO": 0,
     "storm_events_EONET": 1,
     "Kp_current": 1.0,
     "xray_context": {
-      "flux": 7.500931928916543e-07,
+      "flux": 6.524562081722252e-07,
       "class": "B"
     },
     "kp_note": "geomagnetic context, not a lightning proxy",
-    "schumann_potential": 0.2386,
+    "schumann_potential": 0.2184,
     "messpunkte": [
       {
-        "point": "Central Europe",
-        "cape": 20.0,
-        "li": 1.6,
-        "thunderstorm": false,
-        "thunder_score": 0.244,
-        "schumann_contribution": 0.073
-      },
-      {
-        "point": "Tropics (Congo)",
-        "cape": 1510.0,
-        "li": -2.3,
-        "thunderstorm": false,
-        "thunder_score": 0.476,
-        "schumann_contribution": 0.444
-      },
-      {
         "point": "Arctic",
-        "cape": 10.0,
-        "li": 15.4,
+        "cape": 0.0,
+        "li": 14.6,
         "thunderstorm": false,
-        "thunder_score": 0.148,
-        "schumann_contribution": 0.044
+        "thunder_score": 0.106,
+        "schumann_contribution": 0.032
       },
       {
         "point": "Pacific (ITCZ)",
-        "cape": 940.0,
-        "li": -2.9,
+        "cape": 880.0,
+        "li": -3.1,
         "thunderstorm": false,
-        "thunder_score": 0.429,
-        "schumann_contribution": 0.393
+        "thunder_score": 0.428,
+        "schumann_contribution": 0.392
       },
       {
         "point": "Amazonia",
-        "cape": 720.0,
-        "li": -1.7,
+        "cape": 870.0,
+        "li": -2.1,
         "thunderstorm": false,
-        "thunder_score": 0.246,
-        "schumann_contribution": 0.225
+        "thunder_score": 0.257,
+        "schumann_contribution": 0.236
       },
       {
         "point": "Sahel",
         "cape": 0.0,
-        "li": 9.3,
+        "li": 7.8,
         "thunderstorm": false,
-        "thunder_score": 0.018,
-        "schumann_contribution": 0.014
+        "thunder_score": 0.087,
+        "schumann_contribution": 0.068
       }
     ]
   },
@@ -113,7 +97,7 @@
     "layer6_pattern": "quiet atmosphere – no strong pattern modulation"
   },
   "layer0_context": {
-    "score": 0.1765,
+    "score": 0.1973,
     "level": "calm",
     "dominant_driver": "none"
   },
@@ -122,11 +106,11 @@
     "level": "calm"
   },
   "layer2_context": {
-    "score": 0.585,
+    "score": 0.5356,
     "level": "moderate",
     "thunderstorm_trigger": true,
-    "conv_potential": 0.646,
+    "conv_potential": 0.579,
     "enso_phase": "warm_neutral"
   },
-  "state_summary": "Layer-3-State: quiet. CAPE-Mittel 533 J/kg. LI-Mittel 3.2 K. 0 WMO thunderstorm points, 1 NASA storm events. Schumann potential: 0.239. Data completeness: 100%. L2 input: moderate (Conv=0.65, Thunder-Trigger=True)."
+  "state_summary": "Layer-3-State: quiet. CAPE-Mittel 438 J/kg. LI-Mittel 4.3 K. 0 WMO thunderstorm points, 1 NASA storm events. Schumann potential: 0.218. Data completeness: 100%. L2 input: moderate (Conv=0.58, Thunder-Trigger=True)."
 }
