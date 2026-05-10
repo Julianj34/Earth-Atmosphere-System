@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-05-10T09:01:52.015346Z",
+  "layer": 0,
+  "name": "External Cosmic Drivers",
+  "score": 0.1765,
+  "level": "calm",
+  "confidence": 0.75,
+  "score_basis": "3/4 components available",
+  "missing_components": [
+    "solar_wind_speed"
+  ],
+  "components": {
+    "solar_radiation_f107": 0.3158,
+    "geomagnetic_activity_kp": 0.1111,
+    "imf_bz_southward": 0.1026
+  },
+  "raw_values": {
+    "F10.7_sfu": {
+      "value": 120.0,
+      "source": "primary"
+    },
+    "Kp_index": {
+      "value": 1.0,
+      "source": "primary"
+    },
+    "IMF_Bz_nT": {
+      "value": 1.4,
+      "source": "primary"
+    },
+    "SW_speed_kms": {
+      "value": null,
+      "source": "missing"
+    }
+  },
+  "flags": {
+    "geomagnetic_storm": false,
+    "solar_flux_high": false,
+    "bz_strongly_southward": false,
+    "bz_geoeffective": false,
+    "bz_orientation": "northward",
+    "fast_solar_wind": null
+  },
+  "dominant_driver": "none",
+  "downstream_expectation": {
+    "magnetosphere": "calm",
+    "ionosphere": "calm",
+    "schumann_resonance": "unchanged",
+    "lithosphere_currents": "low"
+  },
+  "state_summary": "Layer-0 state: calm. Solar radiation moderate (F10.7=120 sfu). Kp=1.0 (calm). IMF Bz=1.4 nT – northward, no coupling. Solar wind speed unavailable. Data completeness: 75%."
+}

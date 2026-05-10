@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-05-10T09:01:59.377796Z",
+  "layer": 1,
+  "name": "Planetary Body",
+  "score": 0.2986,
+  "level": "calm",
+  "confidence": 1.0,
+  "score_basis": "3/3 dynamic components available",
+  "dynamic_score_note": "Score based exclusively on dynamic components. Conductivity baseline is a stable boundary condition, not in score.",
+  "missing_components": [],
+  "components": {
+    "seismic_activity": {
+      "score": 0.7833,
+      "source": "primary",
+      "dynamic": true
+    },
+    "earth_rotation_lod": {
+      "score": 0.0014,
+      "source": "primary",
+      "dynamic": true
+    },
+    "magnetic_field_variation": {
+      "score": 0.1111,
+      "source": "primary",
+      "dynamic": true
+    }
+  },
+  "baseline_properties": {
+    "ocean_surface_fraction": 0.71,
+    "ocean_conductivity_Sm": 3.2,
+    "role": "stable_boundary_condition"
+  },
+  "reference_constants": {
+    "earth_mass_kg": 5.9722e+24,
+    "rotation_period_h": 23.9345,
+    "dipole_moment_Am2": 7.94e+22,
+    "schumann_ref_Hz": 7.83
+  },
+  "raw_values": {
+    "seismic_events_7d": 87,
+    "seismic_max_mag": 6.1,
+    "seismic_M6plus": 2,
+    "LOD_anomaly_ms": -0.0041,
+    "LOD_source": "primary",
+    "Kp_index": 1.0
+  },
+  "flags": {
+    "strong_earthquake": false,
+    "elevated_seismicity": true,
+    "mag_field_disturbed": false,
+    "lod_anomaly_high": false
+  },
+  "downstream_expectation": {
+    "layer2_surface": "elevated subsurface stress possible",
+    "layer4_ionosphere": "normal",
+    "layer5_gec": "base conductivity stable – 71% oceans (boundary condition)",
+    "schumann_resonance": "Fundamental mode stable ~7.83 Hz – no modulation expected from Layer 1"
+  },
+  "layer0_context": {
+    "score": 0.1765,
+    "level": "calm",
+    "dominant_driver": "none",
+    "confidence": 0.75
+  },
+  "state_summary": "Layer-1 state: calm. Seismics: 87 events M>=4.5 in 7 days, strongest M6.1. LOD anomaly: -0.004 ms [primary]. Magnetic field variation Kp=1.0. Data completeness: 100%. Layer-0 input: calm (Score 0.18)."
+}
