@@ -29,14 +29,14 @@ jobs:
       - name: Run Layer 0–7 pipeline
         run: |
           set -e
-          jupyter nbconvert --to notebook --execute "Layer0_external_drivers.ipynb"       --inplace --ExecutePreprocessor.timeout=300
-          jupyter nbconvert --to notebook --execute "Layer1_planetary_body.ipynb"         --inplace --ExecutePreprocessor.timeout=300
-          jupyter nbconvert --to notebook --execute "Layer2_surface_Zone.ipynb"           --inplace --ExecutePreprocessor.timeout=300
-          jupyter nbconvert --to notebook --execute "Layer3_atmosphere_Zone.ipynb"        --inplace --ExecutePreprocessor.timeout=300
-          jupyter nbconvert --to notebook --execute "Layer4_Ionosphere.ipynb"             --inplace --ExecutePreprocessor.timeout=300
-          jupyter nbconvert --to notebook --execute "Layer5_Global_Electric_Circuit.ipynb" --inplace --ExecutePreprocessor.timeout=300
-          jupyter nbconvert --to notebook --execute "Layer6_Resonance_Field.ipynb"        --inplace --ExecutePreprocessor.timeout=300
-          jupyter nbconvert --to notebook --execute "Layer7_Earth_Field.ipynb"            --inplace --ExecutePreprocessor.timeout=300
+          jupyter nbconvert --to notebook --execute "layer0_external_drivers.ipynb"        --inplace --ExecutePreprocessor.timeout=300
+          jupyter nbconvert --to notebook --execute "layer1_planetary_body.ipynb"          --inplace --ExecutePreprocessor.timeout=300
+          jupyter nbconvert --to notebook --execute "layer2_surface_zone.ipynb"            --inplace --ExecutePreprocessor.timeout=300
+          jupyter nbconvert --to notebook --execute "layer3_atmosphere_zone.ipynb"         --inplace --ExecutePreprocessor.timeout=300
+          jupyter nbconvert --to notebook --execute "layer4_Ionosphere.ipynb"              --inplace --ExecutePreprocessor.timeout=300
+          jupyter nbconvert --to notebook --execute "layer5_Global_Electric_Circuit.ipynb" --inplace --ExecutePreprocessor.timeout=300
+          jupyter nbconvert --to notebook --execute "layer6_Resonance_Field.ipynb"         --inplace --ExecutePreprocessor.timeout=300
+          jupyter nbconvert --to notebook --execute "layer7_Earth_Field.ipynb"             --inplace --ExecutePreprocessor.timeout=300
         timeout-minutes: 60
 
       - name: Commit all generated and updated files
