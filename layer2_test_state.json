@@ -1,22 +1,24 @@
 {
-  "timestamp": "2026-05-11T13:29:43.236119Z",
+  "timestamp": "2026-05-11T18:21:49.745800Z",
   "layer": 2,
   "name": "Surface / Oceans / Land",
-  "score": 0.4129,
+  "score": 0.351,
   "level": "moderate",
-  "confidence": 1.0,
-  "score_basis": "5/5 dynamic components",
+  "confidence": 0.8,
+  "score_basis": "4/5 dynamic components",
   "dominant_component": "ENSO Phase (Nino3.4)",
-  "missing_components": [],
+  "missing_components": [
+    "SST Anomaly (Ocean)"
+  ],
   "components": {
     "Convection Potential": {
-      "score": 0.467,
+      "score": 0.44,
       "source": "primary",
       "dynamic": true
     },
     "SST Anomaly (Ocean)": {
-      "score": 0.6767,
-      "source": "primary",
+      "score": null,
+      "source": "missing",
       "dynamic": true
     },
     "ENSO Phase (Nino3.4)": {
@@ -25,18 +27,18 @@
       "dynamic": true
     },
     "Elec. Surface Coupling": {
-      "score": 0.104,
+      "score": 0.135,
       "source": "primary",
       "dynamic": true
     },
     "Soil Moisture (global)": {
-      "score": 0.092,
+      "score": 0.104,
       "source": "primary",
       "dynamic": true
     }
   },
   "raw_values": {
-    "SST_anomaly_degC": 1.03,
+    "SST_anomaly_degC": null,
     "ENSO": {
       "weekly_nino34_anomaly_degC": 0.9,
       "oni_3month_degC": null,
@@ -45,15 +47,15 @@
       "note": "phase_forecast not used in score",
       "source": "cpc_weekly"
     },
-    "conv_potential_mean": 0.467,
-    "elec_coupling_mean": 0.104,
+    "conv_potential_mean": 0.44,
+    "elec_coupling_mean": 0.135,
     "surface_points": [
       {
         "point": "Sahel",
-        "temp_2m": 41.8,
-        "rh": 6,
-        "conv": 0.467,
-        "elec": 0.104
+        "temp_2m": 34.1,
+        "rh": 11,
+        "conv": 0.44,
+        "elec": 0.135
       }
     ]
   },
@@ -62,9 +64,9 @@
     "el_nino_active": false,
     "el_nino_developing": true,
     "la_nina_active": false,
-    "sst_anomaly_high": true,
+    "sst_anomaly_high": null,
     "thunderstorm_trigger": false,
-    "bz_orientation": "southward"
+    "bz_orientation": "northward"
   },
   "downstream_expectation": {
     "layer3_weather": "moderate convection – normal thunderstorm activity",
@@ -73,14 +75,14 @@
     "layer4_ionosphere": "ENSO-modulated convection influences tropospheric wave propagation"
   },
   "layer0_context": {
-    "score": 0.2323,
+    "score": 0.152,
     "level": "calm",
     "dominant_driver": "none"
   },
   "layer1_context": {
-    "score": 0.329,
+    "score": 0.334,
     "level": "moderate",
     "seismic_elevated": true
   },
-  "state_summary": "Layer-2-State: moderate. SST-Anomalie +1.03 degC. ENSO: warm_neutral / el_nino_likely (weekly Nino3.4=+0.90, ONI=n/a; Forecast nicht im Score). Konvektions-Potential: 0.47. Data completeness: 100%. L1-Eingang: moderate (Score 0.329)."
+  "state_summary": "Layer-2-State: moderate. SST not available. ENSO: warm_neutral / el_nino_likely (weekly Nino3.4=+0.90, ONI=n/a; Forecast nicht im Score). Konvektions-Potential: 0.44. Data completeness: 80%. L1-Eingang: moderate (Score 0.334)."
 }

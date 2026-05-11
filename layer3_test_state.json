@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-05-11T13:32:34.610099Z",
+  "timestamp": "2026-05-11T18:22:33.889441Z",
   "layer": 3,
   "name": "Atmosphere / Weather / Thunderstorms",
-  "score": 0.1525,
+  "score": 0.1787,
   "level": "quiet",
   "confidence": 1.0,
   "score_basis": "5/5 dynamic components",
@@ -10,22 +10,22 @@
   "missing_components": [],
   "components": {
     "Convection Intensity (CAPE)": {
-      "score": 0.2033,
+      "score": 0.265,
       "source": "primary",
       "dynamic": true
     },
     "Atm. Instability (LI)": {
-      "score": 0.2033,
+      "score": 0.2167,
       "source": "primary",
       "dynamic": true
     },
     "Thunderstorm Activity": {
-      "score": 0.1606,
+      "score": 0.1759,
       "source": "primary",
       "dynamic": true
     },
     "Schumann Excitation Potential": {
-      "score": 0.162,
+      "score": 0.2025,
       "source": "derived",
       "dynamic": true
     },
@@ -36,54 +36,62 @@
     }
   },
   "raw_values": {
-    "CAPE_mean_Jkg": 610.0,
-    "LI_mean_K": 3.56,
+    "CAPE_mean_Jkg": 795.0,
+    "LI_mean_K": 3.4,
     "thunder_points_WMO": 0,
     "storm_events_EONET": 1,
-    "Kp_current": 1.0,
+    "Kp_current": 0.0,
     "xray_context": {
-      "flux": 6.523879960695922e-07,
+      "flux": 6.325650474536815e-07,
       "class": "B"
     },
     "kp_note": "geomagnetic context, not a lightning proxy",
-    "schumann_potential": 0.162,
+    "schumann_potential": 0.2025,
     "messpunkte": [
       {
         "point": "Central Europe",
-        "cape": 0.0,
-        "li": 0.8,
+        "cape": 30.0,
+        "li": 2.2,
         "thunderstorm": false,
-        "thunder_score": 0.258,
-        "schumann_contribution": 0.077
+        "thunder_score": 0.232,
+        "schumann_contribution": 0.07
       },
       {
         "point": "Tropics (Congo)",
-        "cape": 2020.0,
-        "li": -2.4,
+        "cape": 2070.0,
+        "li": -2.2,
         "thunderstorm": false,
-        "thunder_score": 0.41,
-        "schumann_contribution": 0.383
+        "thunder_score": 0.4,
+        "schumann_contribution": 0.373
       },
       {
         "point": "Arctic",
         "cape": 0.0,
-        "li": 15.7,
+        "li": 18.0,
         "thunderstorm": false,
-        "thunder_score": 0.144,
-        "schumann_contribution": 0.043
+        "thunder_score": 0.052,
+        "schumann_contribution": 0.016
       },
       {
         "point": "Pacific (ITCZ)",
-        "cape": 1030.0,
-        "li": -2.7,
+        "cape": 1250.0,
+        "li": -2.6,
         "thunderstorm": false,
-        "thunder_score": 0.335,
-        "schumann_contribution": 0.307
+        "thunder_score": 0.316,
+        "schumann_contribution": 0.29
+      },
+      {
+        "point": "Amazonia",
+        "cape": 1420.0,
+        "li": -4.8,
+        "thunderstorm": false,
+        "thunder_score": 0.508,
+        "schumann_contribution": 0.466
       },
       {
         "point": "Sahel",
         "cape": 0.0,
-        "li": 6.4,
+        "li": 9.8,
         "thunderstorm": false,
         "thunder_score": 0.0,
         "schumann_contribution": 0.0
@@ -105,20 +113,20 @@
     "layer6_pattern": "quiet atmosphere – no strong pattern modulation"
   },
   "layer0_context": {
-    "score": 0.2323,
+    "score": 0.152,
     "level": "calm",
     "dominant_driver": "none"
   },
   "layer1_context": {
-    "score": 0.329,
+    "score": 0.334,
     "level": "moderate"
   },
   "layer2_context": {
-    "score": 0.4129,
+    "score": 0.351,
     "level": "moderate",
     "thunderstorm_trigger": false,
-    "conv_potential": 0.467,
+    "conv_potential": 0.44,
     "enso_phase": "warm_neutral"
   },
-  "state_summary": "Layer-3-State: quiet. CAPE-Mittel 610 J/kg. LI-Mittel 3.6 K. 0 WMO thunderstorm points, 1 NASA storm events. Schumann potential: 0.162. Data completeness: 100%. L2 input: moderate (Conv=0.47, Thunder-Trigger=False)."
+  "state_summary": "Layer-3-State: quiet. CAPE-Mittel 795 J/kg. LI-Mittel 3.4 K. 0 WMO thunderstorm points, 1 NASA storm events. Schumann potential: 0.203. Data completeness: 100%. L2 input: moderate (Conv=0.44, Thunder-Trigger=False)."
 }
