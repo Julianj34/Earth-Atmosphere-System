@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-05-12T18:26:03.039494Z",
+  "timestamp": "2026-05-12T21:55:12.237999Z",
   "layer": 2,
   "name": "Surface / Oceans / Land",
-  "score": 0.3485,
+  "score": 0.3553,
   "level": "moderate",
   "confidence": 0.8,
   "score_basis": "4/5 dynamic components",
@@ -12,7 +12,7 @@
   ],
   "components": {
     "Convection Potential": {
-      "score": 0.445,
+      "score": 0.43,
       "source": "primary",
       "dynamic": true
     },
@@ -27,12 +27,12 @@
       "dynamic": true
     },
     "Elec. Surface Coupling": {
-      "score": 0.126,
+      "score": 0.156,
       "source": "primary",
       "dynamic": true
     },
     "Soil Moisture (global)": {
-      "score": 0.098,
+      "score": 0.11,
       "source": "primary",
       "dynamic": true
     }
@@ -47,15 +47,15 @@
       "note": "phase_forecast not used in score",
       "source": "cpc_weekly"
     },
-    "conv_potential_mean": 0.445,
-    "elec_coupling_mean": 0.126,
+    "conv_potential_mean": 0.43,
+    "elec_coupling_mean": 0.156,
     "surface_points": [
       {
         "point": "Sahel",
-        "temp_2m": 35.5,
-        "rh": 10,
-        "conv": 0.445,
-        "elec": 0.126
+        "temp_2m": 31.0,
+        "rh": 15,
+        "conv": 0.43,
+        "elec": 0.156
       }
     ]
   },
@@ -66,7 +66,7 @@
     "la_nina_active": false,
     "sst_anomaly_high": null,
     "thunderstorm_trigger": false,
-    "bz_orientation": "weak_southward"
+    "bz_orientation": null
   },
   "downstream_expectation": {
     "layer3_weather": "moderate convection – normal thunderstorm activity",
@@ -75,7 +75,7 @@
     "layer4_ionosphere": "ENSO-modulated convection influences tropospheric wave propagation"
   },
   "layer0_context": {
-    "score": 0.1698,
+    "score": 0.1579,
     "level": "calm",
     "dominant_driver": "none"
   },
@@ -84,5 +84,5 @@
     "level": "moderate",
     "seismic_elevated": true
   },
-  "state_summary": "Layer-2-State: moderate. SST not available. ENSO: warm_neutral / el_nino_likely (weekly Nino3.4=+0.90, ONI=n/a; Forecast nicht im Score). Konvektions-Potential: 0.45. Data completeness: 80%. L1-Eingang: moderate (Score 0.316)."
+  "state_summary": "Layer-2-State: moderate. SST not available. ENSO: warm_neutral / el_nino_likely (weekly Nino3.4=+0.90, ONI=n/a; Forecast nicht im Score). Konvektions-Potential: 0.43. Data completeness: 80%. L1-Eingang: moderate (Score 0.316)."
 }
