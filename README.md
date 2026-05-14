@@ -14,6 +14,54 @@ Layer 8 becomes more valuable as the `layer7_test_history.jsonl` archive grows o
 Planned next step: **Layer 9 – Model Integration / Prediction Layer**
 
 ---
+## Repository Structure
+
+Earth-Atmosphere-System/
+│
+├── .github/
+│   └── workflows/
+│       └── run_pipeline.yml          # GitHub Actions pipeline for automated runs
+│
+├── data/
+│   ├── history/                      # Growing snapshot history
+│   │   └── layer7_test_history.jsonl
+│   │
+│   └── states/                       # Current state outputs from each layer
+│       ├── layer0_test_state.json
+│       ├── layer1_test_state.json
+│       ├── layer2_test_state.json
+│       ├── layer3_test_state.json
+│       ├── layer4_test_state.json
+│       ├── layer5_test_state.json
+│       ├── layer6_test_state.json
+│       ├── layer7_test_state.json
+│       └── layer8_test_state.json
+│
+├── notebooks/
+│   ├── layer0_external_drivers.ipynb
+│   ├── layer1_planetary_body.ipynb
+│   ├── layer2_surface_zone.ipynb
+│   ├── layer3_atmosphere_zone.ipynb
+│   ├── layer4_Ionosphere.ipynb
+│   ├── layer5_Global_Electric_Circuit.ipynb
+│   ├── layer6_Resonance_Field.ipynb
+│   ├── layer7_Earth_Field.ipynb
+│   └── layer8_Research.ipynb
+│
+├── research/
+│   ├── layer8_test_report.md         # Human-readable Layer-8 research report
+│   ├── test_hypothesis_registry.json # Persistent hypothesis registry
+│   │
+│   └── test_hypothesis_candidates/   # Individual hypothesis candidates
+│       ├── H1.json
+│       ├── H3.json
+│       ├── H6.json
+│       └── H_cavity.json
+│
+├── .gitignore
+├── LICENSE
+└── README.md
+---
 
 ## Core Idea
 
