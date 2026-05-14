@@ -3,10 +3,15 @@ A layered Earth-system framework for mapping field states, atmospheric coupling,
 
 ## Status
 
-Current implementation: **Layer 0–7**  
-Planned: **Layer 8 – System Analysis / Research Intelligence Layer**
+Current implementation: **Layer 0–8**
 
-Layer 8 will become useful after repeated Layer-7 snapshots are collected over time.
+- **Layer 0–6:** Physical system layers  
+- **Layer 7:** Earth Field State Engine — creates standardized, time-stamped system snapshots  
+- **Layer 8:** Research & Hypothesis Engine — analyzes the Layer-7 snapshot history for patterns, transitions, Field Operator behavior, Cavity Gate events, and emerging hypotheses  
+
+Layer 8 becomes more valuable as the `layer7_test_history.jsonl` archive grows over time. With repeated daily snapshots, the system can move from exploratory pattern detection toward more stable hypothesis testing.
+
+Planned next step: **Layer 9 – Model Integration / Prediction Layer**
 
 ---
 
