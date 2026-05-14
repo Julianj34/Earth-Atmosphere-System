@@ -273,12 +273,44 @@ Layer 8 = long-term pattern and hypothesis analysis
 
 Core question:
 What is the current integrated state of the Earth Field System?
+
 ---
-Layer 8 – System Analysis / Research Intelligence Layer
+Layer 8 – Research & Hypothesis Engine
 
-Role: The scientific analysis layer above Layer 7.
+Role: The analytical research layer of the system.
 
-Layer 8 does not work directly with raw data. It works with many saved Layer-7 snapshots over time.
+Examples:
 
-Layer 8 is planned, not fully implemented yet.
+layer7_test_history.jsonl
+snapshot history
+morning / midday / evening / night slots
+day-pair analysis
+ΔL3 / ΔL5 / ΔL6 activation
+Field Operator trends
+state transitions
+Cavity Event Study
+hypothesis registry
+hypothesis candidates
 
+Function:
+Layer 8 does not collect new field data. It reads the growing Layer 7 snapshot archive and searches for reproducible patterns across time.
+
+It analyzes daily activation cycles, especially the difference between morning baseline and evening activation. ΔL3, ΔL5, and ΔL6 are used to study whether atmospheric activation, Global Electric Circuit response, and resonance-field response appear together.
+
+Layer 8 also evaluates Field Operators over time, studies state transitions, detects possible precursor patterns, and generates structured hypotheses for later testing.
+
+Important distinction:
+
+Layer 7 = current system-state snapshot  
+Layer 8 = long-term pattern research and hypothesis testing  
+Layer 9 = future model integration / prediction layer
+
+Core question:
+Which repeating patterns, transitions, and hypotheses emerge from the Earth Field snapshot history?
+
+Outputs:
+
+`layer8_test_state.json` — machine-readable research state  
+`layer8_test_report.md` — human-readable research report  
+`test_hypothesis_registry.json` — persistent hypothesis archive  
+`test_hypothesis_candidates/*.json` — automatically generated hypothesis candidates
