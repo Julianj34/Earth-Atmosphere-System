@@ -1,32 +1,25 @@
 name: Earth-Atmosphere-System Pipeline
-
 on:
   schedule:
-    - cron: '30 4,10,16,20 * * *'   # 06:30 / 12:30 / 18:30 / 22:30 MESZ (UTC+2)
+    - cron: '30 4,10,16,20 * * *'   # 06:30 / 12:30 / 18:30 / 22:30 CEST (UTC+2)
   workflow_dispatch:                  # manual trigger
-
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true   # Node.js 24 fix
-
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
       - name: Install dependencies
         run: |
           pip install --upgrade pip
           pip install jupyter nbconvert plotly pandas numpy requests
-
-      - name: Run Layer 0–7 pipeline (with retry)
+      - name: Run Layer 0–8 pipeline (with retry)
         run: |
           set -e
           run_pipeline() {
@@ -38,14 +31,14 @@ jobs:
             jupyter nbconvert --to notebook --execute "layer5_Global_Electric_Circuit.ipynb" --inplace --ExecutePreprocessor.timeout=300 --ExecutePreprocessor.kernel_name=python3
             jupyter nbconvert --to notebook --execute "layer6_Resonance_Field.ipynb"         --inplace --ExecutePreprocessor.timeout=300 --ExecutePreprocessor.kernel_name=python3
             jupyter nbconvert --to notebook --execute "layer7_Earth_Field.ipynb"             --inplace --ExecutePreprocessor.timeout=300 --ExecutePreprocessor.kernel_name=python3
+            jupyter nbconvert --to notebook --execute "layer8_Research.ipynb"                --inplace --ExecutePreprocessor.timeout=300 --ExecutePreprocessor.kernel_name=python3
           }
           run_pipeline || (echo "⚠️ First attempt failed, retrying in 2 min..." && sleep 120 && run_pipeline) || (echo "⚠️ Second attempt failed, retrying in 5 min..." && sleep 300 && run_pipeline)
         timeout-minutes: 60
-
       - name: Commit all generated and updated files
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add *.json *.jsonl *.ipynb
+          git add *.json *.jsonl *.ipynb data/research/
           git diff --staged --quiet || git commit -m "Auto-run: $(date -u '+%Y-%m-%d %H:%M') UTC"
           git push
