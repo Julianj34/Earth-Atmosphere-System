@@ -1,18 +1,18 @@
 {
-  "timestamp": "2026-05-14T07:35:01.478378Z",
+  "timestamp": "2026-05-14T10:17:53.824790Z",
   "layer": 2,
   "name": "Surface / Oceans / Land",
-  "score": 0.6036,
-  "level": "active",
+  "score": 0.5939,
+  "level": "moderate",
   "confidence": 0.8,
   "score_basis": "4/5 dynamic components",
-  "dominant_component": "ENSO Phase (Nino3.4)",
+  "dominant_component": "Convection Potential",
   "missing_components": [
     "SST Anomaly (Ocean)"
   ],
   "components": {
     "Convection Potential": {
-      "score": 0.7215,
+      "score": 0.73,
       "source": "primary",
       "dynamic": true
     },
@@ -27,12 +27,12 @@
       "dynamic": true
     },
     "Elec. Surface Coupling": {
-      "score": 0.573,
+      "score": 0.5535,
       "source": "primary",
       "dynamic": true
     },
     "Soil Moisture (global)": {
-      "score": 0.395,
+      "score": 0.367,
       "source": "primary",
       "dynamic": true
     }
@@ -47,22 +47,22 @@
       "note": "phase_forecast not used in score",
       "source": "cpc_weekly"
     },
-    "conv_potential_mean": 0.722,
-    "elec_coupling_mean": 0.573,
+    "conv_potential_mean": 0.73,
+    "elec_coupling_mean": 0.553,
     "surface_points": [
       {
         "point": "Amazonia",
-        "temp_2m": 23.2,
-        "rh": 99,
+        "temp_2m": 23.3,
+        "rh": 98,
         "conv": 1.0,
         "elec": 1.0
       },
       {
         "point": "Sahel",
-        "temp_2m": 33.4,
-        "rh": 9,
-        "conv": 0.443,
-        "elec": 0.146
+        "temp_2m": 39.2,
+        "rh": 5,
+        "conv": 0.46,
+        "elec": 0.107
       }
     ]
   },
@@ -82,14 +82,14 @@
     "layer4_ionosphere": "ENSO-modulated convection influences tropospheric wave propagation"
   },
   "layer0_context": {
-    "score": 0.1947,
+    "score": 0.1422,
     "level": "calm",
     "dominant_driver": "none"
   },
   "layer1_context": {
-    "score": 0.2455,
-    "level": "calm",
-    "seismic_elevated": null
+    "score": 0.3243,
+    "level": "moderate",
+    "seismic_elevated": true
   },
-  "state_summary": "Layer-2-State: active. SST not available. ENSO: warm_neutral / el_nino_likely (weekly Nino3.4=+0.90, ONI=n/a; Forecast nicht im Score). Konvektions-Potential: 0.72. Data completeness: 80%. L1-Eingang: calm (Score 0.245)."
+  "state_summary": "Layer-2-State: moderate. SST not available. ENSO: warm_neutral / el_nino_likely (weekly Nino3.4=+0.90, ONI=n/a; Forecast nicht im Score). Konvektions-Potential: 0.73. Data completeness: 80%. L1-Eingang: moderate (Score 0.324)."
 }
