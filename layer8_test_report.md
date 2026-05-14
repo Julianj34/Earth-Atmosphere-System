@@ -1,15 +1,15 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-05-14T11:46:29.637525Z
-**Snapshots analyzed:** 20
+**Run:** 2026-05-14T12:16:35.191028Z
+**Snapshots analyzed:** 21
 **Complete day pairs:** 3  (morning + evening)
 **Complete day quads:** 3  (all 4 slots)
 
 ## System State Frequency
 
-- `seasonal_transition_state` — 10× (50.0%)
-- `cavity_condition_shift_state` — 7× (35.0%)
-- `anomalous_resonance_state` — 3× (15.0%)
+- `seasonal_transition_state` — 11× (52.4%)
+- `cavity_condition_shift_state` — 7× (33.3%)
+- `anomalous_resonance_state` — 3× (14.3%)
 
 ## Day Pairs (ΔL3 Activation)
 
@@ -21,24 +21,24 @@
 
 ## L2 ↔ L3 Relationship
 
-- Pearson: **-0.102**
-- L2 trend: -0.00023 / snapshot
-- L3 trend: +0.00012 / snapshot
-- Gap trend: -0.00036 / snapshot
+- Pearson: **-0.140**
+- L2 trend: -0.00152 / snapshot
+- L3 trend: +0.00038 / snapshot
+- Gap trend: -0.00190 / snapshot
 - Weak coupling visible — more data needed.
 
 ## Field Operators
 
-Coverage: 3/20 snapshots
+Coverage: 4/21 snapshots
 
 ### Current Operator Ranking
 
-- **resonance_model**: 0.425 — modeled non-geometric component exceeds cavity geometry
+- **resonance_model**: 0.455 — modeled non-geometric component exceeds cavity geometry
+- **electric**: 0.317 — moderate electrical coupling
 - **thermal**: 0.290 — thermal preparation weak
-- **ionization**: 0.271 — moderate ionospheric modulation
-- **electric**: 0.197 — GEC near reference, no electrical activation
-- **geomagnetic**: 0.107 — quiet geomagnetic conditions
-- **cross_layer_activation**: 0.098 — no transition tension — layers coherent
+- **ionization**: 0.270 — moderate ionospheric modulation
+- **geomagnetic**: 0.123 — quiet geomagnetic conditions
+- **cross_layer_activation**: 0.092 — no transition tension — layers coherent
 
 ## Hypotheses
 
@@ -57,5 +57,5 @@ Coverage: 3/20 snapshots
 ### 🔶 H8: Is "mixed" the dominant operator regime?
 
 - **Status:** likely
-- **Evidence:** 3/3 snapshots (100.0%) in regime "mixed".
+- **Evidence:** 4/4 snapshots (100.0%) in regime "mixed".
 - **Next step:** Analyze transition patterns between regimes (Layer 9?).
