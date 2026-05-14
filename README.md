@@ -243,103 +243,36 @@ What information about the total Earth Field System is contained in the resonanc
 ---
 Layer 7 – Earth Field State Engine
 
-Role: The central state engine.
+Role: The integration layer and state machine of the system.
 
-Layer 7 does not collect new raw data. It converts Layer 0–6 into a standardized, storable system-state snapshot.
+Examples:
 
-Function
-run Layer 0–6
-collect layer scores
-collect confidence values
-calculate trends and deltas
-detect dominant layers
-detect weak layers
-evaluate coupling strengths
-classify system state
-generate event tags
-save snapshot
-prepare handoff for Layer 8
+Layer 0–6 state files
+normalized layer scores
+layer confidence
+cross-layer couplings
+meta-scores
+Field Operators
+Cavity Gate status
+event tags
+system-state classification
+snapshot history
 
-Layer 7 can classify snapshots into states such as:
+Function:
+Layer 7 does not collect new raw data. It combines the outputs of Layer 0–6 into one standardized, time-stamped Earth Field snapshot.
 
-| System State | Meaning |
-|---|---|
-| normal_background_state | The system is close to baseline |
-| surface_prepared_but_atmosphere_not_activated | Surface/ocean conditions are elevated, but the atmosphere has not activated yet |
-| atmospheric_driven_resonance_state | Atmospheric or thunderstorm activity is the dominant driver |
-| space_weather_driven_ionospheric_state | External drivers strongly affect the ionosphere |
-| mixed_coupled_state | Multiple layers are active together |
-| seasonal_transition_state | The system shows transition-like surface or seasonal signals |
-| anomalous_resonance_state | Resonance-field behavior deviates from expected background |
-| low_confidence_state | Too much missing or uncertain data |
+It detects which layers are dominant, which layers are weak, how strongly the layers are coupled, and whether the system is in a background, transition, cavity-shift, mixed-coupled, or anomalous resonance state.
 
----
+Layer 7 is the handoff layer for Layer 8. Each run saves the current state as `layer7_test_state.json` and appends one snapshot to `layer7_test_history.jsonl`.
 
-## Example Layer-7 Output
+Important distinction:
 
-  json
- 
-  "system_state": "seasonal_transition_state",
-  "dominant_layer": "L2_surface_zone",
-  "state_score": 0.5401,
-  "avg_score": 0.3149,
-  "state_confidence": 0.65
+Layer 0–6 = physical system layers  
+Layer 7 = current system-state engine  
+Layer 8 = long-term pattern and hypothesis analysis
 
-
-Interpretation:
-
-The surface/ocean contact zone is prepared,
-but atmosphere and resonance field are not strongly activated yet.
-
-Diagnostic interpretation:
-
-surface_prepared_but_atmosphere_not_activated
-Diagnostic Features
-
-Layer 7 creates features such as:
-
-surface_atmosphere_gap
-surface_to_resonance_gap
-atmosphere_to_gec_gap
-external_pressure_low
-resonance_confirmed
-transition_state
-
-Example:
-
-surface_atmosphere_gap = L2_score - L3_score
-
-This helps detect whether surface/ocean preparation is followed by atmospheric activation.
-
-Coupling Matrix
-
-Layer 7 stores simplified coupling strengths between layers.
-
-Example couplings:
-
-L0 external drivers → L4 ionosphere
-L0 external drivers → L5 Global Electric Circuit
-L2 surface zone → L3 atmosphere
-L3 atmosphere → L5 Global Electric Circuit
-L3 atmosphere → L6 Schumann resonance
-L4 ionosphere → L6 Schumann resonance
-L5 Global Electric Circuit → L6 Schumann resonance
-
-These are not final causal proofs. They are model features for later analysis.
-
-Event Tags
-
-Layer 7 creates event tags such as:
-
-el_nino_developing
-sst_anomaly_high
-surface_convection_trigger
-elevated_seismicity
-non_geometric_dominance
-state_seasonal_transition_state
-
-These tags are important for the future Layer-8 analysis.
-
+Core question:
+What is the current integrated state of the Earth Field System?
 ---
 Layer 8 – System Analysis / Research Intelligence Layer
 
