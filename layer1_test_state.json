@@ -1,17 +1,19 @@
 {
-  "timestamp": "2026-05-13T21:57:28.672307Z",
+  "timestamp": "2026-05-14T07:33:52.857859Z",
   "layer": 1,
   "name": "Planetary Body",
-  "score": 0.3572,
-  "level": "moderate",
-  "confidence": 1.0,
-  "score_basis": "3/3 dynamic components available",
+  "score": 0.2455,
+  "level": "calm",
+  "confidence": 0.67,
+  "score_basis": "2/3 dynamic components available",
   "dynamic_score_note": "Score based exclusively on dynamic components. Conductivity baseline is a stable boundary condition, not in score.",
-  "missing_components": [],
+  "missing_components": [
+    "seismic_activity"
+  ],
   "components": {
     "seismic_activity": {
-      "score": 0.6917,
-      "source": "primary",
+      "score": null,
+      "source": "missing",
       "dynamic": true
     },
     "earth_rotation_lod": {
@@ -20,7 +22,7 @@
       "dynamic": true
     },
     "magnetic_field_variation": {
-      "score": 0.1111,
+      "score": 0.2222,
       "source": "primary",
       "dynamic": true
     }
@@ -37,30 +39,30 @@
     "schumann_ref_Hz": 7.83
   },
   "raw_values": {
-    "seismic_events_7d": 85,
-    "seismic_max_mag": 6.1,
-    "seismic_M6plus": 1,
+    "seismic_events_7d": null,
+    "seismic_max_mag": null,
+    "seismic_M6plus": null,
     "LOD_anomaly_ms": 0.8064,
     "LOD_source": "primary",
-    "Kp_index": 1.0
+    "Kp_index": 2.0
   },
   "flags": {
-    "strong_earthquake": false,
-    "elevated_seismicity": true,
+    "strong_earthquake": null,
+    "elevated_seismicity": null,
     "mag_field_disturbed": false,
     "lod_anomaly_high": false
   },
   "downstream_expectation": {
-    "layer2_surface": "elevated subsurface stress possible",
+    "layer2_surface": "normal",
     "layer4_ionosphere": "normal",
     "layer5_gec": "base conductivity stable – 71% oceans (boundary condition)",
     "schumann_resonance": "Fundamental mode stable ~7.83 Hz – no modulation expected from Layer 1"
   },
   "layer0_context": {
-    "score": 0.1523,
+    "score": 0.1947,
     "level": "calm",
     "dominant_driver": "none",
     "confidence": 0.75
   },
-  "state_summary": "Layer-1 state: moderate. Seismics: 85 events M>=4.5 in 7 days, strongest M6.1. LOD anomaly: +0.806 ms [primary]. Magnetic field variation Kp=1.0. Data completeness: 100%. Layer-0 input: calm (Score 0.15)."
+  "state_summary": "Layer-1 state: calm. Seismic data unavailable. LOD anomaly: +0.806 ms [primary]. Magnetic field variation Kp=2.0. Data completeness: 67%. Layer-0 input: calm (Score 0.19)."
 }

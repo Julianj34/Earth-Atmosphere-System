@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-05-13T21:58:51.436876Z",
+  "timestamp": "2026-05-14T07:35:01.478378Z",
   "layer": 2,
   "name": "Surface / Oceans / Land",
-  "score": 0.3518,
-  "level": "moderate",
+  "score": 0.6036,
+  "level": "active",
   "confidence": 0.8,
   "score_basis": "4/5 dynamic components",
   "dominant_component": "ENSO Phase (Nino3.4)",
@@ -12,7 +12,7 @@
   ],
   "components": {
     "Convection Potential": {
-      "score": 0.424,
+      "score": 0.7215,
       "source": "primary",
       "dynamic": true
     },
@@ -27,12 +27,12 @@
       "dynamic": true
     },
     "Elec. Surface Coupling": {
-      "score": 0.148,
+      "score": 0.573,
       "source": "primary",
       "dynamic": true
     },
     "Soil Moisture (global)": {
-      "score": 0.11,
+      "score": 0.395,
       "source": "primary",
       "dynamic": true
     }
@@ -47,42 +47,49 @@
       "note": "phase_forecast not used in score",
       "source": "cpc_weekly"
     },
-    "conv_potential_mean": 0.424,
-    "elec_coupling_mean": 0.148,
+    "conv_potential_mean": 0.722,
+    "elec_coupling_mean": 0.573,
     "surface_points": [
       {
+        "point": "Amazonia",
+        "temp_2m": 23.2,
+        "rh": 99,
+        "conv": 1.0,
+        "elec": 1.0
+      },
+      {
         "point": "Sahel",
-        "temp_2m": 31.0,
-        "rh": 13,
-        "conv": 0.424,
-        "elec": 0.148
+        "temp_2m": 33.4,
+        "rh": 9,
+        "conv": 0.443,
+        "elec": 0.146
       }
     ]
   },
   "flags": {
-    "elevated_convection": false,
+    "elevated_convection": true,
     "el_nino_active": false,
     "el_nino_developing": true,
     "la_nina_active": false,
     "sst_anomaly_high": null,
-    "thunderstorm_trigger": false,
+    "thunderstorm_trigger": true,
     "bz_orientation": "northward"
   },
   "downstream_expectation": {
-    "layer3_weather": "moderate convection – normal thunderstorm activity",
-    "layer5_gec": "normal GEC baseline state expected",
-    "schumann_resonance": "moderate convection – slight Schumann modulation possible",
+    "layer3_weather": "elevated thunderstorm potential – convection and E-coupling active",
+    "layer5_gec": "elevated energy input into GEC through thunderstorm activity possible",
+    "schumann_resonance": "elevated thunderstorm activity possible – Schumann excitation expected",
     "layer4_ionosphere": "ENSO-modulated convection influences tropospheric wave propagation"
   },
   "layer0_context": {
-    "score": 0.1523,
+    "score": 0.1947,
     "level": "calm",
     "dominant_driver": "none"
   },
   "layer1_context": {
-    "score": 0.3572,
-    "level": "moderate",
-    "seismic_elevated": true
+    "score": 0.2455,
+    "level": "calm",
+    "seismic_elevated": null
   },
-  "state_summary": "Layer-2-State: moderate. SST not available. ENSO: warm_neutral / el_nino_likely (weekly Nino3.4=+0.90, ONI=n/a; Forecast nicht im Score). Konvektions-Potential: 0.42. Data completeness: 80%. L1-Eingang: moderate (Score 0.357)."
+  "state_summary": "Layer-2-State: active. SST not available. ENSO: warm_neutral / el_nino_likely (weekly Nino3.4=+0.90, ONI=n/a; Forecast nicht im Score). Konvektions-Potential: 0.72. Data completeness: 80%. L1-Eingang: calm (Score 0.245)."
 }
