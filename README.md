@@ -16,17 +16,17 @@ Planned next step: **Layer 9 – Model Integration / Prediction Layer**
 ---
 ## Repository Structure
 
+```text
 Earth-Atmosphere-System/
-│
 ├── .github/
 │   └── workflows/
-│       └── run_pipeline.yml          # GitHub Actions pipeline for automated runs
+│       └── run_pipeline.yml
 │
 ├── data/
-│   ├── history/                      # Growing snapshot history
+│   ├── history/
 │   │   └── layer7_test_history.jsonl
 │   │
-│   └── states/                       # Current state outputs from each layer
+│   └── states/
 │       ├── layer0_test_state.json
 │       ├── layer1_test_state.json
 │       ├── layer2_test_state.json
@@ -49,10 +49,9 @@ Earth-Atmosphere-System/
 │   └── layer8_Research.ipynb
 │
 ├── research/
-│   ├── layer8_test_report.md         # Human-readable Layer-8 research report
-│   ├── test_hypothesis_registry.json # Persistent hypothesis registry
-│   │
-│   └── test_hypothesis_candidates/   # Individual hypothesis candidates
+│   ├── layer8_test_report.md
+│   ├── test_hypothesis_registry.json
+│   └── test_hypothesis_candidates/
 │       ├── H1.json
 │       ├── H3.json
 │       ├── H6.json
@@ -61,6 +60,15 @@ Earth-Atmosphere-System/
 ├── .gitignore
 ├── LICENSE
 └── README.md
+```
+
+**Folder logic:**
+
+- `notebooks/` contains the executable layer notebooks.
+- `data/states/` stores the latest state output of each layer.
+- `data/history/` stores the growing Layer-7 snapshot archive.
+- `research/` stores Layer-8 reports, hypothesis candidates, and the hypothesis registry.
+- `.github/workflows/` runs the automated pipeline.
 ---
 
 ## Core Idea
