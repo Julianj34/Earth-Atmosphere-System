@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-05-16T11:36:34.759451Z",
+  "timestamp": "2026-05-16T17:33:52.871890Z",
   "layer": 4,
   "name": "Ionosphere",
-  "score": 0.4294,
+  "score": 0.3934,
   "level": "moderate",
   "confidence": 1.0,
   "score_basis": "5/5 dynamic components",
-  "dominant_component": "Cavity Height Deviation",
+  "dominant_component": "X-Ray Absorption (D-Layer)",
   "missing_components": [],
   "components": {
     "Ionization Level (F10.7)": {
@@ -25,12 +25,12 @@
       "dynamic": true
     },
     "X-Ray Absorption (D-Layer)": {
-      "score": 0.533,
+      "score": 0.698,
       "source": "primary",
       "dynamic": true
     },
     "IMF Bz Coupling": {
-      "score": 0.345,
+      "score": 0.0,
       "source": "primary",
       "dynamic": true
     }
@@ -38,10 +38,10 @@
   "raw_values": {
     "F10.7_sfu": 120.01,
     "Kp_current": 3.0,
-    "Kp_max_24h": 5.0,
-    "xray_flux_Wm2": 4.6312618451338494e-07,
-    "xray_class": "B",
-    "IMF_Bz_nT": -7.09,
+    "Kp_max_24h": 4.0,
+    "xray_flux_Wm2": 3.0730625439900905e-06,
+    "xray_class": "C",
+    "IMF_Bz_nT": 8.57,
     "wwv_solar_flux": 101,
     "wwv_a_index": 35,
     "wwv_k_index": null,
@@ -92,7 +92,7 @@
     "radio_blackout": false,
     "ionospheric_disturbed": true,
     "cavity_elevated": true,
-    "bz_southward_coupled": true,
+    "bz_southward_coupled": false,
     "iono_alerts_active": true
   },
   "downstream_expectation": {
@@ -106,5 +106,5 @@
     "L2": null,
     "L3": null
   },
-  "state_summary": "Layer-4-State: moderate. F10.7=120 sfu. Kp=3.0 (max 24h: 5.0). X-Ray B-Klasse. IMF Bz=-7.1 nT. Cavity height 67.6 km (Ref 80 km, Δ -12.4 km). SR-1=10.480 Hz (Δ +20.1 mHz). Propagation: unsettled. Data completeness: 100%."
+  "state_summary": "Layer-4-State: moderate. F10.7=120 sfu. Kp=3.0 (max 24h: 4.0). X-Ray C-Klasse. IMF Bz=+8.6 nT. Cavity height 67.6 km (Ref 80 km, Δ -12.4 km). SR-1=10.480 Hz (Δ +20.1 mHz). Propagation: unsettled. Data completeness: 100%."
 }
