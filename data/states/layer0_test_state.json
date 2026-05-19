@@ -1,18 +1,18 @@
 {
-  "timestamp": "2026-05-19T13:42:07.814060Z",
+  "timestamp": "2026-05-19T18:23:01.014751Z",
   "layer": 0,
   "name": "External Cosmic Drivers",
-  "score": 0.3029,
-  "level": "moderate",
-  "confidence": 0.75,
-  "score_basis": "3/4 components available",
+  "score": 0.2135,
+  "level": "calm",
+  "confidence": 0.5,
+  "score_basis": "2/4 components available",
   "missing_components": [
+    "imf_bz_southward",
     "solar_wind_speed"
   ],
   "components": {
     "solar_radiation_f107": 0.3158,
-    "geomagnetic_activity_kp": 0.3333,
-    "imf_bz_southward": 0.2594
+    "geomagnetic_activity_kp": 0.1111
   },
   "raw_values": {
     "F10.7_sfu": {
@@ -20,12 +20,12 @@
       "source": "primary"
     },
     "Kp_index": {
-      "value": 3.0,
+      "value": 1.0,
       "source": "primary"
     },
     "IMF_Bz_nT": {
-      "value": -4.1,
-      "source": "primary"
+      "value": null,
+      "source": "missing"
     },
     "SW_speed_kms": {
       "value": null,
@@ -35,9 +35,9 @@
   "flags": {
     "geomagnetic_storm": false,
     "solar_flux_high": false,
-    "bz_strongly_southward": false,
-    "bz_geoeffective": false,
-    "bz_orientation": "southward",
+    "bz_strongly_southward": null,
+    "bz_geoeffective": null,
+    "bz_orientation": null,
     "fast_solar_wind": null
   },
   "dominant_driver": "none",
@@ -47,5 +47,5 @@
     "schumann_resonance": "unchanged",
     "lithosphere_currents": "low"
   },
-  "state_summary": "Layer-0 state: moderate. Solar radiation moderate (F10.7=120 sfu). Kp=3.0 (moderately active). IMF Bz=-4.1 nT – weakly southward, not geoeffective. Solar wind speed unavailable. Data completeness: 75%."
+  "state_summary": "Layer-0 state: calm. Solar radiation moderate (F10.7=120 sfu). Kp=1.0 (calm). IMF Bz unavailable. Solar wind speed unavailable. Data completeness: 50%."
 }
