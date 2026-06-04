@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-06-04T08:41:49.354045Z",
+  "timestamp": "2026-06-04T18:36:30.002897Z",
   "layer": 3,
   "name": "Atmosphere / Weather / Thunderstorms",
-  "score": 0.2197,
+  "score": 0.2007,
   "level": "quiet",
   "confidence": 1.0,
   "score_basis": "5/5 dynamic components",
@@ -10,22 +10,22 @@
   "missing_components": [],
   "components": {
     "Convection Intensity (CAPE)": {
-      "score": 0.2493,
+      "score": 0.1972,
       "source": "primary",
       "dynamic": true
     },
     "Atm. Instability (LI)": {
-      "score": 0.3133,
+      "score": 0.3056,
       "source": "primary",
       "dynamic": true
     },
     "Thunderstorm Activity": {
-      "score": 0.2164,
+      "score": 0.2009,
       "source": "primary",
       "dynamic": true
     },
     "Schumann Excitation Potential": {
-      "score": 0.253,
+      "score": 0.233,
       "source": "derived",
       "dynamic": true
     },
@@ -36,57 +36,65 @@
     }
   },
   "raw_values": {
-    "CAPE_mean_Jkg": 748.0,
-    "LI_mean_K": 2.24,
+    "CAPE_mean_Jkg": 591.7,
+    "LI_mean_K": 2.33,
     "thunder_points_WMO": 0,
     "storm_events_EONET": 2,
     "Kp_current": 0.0,
     "xray_context": {
-      "flux": 1.336022251052782e-06,
+      "flux": 1.1680388070089975e-06,
       "class": "C"
     },
     "kp_note": "geomagnetic context, not a lightning proxy",
-    "schumann_potential": 0.253,
+    "schumann_potential": 0.233,
     "messpunkte": [
       {
-        "point": "Tropics (Congo)",
-        "cape": 210.0,
-        "li": 1.0,
+        "point": "Central Europe",
+        "cape": 0.0,
+        "li": 5.5,
         "thunderstorm": false,
-        "thunder_score": 0.217,
-        "schumann_contribution": 0.203
+        "thunder_score": 0.16,
+        "schumann_contribution": 0.048
+      },
+      {
+        "point": "Tropics (Congo)",
+        "cape": 0.0,
+        "li": 3.9,
+        "thunderstorm": false,
+        "thunder_score": 0.123,
+        "schumann_contribution": 0.115
       },
       {
         "point": "Arctic",
         "cape": 0.0,
-        "li": 15.7,
+        "li": 17.0,
         "thunderstorm": false,
-        "thunder_score": 0.15,
-        "schumann_contribution": 0.045
+        "thunder_score": 0.052,
+        "schumann_contribution": 0.016
       },
       {
         "point": "Pacific (ITCZ)",
-        "cape": 1510.0,
-        "li": -3.2,
+        "cape": 1370.0,
+        "li": -4.8,
         "thunderstorm": false,
-        "thunder_score": 0.367,
-        "schumann_contribution": 0.336
+        "thunder_score": 0.471,
+        "schumann_contribution": 0.432
       },
       {
         "point": "Amazonia",
-        "cape": 460.0,
-        "li": 0.9,
+        "cape": 1500.0,
+        "li": -5.1,
         "thunderstorm": false,
-        "thunder_score": 0.335,
-        "schumann_contribution": 0.307
+        "thunder_score": 0.523,
+        "schumann_contribution": 0.479
       },
       {
         "point": "Sahel",
-        "cape": 1560.0,
-        "li": -3.2,
+        "cape": 680.0,
+        "li": -2.5,
         "thunderstorm": false,
-        "thunder_score": 0.477,
-        "schumann_contribution": 0.374
+        "thunder_score": 0.393,
+        "schumann_contribution": 0.308
       }
     ]
   },
@@ -120,5 +128,5 @@
     "conv_potential": null,
     "enso_phase": null
   },
-  "state_summary": "Layer-3-State: quiet. CAPE-Mittel 748 J/kg. LI-Mittel 2.2 K. 0 WMO thunderstorm points, 2 NASA storm events. Schumann potential: 0.253. Data completeness: 100%. L2 context missing."
+  "state_summary": "Layer-3-State: quiet. CAPE-Mittel 592 J/kg. LI-Mittel 2.3 K. 0 WMO thunderstorm points, 2 NASA storm events. Schumann potential: 0.233. Data completeness: 100%. L2 context missing."
 }
