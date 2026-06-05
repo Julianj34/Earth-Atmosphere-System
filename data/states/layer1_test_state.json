@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-06-05T13:37:33.128157Z",
+  "timestamp": "2026-06-05T18:27:26.498329Z",
   "layer": 1,
   "name": "Planetary Body",
-  "score": 0.4267,
+  "score": 0.317,
   "level": "moderate",
   "confidence": 1.0,
   "score_basis": "3/3 dynamic components available",
@@ -15,12 +15,12 @@
       "dynamic": true
     },
     "earth_rotation_lod": {
-      "score": 0.0231,
+      "score": 0.0275,
       "source": "primary",
       "dynamic": true
     },
     "magnetic_field_variation": {
-      "score": 0.4444,
+      "score": 0.1111,
       "source": "primary",
       "dynamic": true
     }
@@ -40,21 +40,21 @@
     "seismic_events_7d": 93,
     "seismic_max_mag": 6.2,
     "seismic_M6plus": 2,
-    "LOD_anomaly_ms": -0.0694,
+    "LOD_anomaly_ms": 0.0826,
     "LOD_source": "primary",
-    "Kp_index": 4.0
+    "Kp_index": 1.0
   },
   "flags": {
     "strong_earthquake": false,
     "elevated_seismicity": true,
-    "mag_field_disturbed": true,
+    "mag_field_disturbed": false,
     "lod_anomaly_high": false
   },
   "downstream_expectation": {
     "layer2_surface": "elevated subsurface stress possible",
-    "layer4_ionosphere": "ionospheric modification via Kp possible",
+    "layer4_ionosphere": "normal",
     "layer5_gec": "base conductivity stable – 71% oceans (boundary condition)",
-    "schumann_resonance": "Only minor indirect modulation possible (Kp < 5, no strong Layer-1 driver)"
+    "schumann_resonance": "Fundamental mode stable ~7.83 Hz – no modulation expected from Layer 1"
   },
   "layer0_context": {
     "score": null,
@@ -62,5 +62,5 @@
     "dominant_driver": null,
     "confidence": null
   },
-  "state_summary": "Layer-1 state: moderate. Seismics: 93 events M>=4.5 in 7 days, strongest M6.2. LOD anomaly: -0.069 ms [primary]. Magnetic field variation Kp=4.0. Data completeness: 100%. Layer-0 context missing."
+  "state_summary": "Layer-1 state: moderate. Seismics: 93 events M>=4.5 in 7 days, strongest M6.2. LOD anomaly: +0.083 ms [primary]. Magnetic field variation Kp=1.0. Data completeness: 100%. Layer-0 context missing."
 }
