@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-06-05T08:31:00.467729Z",
+  "timestamp": "2026-06-05T13:37:33.128157Z",
   "layer": 1,
   "name": "Planetary Body",
-  "score": 0.354,
+  "score": 0.4267,
   "level": "moderate",
   "confidence": 1.0,
   "score_basis": "3/3 dynamic components available",
@@ -10,7 +10,7 @@
   "missing_components": [],
   "components": {
     "seismic_activity": {
-      "score": 0.8167,
+      "score": 0.8125,
       "source": "primary",
       "dynamic": true
     },
@@ -20,7 +20,7 @@
       "dynamic": true
     },
     "magnetic_field_variation": {
-      "score": 0.2222,
+      "score": 0.4444,
       "source": "primary",
       "dynamic": true
     }
@@ -37,24 +37,24 @@
     "schumann_ref_Hz": 7.83
   },
   "raw_values": {
-    "seismic_events_7d": 94,
+    "seismic_events_7d": 93,
     "seismic_max_mag": 6.2,
     "seismic_M6plus": 2,
     "LOD_anomaly_ms": -0.0694,
     "LOD_source": "primary",
-    "Kp_index": 2.0
+    "Kp_index": 4.0
   },
   "flags": {
     "strong_earthquake": false,
     "elevated_seismicity": true,
-    "mag_field_disturbed": false,
+    "mag_field_disturbed": true,
     "lod_anomaly_high": false
   },
   "downstream_expectation": {
     "layer2_surface": "elevated subsurface stress possible",
-    "layer4_ionosphere": "normal",
+    "layer4_ionosphere": "ionospheric modification via Kp possible",
     "layer5_gec": "base conductivity stable – 71% oceans (boundary condition)",
-    "schumann_resonance": "Fundamental mode stable ~7.83 Hz – no modulation expected from Layer 1"
+    "schumann_resonance": "Only minor indirect modulation possible (Kp < 5, no strong Layer-1 driver)"
   },
   "layer0_context": {
     "score": null,
@@ -62,5 +62,5 @@
     "dominant_driver": null,
     "confidence": null
   },
-  "state_summary": "Layer-1 state: moderate. Seismics: 94 events M>=4.5 in 7 days, strongest M6.2. LOD anomaly: -0.069 ms [primary]. Magnetic field variation Kp=2.0. Data completeness: 100%. Layer-0 context missing."
+  "state_summary": "Layer-1 state: moderate. Seismics: 93 events M>=4.5 in 7 days, strongest M6.2. LOD anomaly: -0.069 ms [primary]. Magnetic field variation Kp=4.0. Data completeness: 100%. Layer-0 context missing."
 }
