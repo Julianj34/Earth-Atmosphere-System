@@ -1,94 +1,100 @@
 {
-  "timestamp": "2026-06-07T21:48:17.111867Z",
+  "timestamp": "2026-06-08T09:13:02.156115Z",
   "layer": 3,
   "name": "Atmosphere / Weather / Thunderstorms",
-  "score": 0.2931,
+  "score": 0.211,
   "level": "quiet",
-  "confidence": 0.8,
-  "score_basis": "4/5 dynamic components",
-  "dominant_component": "Convection Intensity (CAPE)",
-  "missing_components": [
-    "Active Storm Events (EONET)"
-  ],
+  "confidence": 1.0,
+  "score_basis": "5/5 dynamic components",
+  "dominant_component": "Atm. Instability (LI)",
+  "missing_components": [],
   "components": {
     "Convection Intensity (CAPE)": {
-      "score": 0.344,
+      "score": 0.2178,
       "source": "primary",
       "dynamic": true
     },
     "Atm. Instability (LI)": {
-      "score": 0.2783,
+      "score": 0.3375,
       "source": "primary",
       "dynamic": true
     },
     "Thunderstorm Activity": {
-      "score": 0.2488,
+      "score": 0.2043,
       "source": "primary",
       "dynamic": true
     },
     "Schumann Excitation Potential": {
-      "score": 0.3012,
+      "score": 0.2288,
       "source": "derived",
       "dynamic": true
     },
     "Active Storm Events (EONET)": {
-      "score": null,
-      "source": "missing",
+      "score": 0.0667,
+      "source": "primary",
       "dynamic": true
     }
   },
   "raw_values": {
-    "CAPE_mean_Jkg": 1032.0,
-    "LI_mean_K": 2.66,
+    "CAPE_mean_Jkg": 653.3,
+    "LI_mean_K": 1.95,
     "thunder_points_WMO": 0,
-    "storm_events_EONET": 0,
+    "storm_events_EONET": 2,
     "Kp_current": 0.0,
     "xray_context": {
-      "flux": 8.762512493376562e-07,
+      "flux": 8.582227906117623e-07,
       "class": "B"
     },
     "kp_note": "geomagnetic context, not a lightning proxy",
-    "schumann_potential": 0.3012,
+    "schumann_potential": 0.2288,
     "messpunkte": [
       {
-        "point": "Tropics (Congo)",
-        "cape": 630.0,
-        "li": 0.9,
+        "point": "Central Europe",
+        "cape": 20.0,
+        "li": -1.5,
         "thunderstorm": false,
-        "thunder_score": 0.314,
-        "schumann_contribution": 0.293
+        "thunder_score": 0.19,
+        "schumann_contribution": 0.057
+      },
+      {
+        "point": "Tropics (Congo)",
+        "cape": 810.0,
+        "li": -1.4,
+        "thunderstorm": false,
+        "thunder_score": 0.348,
+        "schumann_contribution": 0.325
       },
       {
         "point": "Arctic",
         "cape": 0.0,
-        "li": 17.6,
+        "li": 16.9,
         "thunderstorm": false,
-        "thunder_score": 0.15,
-        "schumann_contribution": 0.045
+        "thunder_score": 0.114,
+        "schumann_contribution": 0.034
       },
       {
         "point": "Pacific (ITCZ)",
-        "cape": 1410.0,
-        "li": -2.7,
+        "cape": 900.0,
+        "li": -2.4,
         "thunderstorm": false,
-        "thunder_score": 0.411,
-        "schumann_contribution": 0.377
+        "thunder_score": 0.417,
+        "schumann_contribution": 0.382
       },
       {
         "point": "Amazonia",
-        "cape": 2920.0,
-        "li": -3.3,
+        "cape": 920.0,
+        "li": 1.2,
         "thunderstorm": false,
-        "thunder_score": 0.636,
-        "schumann_contribution": 0.583
+        "thunder_score": 0.304,
+        "schumann_contribution": 0.279
       },
       {
         "point": "Sahel",
-        "cape": 200.0,
-        "li": 0.8,
+        "cape": 1270.0,
+        "li": -1.1,
         "thunderstorm": false,
-        "thunder_score": 0.266,
-        "schumann_contribution": 0.208
+        "thunder_score": 0.378,
+        "schumann_contribution": 0.296
       }
     ]
   },
@@ -122,5 +128,5 @@
     "conv_potential": null,
     "enso_phase": null
   },
-  "state_summary": "Layer-3-State: quiet. CAPE-Mittel 1032 J/kg. LI-Mittel 2.7 K. 0 WMO thunderstorm points, 0 NASA storm events. Schumann potential: 0.301. Data completeness: 80%. L2 context missing."
+  "state_summary": "Layer-3-State: quiet. CAPE-Mittel 653 J/kg. LI-Mittel 1.9 K. 0 WMO thunderstorm points, 2 NASA storm events. Schumann potential: 0.229. Data completeness: 100%. L2 context missing."
 }
