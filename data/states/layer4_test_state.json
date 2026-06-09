@@ -1,13 +1,15 @@
 {
-  "timestamp": "2026-06-09T13:26:53.690921Z",
+  "timestamp": "2026-06-09T18:34:42.045291Z",
   "layer": 4,
   "name": "Ionosphere",
-  "score": 0.3312,
+  "score": 0.3025,
   "level": "moderate",
-  "confidence": 1.0,
-  "score_basis": "5/5 dynamic components",
-  "dominant_component": "X-Ray Absorption (D-Layer)",
-  "missing_components": [],
+  "confidence": 0.8,
+  "score_basis": "4/5 dynamic components",
+  "dominant_component": "Cavity Height Deviation",
+  "missing_components": [
+    "X-Ray Absorption (D-Layer)"
+  ],
   "components": {
     "Ionization Level (F10.7)": {
       "score": 0.346,
@@ -25,12 +27,12 @@
       "dynamic": true
     },
     "X-Ray Absorption (D-Layer)": {
-      "score": 0.604,
-      "source": "primary",
+      "score": null,
+      "source": "missing",
       "dynamic": true
     },
     "IMF Bz Coupling": {
-      "score": 0.045,
+      "score": 0.203,
       "source": "primary",
       "dynamic": true
     }
@@ -38,10 +40,10 @@
   "raw_values": {
     "F10.7_sfu": 125.69,
     "Kp_current": 1.0,
-    "Kp_max_24h": 2.0,
-    "xray_flux_Wm2": 1.0516044994801632e-06,
-    "xray_class": "C",
-    "IMF_Bz_nT": 3.44,
+    "Kp_max_24h": 3.0,
+    "xray_flux_Wm2": null,
+    "xray_class": null,
+    "IMF_Bz_nT": -2.09,
     "wwv_solar_flux": 131,
     "wwv_a_index": 8,
     "wwv_k_index": null,
@@ -106,5 +108,5 @@
     "L2": null,
     "L3": null
   },
-  "state_summary": "Layer-4-State: moderate. F10.7=126 sfu. Kp=1.0 (max 24h: 2.0). X-Ray C-Klasse. IMF Bz=+3.4 nT. Cavity height 69.0 km (Ref 80 km, Δ -11.0 km). SR-1=10.478 Hz (Δ +17.9 mHz). Propagation: normal. Data completeness: 100%."
+  "state_summary": "Layer-4-State: moderate. F10.7=126 sfu. Kp=1.0 (max 24h: 3.0). X-Ray n/a. IMF Bz=-2.1 nT. Cavity height 69.0 km (Ref 80 km, Δ -11.0 km). SR-1=10.478 Hz (Δ +17.9 mHz). Propagation: normal. Data completeness: 80%."
 }
