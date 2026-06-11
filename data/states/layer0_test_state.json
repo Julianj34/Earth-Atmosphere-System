@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-06-11T19:19:55.704378Z",
+  "timestamp": "2026-06-11T22:23:23.584614Z",
   "layer": 0,
   "name": "External Cosmic Drivers",
-  "score": 0.392,
-  "level": "moderate",
+  "score": 0.2634,
+  "level": "calm",
   "confidence": 0.75,
   "score_basis": "3/4 components available",
   "missing_components": [
@@ -11,8 +11,8 @@
   ],
   "components": {
     "solar_radiation_f107": 0.3457,
-    "geomagnetic_activity_kp": 0.3333,
-    "imf_bz_southward": 0.4969
+    "geomagnetic_activity_kp": 0.4444,
+    "imf_bz_southward": 0.0
   },
   "raw_values": {
     "F10.7_sfu": {
@@ -20,11 +20,11 @@
       "source": "primary"
     },
     "Kp_index": {
-      "value": 3.0,
+      "value": 4.0,
       "source": "primary"
     },
     "IMF_Bz_nT": {
-      "value": -12.4,
+      "value": 11.6,
       "source": "primary"
     },
     "SW_speed_kms": {
@@ -35,17 +35,17 @@
   "flags": {
     "geomagnetic_storm": false,
     "solar_flux_high": false,
-    "bz_strongly_southward": true,
-    "bz_geoeffective": true,
-    "bz_orientation": "strongly_southward",
+    "bz_strongly_southward": false,
+    "bz_geoeffective": false,
+    "bz_orientation": "northward",
     "fast_solar_wind": null
   },
-  "dominant_driver": "imf_southward",
+  "dominant_driver": "geomagnetic",
   "downstream_expectation": {
-    "magnetosphere": "energy coupling active",
-    "ionosphere": "elevated electron density possible",
-    "schumann_resonance": "slight modulation possible",
-    "lithosphere_currents": "low"
+    "magnetosphere": "compressed / storm",
+    "ionosphere": "elevated disturbance (TEC variability)",
+    "schumann_resonance": "elevated amplitude possible",
+    "lithosphere_currents": "elevated induction currents"
   },
-  "state_summary": "Layer-0 state: moderate. Solar radiation moderate (F10.7=126 sfu). Kp=3.0 (moderately active). IMF Bz=-12.4 nT – strongly southward, geoeffective. Solar wind speed unavailable. Data completeness: 75%."
+  "state_summary": "Layer-0 state: calm. Solar radiation moderate (F10.7=126 sfu). Kp=4.0 (moderately active). IMF Bz=11.6 nT – northward, no coupling. Solar wind speed unavailable. Data completeness: 75%."
 }
