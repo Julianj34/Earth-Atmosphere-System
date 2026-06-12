@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-06-11T22:25:53.657719Z",
+  "timestamp": "2026-06-12T08:49:18.477355Z",
   "layer": 3,
   "name": "Atmosphere / Weather / Thunderstorms",
-  "score": 0.2822,
+  "score": 0.2811,
   "level": "quiet",
   "confidence": 1.0,
   "score_basis": "5/5 dynamic components",
@@ -10,22 +10,22 @@
   "missing_components": [],
   "components": {
     "Convection Intensity (CAPE)": {
-      "score": 0.27,
+      "score": 0.3467,
       "source": "primary",
       "dynamic": true
     },
     "Atm. Instability (LI)": {
-      "score": 0.4017,
+      "score": 0.465,
       "source": "primary",
       "dynamic": true
     },
     "Thunderstorm Activity": {
-      "score": 0.345,
+      "score": 0.2258,
       "source": "primary",
       "dynamic": true
     },
     "Schumann Excitation Potential": {
-      "score": 0.2942,
+      "score": 0.268,
       "source": "derived",
       "dynamic": true
     },
@@ -36,62 +36,62 @@
     }
   },
   "raw_values": {
-    "CAPE_mean_Jkg": 810.0,
-    "LI_mean_K": 1.18,
-    "thunder_points_WMO": 1,
+    "CAPE_mean_Jkg": 1040.0,
+    "LI_mean_K": 0.42,
+    "thunder_points_WMO": 0,
     "storm_events_EONET": 3,
-    "Kp_current": 4.0,
+    "Kp_current": 3.0,
     "xray_context": {
-      "flux": 1.6199417132156668e-06,
-      "class": "C"
+      "flux": 6.315556220215512e-07,
+      "class": "B"
     },
     "kp_note": "geomagnetic context, not a lightning proxy",
-    "schumann_potential": 0.2942,
+    "schumann_potential": 0.268,
     "messpunkte": [
       {
         "point": "Tropics (Congo)",
-        "cape": 130.0,
-        "li": 2.2,
+        "cape": 1420.0,
+        "li": -0.1,
         "thunderstorm": false,
-        "thunder_score": 0.11,
-        "schumann_contribution": 0.103
+        "thunder_score": 0.343,
+        "schumann_contribution": 0.32
       },
       {
         "point": "Arctic",
         "cape": 0.0,
-        "li": 9.9,
+        "li": 10.4,
         "thunderstorm": false,
         "thunder_score": 0.15,
         "schumann_contribution": 0.045
       },
       {
         "point": "Pacific (ITCZ)",
-        "cape": 680.0,
-        "li": -2.8,
+        "cape": 560.0,
+        "li": -3.3,
         "thunderstorm": false,
-        "thunder_score": 0.39,
-        "schumann_contribution": 0.357
+        "thunder_score": 0.406,
+        "schumann_contribution": 0.372
       },
       {
         "point": "Amazonia",
-        "cape": 2990.0,
-        "li": -2.7,
-        "thunderstorm": true,
-        "thunder_score": 0.788,
-        "schumann_contribution": 0.722
+        "cape": 1400.0,
+        "li": -1.6,
+        "thunderstorm": false,
+        "thunder_score": 0.328,
+        "schumann_contribution": 0.301
       },
       {
         "point": "Sahel",
-        "cape": 250.0,
-        "li": -0.7,
+        "cape": 1820.0,
+        "li": -3.3,
         "thunderstorm": false,
-        "thunder_score": 0.312,
-        "schumann_contribution": 0.244
+        "thunder_score": 0.386,
+        "schumann_contribution": 0.302
       }
     ]
   },
   "flags": {
-    "active_thunderstorms": true,
+    "active_thunderstorms": false,
     "high_cape": false,
     "atmospheric_instability": false,
     "elevated_storm_activity": false,
@@ -99,7 +99,7 @@
     "l2_thunder_confirmed": false
   },
   "downstream_expectation": {
-    "layer4_ionosphere": "Thunderstorm columns reach tropopause – TIE effects and sprites possible",
+    "layer4_ionosphere": "normal tropospheric influence on ionosphere",
     "layer5_gec": "normal GEC baseline state",
     "schumann_resonance": "low Schumann excitation – quiet convection",
     "layer6_pattern": "quiet atmosphere – no strong pattern modulation"
@@ -120,5 +120,5 @@
     "conv_potential": null,
     "enso_phase": null
   },
-  "state_summary": "Layer-3-State: quiet. CAPE-Mittel 810 J/kg. LI-Mittel 1.2 K. 1 WMO thunderstorm points, 3 NASA storm events. Schumann potential: 0.294. Data completeness: 100%. L2 context missing."
+  "state_summary": "Layer-3-State: quiet. CAPE-Mittel 1040 J/kg. LI-Mittel 0.4 K. 0 WMO thunderstorm points, 3 NASA storm events. Schumann potential: 0.268. Data completeness: 100%. L2 context missing."
 }
