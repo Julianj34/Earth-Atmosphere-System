@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-13T21:49:57.809789Z",
+  "timestamp": "2026-06-14T08:35:54.386626Z",
   "layer": 6,
   "name": "Resonance Field / Schumann",
   "measurement_status": "model_expected_not_observed",
@@ -10,7 +10,7 @@
     "Q_factor": null,
     "note": "Insert real measurement data here when available (e.g. AURA, NASA/MEPAS)"
   },
-  "score": 0.373,
+  "score": 0.3869,
   "level": "moderate",
   "confidence": 1.0,
   "score_basis": "5/5 dynamic components",
@@ -18,7 +18,7 @@
   "missing_components": [],
   "components": {
     "Excitation Strength (Amplitude)": {
-      "score": 0.3872,
+      "score": 0.401,
       "source": "derived_from_L3_L5",
       "dynamic": true
     },
@@ -33,7 +33,7 @@
       "dynamic": true
     },
     "Chimney Activity": {
-      "score": 0.2778,
+      "score": 0.3333,
       "source": "time_of_day",
       "dynamic": true
     },
@@ -99,40 +99,40 @@
     "SR_1": {
       "freq_Hz": 7.82,
       "freq_shift_mHz": -10.0,
-      "amplitude_pT": 1.0033,
-      "amplitude_factor": 1.003,
+      "amplitude_pT": 1.0212,
+      "amplitude_factor": 1.021,
       "Q_factor": 4.297,
       "Q_factor_change": -4.5
     },
     "SR_2": {
       "freq_Hz": 14.29,
       "freq_shift_mHz": -10.0,
-      "amplitude_pT": 0.4515,
-      "amplitude_factor": 1.003,
+      "amplitude_pT": 0.4596,
+      "amplitude_factor": 1.021,
       "Q_factor": 4.584,
       "Q_factor_change": -4.5
     },
     "SR_3": {
       "freq_Hz": 20.79,
       "freq_shift_mHz": -10.0,
-      "amplitude_pT": 0.301,
-      "amplitude_factor": 1.003,
+      "amplitude_pT": 0.3064,
+      "amplitude_factor": 1.021,
       "Q_factor": 4.775,
       "Q_factor_change": -4.5
     },
     "SR_4": {
       "freq_Hz": 27.29,
       "freq_shift_mHz": -10.0,
-      "amplitude_pT": 0.2007,
-      "amplitude_factor": 1.003,
+      "amplitude_pT": 0.2043,
+      "amplitude_factor": 1.021,
       "Q_factor": 4.966,
       "Q_factor_change": -4.5
     },
     "SR_5": {
       "freq_Hz": 33.79,
       "freq_shift_mHz": -10.0,
-      "amplitude_pT": 0.1304,
-      "amplitude_factor": 1.003,
+      "amplitude_pT": 0.1328,
+      "amplitude_factor": 1.021,
       "Q_factor": 5.157,
       "Q_factor_change": -4.5
     }
@@ -150,10 +150,10 @@
       "xray_effect": 0
     },
     "amplitude_factor": {
-      "total": 1.0033,
+      "total": 1.0212,
       "gec_generator": 1.0,
       "thunder_l3": 1.075,
-      "chimney_factor": 0.933
+      "chimney_factor": 0.95
     },
     "q_factor_modulation": {
       "total": 0.955,
@@ -162,14 +162,14 @@
     }
   },
   "diurnal_pattern": {
-    "utc_hour": 21,
+    "utc_hour": 8,
     "active_chimneys": [
       {
-        "name": "Americas",
-        "activity": 0.833
+        "name": "Asia/Maritime",
+        "activity": 1.0
       }
     ],
-    "global_activity": 0.833
+    "global_activity": 1.0
   },
   "dominant_physical_driver": "diurnal_chimney_distribution",
   "delta_analysis": {
@@ -216,7 +216,7 @@
     "note": "Score 0.30 is lower bound of moderate; values near threshold should be interpreted as quiet_to_moderate"
   },
   "downstream_expectation": {
-    "layer7_engine": "L6-Score 0.373 (moderate) – SR-1 7.82 Hz | Amp 1.00x | non_geom_dom=10.0x",
+    "layer7_engine": "L6-Score 0.387 (moderate) – SR-1 7.82 Hz | Amp 1.02x | non_geom_dom=10.0x",
     "layer8_research": "Hypothesis: If real measurements confirm non_geometric_dominance, then day/night structure, conductivity/damping and source distribution (chimneys) are currently dominant. Kp and solar flares become relevant only during active disturbances."
   },
   "layer_context": {
@@ -227,5 +227,5 @@
     "L4": null,
     "L5": null
   },
-  "state_summary": "Layer-6-State: moderate. SR-1 expected 7.820 Hz (Δ -10.0 mHz vs reference 7.83 Hz). Amplitude factor 1.00 (normal excitation). Q-Factor SR-1 4.30 (-4.5%). Active chimneys: ['Americas']. Non-geometric dominance: 10.0x. Data completeness: 100%."
+  "state_summary": "Layer-6-State: moderate. SR-1 expected 7.820 Hz (Δ -10.0 mHz vs reference 7.83 Hz). Amplitude factor 1.02 (normal excitation). Q-Factor SR-1 4.30 (-4.5%). Active chimneys: ['Asia/Maritime']. Non-geometric dominance: 10.0x. Data completeness: 100%."
 }
