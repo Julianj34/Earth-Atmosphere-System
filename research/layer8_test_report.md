@@ -1,6 +1,6 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-06-18T18:45:13.181631Z
+**Run:** 2026-06-18T22:33:39.717887Z
 **Snapshots analyzed:** 21
 **Complete day pairs:** 3  (morning + evening)
 **Complete day quads:** 3  (all 4 slots)
