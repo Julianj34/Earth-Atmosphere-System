@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-06-23T18:24:41.047564Z",
+  "timestamp": "2026-06-23T22:01:03.509416Z",
   "layer": 4,
   "name": "Ionosphere",
-  "score": 0.3432,
+  "score": 0.3022,
   "level": "moderate",
   "confidence": 1.0,
   "score_basis": "5/5 dynamic components",
@@ -20,17 +20,17 @@
       "dynamic": true
     },
     "Cavity Height Deviation": {
-      "score": 0.51,
+      "score": 0.34,
       "source": "derived",
       "dynamic": true
     },
     "X-Ray Absorption (D-Layer)": {
-      "score": 0.659,
+      "score": 0.639,
       "source": "primary",
       "dynamic": true
     },
     "IMF Bz Coupling": {
-      "score": 0.201,
+      "score": 0.186,
       "source": "primary",
       "dynamic": true
     }
@@ -39,27 +39,27 @@
     "F10.7_sfu": 125.69,
     "Kp_current": 0.0,
     "Kp_max_24h": 3.0,
-    "xray_flux_Wm2": 1.983305082831066e-06,
+    "xray_flux_Wm2": 1.5582187415930093e-06,
     "xray_class": "C",
-    "IMF_Bz_nT": -2.02,
-    "wwv_solar_flux": 122,
-    "wwv_a_index": 5,
+    "IMF_Bz_nT": -1.5,
+    "wwv_solar_flux": 130,
+    "wwv_a_index": 7,
     "wwv_k_index": null,
     "wwv_conditions": [
       "storm"
     ]
   },
   "resonance_system": {
-    "cavity_height_km": 69.8,
+    "cavity_height_km": 86.8,
     "cavity_height_ref_km": 80.0,
-    "cavity_delta_km": -10.2,
-    "day_night": "day",
-    "d_layer_active": true,
+    "cavity_delta_km": 6.8,
+    "day_night": "night",
+    "d_layer_active": false,
     "schumann_frequencies_Hz": {
-      "SR_1": 10.4765,
-      "SR_2": 18.1458,
-      "SR_3": 25.6621,
-      "SR_4": 33.1296
+      "SR_1": 10.4489,
+      "SR_2": 18.0981,
+      "SR_3": 25.5945,
+      "SR_4": 33.0424
     },
     "schumann_ref_Hz": {
       "SR_1": 10.4599,
@@ -80,10 +80,10 @@
       "layer7_feature": "non_geometric_dominance = observed_delta_mHz >> geometric_delta_mHz"
     },
     "schumann_delta_mHz": {
-      "SR_1": 16.56,
-      "SR_2": 28.69,
-      "SR_3": 40.58,
-      "SR_4": 52.38
+      "SR_1": -11.01,
+      "SR_2": -19.08,
+      "SR_3": -26.98,
+      "SR_4": -34.83
     },
     "propagation_conditions": "normal"
   },
@@ -91,13 +91,13 @@
     "geomagnetic_storm": false,
     "radio_blackout": false,
     "ionospheric_disturbed": false,
-    "cavity_elevated": true,
+    "cavity_elevated": false,
     "bz_southward_coupled": false,
     "iono_alerts_active": true
   },
   "downstream_expectation": {
     "layer5_gec": "normal ionospheric conductivity",
-    "schumann_resonance": "Cavity height deviation >10 km – SR frequency shift possible",
+    "schumann_resonance": "SR-1 at 10.449 Hz (Δ -11.0 mHz) – minor shift",
     "layer6_pattern": "Ionosphere stable – resonance pattern unchanged"
   },
   "layer_context": {
@@ -106,5 +106,5 @@
     "L2": null,
     "L3": null
   },
-  "state_summary": "Layer-4-State: moderate. F10.7=126 sfu. Kp=0.0 (max 24h: 3.0). X-Ray C-Klasse. IMF Bz=-2.0 nT. Cavity height 69.8 km (Ref 80 km, Δ -10.2 km). SR-1=10.476 Hz (Δ +16.6 mHz). Propagation: normal. Data completeness: 100%."
+  "state_summary": "Layer-4-State: moderate. F10.7=126 sfu. Kp=0.0 (max 24h: 3.0). X-Ray C-Klasse. IMF Bz=-1.5 nT. Cavity height 86.8 km (Ref 80 km, Δ +6.8 km). SR-1=10.449 Hz (Δ -11.0 mHz). Propagation: normal. Data completeness: 100%."
 }
