@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-06-23T21:58:27.416028Z",
+  "timestamp": "2026-06-24T07:59:33.876308Z",
   "layer": 0,
   "name": "External Cosmic Drivers",
-  "score": 0.1184,
-  "level": "calm",
+  "score": 0.308,
+  "level": "moderate",
   "confidence": 0.75,
   "score_basis": "3/4 components available",
   "missing_components": [
@@ -11,8 +11,8 @@
   ],
   "components": {
     "solar_radiation_f107": 0.3457,
-    "geomagnetic_activity_kp": 0.0,
-    "imf_bz_southward": 0.0094
+    "geomagnetic_activity_kp": 0.2222,
+    "imf_bz_southward": 0.356
   },
   "raw_values": {
     "F10.7_sfu": {
@@ -20,11 +20,11 @@
       "source": "primary"
     },
     "Kp_index": {
-      "value": 0.0,
+      "value": 2.0,
       "source": "primary"
     },
     "IMF_Bz_nT": {
-      "value": 4.7,
+      "value": -7.5,
       "source": "primary"
     },
     "SW_speed_kms": {
@@ -36,16 +36,16 @@
     "geomagnetic_storm": false,
     "solar_flux_high": false,
     "bz_strongly_southward": false,
-    "bz_geoeffective": false,
-    "bz_orientation": "northward",
+    "bz_geoeffective": true,
+    "bz_orientation": "southward",
     "fast_solar_wind": null
   },
-  "dominant_driver": "none",
+  "dominant_driver": "imf_southward",
   "downstream_expectation": {
-    "magnetosphere": "calm",
-    "ionosphere": "calm",
-    "schumann_resonance": "unchanged",
+    "magnetosphere": "energy coupling active",
+    "ionosphere": "elevated electron density possible",
+    "schumann_resonance": "slight modulation possible",
     "lithosphere_currents": "low"
   },
-  "state_summary": "Layer-0 state: calm. Solar radiation moderate (F10.7=126 sfu). Kp=0.0 (calm). IMF Bz=4.7 nT – northward, no coupling. Solar wind speed unavailable. Data completeness: 75%."
+  "state_summary": "Layer-0 state: moderate. Solar radiation moderate (F10.7=126 sfu). Kp=2.0 (calm). IMF Bz=-7.5 nT – southward, geoeffective. Solar wind speed unavailable. Data completeness: 75%."
 }
