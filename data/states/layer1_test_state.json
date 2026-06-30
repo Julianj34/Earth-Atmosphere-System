@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-06-30T18:19:50.477754Z",
+  "timestamp": "2026-06-30T21:58:01.724516Z",
   "layer": 1,
   "name": "Planetary Body",
-  "score": 0.4427,
+  "score": 0.5538,
   "level": "moderate",
   "confidence": 1.0,
   "score_basis": "3/3 dynamic components available",
@@ -20,7 +20,7 @@
       "dynamic": true
     },
     "magnetic_field_variation": {
-      "score": 0.1111,
+      "score": 0.4444,
       "source": "primary",
       "dynamic": true
     }
@@ -42,19 +42,19 @@
     "seismic_M6plus": 5,
     "LOD_anomaly_ms": -0.651,
     "LOD_source": "primary",
-    "Kp_index": 1.0
+    "Kp_index": 4.0
   },
   "flags": {
     "strong_earthquake": true,
     "elevated_seismicity": true,
-    "mag_field_disturbed": false,
+    "mag_field_disturbed": true,
     "lod_anomaly_high": false
   },
   "downstream_expectation": {
     "layer2_surface": "elevated subsurface stress possible",
-    "layer4_ionosphere": "normal",
+    "layer4_ionosphere": "ionospheric modification via Kp possible",
     "layer5_gec": "base conductivity stable – 71% oceans (boundary condition)",
-    "schumann_resonance": "Fundamental mode stable ~7.83 Hz – no modulation expected from Layer 1"
+    "schumann_resonance": "Only minor indirect modulation possible (Kp < 5, no strong Layer-1 driver)"
   },
   "layer0_context": {
     "score": null,
@@ -62,5 +62,5 @@
     "dominant_driver": null,
     "confidence": null
   },
-  "state_summary": "Layer-1 state: moderate. Seismics: 106 events M>=4.5 in 7 days, strongest M7.5. LOD anomaly: -0.651 ms [primary]. Magnetic field variation Kp=1.0. Data completeness: 100%. Layer-0 context missing."
+  "state_summary": "Layer-1 state: moderate. Seismics: 106 events M>=4.5 in 7 days, strongest M7.5. LOD anomaly: -0.651 ms [primary]. Magnetic field variation Kp=4.0. Data completeness: 100%. Layer-0 context missing."
 }
