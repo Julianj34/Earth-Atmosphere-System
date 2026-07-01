@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-07-01T18:28:56.757219Z",
+  "timestamp": "2026-07-01T22:04:57.911672Z",
   "layer": 5,
   "name": "Global Electric Circuit",
-  "score": 0.3693,
+  "score": 0.4513,
   "level": "moderate",
   "confidence": 1.0,
   "score_basis": "5/5 dynamic components",
@@ -21,12 +21,12 @@
       "note": "Potential from CAPE/instability; no confirmed active thunderstorm situation"
     },
     "Iono. Conductivity (L4)": {
-      "score": 0.4963,
+      "score": 0.6454,
       "source": "estimated",
       "dynamic": true
     },
     "GEC Potential Deviation": {
-      "score": 0.6833,
+      "score": 1.0,
       "source": "derived",
       "dynamic": true
     },
@@ -36,21 +36,21 @@
       "dynamic": true
     },
     "IMF Bz Coupling": {
-      "score": 0.0557,
+      "score": 0.0,
       "source": "primary",
       "dynamic": true
     }
   },
   "gec_state": {
-    "V_ionosphere_kV": 361.4,
-    "I_total_A": 1204.5,
-    "E_fair_weather_Vm": 156.6,
+    "V_ionosphere_kV": 397.4,
+    "I_total_A": 1324.5,
+    "E_fair_weather_Vm": 172.2,
     "J_fair_weather_pAm2": 2.3,
     "generator_strength": 1.15,
-    "iono_cond_factor": 1.047,
+    "iono_cond_factor": 1.152,
     "kp_cond_mod": 1.0,
-    "delta_V_pct": 20.5,
-    "delta_I_pct": 20.4
+    "delta_V_pct": 32.5,
+    "delta_I_pct": 32.5
   },
   "gec_reference": {
     "V_iono_kV": 300.0,
@@ -74,11 +74,11 @@
     "Kp_used_for_score": 1.0,
     "Kp_source": "primary",
     "Kp_max_24h": 3.0,
-    "IMF_Bz_nT": 3.05,
+    "IMF_Bz_nT": 13.07,
     "SW_speed_kms": null,
     "SW_density_cm3": null,
     "xray_class": "C",
-    "F10.7_sfu": 125.69,
+    "F10.7_sfu": 138.21,
     "CAPE_mean_Jkg": 800.0
   },
   "thresholds": {
@@ -90,14 +90,14 @@
     "gec_elevated": true,
     "gec_suppressed": false,
     "generator_active": false,
-    "iono_conductivity_high": false,
+    "iono_conductivity_high": true,
     "geomagnetic_storm": false,
     "bz_southward_coupled": false
   },
   "downstream_expectation": {
     "layer6_schumann": "GEC potential elevated – increased Schumann excitation energy",
     "schumann_amplitude": "elevated amplitude expected",
-    "layer7_engine": "GEC-Score 0.369 (moderate) – dominant: GEC Potential Deviation"
+    "layer7_engine": "GEC-Score 0.451 (moderate) – dominant: GEC Potential Deviation"
   },
   "layer_context": {
     "L0": null,
@@ -106,5 +106,5 @@
     "L3": null,
     "L4": null
   },
-  "state_summary": "Layer-5-State: moderate. Generator strength 1.15 (CAPE=800 J/kg). V_iono=361 kV (Δ +20.5% vs. Carnegie). I_total=1204 A (Δ +20.4%). Kp_1m=1.0 (score_Kp=1.0). IMF Bz=+3.0 nT. Data completeness: 100%."
+  "state_summary": "Layer-5-State: moderate. Generator strength 1.15 (CAPE=800 J/kg). V_iono=397 kV (Δ +32.5% vs. Carnegie). I_total=1324 A (Δ +32.5%). Kp_1m=1.0 (score_Kp=1.0). IMF Bz=+13.1 nT. Data completeness: 100%."
 }
