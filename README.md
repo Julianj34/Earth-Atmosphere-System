@@ -1,377 +1,241 @@
 # Earth-Atmosphere-System
-A layered Earth-system framework for mapping field states, atmospheric coupling, the Global Electric Circuit, and Schumann-resonance patterns.
 
-## Status
+Gekoppeltes Multi-Layer-Zustandsanalyse-System für das Erd-Atmosphäre-System
+(**L0–L9** plus Meso-Skala **L2.5** und holarchische Meta-Analyse). Läuft vollständig
+lokal — die Pipeline braucht kein GitHub, keine Cloud, keinen Scheduler.
 
-Current implementation: **Layer 0–8**
+> **Earth Field Observatory** — untersucht, wann Oberfläche, Ozean, Atmosphäre,
+> Ionosphäre, Globaler Stromkreis (GEC) und Resonanzfeld gemeinsam in bestimmte
+> Systemzustände übergehen.
 
-- **Layer 0–6:** Physical system layers  
-- **Layer 7:** Earth Field State Engine — creates standardized, time-stamped system snapshots  
-- **Layer 8:** Research & Hypothesis Engine — analyzes the Layer-7 snapshot history for patterns, transitions, Field Operator behavior, Cavity Gate events, and emerging hypotheses  
-
-Layer 8 becomes more valuable as the `layer7_test_history.jsonl` archive grows over time. With repeated daily snapshots, the system can move from exploratory pattern detection toward more stable hypothesis testing.
-
-Planned next step: **Layer 9 – Model Integration / Prediction Layer**
+**Status:** post-holarchy Refactor · ~108 Snapshots · Meso-Skala aktiv über
+Wolken-Übergangsproxy (echtes OLR wartet auf Quellen-Migration)
 
 ---
-## Repository Structure
 
-```text
-Earth-Atmosphere-System/
-├── .github/
-│   └── workflows/
-│       └── run_pipeline.yml
-│
-├── data/
-│   ├── history/
-│   │   └── layer7_test_history.jsonl
-│   │
-│   └── states/
-│       ├── layer0_test_state.json
-│       ├── layer1_test_state.json
-│       ├── layer2_test_state.json
-│       ├── layer3_test_state.json
-│       ├── layer4_test_state.json
-│       ├── layer5_test_state.json
-│       ├── layer6_test_state.json
-│       ├── layer7_test_state.json
-│       └── layer8_test_state.json
-│
-├── notebooks/
-│   ├── layer0_external_drivers.ipynb
-│   ├── layer1_planetary_body.ipynb
-│   ├── layer2_surface_zone.ipynb
-│   ├── layer3_atmosphere_zone.ipynb
-│   ├── layer4_Ionosphere.ipynb
-│   ├── layer5_Global_Electric_Circuit.ipynb
-│   ├── layer6_Resonance_Field.ipynb
-│   ├── layer7_Earth_Field.ipynb
-│   └── layer8_Research.ipynb
-│
-├── research/
-│   ├── layer8_test_report.md
-│   ├── test_hypothesis_registry.json
-│   └── test_hypothesis_candidates/
-│       ├── H1.json
-│       ├── H3.json
-│       ├── H6.json
-│       └── H_cavity.json
-│
-├── .gitignore
-├── LICENSE
-└── README.md
+## Kernidee
+
+Die Erde wird nicht als isolierte Einzelvariablen analysiert, sondern als
+gekoppeltes System — und zwar als **Holarchie von Skalen**, nicht als flacher Stack.
+Jeder Layer ist ein *Holon*: ein Ganzes auf seiner eigenen Skala und ein Teil der
+Skala darüber.
+
+**Systemformel:**
+
+```
+L2   Vorbereitung        (makro, Becken, Wochen–Monate)
+ └→ L2.5 Meso-Organisation (meso, regional, Stunden–Tage)   [Mediator]
+     └→ L3  Aktivierung     (mikro, lokal, Minuten–Stunden)
+         └→ L5  Elektrische Antwort (GEC)
+             └→ L6  Resonanz-Antwort  (Proxy)
+                 └→ L8  Muster / Hypothesen  (confound-gated)
+                     └→ L9  Externe Validierung
 ```
 
-**Folder logic:**
-
-- `notebooks/` contains the executable layer notebooks.
-- `data/states/` stores the latest state output of each layer.
-- `data/history/` stores the growing Layer-7 snapshot archive.
-- `research/` stores Layer-8 reports, hypothesis candidates, and the hypothesis registry.
-- `.github/workflows/` runs the automated pipeline.
----
-
-## Core Idea
-
-The Earth is not analyzed as isolated variables, but as a coupled system:
-
-External drivers
-→ planetary body
-→ surface / ocean / contact zone
-→ atmosphere / thunderstorms
-→ ionosphere
-→ Global Electric Circuit
-→ resonance field / Schumann resonance
-→ Earth Field State Engine
-→ system analysis / research intelligence
-
-The goal is to detect system states, layer gaps, dominant layers, coupling patterns, transitions, recurring tag combinations, and possible precursor patterns.
-
-Layer Model
-Layer 0 – External Drivers
-
-Role: Everything that acts on the Earth system from outside.
-
-Examples:
-
-solar radiation
-UV / X-Ray
-solar wind
-geomagnetic disturbances
-cosmic radiation
-planetary / orbital cycles
-
-Function:
-Layer 0 is the external modulator. It can influence the ionosphere, geomagnetic conditions, atmospheric coupling, and resonance conditions.
-
-Core question:
-Which external influences are changing the state of the Earth Field System?
+Der zentrale strukturelle Befund dieser Version: Die Aktivierungskette ist
+**ab L3 abwärts intakt und stark, aber am Makro→Mikro-Übergang (L2→L3) gebrochen**.
+Dieser Bruch ist kein Modellfehler — es ist eine **fehlende Skala**. Genau dort
+sitzt jetzt der Meso-Holon `H_meso_conv` (L2.5).
 
 ---
-Layer 1 – Planetary Body
 
-Role: The Earth as the physical carrier of the system.
+## Layer-Architektur
 
-Examples:
+| Layer | Holon | Skala / Zeitskala | Rolle | Status |
+|-------|-------|-------------------|-------|--------|
+| L0 | `H_external` | global / Minuten–Tage | driver | measured |
+| L1 | `H_lithosphere` | global / Stunden–Tage | driver | measured |
+| L2 | `H_macro_ocean` | Becken·global / Wochen–Monate | constraint | measured |
+| **L2.5** | **`H_meso_conv`** | **regional / Stunden–Tage** | **mediator** | **measured\* (cloud-proxy)** |
+| L3 | `H_micro_storm` | lokal / Minuten–Stunden | response | measured |
+| L4 | `H_field_iono` | global / Minuten–Tage | mediator | measured |
+| L5 | `H_field_gec` | global / Minuten–Tage | response | measured |
+| L6 | `H_field_reso` | global / Minuten–Tage | response | **proxy** (teilmodelliert) |
+| L7 | `H_obs_diag` | System / pro Lauf | measurement | measured |
+| L8 | `H_obs_learn` | System / langfristig | measurement | measured |
+| L9 | `H_obs_valid` | System / langfristig | measurement | measured |
 
-Earth rotation
-basic geomagnetic field structure
-lithosphere
-soil / rock
-oceans
-surface conductivity
-planetary geometry
-seismic activity
-LOD anomaly
+**Legende Beobachtungsstatus:**
 
-Function:
-Layer 1 forms the material foundation. Without this layer, there would be no Earth-ionosphere cavity, no surface-ionosphere coupling, and no global electric circuit.
+```
+measured  = direkte Beobachtung
+proxy     = modellierte Näherung — zählt NIE als unabhängige Bestätigung
+inferred  = physikalisch erwartet, aber in diesem System nicht instrumentiert
+```
 
-Stable baseline properties such as ocean conductivity are treated as boundary conditions, not as daily dynamic stress values.
+\* **cloud-proxy** = L2.5 wird über einen *realen, aber schwächeren* Ersatz-Feed
+gemessen (Gesamtbewölkung aus L3 / Open-Meteo), solange die primäre OLR-Quelle
+nicht verfügbar ist. Explizit geflaggt (`organisation_source="cloud_proxy"`),
+nie still, nie synthetisch.
 
-Core question:
-Which planetary base conditions shape the resonance and coupling space?
+**Saubere architektonische Trennung:**
 
----
-Layer 2 – Surface / Oceans / Contact Zone
-
-Role: The boundary zone between Earth surface, oceans, land, biosphere, and atmosphere.
-
-Examples:
-
-land-ocean distribution
-surface temperature
-sea surface temperature
-SST anomaly
-ENSO / Niño3.4 context
-humidity
-vegetation
-soil moisture
-local electric fields
-surface-atmosphere exchange
-
-Function:
-Layer 2 prepares atmospheric activity. It influences heat flux, moisture, convection, and indirectly thunderstorm and electrical processes.
-
-This layer can become elevated even when the atmosphere has not yet activated.
-
-Core question:
-Is the surface prepared for atmospheric and thunderstorm activation?
+```
+Layer 0–6   →   Physikalische / datenbasierte Zustände (die eigentliche Holarchie)
+Layer 7     →   State Engine (schreibt, forscht nicht)
+Layer 8     →   Musteranalyse + Hypothesen (liest History, confound-gated)
+Layer 9     →   Externe Validierung (NOAA CPC ONI, NOAA SWPC, NASA EONET)
+```
 
 ---
-Layer 3 – Atmosphere / Weather / Thunderstorms
 
-Role: The dynamic weather and convection layer.
+## Empirische Kopplungsmatrix (n ≈ 108 Snapshots)
 
-Examples:
+| Kopplung | r (Pearson) | Evidenz | Confounded | Mechanismus |
+|----------|-------------|---------|------------|-------------|
+| L2 → L2.5 | — | pending | — | ENSO/SST setzt regionale Konvektionswahrscheinlichkeit; Meso jetzt instrumentiert, Statistik wartet auf History |
+| L2.5 → L3 | — | pending | — | Organisierte konvektive Systeme → Gewitterzellen / Blitze |
+| **L3 → L5** | +0.649 | stark (roh) | **ja — zirkulär** | Gewitter laden den Generator (CAPE → V_iono); aber L5 wird deterministisch aus L3 berechnet |
+| L3 → L6 | +0.481 | moderat | ja (proxy) | Blitze regen Schumann-Resonanz an |
+| L4 → L6 | −0.196 | vernachlässigbar | ja (proxy) | Kavitätshöhe / Leitfähigkeit moduliert Frequenz & Q |
+| **L5 → L6** | +0.603 | stark | ja (proxy) | GEC ist die elektrische Architektur der Resonanz |
+| L0 → L4 | +0.380 | schwach | nein | Solarwind / F10.7 / X-Ray ionisieren die Ionosphäre |
+| L0 → L5 | +0.132 | vernachlässigbar | nein | Kp moduliert ionosphärische Leitfähigkeit (GEC-Widerstand) |
 
-temperature
-humidity
-air pressure
-wind
-CAPE
-Lifted Index
-convection
-cloud formation
-thunderstorm cells
-lightning proxies
-active storm events
-
-Function:
-Layer 3 determines whether surface preparation actually turns into atmospheric activation.
-
-Thunderstorms and lightning are especially important because they energize the Global Electric Circuit and excite Schumann-resonance modes.
-
-Important distinction:
-
-Layer 2 = potential / preparation
-Layer 3 = actual atmospheric activation
-
-Core question:
-How strong is the current atmospheric-electrical activity?
+**Wichtig beim Lesen:** Die stärksten Korrelationen des Systems (L3→L5, L5→L6)
+sind **keine unabhängige Bestätigung**. L5 ist eine deterministische Transformation
+von L3 (`0.5·CAPE_L3 + 0.5·thunder_L3`) — die Korrelation ist erzwungen, nicht
+evidenziell. Diese Zirkularität ist explizit kodiert (`CIRCULAR_COUPLINGS`-Set,
+`confound_type`-Spalte) und wird vom Promotion-Lock in L8 durchgesetzt: zirkuläre
+und Proxy-Kopplungen können nie zu bestätigten Hypothesen befördert werden.
+Das echte Backbone sind **H1, H6 und die thermal→L3 Lead-Lag-Beziehung**.
 
 ---
-Layer 4 – Ionosphere
 
-Role: The upper conductive boundary layer of the Earth-ionosphere resonance system.
+## Konservative Inferenz als Projektprinzip
 
-Examples:
+Statistische Erweiterungen sind **explizit aufgeschoben**, bis die Datenmenge sie
+rechtfertigt — das ist ein stehendes Projektprinzip, keine vorübergehende Notlösung:
 
-D-, E-, F-layers
-electron density
-ionization
-day/night differences
-solar UV influence
-X-Ray / D-layer absorption
-geomagnetic disturbance
-ionospheric conductivity
-cavity-height scenarios
+- Bootstrap-Konfidenzintervalle, p-Werte, Spearman-Korrelationen: erst wenn die
+  Meso-Zeitreihe mindestens eine Konvektionssaison umfasst
+- Regressionsmodelle mit Dreifach-Interaktionstermen und ein Kopplungstensor über
+  acht Zustandsdimensionen: gleiche Bedingung
+- Aktuell: ~63 vollständige Tagespaare, ~92 % davon in `seasonal_transition_state`
+  — zu homogen für belastbare Interaktionsstatistik
 
-Function:
-Layer 4 forms the upper boundary of the Earth-ionosphere cavity. It changes the propagation conditions of electromagnetic waves and affects resonance conditions.
-
-Important distinction:
-
-Layer 4 geometric cavity model ≠ observed Schumann resonance
-
-Layer 4 can provide an idealized geometric baseline. Layer 6 uses empirical Schumann-reference values and compares expected shifts against this baseline.
-
-Core question:
-How does the ionosphere modify the resonance and coupling conditions?
+Hypothesen durchlaufen eine explizite, evidenz-basierte State Machine
+(`active → idle → dormant → retired/accepted` mit `missing_runs`-Tracking) statt
+automatischer Retirement-Heuristiken.
 
 ---
-Layer 5 – Global Electric Circuit
 
-Role: The electrical macro-architecture of the Earth.
+## Repository-Struktur
 
-Examples:
+```
+Earth-Atmosphere-System/
+├── notebooks/          Layer-Scoring L0–L9 (Interface)
+├── src/atmosphere/
+│   ├── paths.py        zentrale Pfadauflösung (CWD-unabhängig)
+│   ├── config/         domain.py (OM_POINTS/TIME_BASIS — eine Quelle für L2/L3/Meso)
+│   ├── layers/         layer_meso.py (L2.5)
+│   ├── ingest/         meso_ingest.py (OLR-Feed + Wolken-Fallback + CIN aus L3)
+│   └── meta/           role_proxy_writeback.py, holarchic_coupling_analysis.py
+├── states/
+│   ├── current/        layer{0..9}_state.json
+│   ├── history/        layer7_history.jsonl
+│   ├── registry/       hypothesis_registry.json, holon_registry.yaml
+│   └── coupling/       holarchic_coupling_matrix.csv, holarchic_event_card.json
+├── reports/            layer8_report.md, layer9_report.md, holarchic_analysis_report.md
+├── config/             meso_feeds.yaml
+├── pipeline/           run_pipeline.py
+└── .github/workflows/  run_pipeline.yml
+```
 
-thunderstorms as generators
-ionospheric potential
-vertical currents
-fair-weather return currents
-surface ↔ ionosphere electrical coupling
-global charge circulation
-
-Function:
-Layer 5 connects thunderstorms, Earth surface, and ionosphere into a global electric circuit.
-
-Core logic:
-
-thunderstorms / lightning
-→ ionospheric potential
-→ vertical currents
-→ global electrical feedback
-
-Layer 5 estimates whether the Global Electric Circuit is near reference, elevated, or suppressed.
-
-Core question:
-How strongly is the global electric circuit currently activated?
+`.project-root` ist eine leere Markerdatei im Projekt-Top — jedes Notebook findet
+darüber die Projektwurzel, unabhängig davon, von wo Jupyter gestartet wurde.
 
 ---
-Layer 6 – Resonance Field / Schumann Resonance
 
-Role: The observable or modeled electromagnetic resonance pattern of the system.
+## Setup & Ausführung
 
-Examples:
+```bash
+pip install -r requirements.txt
+pip install -e .          # optional; die Notebooks haben einen eigenen Bootstrap
 
-SR-1 fundamental mode
-higher Schumann modes
-amplitude
-frequency shift
-band structure
-Q-factor
-daily pattern
-seasonal pattern
-anomalies
-geometric vs. non-geometric delta
+# Setup prüfen (läuft ohne Internet in Sekunden):
+python -c "import atmosphere.paths as p; print(p.ROOT)"
+python pipeline/run_pipeline.py --holarchic
+```
 
-Function:
-Layer 6 describes the resonance behavior of the Earth-ionosphere cavity.
+**Ganze Kette:**
 
-Currently, this layer works as a model-expected resonance state, not as a direct measurement layer.
+```bash
+python pipeline/run_pipeline.py
+```
 
-measurement_status = model_expected_not_observed
+Führt L0…L9 der Reihe nach aus (jedes Notebook schreibt seinen State nach
+`states/current/`; L7 hängt an `states/history/layer7_history.jsonl` an) und
+danach die holarchische Meta-Analyse.
 
-Later, real Schumann-resonance measurements can be added.
+**Nützliche Optionen:**
 
-The Schumann resonance is not treated as an isolated frequency. It is treated as a possible expression of coupled states involving:
+```bash
+python pipeline/run_pipeline.py --from 7      # ab L7 fortsetzen
+python pipeline/run_pipeline.py --only 7 8 9  # nur diese Layer
+python pipeline/run_pipeline.py --holarchic   # nur die Meta-Analyse über die History
+```
 
-thunderstorm activity
-ionospheric conductivity
-Global Electric Circuit
-day/night structure
-damping
-lightning-source distribution
-propagation conditions
-
-Important distinction:
-
-empirical Schumann reference values
-≠
-idealized geometric cavity frequencies
-
-Empirical reference examples:
-
-SR-1 ≈ 7.83 Hz
-SR-2 ≈ 14.3 Hz
-SR-3 ≈ 20.8 Hz
-SR-4 ≈ 27.3 Hz
-
-Core question:
-What information about the total Earth Field System is contained in the resonance pattern?
+Einzelne Notebooks lassen sich normal in Jupyter öffnen — der Bootstrap in Zelle 1
+löst die Pfade selbst auf, egal von wo Jupyter gestartet wurde.
 
 ---
-Layer 7 – Earth Field State Engine
 
-Role: The integration layer and state machine of the system.
+## Meso-Layer (L2.5) — Status & Datenquelle
 
-Examples:
+`layer_meso` läuft **nicht** auf synthetischen Daten und ist nicht blockiert:
 
-Layer 0–6 state files
-normalized layer scores
-layer confidence
-cross-layer couplings
-meta-scores
-Field Operators
-Cavity Gate status
-event tags
-system-state classification
-snapshot history
-
-Function:
-Layer 7 does not collect new raw data. It combines the outputs of Layer 0–6 into one standardized, time-stamped Earth Field snapshot.
-
-It detects which layers are dominant, which layers are weak, how strongly the layers are coupled, and whether the system is in a background, transition, cavity-shift, mixed-coupled, or anomalous resonance state.
-
-Layer 7 is the handoff layer for Layer 8. Each run saves the current state as `layer7_test_state.json` and appends one snapshot to `layer7_test_history.jsonl`.
-
-Important distinction:
-
-Layer 0–6 = physical system layers  
-Layer 7 = current system-state engine  
-Layer 8 = long-term pattern and hypothesis analysis
-
-Core question:
-What is the current integrated state of the Earth Field System?
+- **CIN** (das multiplikative Gate) stammt aus L3 (`raw_values.CIN_mean_Jkg`) —
+  kein neuer Feed, automatisch an dieselbe Stichprobengeometrie alignt.
+- **Organisation**: primär OLR-Anomalie. Alle vier bekannten Live-OLR-Quellen sind
+  derzeit unbrauchbar (PSL eingefroren auf Ende 2022, NCEI 404, AWS NODD ohne
+  skriptbaren Pfad, IRI Timeout). Ein **Staleness-Guard** (> 10 Tage → ablehnen)
+  verhindert, dass alte Werte einsickern.
+- **Fallback**: Gesamtbewölkung aus L3 (Open-Meteo) tritt in denselben Slot; der
+  Holon wird `measured` mit `organisation_source="cloud_proxy"`. Schwächer als
+  echtes OLR (zählt auch nicht-konvektive Schichtbewölkung mit) — deshalb
+  konservativ geschwellt und ehrlich als Übergang markiert.
+- **Swap-Punkt**: Sobald wieder eine Live-OLR-Tagesquelle existiert, wird nur die
+  Konstante `_OLR_DAILY` in `meso_ingest.py` umgestellt. OLR hat dann automatisch
+  wieder Vorrang, der Wolken-Pfad fällt still in die Reserve.
 
 ---
-Layer 8 – Research & Hypothesis Engine
 
-Role: The analytical research layer of the system.
+## Confound-Guard
 
-Examples:
+Diese Invarianten setzt `meta/role_proxy_writeback.py` bei jedem Lauf durch, bevor
+L7 und L8 ihre States schreiben:
 
-layer7_test_history.jsonl
-snapshot history
-morning / midday / evening / night slots
-day-pair analysis
-ΔL3 / ΔL5 / ΔL6 activation
-Field Operator trends
-state transitions
-Cavity Event Study
-hypothesis registry
-hypothesis candidates
+- **L5 ist `derived_proxy` von L3** — `generator_strength` wird aus CAPE und
+  Gewitterscore berechnet, ist also keine unabhängige Messung.
+- **L6 ist `proxy`** — der nicht-geometrische Anteil ist modelliert
+  (`measurement_status: model_expected_not_observed`).
+- **Der thermal-Operator ist L2-only** und damit der einzige saubere
+  Cross-Scale-Prädiktor unter den Feldoperatoren.
+- **Promotion-Lock:** zirkuläre, Proxy- und unklassifizierte Evidenz wird hart von
+  der Modelllogik ausgeschlossen — unabhängig vom Review-Status.
+- **Die holarchische Matrix** markiert L3→L5 als `circular` und die
+  L6-Kopplungen als `proxy` (`confound_type`-Spalte in
+  `holarchic_coupling_matrix.csv`).
+- **`layer_meso`** gatet CIN multiplikativ und fällt defensiv auf
+  `source_status="inferred"` zurück, wenn die Stichprobe nicht exakt zu L3 passt.
 
-Function:
-Layer 8 does not collect new field data. It reads the growing Layer 7 snapshot archive and searches for reproducible patterns across time.
+---
 
-It analyzes daily activation cycles, especially the difference between morning baseline and evening activation. ΔL3, ΔL5, and ΔL6 are used to study whether atmospheric activation, Global Electric Circuit response, and resonance-field response appear together.
+## Roadmap
 
-Layer 8 also evaluates Field Operators over time, studies state transitions, detects possible precursor patterns, and generates structured hypotheses for later testing.
+- **Kurzfristig:** Meso-State (`layer2p5_meso_state.json`) persistieren und in die
+  `layer7_history` einspeisen; Score-Normalisierung im
+  `cross_layer_activation_operator` auf Median/MAD-basierte z-Scores umstellen
+- **Mittelfristig:** deskriptiver Topologie-Klassifikator
+  (`state_dependent_effect_topology.py`), sobald Meso-History akkumuliert ist
+- **Aufgeschoben** (bis ≥ 1 Konvektionssaison Meso-Zeitreihe): Interaktions-
+  Regressionen, Kopplungstensor, Bootstrap-CIs
+- **Offen:** Live-OLR-Quelle — bekannte Endpunkte ausgeschöpft, wird periodisch
+  neu geprüft
 
-Important distinction:
+---
 
-Layer 7 = current system-state snapshot  
-Layer 8 = long-term pattern research and hypothesis testing  
-Layer 9 = future model integration / prediction layer
+## Lizenz
 
-Core question:
-Which repeating patterns, transitions, and hypotheses emerge from the Earth Field snapshot history?
-
-Outputs:
-
-`layer8_test_state.json` — machine-readable research state  
-`layer8_test_report.md` — human-readable research report  
-`test_hypothesis_registry.json` — persistent hypothesis archive  
-`test_hypothesis_candidates/*.json` — automatically generated hypothesis candidates
+MIT — siehe [LICENSE](LICENSE).
