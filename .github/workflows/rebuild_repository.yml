@@ -1,0 +1,189 @@
+name: Rebuild repository structure
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: "Type REBUILD to confirm"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    if: ${{ github.event.inputs.confirmation == 'REBUILD' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout complete repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate rebuild source
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ ! -d "_rebuild" ]; then
+            echo "ERROR: _rebuild directory does not exist."
+            exit 1
+          fi
+
+          required_paths=(
+            "_rebuild/.github/workflows/run_pipeline.yml"
+            "_rebuild/notebooks"
+            "_rebuild/src/atmosphere"
+            "_rebuild/pipeline/run_pipeline.py"
+            "_rebuild/config/meso_feeds.yaml"
+            "_rebuild/README.md"
+            "_rebuild/pyproject.toml"
+            "_rebuild/requirements.txt"
+          )
+
+          for path in "${required_paths[@]}"; do
+            if [ ! -e "$path" ]; then
+              echo "ERROR: Missing required path: $path"
+              exit 1
+            fi
+          done
+
+          echo "Rebuild source is valid."
+
+      - name: Create backup tag
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          BACKUP_TAG="legacy-before-restructure-${GITHUB_RUN_NUMBER}"
+
+          git tag "$BACKUP_TAG" "$GITHUB_SHA"
+          git push origin "$BACKUP_TAG"
+
+          echo "Created backup tag: $BACKUP_TAG"
+
+      - name: Create restructure branch
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          BRANCH_NAME="restructure-v2-${GITHUB_RUN_NUMBER}"
+
+          git switch -c "$BRANCH_NAME"
+
+          echo "BRANCH_NAME=$BRANCH_NAME" >> "$GITHUB_ENV"
+
+      - name: Remove old repository structure
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          find . \
+            -mindepth 1 \
+            -maxdepth 1 \
+            ! -name ".git" \
+            ! -name "_rebuild" \
+            -exec rm -rf {} +
+
+      - name: Install new repository structure
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          cp -a _rebuild/. .
+          rm -rf _rebuild
+
+          # Required empty repository-root marker
+          touch .project-root
+
+      - name: Validate final structure
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          required_files=(
+            ".github/workflows/run_pipeline.yml"
+            ".project-root"
+            "src/atmosphere/__init__.py"
+            "src/atmosphere/paths.py"
+            "src/atmosphere/config/__init__.py"
+            "src/atmosphere/config/domain.py"
+            "src/atmosphere/layers/__init__.py"
+            "src/atmosphere/layers/layer_meso.py"
+            "src/atmosphere/ingest/__init__.py"
+            "src/atmosphere/ingest/meso_ingest.py"
+            "src/atmosphere/meta/__init__.py"
+            "src/atmosphere/meta/role_proxy_writeback.py"
+            "src/atmosphere/meta/holarchic_coupling_analysis.py"
+            "pipeline/run_pipeline.py"
+            "config/meso_feeds.yaml"
+            ".gitignore"
+            "LICENSE"
+            "README.md"
+            "pyproject.toml"
+            "requirements.txt"
+          )
+
+          for file in "${required_files[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "ERROR: Missing required file: $file"
+              exit 1
+            fi
+          done
+
+          required_directories=(
+            "notebooks"
+            "states/current"
+            "states/history"
+            "states/registry"
+            "states/coupling"
+            "reports"
+          )
+
+          for directory in "${required_directories[@]}"; do
+            if [ ! -d "$directory" ]; then
+              echo "ERROR: Missing directory: $directory"
+              exit 1
+            fi
+          done
+
+          notebook_count="$(
+            find notebooks \
+              -maxdepth 1 \
+              -type f \
+              -name 'atmosphere_analysis_layer*.ipynb' |
+            wc -l
+          )"
+
+          if [ "$notebook_count" -ne 10 ]; then
+            echo "ERROR: Expected 10 layer notebooks, found $notebook_count."
+            exit 1
+          fi
+
+          echo "Final repository structure is valid."
+
+      - name: Commit rebuilt repository
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -A
+          git add -f .project-root
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m \
+            "refactor: rebuild Earth Atmosphere System structure"
+
+          git push --set-upstream origin "$BRANCH_NAME"
+
+          echo "Created branch: $BRANCH_NAME"
