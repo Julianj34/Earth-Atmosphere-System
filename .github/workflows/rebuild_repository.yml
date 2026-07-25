@@ -25,6 +25,40 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Prepare pipeline workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ ! -d "$REBUILD_DIR" ]; then
+            echo "ERROR: $REBUILD_DIR directory does not exist."
+            exit 1
+          fi
+
+          TARGET_WORKFLOW="$REBUILD_DIR/.github/workflows/run_pipeline.yml"
+          SOURCE_WORKFLOW=".github/workflows/run_pipeline.yml"
+
+          if [ -f "$TARGET_WORKFLOW" ]; then
+            echo "Pipeline workflow already exists inside rebuild directory."
+
+          elif [ -f "$SOURCE_WORKFLOW" ]; then
+            echo "Copying existing pipeline workflow into rebuild directory."
+
+            mkdir -p "$REBUILD_DIR/.github/workflows"
+            cp "$SOURCE_WORKFLOW" "$TARGET_WORKFLOW"
+
+          else
+            echo "ERROR: run_pipeline.yml was not found."
+            echo "Checked:"
+            echo "  $TARGET_WORKFLOW"
+            echo "  $SOURCE_WORKFLOW"
+
+            echo "Existing workflow files:"
+            find .github/workflows -maxdepth 1 -type f 2>/dev/null || true
+
+            exit 1
+          fi
+
       - name: Validate rebuild source
         shell: bash
         run: |
@@ -33,12 +67,8 @@ jobs:
           echo "Repository root contents:"
           ls -la
 
-          echo "Rebuild directory: $REBUILD_DIR"
-
-          if [ ! -d "$REBUILD_DIR" ]; then
-            echo "ERROR: $REBUILD_DIR directory does not exist."
-            exit 1
-          fi
+          echo "Rebuild directory contents:"
+          find "$REBUILD_DIR" -maxdepth 4 -print | sort
 
           required_paths=(
             "$REBUILD_DIR/.github/workflows/run_pipeline.yml"
@@ -65,7 +95,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          BACKUP_TAG="legacy-before-restructure-${GITHUB_RUN_NUMBER}"
+          BACKUP_TAG="legacy-before-restructure-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
 
           git tag "$BACKUP_TAG" "$GITHUB_SHA"
           git push origin "$BACKUP_TAG"
@@ -77,7 +107,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          BRANCH_NAME="restructure-v2-${GITHUB_RUN_NUMBER}"
+          BRANCH_NAME="restructure-v2-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
 
           git switch -c "$BRANCH_NAME"
 
@@ -97,6 +127,9 @@ jobs:
 
           echo "Old repository structure removed."
 
+          echo "Remaining files:"
+          ls -la
+
       - name: Install new repository structure
         shell: bash
         run: |
@@ -105,7 +138,7 @@ jobs:
           cp -a "$REBUILD_DIR"/. .
           rm -rf "$REBUILD_DIR"
 
-          # Required empty repository-root marker
+          # Empty repository-root marker
           touch .project-root
 
           echo "New repository structure installed."
@@ -169,8 +202,16 @@ jobs:
             wc -l
           )"
 
+          notebook_count="$(echo "$notebook_count" | tr -d ' ')"
+
+          echo "Found $notebook_count layer notebooks."
+
           if [ "$notebook_count" -ne 10 ]; then
             echo "ERROR: Expected 10 layer notebooks, found $notebook_count."
+
+            echo "Detected notebooks:"
+            find notebooks -maxdepth 1 -type f -name '*.ipynb' | sort
+
             exit 1
           fi
 
@@ -181,9 +222,8 @@ jobs:
         run: |
           set -euo pipefail
 
-          echo "Final root contents:"
           find . \
-            -maxdepth 3 \
+            -maxdepth 4 \
             -not -path "./.git/*" \
             -not -path "./.git" \
             | sort
