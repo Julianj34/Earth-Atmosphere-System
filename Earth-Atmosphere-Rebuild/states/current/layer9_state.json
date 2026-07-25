@@ -1,0 +1,139 @@
+{
+  "timestamp": "2026-07-25T11:55:54.385448Z",
+  "engine_version": "1.0",
+  "layer": 9,
+  "name": "External Grounding & Validation",
+  "validation_scope": "early_model_validation",
+  "input_sources": [
+    "layer7_state",
+    "layer7_history",
+    "layer8_state",
+    "external_apis"
+  ],
+  "validation_modules": {
+    "enso_validation": {
+      "external_source": "NOAA CPC ONI",
+      "checks": [],
+      "external_oni": null
+    },
+    "space_weather_validation": {
+      "external_source": "NOAA SWPC",
+      "checks": [
+        "V_kp_consistency"
+      ],
+      "kp_validation_context": {
+        "model_kp_current_1m": 1.0,
+        "model_kp_max_60min": null,
+        "model_kp_used": 1.0,
+        "model_kp_method": "unknown",
+        "noaa_kp_current": 1.0,
+        "noaa_kp_max_60min": 2.0,
+        "delta": 0.0,
+        "window_used": "current_1m",
+        "interpretation": "Kp-Werte konsistent innerhalb Toleranz (current_1m)",
+        "action": "OK"
+      }
+    },
+    "storm_validation": {
+      "external_source": "NASA EONET",
+      "checks": [],
+      "open_storms": 4
+    },
+    "schumann_validation": {
+      "external_source": "no_public_realtime_feed",
+      "status": "pending_data_source",
+      "note": "Echtzeit-Schumann-Daten sind nicht öffentlich verfügbar. Layer 6 bleibt model_expected_not_observed.",
+      "checks": [
+        "V_schumann_data_availability"
+      ]
+    },
+    "consistency_validation": {
+      "external_source": "internal_rules",
+      "checks": [
+        "V_consistency_tags",
+        "V_consistency_seasonal"
+      ]
+    },
+    "known_event_backtest": {
+      "external_source": "l7_history",
+      "checks": [
+        "V_backtest_carnegie_anomalous"
+      ]
+    }
+  },
+  "validation_checks": [
+    {
+      "id": "V_kp_consistency",
+      "module": "space_weather_validation",
+      "goal": "Modell-Kp und NOAA-Kp im gleichen Zeitfenster konsistent",
+      "expected": "|Δ Kp| <= 1.0  (Fenster: current_1m)",
+      "observed": "model_current=1.0  vs  noaa_current=1.0  →  |Δ|=0.00",
+      "status": "passed",
+      "confidence": 0.9,
+      "external_source": "NOAA SWPC",
+      "details": "Kp-Werte konsistent innerhalb Toleranz (current_1m)",
+      "timestamp": "2026-07-25T11:55:54.385448Z"
+    },
+    {
+      "id": "V_schumann_data_availability",
+      "module": "schumann_validation",
+      "goal": "Externe Schumann-Resonanz-Messdaten für Vergleich verfügbar",
+      "expected": "real-time SR1 amplitude/frequency feed",
+      "observed": "no public feed available",
+      "status": "inconclusive",
+      "confidence": 0.0,
+      "external_source": "none",
+      "details": "Layer 6 läuft als modelliert, nicht gemessen. Validierung blockiert.",
+      "timestamp": "2026-07-25T11:55:54.385448Z"
+    },
+    {
+      "id": "V_consistency_tags",
+      "module": "consistency_validation",
+      "goal": "Baseline-Tags und Signal-Tags sind disjunkt",
+      "expected": "no overlap",
+      "observed": "overlap = []",
+      "status": "passed",
+      "confidence": null,
+      "external_source": "internal",
+      "details": "baseline_n=2, signal_n=5",
+      "timestamp": "2026-07-25T11:55:54.385448Z"
+    },
+    {
+      "id": "V_consistency_seasonal",
+      "module": "consistency_validation",
+      "goal": "seasonal_transition_state: preparation > 0.45 und downstream < 0.35",
+      "expected": "prep > 0.45 AND downstream < 0.35",
+      "observed": "prep=0.554, downstream=0.345",
+      "status": "passed",
+      "confidence": null,
+      "external_source": "internal",
+      "details": "Meta-Score-Konsistenz für seasonal_transition_state",
+      "timestamp": "2026-07-25T11:55:54.385448Z"
+    },
+    {
+      "id": "V_backtest_carnegie_anomalous",
+      "module": "known_event_backtest",
+      "goal": "anomalous_resonance_state tritt überwiegend (>= 80%) abends auf",
+      "expected": ">= 80% evening",
+      "observed": "100.0% evening (7/7)",
+      "status": "passed",
+      "confidence": 0.85,
+      "external_source": "internal",
+      "details": "Carnegie-Tagesgang-Backtest aus History. n=7.",
+      "timestamp": "2026-07-25T11:55:54.385448Z"
+    }
+  ],
+  "aggregate": {
+    "n_total": 5,
+    "n_passed": 4,
+    "n_failed": 0,
+    "n_uncertain": 0,
+    "n_inconclusive": 1,
+    "validation_score": 1.0,
+    "evidence_level": "exploratory_signal"
+  },
+  "failed_checks": [],
+  "uncertain_checks": [],
+  "validated_hypotheses": [],
+  "model_adjustment_suggestions": []
+}

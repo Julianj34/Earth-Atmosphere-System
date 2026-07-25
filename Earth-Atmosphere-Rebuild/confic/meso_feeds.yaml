@@ -1,0 +1,73 @@
+# ============================================================================
+# Meso-Layer (L2.5 / H_meso_conv) — Feed-Konfiguration
+# ----------------------------------------------------------------------------
+# Solange real_feeds: false ist, läuft layer_meso mit source_status="inferred"
+# und schreibt KEINE "measured"-Werte in die Holarchie. Erst wenn echte Quellen
+# verdrahtet sind, real_feeds auf true setzen — dann gibt score_meso()
+# holon_status="measured" aus und die L2->L2.5->L3-Kopplungen werden observable.
+# ============================================================================
+meta:
+  layer_id: L2p5_meso_convection
+  holon_id: H_meso_conv
+  role: mediator
+  real_feeds: false          # << auf true setzen, wenn Endpoints unten gefüllt sind
+  source_status: inferred    # wird in der Ingestion-Zelle aus real_feeds abgeleitet
+
+# Organisations-Komposit (entspricht _BASE_WEIGHTS in layer_meso.py)
+weights:
+  mjo:   0.28
+  olr:   0.24
+  shear: 0.22
+  rh:    0.16
+  iorg:  0.10               # optionaler Direktmaß-Term
+
+# Multiplikatives CIN-Gate (cin_gate in layer_meso.py)
+cin_gate:
+  soft: 25.0                # CIN <= soft  -> Gate ~1.0 (offen)
+  hard: 150.0               # CIN >= hard  -> Gate ~0.05 (gedeckelt)
+
+# Datenquellen. endpoint leer lassen, bis die echte Quelle verdrahtet ist.
+feeds:
+  mjo_amplitude:
+    product: "BoM RMM (Wheeler-Hendon)"
+    var: "RMM amplitude"
+    cadence: daily
+    role: organisation_envelope
+    endpoint: ""
+  mjo_phase:
+    product: "BoM RMM (Wheeler-Hendon)"
+    var: "RMM phase 1-8"
+    cadence: daily
+    role: organisation_envelope
+    endpoint: ""
+  olr_anomaly:
+    product: "NOAA interpolated OLR"
+    var: "OLR anomaly W/m^2"
+    cadence: daily
+    role: organisation_proxy
+    endpoint: ""
+  shear_0_6km:
+    product: "ERA5 / GFS"
+    var: "0-6km bulk wind shear m/s"
+    cadence: 6-hourly
+    role: organisation_potential
+    endpoint: ""
+  midlevel_rh:
+    product: "ERA5 / GFS"
+    var: "700-500 hPa mean RH %"
+    cadence: 6-hourly
+    role: organisation_sustain
+    endpoint: ""
+  cin:
+    product: "ERA5 / GFS / SPC mesoanalysis"
+    var: "CIN J/kg"
+    cadence: hourly-6hourly
+    role: realisation_gate
+    endpoint: ""
+  iorg:
+    product: "abgeleitet aus IR Tb<241K / IMERG"
+    var: "Iorg aggregation index"
+    cadence: hourly
+    role: organisation_direct
+    optional: true
+    endpoint: ""

@@ -1,0 +1,113 @@
+# Holon Registry — Holarchic Coupling Analysis V1
+# status: measured | proxy | inferred(not instrumented)
+holons:
+  - id: H_external
+    level: external_bound
+    scale: global
+    timescale: minutes-days
+    parent: null
+    children: [H_field_iono]
+    layer: L0
+    status: measured
+    role: driver
+    sources: [F10.7, Kp, IMF_Bz, xray]
+  - id: H_lithosphere
+    level: macro_parallel
+    scale: global
+    timescale: hours-days
+    parent: null
+    children: []
+    layer: L1
+    status: measured
+    role: driver
+    sources: [seismic_events, max_mag, LOD_anomaly]
+  - id: H_macro_ocean
+    level: macro
+    scale: basin/global
+    timescale: weeks-months
+    parent: null
+    children: [H_meso_conv]
+    layer: L2
+    status: measured
+    role: constraint
+    sources: [SST_anomaly, ENSO_phase, conv_pot]
+  - id: H_meso_conv
+    level: meso
+    scale: regional
+    timescale: hours-days
+    parent: H_macro_ocean
+    children: [H_micro_storm]
+    layer: L2p5
+    status: proxy
+    role: mediator
+    sources: [CIN_from_L3, CloudCover_from_L3(transitional)]
+  - id: H_micro_storm
+    level: micro
+    scale: local
+    timescale: minutes-hours
+    parent: H_meso_conv
+    children: [H_field_gec]
+    layer: L3
+    status: measured
+    role: response
+    sources: [CAPE, thunder_pts, storms_EONET]
+  - id: H_field_iono
+    level: global_field
+    scale: global
+    timescale: minutes-days
+    parent: null
+    children: [H_field_reso]
+    layer: L4
+    status: measured
+    role: mediator
+    sources: [cavity_h, Kp, xray_class]
+  - id: H_field_gec
+    level: global_field
+    scale: global
+    timescale: minutes-days
+    parent: H_micro_storm
+    children: [H_field_reso]
+    layer: L5
+    status: measured
+    role: response
+    sources: [V_iono, delta_V_pct, generator]
+  - id: H_field_reso
+    level: global_field
+    scale: global
+    timescale: minutes-days
+    parent: H_field_gec
+    children: []
+    layer: L6
+    status: proxy
+    role: response
+    sources: [SR1_Hz, SR1_amp_pT, non_geom_ratio]
+  - id: H_obs_diag
+    level: observation
+    scale: system
+    timescale: per-run
+    parent: null
+    children: [H_obs_learn]
+    layer: L7
+    status: measured
+    role: measurement
+    sources: [couplings, field_operators, cavity_gate]
+  - id: H_obs_learn
+    level: observation
+    scale: system
+    timescale: long-term
+    parent: H_obs_diag
+    children: [H_obs_valid]
+    layer: L8
+    status: measured
+    role: measurement
+    sources: [hypotheses, macro_handoff]
+  - id: H_obs_valid
+    level: observation
+    scale: system
+    timescale: long-term
+    parent: H_obs_learn
+    children: []
+    layer: L9
+    status: measured
+    role: measurement
+    sources: [source_revalidation]

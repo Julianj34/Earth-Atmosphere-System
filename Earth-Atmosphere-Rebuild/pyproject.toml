@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "atmosphere-analysis"
+version = "0.1.0"
+description = "Coupled multi-layer Earth-atmosphere state analysis (L0-L9 + holarchic meta-analysis)"
+requires-python = ">=3.9"
+dependencies = [
+  "requests",
+  "pandas",
+  "numpy",
+  "plotly",
+  "pyyaml",
+]
+
+[project.optional-dependencies]
+run = ["jupyter", "nbconvert", "nbclient"]
+test = ["pytest"]
+meso = ["xarray", "netCDF4"]   # nur fuer den OLR-Feed (NOAA PSL via OPeNDAP)
+
+# Paket liegt unter src/atmosphere  -> editable install via:  pip install -e .
+[tool.setuptools.packages.find]
+where = ["src"]

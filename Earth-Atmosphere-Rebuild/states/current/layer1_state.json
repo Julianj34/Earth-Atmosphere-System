@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-07-25T11:53:08.948543Z",
+  "layer": 1,
+  "name": "Geophysikalischer Grundzustand",
+  "score": 0.3749,
+  "level": "moderat",
+  "confidence": 1.0,
+  "score_basis": "3/3 dynamische Komponenten verfuegbar",
+  "dynamic_score_note": "Score basiert ausschliesslich auf dynamischen Komponenten. Leitfaehigkeits-Baseline ist stabile Randbedingung, nicht im Score.",
+  "missing_components": [],
+  "components": {
+    "Seismische Aktivität": {
+      "score": 0.9333,
+      "source": "primary",
+      "dynamic": true
+    },
+    "Erdrotation (LOD-Anomalie)": {
+      "score": 0.0802,
+      "source": "primary",
+      "dynamic": true
+    },
+    "Magnetfeld-Variation (Kp)": {
+      "score": 0.1111,
+      "source": "primary",
+      "dynamic": true
+    }
+  },
+  "baseline_properties": {
+    "ocean_surface_fraction": 0.71,
+    "ocean_conductivity_Sm": 3.2,
+    "role": "stable_boundary_condition"
+  },
+  "reference_constants": {
+    "Erdmasse_kg": 5.9722e+24,
+    "Rotationsperiode_h": 23.9345,
+    "Dipolmoment_Am2": 7.94e+22,
+    "Schumann_Ref_Hz": 7.83
+  },
+  "raw_values": {
+    "seismic_events_7d": 144,
+    "seismic_max_mag": 6.0,
+    "seismic_M6plus": 1,
+    "LOD_anomaly_ms": -0.2405,
+    "LOD_source": "primary",
+    "Kp_index": 1.0
+  },
+  "flags": {
+    "strong_earthquake": false,
+    "elevated_seismicity": true,
+    "mag_field_disturbed": false,
+    "lod_anomaly_high": false
+  },
+  "downstream_expectation": {
+    "layer2_surface": "erhoehte Spannung im Untergrund moeglich",
+    "layer4_ionosphere": "normal",
+    "layer5_gec": "Grundleitfaehigkeit stabil – 71% Ozeane (Randbedingung)",
+    "schumann_resonance": "Grundmode stabil ~7.83 Hz – keine Modulation aus Layer 1 erwartet"
+  },
+  "layer0_context": {
+    "score": 0.2077,
+    "level": "ruhig",
+    "dominant_driver": "none",
+    "confidence": 0.75
+  },
+  "state_summary": "Layer-1-Zustand: moderat. Seismik: 144 Ereignisse M>=4.5 in 7 Tagen, staerkste M6.0. LOD-Anomalie: -0.240 ms [primary]. Magnetfeld-Variation Kp=1.0. Datenvollstaendigkeit: 100%. Layer-0-Modulator: ruhig (Score 0.21)."
+}

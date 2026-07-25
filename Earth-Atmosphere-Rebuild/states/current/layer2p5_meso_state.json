@@ -1,0 +1,58 @@
+{
+  "score": 0.0,
+  "organisation": 0.0,
+  "cin_gate": 1.0,
+  "level": "ruhig",
+  "confidence": 0.2,
+  "dominant_component": "organisation(cloud_proxy)",
+  "organisation_source": "cloud_proxy",
+  "flags": {
+    "mjo_active": false,
+    "mcs_organised": false,
+    "cin_capped": false,
+    "shear_supportive": false,
+    "midlevel_dry": false,
+    "organised_but_capped": false
+  },
+  "key_metrics": {
+    "MJO_amp": null,
+    "MJO_phase": null,
+    "OLR_anom": null,
+    "cloud_cover": 28.7,
+    "shear_0_6km": null,
+    "midlevel_RH": null,
+    "CIN": 22.0
+  },
+  "available": true,
+  "holon_role": "mediator",
+  "holon_status": "measured",
+  "component_terms": {
+    "olr": 0.0
+  },
+  "ingest": {
+    "layer": "L2p5_meso_convection",
+    "aligned_to_l3_points": true,
+    "time_basis": {
+      "source": "open-meteo",
+      "select": "first_nonnull_hourly",
+      "horizon": "forecast_hours=6",
+      "tz": "UTC",
+      "agg": "mean_over_points"
+    },
+    "olr_present": false,
+    "cloud_present": true,
+    "organisation_source": "cloud_proxy",
+    "cin_source": "layer3_state (reused)",
+    "source_status": "measured"
+  },
+  "timestamp": "2026-07-25T11:55:35.271923Z",
+  "engine_version": "1.0",
+  "layer": "2.5",
+  "name": "Meso-Scale Convective Organisation",
+  "source_status": "measured",
+  "construct_status": "derived_proxy",
+  "evidence_status": "derived_proxy",
+  "shared_source_with": [
+    "L3_atmosphere"
+  ]
+}
