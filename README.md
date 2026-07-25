@@ -1,241 +1,530 @@
 # Earth-Atmosphere-System
 
-Gekoppeltes Multi-Layer-Zustandsanalyse-System für das Erd-Atmosphäre-System
-(**L0–L9** plus Meso-Skala **L2.5** und holarchische Meta-Analyse). Läuft vollständig
-lokal — die Pipeline braucht kein GitHub, keine Cloud, keinen Scheduler.
+[![Run pipeline](https://github.com/Julianj34/Earth-Atmosphere-System/actions/workflows/run_pipeline.yml/badge.svg)](https://github.com/Julianj34/Earth-Atmosphere-System/actions/workflows/run_pipeline.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-> **Earth Field Observatory** — untersucht, wann Oberfläche, Ozean, Atmosphäre,
-> Ionosphäre, Globaler Stromkreis (GEC) und Resonanzfeld gemeinsam in bestimmte
-> Systemzustände übergehen.
+An exploratory, layered system for observing coupled Earth–atmosphere states, tracing macro–meso–micro transitions, and generating testable hypotheses.
 
-**Status:** post-holarchy Refactor · ~108 Snapshots · Meso-Skala aktiv über
-Wolken-Übergangsproxy (echtes OLR wartet auf Quellen-Migration)
+The project treats the Earth–atmosphere environment as a connected system rather than a collection of isolated variables. It integrates external drivers, surface and ocean preparation, mesoscale organization, atmospheric activation, ionospheric conditions, the Global Electric Circuit, resonance-related proxies, historical state sequences, and hypothesis validation.
 
----
-
-## Kernidee
-
-Die Erde wird nicht als isolierte Einzelvariablen analysiert, sondern als
-gekoppeltes System — und zwar als **Holarchie von Skalen**, nicht als flacher Stack.
-Jeder Layer ist ein *Holon*: ein Ganzes auf seiner eigenen Skala und ein Teil der
-Skala darüber.
-
-**Systemformel:**
-
-```
-L2   Vorbereitung        (makro, Becken, Wochen–Monate)
- └→ L2.5 Meso-Organisation (meso, regional, Stunden–Tage)   [Mediator]
-     └→ L3  Aktivierung     (mikro, lokal, Minuten–Stunden)
-         └→ L5  Elektrische Antwort (GEC)
-             └→ L6  Resonanz-Antwort  (Proxy)
-                 └→ L8  Muster / Hypothesen  (confound-gated)
-                     └→ L9  Externe Validierung
-```
-
-Der zentrale strukturelle Befund dieser Version: Die Aktivierungskette ist
-**ab L3 abwärts intakt und stark, aber am Makro→Mikro-Übergang (L2→L3) gebrochen**.
-Dieser Bruch ist kein Modellfehler — es ist eine **fehlende Skala**. Genau dort
-sitzt jetzt der Meso-Holon `H_meso_conv` (L2.5).
+> [!IMPORTANT]
+> This is **not a weather forecasting model** and it does not establish causal physical relationships by itself.
+>
+> Measured signals, derived proxies, modeled expectations, and unknown states must remain distinguishable. A downstream layer derived from an upstream layer cannot count as independent confirmation of that same upstream signal.
 
 ---
 
-## Layer-Architektur
+## Core research question
 
-| Layer | Holon | Skala / Zeitskala | Rolle | Status |
-|-------|-------|-------------------|-------|--------|
-| L0 | `H_external` | global / Minuten–Tage | driver | measured |
-| L1 | `H_lithosphere` | global / Stunden–Tage | driver | measured |
-| L2 | `H_macro_ocean` | Becken·global / Wochen–Monate | constraint | measured |
-| **L2.5** | **`H_meso_conv`** | **regional / Stunden–Tage** | **mediator** | **measured\* (cloud-proxy)** |
-| L3 | `H_micro_storm` | lokal / Minuten–Stunden | response | measured |
-| L4 | `H_field_iono` | global / Minuten–Tage | mediator | measured |
-| L5 | `H_field_gec` | global / Minuten–Tage | response | measured |
-| L6 | `H_field_reso` | global / Minuten–Tage | response | **proxy** (teilmodelliert) |
-| L7 | `H_obs_diag` | System / pro Lauf | measurement | measured |
-| L8 | `H_obs_learn` | System / langfristig | measurement | measured |
-| L9 | `H_obs_valid` | System / langfristig | measurement | measured |
+Under what conditions does broad Earth-system preparation develop into organized mesoscale structure, local atmospheric activation, electrical response, and wider system-level change?
 
-**Legende Beobachtungsstatus:**
+The main analytical chain is:
 
+```text
+External and background conditions
+        ↓
+Surface and ocean preparation
+        ↓
+Mesoscale organization
+        ↓
+Atmospheric activation
+        ↓
+Ionospheric and electrical response
+        ↓
+Resonance-related response
+        ↓
+Integrated system state
+        ↓
+Pattern analysis and hypothesis generation
+        ↓
+External validation
 ```
-measured  = direkte Beobachtung
-proxy     = modellierte Näherung — zählt NIE als unabhängige Bestätigung
-inferred  = physikalisch erwartet, aber in diesem System nicht instrumentiert
+
+The system is designed to preserve uncertainty and to distinguish between:
+
+- a variable being present,
+- a proxy suggesting a process,
+- several layers changing together,
+- a relationship being circular or confounded,
+- and a hypothesis receiving genuinely independent support.
+
+---
+
+## System architecture
+
+| Layer | Conceptual role | Current interpretation |
+|---|---|---|
+| **L0** | External drivers | Background forcing and external context |
+| **L1** | Planetary/background state | Broad environmental state and slow context |
+| **L2** | Surface and ocean preparation | Macro-scale preparation conditions |
+| **L2.5** | Mesoscale organization | Bridge between broad preparation and local activation |
+| **L3** | Atmospheric activation | Local or regional atmospheric response |
+| **L4** | Ionospheric state | Upper-atmosphere and ionospheric conditions |
+| **L5** | Global Electric Circuit | Electrical-response layer; currently partly proxy-derived |
+| **L6** | Resonance-related state | Model- and proxy-limited resonance layer |
+| **L7** | Integrated state engine | Time-stamped total-system snapshots and history |
+| **L8** | Pattern and hypothesis layer | Transitions, coupling patterns, and hypothesis candidates |
+| **L9** | Validation layer | External checks, promotion gates, and status updates |
+
+### Macro–meso–micro bridge
+
+A central design problem is the transition from broad preparation to local activation:
+
+```text
+L2 macro preparation
+    → L2.5 mesoscale organization
+        → L3 local atmospheric activation
 ```
 
-\* **cloud-proxy** = L2.5 wird über einen *realen, aber schwächeren* Ersatz-Feed
-gemessen (Gesamtbewölkung aus L3 / Open-Meteo), solange die primäre OLR-Quelle
-nicht verfügbar ist. Explizit geflaggt (`organisation_source="cloud_proxy"`),
-nie still, nie synthetisch.
+Without the mesoscale bridge, broad conditions can appear favorable while no local event develops. L2.5 therefore acts as an organization and gating layer rather than another independent endpoint.
 
-**Saubere architektonische Trennung:**
+### Holarchic analysis
 
-```
-Layer 0–6   →   Physikalische / datenbasierte Zustände (die eigentliche Holarchie)
-Layer 7     →   State Engine (schreibt, forscht nicht)
-Layer 8     →   Musteranalyse + Hypothesen (liest History, confound-gated)
-Layer 9     →   Externe Validierung (NOAA CPC ONI, NOAA SWPC, NASA EONET)
+The project also evaluates the system as a hierarchy of interacting subsystems, or holons. The holarchic analysis asks whether a state change:
+
+- remains local,
+- propagates across layers,
+- is amplified or damped,
+- is delayed,
+- is blocked by an intermediate layer,
+- or only appears coupled because two layers share the same underlying input.
+
+The main modules are:
+
+```text
+src/atmosphere/meta/holarchic_coupling_analysis.py
+src/atmosphere/meta/role_proxy_writeback.py
 ```
 
 ---
 
-## Empirische Kopplungsmatrix (n ≈ 108 Snapshots)
+## Scientific interpretation contract
 
-| Kopplung | r (Pearson) | Evidenz | Confounded | Mechanismus |
-|----------|-------------|---------|------------|-------------|
-| L2 → L2.5 | — | pending | — | ENSO/SST setzt regionale Konvektionswahrscheinlichkeit; Meso jetzt instrumentiert, Statistik wartet auf History |
-| L2.5 → L3 | — | pending | — | Organisierte konvektive Systeme → Gewitterzellen / Blitze |
-| **L3 → L5** | +0.649 | stark (roh) | **ja — zirkulär** | Gewitter laden den Generator (CAPE → V_iono); aber L5 wird deterministisch aus L3 berechnet |
-| L3 → L6 | +0.481 | moderat | ja (proxy) | Blitze regen Schumann-Resonanz an |
-| L4 → L6 | −0.196 | vernachlässigbar | ja (proxy) | Kavitätshöhe / Leitfähigkeit moduliert Frequenz & Q |
-| **L5 → L6** | +0.603 | stark | ja (proxy) | GEC ist die elektrische Architektur der Resonanz |
-| L0 → L4 | +0.380 | schwach | nein | Solarwind / F10.7 / X-Ray ionisieren die Ionosphäre |
-| L0 → L5 | +0.132 | vernachlässigbar | nein | Kp moduliert ionosphärische Leitfähigkeit (GEC-Widerstand) |
+Every signal should be interpreted according to its provenance and role.
 
-**Wichtig beim Lesen:** Die stärksten Korrelationen des Systems (L3→L5, L5→L6)
-sind **keine unabhängige Bestätigung**. L5 ist eine deterministische Transformation
-von L3 (`0.5·CAPE_L3 + 0.5·thunder_L3`) — die Korrelation ist erzwungen, nicht
-evidenziell. Diese Zirkularität ist explizit kodiert (`CIRCULAR_COUPLINGS`-Set,
-`confound_type`-Spalte) und wird vom Promotion-Lock in L8 durchgesetzt: zirkuläre
-und Proxy-Kopplungen können nie zu bestätigten Hypothesen befördert werden.
-Das echte Backbone sind **H1, H6 und die thermal→L3 Lead-Lag-Beziehung**.
+| Signal type | Meaning | Can independently confirm another layer? |
+|---|---|---|
+| `measured` | Directly based on an observational input | Potentially, subject to quality and confound checks |
+| `derived_proxy` | Calculated from one or more upstream variables | No, not when testing the source relationship |
+| `modeled_proxy` | Expected or simulated response | No, unless externally validated |
+| `transitional_proxy` | Temporary substitute for a missing feed | Only as exploratory evidence |
+| `unknown` | Evidence is absent, stale, invalid, or insufficient | No |
+
+This distinction is essential for preventing circular conclusions.
+
+For example, when an electrical state is derived primarily from atmospheric activation, a strong L3–L5 relationship may reflect construction logic rather than independent physics. The relationship can still be operationally useful, but it must be labeled as dependent.
 
 ---
 
-## Konservative Inferenz als Projektprinzip
+## Current development status
 
-Statistische Erweiterungen sind **explizit aufgeschoben**, bis die Datenmenge sie
-rechtfertigt — das ist ein stehendes Projektprinzip, keine vorübergehende Notlösung:
+| Component | Status |
+|---|---|
+| Layer notebooks L0–L9 | Implemented |
+| Central pipeline runner | Implemented |
+| Current-state storage | Implemented |
+| L7 historical state sequence | Implemented |
+| Hypothesis registry | Implemented |
+| Hypothesis-candidate artifacts | Implemented |
+| Holarchic coupling analysis | Implemented |
+| Role/proxy writeback | Implemented |
+| Mesoscale integration | Implemented with transitional feed logic |
+| Independent Global Electric Circuit validation | In development |
+| Independent resonance validation | In development |
+| Formal test suite | Planned |
+| Scientific maturity | Exploratory research system |
 
-- Bootstrap-Konfidenzintervalle, p-Werte, Spearman-Korrelationen: erst wenn die
-  Meso-Zeitreihe mindestens eine Konvektionssaison umfasst
-- Regressionsmodelle mit Dreifach-Interaktionstermen und ein Kopplungstensor über
-  acht Zustandsdimensionen: gleiche Bedingung
-- Aktuell: ~63 vollständige Tagespaare, ~92 % davon in `seasonal_transition_state`
-  — zu homogen für belastbare Interaktionsstatistik
+### Important current limitations
 
-Hypothesen durchlaufen eine explizite, evidenz-basierte State Machine
-(`active → idle → dormant → retired/accepted` mit `missing_runs`-Tracking) statt
-automatischer Retirement-Heuristiken.
+1. **L2.5 is transitional.**  
+   Mesoscale organization currently depends on a transitional proxy configuration. The target is a more independent organization layer using feeds such as outgoing longwave radiation and convective inhibition where reliable data are available.
+
+2. **L5 is not fully independent.**  
+   Parts of the Global Electric Circuit representation are derived from lower-layer atmospheric variables. L5 must therefore not be treated as independent confirmation of L3.
+
+3. **L6 remains proxy- and model-limited.**  
+   Resonance-related states are useful for system exploration, but they do not yet provide an independently validated observational layer.
+
+4. **Correlation is not causation.**  
+   Cross-layer alignment may arise from shared inputs, temporal autocorrelation, construction rules, common seasonality, or other confounders.
+
+5. **L9 is an evolving validation layer.**  
+   Hypotheses should remain candidates until they pass independent data checks, falsification attempts, and explicit promotion criteria.
 
 ---
 
-## Repository-Struktur
+## Repository structure
 
-```
+```text
 Earth-Atmosphere-System/
-├── notebooks/          Layer-Scoring L0–L9 (Interface)
-├── src/atmosphere/
-│   ├── paths.py        zentrale Pfadauflösung (CWD-unabhängig)
-│   ├── config/         domain.py (OM_POINTS/TIME_BASIS — eine Quelle für L2/L3/Meso)
-│   ├── layers/         layer_meso.py (L2.5)
-│   ├── ingest/         meso_ingest.py (OLR-Feed + Wolken-Fallback + CIN aus L3)
-│   └── meta/           role_proxy_writeback.py, holarchic_coupling_analysis.py
+├── .github/
+│   └── workflows/
+│       └── run_pipeline.yml
+├── config/
+│   └── meso_feeds.yaml
+├── notebooks/
+│   ├── atmosphere_analysis_layer0.ipynb
+│   ├── atmosphere_analysis_layer1.ipynb
+│   ├── atmosphere_analysis_layer2.ipynb
+│   ├── atmosphere_analysis_layer3.ipynb
+│   ├── atmosphere_analysis_layer4.ipynb
+│   ├── atmosphere_analysis_layer5.ipynb
+│   ├── atmosphere_analysis_layer6.ipynb
+│   ├── atmosphere_analysis_layer7.ipynb
+│   ├── atmosphere_analysis_layer8.ipynb
+│   └── atmosphere_analysis_layer9.ipynb
+├── pipeline/
+│   └── run_pipeline.py
+├── reports/
+│   ├── holarchic_analysis_report.md
+│   ├── layer8_report.md
+│   ├── layer9_report.md
+│   └── meso_integration_spec.md
+├── src/
+│   └── atmosphere/
+│       ├── __init__.py
+│       ├── paths.py
+│       ├── config/
+│       │   ├── __init__.py
+│       │   └── domain.py
+│       ├── ingest/
+│       │   ├── __init__.py
+│       │   └── meso_ingest.py
+│       ├── layers/
+│       │   ├── __init__.py
+│       │   └── layer_meso.py
+│       └── meta/
+│           ├── __init__.py
+│           ├── holarchic_coupling_analysis.py
+│           └── role_proxy_writeback.py
 ├── states/
-│   ├── current/        layer{0..9}_state.json
-│   ├── history/        layer7_history.jsonl
-│   ├── registry/       hypothesis_registry.json, holon_registry.yaml
-│   └── coupling/       holarchic_coupling_matrix.csv, holarchic_event_card.json
-├── reports/            layer8_report.md, layer9_report.md, holarchic_analysis_report.md
-├── config/             meso_feeds.yaml
-├── pipeline/           run_pipeline.py
-└── .github/workflows/  run_pipeline.yml
+│   ├── current/
+│   │   ├── layer0_state.json
+│   │   ├── layer1_state.json
+│   │   ├── layer2_state.json
+│   │   ├── layer2p5_meso_state.json
+│   │   ├── layer3_state.json
+│   │   ├── layer4_state.json
+│   │   ├── layer5_state.json
+│   │   ├── layer6_state.json
+│   │   ├── layer7_state.json
+│   │   ├── layer8_state.json
+│   │   └── layer9_state.json
+│   ├── history/
+│   │   └── layer7_history.jsonl
+│   ├── registry/
+│   │   ├── holon_registry.yaml
+│   │   ├── hypothesis_registry.json
+│   │   └── hypothesis_candidates/
+│   └── coupling/
+│       ├── holarchic_coupling_matrix.csv
+│       └── holarchic_event_card.json
+├── .gitignore
+├── .project-root
+├── LICENSE
+├── README.md
+├── pyproject.toml
+└── requirements.txt
 ```
-
-`.project-root` ist eine leere Markerdatei im Projekt-Top — jedes Notebook findet
-darüber die Projektwurzel, unabhängig davon, von wo Jupyter gestartet wurde.
 
 ---
 
-## Setup & Ausführung
+## Installation
+
+A recent Python 3 environment is recommended. Python 3.11 is a suitable default.
+
+### 1. Clone the repository
 
 ```bash
-pip install -r requirements.txt
-pip install -e .          # optional; die Notebooks haben einen eigenen Bootstrap
-
-# Setup prüfen (läuft ohne Internet in Sekunden):
-python -c "import atmosphere.paths as p; print(p.ROOT)"
-python pipeline/run_pipeline.py --holarchic
+git clone https://github.com/Julianj34/Earth-Atmosphere-System.git
+cd Earth-Atmosphere-System
 ```
 
-**Ganze Kette:**
+### 2. Create a virtual environment
+
+Windows PowerShell:
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+Windows Command Prompt:
+
+```cmd
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+Linux or macOS:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+pip install -e .
+```
+
+The editable install makes the `src/atmosphere` package available while allowing local source changes without reinstalling the project after every edit.
+
+---
+
+## Running the system
+
+### Run the complete pipeline
 
 ```bash
 python pipeline/run_pipeline.py
 ```
 
-Führt L0…L9 der Reihe nach aus (jedes Notebook schreibt seinen State nach
-`states/current/`; L7 hängt an `states/history/layer7_history.jsonl` an) und
-danach die holarchische Meta-Analyse.
-
-**Nützliche Optionen:**
+### Start from a later layer
 
 ```bash
-python pipeline/run_pipeline.py --from 7      # ab L7 fortsetzen
-python pipeline/run_pipeline.py --only 7 8 9  # nur diese Layer
-python pipeline/run_pipeline.py --holarchic   # nur die Meta-Analyse über die History
+python pipeline/run_pipeline.py --from 7
 ```
 
-Einzelne Notebooks lassen sich normal in Jupyter öffnen — der Bootstrap in Zelle 1
-löst die Pfade selbst auf, egal von wo Jupyter gestartet wurde.
+### Run selected layers
+
+```bash
+python pipeline/run_pipeline.py --only 7 8 9
+```
+
+### Run holarchic analysis
+
+```bash
+python pipeline/run_pipeline.py --holarchic
+```
+
+The pipeline reads the required upstream state artifacts, executes the requested layers, and updates the corresponding files under `states/` and `reports/`.
 
 ---
 
-## Meso-Layer (L2.5) — Status & Datenquelle
+## GitHub Actions
 
-`layer_meso` läuft **nicht** auf synthetischen Daten und ist nicht blockiert:
+The workflow is located at:
 
-- **CIN** (das multiplikative Gate) stammt aus L3 (`raw_values.CIN_mean_Jkg`) —
-  kein neuer Feed, automatisch an dieselbe Stichprobengeometrie alignt.
-- **Organisation**: primär OLR-Anomalie. Alle vier bekannten Live-OLR-Quellen sind
-  derzeit unbrauchbar (PSL eingefroren auf Ende 2022, NCEI 404, AWS NODD ohne
-  skriptbaren Pfad, IRI Timeout). Ein **Staleness-Guard** (> 10 Tage → ablehnen)
-  verhindert, dass alte Werte einsickern.
-- **Fallback**: Gesamtbewölkung aus L3 (Open-Meteo) tritt in denselben Slot; der
-  Holon wird `measured` mit `organisation_source="cloud_proxy"`. Schwächer als
-  echtes OLR (zählt auch nicht-konvektive Schichtbewölkung mit) — deshalb
-  konservativ geschwellt und ehrlich als Übergang markiert.
-- **Swap-Punkt**: Sobald wieder eine Live-OLR-Tagesquelle existiert, wird nur die
-  Konstante `_OLR_DAILY` in `meso_ingest.py` umgestellt. OLR hat dann automatisch
-  wieder Vorrang, der Wolken-Pfad fällt still in die Reserve.
+```text
+.github/workflows/run_pipeline.yml
+```
+
+To run it manually:
+
+1. Open the repository on GitHub.
+2. Select **Actions**.
+3. Open **Run pipeline**.
+4. Select **Run workflow**.
+5. Choose the branch and start the run.
+
+The project can also run fully on a local machine. GitHub Actions is an execution and automation layer, not a runtime dependency.
 
 ---
 
-## Confound-Guard
+## Outputs
 
-Diese Invarianten setzt `meta/role_proxy_writeback.py` bei jedem Lauf durch, bevor
-L7 und L8 ihre States schreiben:
+### Current states
 
-- **L5 ist `derived_proxy` von L3** — `generator_strength` wird aus CAPE und
-  Gewitterscore berechnet, ist also keine unabhängige Messung.
-- **L6 ist `proxy`** — der nicht-geometrische Anteil ist modelliert
-  (`measurement_status: model_expected_not_observed`).
-- **Der thermal-Operator ist L2-only** und damit der einzige saubere
-  Cross-Scale-Prädiktor unter den Feldoperatoren.
-- **Promotion-Lock:** zirkuläre, Proxy- und unklassifizierte Evidenz wird hart von
-  der Modelllogik ausgeschlossen — unabhängig vom Review-Status.
-- **Die holarchische Matrix** markiert L3→L5 als `circular` und die
-  L6-Kopplungen als `proxy` (`confound_type`-Spalte in
-  `holarchic_coupling_matrix.csv`).
-- **`layer_meso`** gatet CIN multiplikativ und fällt defensiv auf
-  `source_status="inferred"` zurück, wenn die Stichprobe nicht exakt zu L3 passt.
+```text
+states/current/
+```
+
+These JSON artifacts contain the latest state produced by each layer.
+
+### Historical system sequence
+
+```text
+states/history/layer7_history.jsonl
+```
+
+L7 appends time-stamped integrated system states. This history is the main temporal input for transition and pattern analysis.
+
+### Hypothesis registry
+
+```text
+states/registry/hypothesis_registry.json
+states/registry/hypothesis_candidates/
+```
+
+The registry stores hypothesis status, evidence, restrictions, and promotion state. Candidate files preserve hypotheses separately so they can be reviewed without automatically changing the operational model.
+
+### Holarchic coupling artifacts
+
+```text
+states/coupling/holarchic_coupling_matrix.csv
+states/coupling/holarchic_event_card.json
+reports/holarchic_analysis_report.md
+```
+
+These artifacts summarize cross-layer coupling, event structure, and system-level interpretation.
+
+### Analysis reports
+
+```text
+reports/layer8_report.md
+reports/layer9_report.md
+reports/meso_integration_spec.md
+```
+
+---
+
+## Analytical safeguards
+
+The project is designed around conservative interpretation.
+
+### Provenance awareness
+
+Every analytical result should retain enough metadata to determine:
+
+- its source,
+- its observation time,
+- its processing time,
+- whether it is measured or derived,
+- which upstream variables contributed to it,
+- and whether the input was stale or missing.
+
+### Confound control
+
+A relationship should be downgraded when it may be explained by:
+
+- direct mathematical construction,
+- a shared upstream source,
+- temporal autocorrelation,
+- seasonality,
+- regime changes,
+- missing-data substitution,
+- or a proxy being mistaken for a measurement.
+
+### Circularity control
+
+A derived layer cannot be used as independent proof of the layer from which it was derived.
+
+### Promotion gates
+
+Hypotheses should not move into model logic merely because they are interesting or repeatedly observed. Promotion should require:
+
+- explicit evidence,
+- an identified falsification test,
+- independent inputs where possible,
+- confound review,
+- provenance completeness,
+- and a documented decision.
+
+### Preservation of unknown states
+
+Missing or ambiguous evidence should remain `unknown`. The pipeline should not convert uncertainty into false certainty simply to complete a state vector.
+
+---
+
+## Example analytical interpretation
+
+Suppose the system observes:
+
+```text
+L2 preparation: elevated
+L2.5 organization: weak
+L3 activation: absent
+```
+
+The correct interpretation is not that the macro signal failed. A more precise interpretation is:
+
+> Broad preparation was present, but the mesoscale organization gate did not form strongly enough for local atmospheric activation.
+
+A second example:
+
+```text
+L3 activation: elevated
+L5 electrical proxy: elevated
+```
+
+When L5 is calculated partly from L3, this is not two independent observations. It is one observation plus a dependent transformation. The relationship can describe the model state, but it cannot independently validate the underlying physical coupling.
+
+---
+
+## Research workflow
+
+```text
+1. Ingest or update inputs
+        ↓
+2. Produce layer states
+        ↓
+3. Build the integrated L7 snapshot
+        ↓
+4. Append the historical state sequence
+        ↓
+5. Detect transitions and cross-layer patterns
+        ↓
+6. Generate hypothesis candidates
+        ↓
+7. Run confound and circularity checks
+        ↓
+8. Test against independent evidence
+        ↓
+9. Promote, retain, revise, or reject
+```
+
+This separates observation from interpretation and interpretation from model promotion.
 
 ---
 
 ## Roadmap
 
-- **Kurzfristig:** Meso-State (`layer2p5_meso_state.json`) persistieren und in die
-  `layer7_history` einspeisen; Score-Normalisierung im
-  `cross_layer_activation_operator` auf Median/MAD-basierte z-Scores umstellen
-- **Mittelfristig:** deskriptiver Topologie-Klassifikator
-  (`state_dependent_effect_topology.py`), sobald Meso-History akkumuliert ist
-- **Aufgeschoben** (bis ≥ 1 Konvektionssaison Meso-Zeitreihe): Interaktions-
-  Regressionen, Kopplungstensor, Bootstrap-CIs
-- **Offen:** Live-OLR-Quelle — bekannte Endpunkte ausgeschöpft, wird periodisch
-  neu geprüft
+Current priorities include:
+
+- stabilizing independent mesoscale feeds,
+- integrating stronger organization and gating variables,
+- separating measured and derived Global Electric Circuit components,
+- adding independent resonance-related observations,
+- improving lead–lag tests with autocorrelation and regime controls,
+- expanding provenance and staleness validation,
+- adding a dedicated automated test suite,
+- formalizing hypothesis promotion and rejection criteria,
+- and improving long-run pattern analysis across the L7 history.
 
 ---
 
-## Lizenz
+## Scope and responsible use
 
-MIT — siehe [LICENSE](LICENSE).
+This repository is intended for exploratory research, system architecture development, data analysis, and hypothesis generation.
+
+It should not be used as:
+
+- an operational weather-warning system,
+- a substitute for established meteorological services,
+- proof of causal geophysical mechanisms,
+- or evidence for extraordinary claims without independent validation.
+
+Results should be interpreted together with source quality, uncertainty, proxy dependence, and the current maturity of each layer.
+
+---
+
+## Contributing
+
+Contributions are welcome when they improve:
+
+- data provenance,
+- independent observational coverage,
+- reproducibility,
+- confound detection,
+- validation logic,
+- tests,
+- documentation,
+- or scientific clarity.
+
+For substantial changes, open an issue first and describe:
+
+1. the layer or module affected,
+2. the proposed evidence source,
+3. whether the signal is measured or derived,
+4. expected failure modes,
+5. and how the change can be tested.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
