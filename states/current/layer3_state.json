@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-07-25T16:23:58.279129Z",
+  "timestamp": "2026-07-25T21:13:54.814984Z",
   "layer": 3,
   "name": "Atmosphaere / Wetter / Konvektion",
-  "score": 0.3422,
+  "score": 0.301,
   "level": "moderat",
   "confidence": 1.0,
   "score_basis": "5/5 dynamische Komponenten",
@@ -10,22 +10,22 @@
   "missing_components": [],
   "components": {
     "Konvektions-Intensität (CAPE)": {
-      "score": 0.4467,
+      "score": 0.29,
       "source": "primary",
       "dynamic": true
     },
     "Atm. Instabilität (LI)": {
-      "score": 0.65,
+      "score": 0.5417,
       "source": "primary",
       "dynamic": true
     },
     "Gewitteraktivität": {
-      "score": 0.2268,
+      "score": 0.2303,
       "source": "primary",
       "dynamic": true
     },
     "Schumann-Anregungs-Potenzial": {
-      "score": 0.254,
+      "score": 0.3096,
       "source": "derived",
       "dynamic": true
     },
@@ -36,37 +36,37 @@
     }
   },
   "raw_values": {
-    "CAPE_mean_Jkg": 1340.0,
-    "CIN_mean_Jkg": 14.0,
-    "CloudCover_mean_pct": 18.0,
-    "LI_mean_K": -1.8,
+    "CAPE_mean_Jkg": 870.0,
+    "CIN_mean_Jkg": 54.0,
+    "CloudCover_mean_pct": 71.0,
+    "LI_mean_K": -0.5,
     "thunder_points_WMO": 0,
     "storm_events_EONET": 4,
-    "Kp_current": 1.0,
+    "Kp_current": 0.0,
     "xray_context": {
-      "flux": 8.923948371375445e-07,
+      "flux": 9.198988664138597e-07,
       "class": "B"
     },
     "kp_note": "geomagnetischer Kontext, kein Blitz-Proxy",
-    "schumann_potential": 0.254,
+    "schumann_potential": 0.3096,
     "messpunkte": [
       {
         "point": "Sahel",
-        "cape": 1340.0,
-        "li": -1.8,
+        "cape": 870.0,
+        "li": -0.5,
         "thunderstorm": false,
-        "thunder_score": 0.324,
-        "schumann_contribution": 0.254
+        "thunder_score": 0.329,
+        "schumann_contribution": 0.258
       }
     ]
   },
   "flags": {
     "active_thunderstorms": false,
     "high_cape": false,
-    "atmospheric_instability": true,
+    "atmospheric_instability": false,
     "elevated_storm_activity": false,
     "schumann_trigger": false,
-    "l2_thunder_confirmed": false
+    "l2_thunder_confirmed": true
   },
   "downstream_expectation": {
     "layer4_ionosphere": "normaler troposphaerischer Einfluss auf Ionosphaere",
@@ -75,20 +75,20 @@
     "layer6_pattern": "ruhige Atmosphaere – keine starke Mustermodulation"
   },
   "layer0_context": {
-    "score": 0.2355,
+    "score": 0.1584,
     "level": "ruhig",
     "dominant_driver": "none"
   },
   "layer1_context": {
-    "score": 0.3749,
+    "score": 0.3598,
     "level": "moderat"
   },
   "layer2_context": {
-    "score": 0.5351,
+    "score": 0.5573,
     "level": "moderat",
-    "thunderstorm_trigger": false,
-    "conv_potential": 0.561,
+    "thunderstorm_trigger": true,
+    "conv_potential": 0.581,
     "enso_phase": "warm_neutral"
   },
-  "state_summary": "Layer-3-Zustand: moderat. CAPE-Mittel 1340 J/kg. LI-Mittel -1.8 K. 0 WMO-Gewitterpunkte, 4 NASA-Sturmereignisse. Schumann-Potenzial: 0.254. Datenvollstaendigkeit: 100%. L2-Eingang: moderat (Conv=0.56, Thunder-Trigger=False)."
+  "state_summary": "Layer-3-Zustand: moderat. CAPE-Mittel 870 J/kg. LI-Mittel -0.5 K. 0 WMO-Gewitterpunkte, 4 NASA-Sturmereignisse. Schumann-Potenzial: 0.310. Datenvollstaendigkeit: 100%. L2-Eingang: moderat (Conv=0.58, Thunder-Trigger=True)."
 }

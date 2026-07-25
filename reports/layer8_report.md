@@ -1,15 +1,15 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-07-25T16:24:25.648475Z
-**Snapshots analysiert:** 173
-**Vollständige Tagespaare:** 23
+**Run:** 2026-07-25T21:14:15.943770Z
+**Snapshots analysiert:** 174
+**Vollständige Tagespaare:** 24
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 159× (91.9%)
-- `anomalous_resonance_state` — 6× (3.5%)
+- `seasonal_transition_state` — 160× (92.0%)
+- `anomalous_resonance_state` — 6× (3.4%)
 - `cavity_condition_shift_state` — 5× (2.9%)
-- `normal_background_state` — 2× (1.2%)
+- `normal_background_state` — 2× (1.1%)
 - `geomagnetic_disturbance_state` — 1× (0.6%)
 
 ## Tagespaare (ΔL3 Aktivierung)
@@ -39,38 +39,39 @@
 | 2026-07-16 | 0.257 | 0.294 | +0.037 | normal_background |
 | 2026-07-20 | 0.129 | 0.198 | +0.069 | seasonal_transition |
 | 2026-07-21 | 0.197 | 0.206 | +0.008 | seasonal_transition |
+| 2026-07-25 | 0.200 | 0.301 | +0.102 | seasonal_transition |
 
 **ΔL3-Schwelle (empirisch):** +0.049
 
 ## L2 ↔ L3 Beziehung
 
-- Pearson: **+0.067**
+- Pearson: **+0.060**
 - L2 Trend: +0.00009 / Snapshot
-- L3 Trend: +0.00021 / Snapshot
-- Gap-Trend: -0.00012 / Snapshot
+- L3 Trend: +0.00023 / Snapshot
+- Gap-Trend: -0.00014 / Snapshot
 - Schwache Kopplung sichtbar — mehr Daten nötig.
 
 ## Field Operators
 
-Coverage: 154/173 Snapshots
+Coverage: 155/174 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
-- **electric**: 0.543 — moderate elektrische Kopplung  ⚠️ confounded_circular
-- **resonance_model**: 0.521 — modellierte Resonanzamplitude erhöht
-- **thermal**: 0.408 — moderate thermische Vorbereitung vorhanden
-- **ionization**: 0.345 — moderate ionosphärische Modulation
-- **geomagnetic**: 0.209 — ruhige geomagnetische Bedingungen
-- **cross_layer_activation**: 0.097 — keine Übergangsspannung — Layer kohärent  ⚠️ confounded_circular
+- **electric**: 0.525 — moderate elektrische Kopplung  ⚠️ confounded_circular
+- **resonance_model**: 0.499 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
+- **thermal**: 0.424 — moderate thermische Vorbereitung vorhanden
+- **ionization**: 0.291 — ruhige Ionosphäre, minimaler Strahlungseffekt
+- **geomagnetic**: 0.162 — ruhige geomagnetische Bedingungen
+- **cross_layer_activation**: 0.128 — keine Übergangsspannung — Layer kohärent  ⚠️ confounded_circular
 
 ### Operator ↔ ΔL3 Korrelation
 
-- electric: r = +0.476  ⚠️ **confounded_circular** — Operator enthält L3, kein unabhängiger Prädiktor
+- electric: r = +0.546  ⚠️ **confounded_circular** — Operator enthält L3, kein unabhängiger Prädiktor
 - resonance_model: r = +0.348
-- cross_layer_activation: r = +0.266  ⚠️ **confounded_circular** — Operator enthält L3, kein unabhängiger Prädiktor
-- thermal: r = -0.200
-- ionization: r = -0.074
-- geomagnetic: r = +0.027
+- thermal: r = -0.180
+- cross_layer_activation: r = +0.149  ⚠️ **confounded_circular** — Operator enthält L3, kein unabhängiger Prädiktor
+- ionization: r = -0.104
+- geomagnetic: r = -0.033
 
 ## Hypothesen
 
@@ -83,7 +84,7 @@ Coverage: 154/173 Snapshots
 ### 🚫 H4: Moduliert L6_evening die Carnegie-Amplitude (L5 abends)?
 
 - **Status:** confound_blocked (confounded_proxy) — nicht promotbar, nur exploratorisch
-- **Evidenz:** Pearson L5_evening vs L6_evening = +0.823 über 23 Abende.
+- **Evidenz:** Pearson L5_evening vs L6_evening = +0.790 über 24 Abende.
 - **Nächster Schritt:** Korrelation in größerer Stichprobe bestätigen.
 
 ### 🚫 H_combined: Ist combined_activation_score (ΔL3+L5+L6) besser als ΔL3 allein?
@@ -91,3 +92,9 @@ Coverage: 154/173 Snapshots
 - **Status:** confound_blocked (confounded_circular) — nicht promotbar, nur exploratorisch
 - **Evidenz:** combined Overlap=True vs ΔL3 Overlap=True. combined Schwelle=0.4200.
 - **Nächster Schritt:** Mehr Tagespaare für robuste Trennung. ROC-Analyse ab n>=20.
+
+### 🚫 H_op_electric: Ist der electric Operator ein Prädiktor für ΔL3-Aktivierung?
+
+- **Status:** confound_blocked (confounded_circular) — nicht promotbar, nur exploratorisch
+- **Evidenz:** Pearson electric_operator vs ΔL3 = +0.546.
+- **Nächster Schritt:** Bestätigung mit mehr Operator-Snapshots.
