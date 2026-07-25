@@ -1,46 +1,126 @@
 name: Earth-Atmosphere-System Pipeline
+
+# ---------------------------------------------------------------------------
+# ZEITPLAN — vier Läufe pro Tag, ~6 h Abstand.
+#
+# Die Zeiten sind NICHT frei gewählt. L4 schaltet die Cavity-Höhe bei 6 und
+# 19 UTC um (70 km ↔ 87 km, 17-km-Sprung). Jeder Lauf muss deshalb mit
+# Sicherheitsabstand INNERHALB eines Regimes liegen, sonst entscheidet die
+# Scheduler-Verzögerung (5–30 min sind normal, mehr möglich) darüber, welche
+# Cavity-Höhe der Snapshot bekommt.
+#
+#   Lauf  UTC    MESZ    L8-Slot    L4-Regime   Abstand zur Grenze
+#   ----  -----  -----   --------   ---------   ------------------
+#    1    02:20  04:20   night      Nacht 87    3 h 40 vor 6 UTC
+#    2    08:20  10:20   morning    Tag   70    2 h 20 nach 6 UTC
+#    3    14:20  16:20   midday     Tag   70    4 h 40 vor 19 UTC
+#    4    20:20  22:20   evening    Nacht 87    1 h 20 nach 19 UTC
+#
+# Damit ist jeder Slot in sich cavity-homogen. Wichtiger noch: Lauf 1 und
+# Lauf 4 liegen im GLEICHEN Regime (Nacht) und gleichzeitig nahe am
+# Carnegie-Trog (~03 UTC) bzw. Carnegie-Peak (~19–20 UTC). Das primäre
+# Tagespaar night↔evening ist deshalb frei vom Cavity-Sprung — die
+# 17-km-Differenz kürzt sich heraus statt als Signal aufzutreten.
+#
+# ACHTUNG: L8 kennt derzeit nur ZWEI Slots (EVENING_HOUR = 18 MESZ). Ohne den
+# Patch aus L8_slot_patch.md landen Lauf 1+2 beide in „morning" und Lauf 3+4
+# beide in „evening"; L8 verwirft dann pro Slot den zweiten für die
+# Tagespaare, zählt ihn aber in der globalen Statistik mit.
+# ---------------------------------------------------------------------------
 on:
   schedule:
-    - cron: '30 4,10,16,20 * * *'   # 06:30 / 12:30 / 18:30 / 22:30 CEST (UTC+2)
-  workflow_dispatch:                  # manual trigger
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true   # Node.js 24 fix
+    - cron: '20 2 * * *'      # 02:20 UTC → night    (Carnegie-Trog)
+    - cron: '20 8 * * *'      # 08:20 UTC → morning
+    - cron: '20 14 * * *'     # 14:20 UTC → midday
+    - cron: '20 20 * * *'     # 20:20 UTC → evening  (nach Carnegie-Peak)
+  workflow_dispatch:
+
+# Vier Läufe täglich plus manuelle Auslösung: Überlappung ist ohne diesen
+# Block realistisch. Zwei parallele Läufe hängen beide an
+# layer7_history.jsonl an und kollidieren beim Push.
+concurrency:
+  group: atmosphere-pipeline
+  cancel-in-progress: false
+
+# Muss explizit stehen — neuere Repos haben GITHUB_TOKEN standardmäßig
+# read-only, dann scheitert `git push` mit 403.
+permissions:
+  contents: write
+
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
+    timeout-minutes: 45       # < 6 h Slot-Abstand, damit sich Läufe nie stauen
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0        # für `git pull --rebase` vor dem Push
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: pip
+
       - name: Install dependencies
         run: |
-          pip install --upgrade pip
-          pip install jupyter nbconvert plotly pandas numpy requests
-      - name: Run Layer 0–8 pipeline (with retry)
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -e .
+          # requirements.txt braucht: jupyter, nbconvert, plotly, pandas, numpy,
+          # requests, pyyaml, pytest — plus xarray + netCDF4 für den OLR-Pfad.
+          # Solange _OLR_DAILY auf der eingefrorenen PSL-Quelle steht, werden
+          # die beiden nur gebraucht, um sie abzulehnen; bei 4 Läufen täglich
+          # sind das 8 vergebliche OPeNDAP-Verbindungen pro Tag.
+
+      # Ohne .project-root scheitert der Bootstrap in jedem Notebook mit einem
+      # irreführenden ModuleNotFoundError statt einer klaren Meldung. Der
+      # pytest-Schritt ist entfallen, weil tests/ nicht im Repo liegt.
+      - name: Setup prüfen
         run: |
-          set -e
-          run_pipeline() {
-            cd notebooks
-            jupyter nbconvert --to notebook --execute "layer0_external_drivers.ipynb"        --inplace --ExecutePreprocessor.timeout=300 --ExecutePreprocessor.kernel_name=python3
-            jupyter nbconvert --to notebook --execute "layer1_planetary_body.ipynb"          --inplace --ExecutePreprocessor.timeout=300 --ExecutePreprocessor.kernel_name=python3
-            jupyter nbconvert --to notebook --execute "layer2_surface_zone.ipynb"            --inplace --ExecutePreprocessor.timeout=300 --ExecutePreprocessor.kernel_name=python3
-            jupyter nbconvert --to notebook --execute "layer3_atmosphere_zone.ipynb"         --inplace --ExecutePreprocessor.timeout=300 --ExecutePreprocessor.kernel_name=python3
-            jupyter nbconvert --to notebook --execute "layer4_Ionosphere.ipynb"              --inplace --ExecutePreprocessor.timeout=300 --ExecutePreprocessor.kernel_name=python3
-            jupyter nbconvert --to notebook --execute "layer5_Global_Electric_Circuit.ipynb" --inplace --ExecutePreprocessor.timeout=300 --ExecutePreprocessor.kernel_name=python3
-            jupyter nbconvert --to notebook --execute "layer6_Resonance_Field.ipynb"         --inplace --ExecutePreprocessor.timeout=300 --ExecutePreprocessor.kernel_name=python3
-            jupyter nbconvert --to notebook --execute "layer7_Earth_Field.ipynb"             --inplace --ExecutePreprocessor.timeout=300 --ExecutePreprocessor.kernel_name=python3
-            jupyter nbconvert --to notebook --execute "layer8_Research.ipynb"                --inplace --ExecutePreprocessor.timeout=300 --ExecutePreprocessor.kernel_name=python3
-            cd ..
-          }
-          run_pipeline || (echo "⚠️ First attempt failed, retrying in 2 min..." && sleep 120 && run_pipeline) || (echo "⚠️ Second attempt failed, retrying in 5 min..." && sleep 300 && run_pipeline)
-        timeout-minutes: 60
-      - name: Commit all generated and updated files
+          test -f .project-root || { echo "::error::.project-root fehlt im Repo"; exit 1; }
+          python -c "import atmosphere.paths as p; print('paths ok:', p.ROOT)"
+
+      # Ein Aufruf statt neun nbconvert-Zeilen: Reihenfolge, Abbruchverhalten
+      # und der holarchic-Schritt liegen in run_pipeline.py — an EINER Stelle
+      # und testbar. Kein `cd notebooks`; die Notebooks lösen ihre Pfade über
+      # .project-root selbst auf.
+      - name: Run pipeline L0–L9 + holarchic
+        run: python pipeline/run_pipeline.py --timeout 900
+
+      # KEIN automatischer Retry. Jeder Wiederholungslauf, der L7 erneut
+      # ausführt, hängt einen ZWEITEN Snapshot mit demselben Datenstand an die
+      # History an. Bei vier Läufen täglich wäre das der schnellste Weg zu
+      # einem aufgeblähten Archiv. Nach dem Append-Guard kann hier ein Retry
+      # zurückkommen — dann ist er idempotent.
+
+      - name: Commit generated files
         run: |
           git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add notebooks/*.ipynb data/states/ data/history/ research/
-          git diff --staged --quiet || git commit -m "Auto-run: $(date -u '+%Y-%m-%d %H:%M') UTC"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # NUR Ergebnisse. Die Notebooks bleiben draußen: run_pipeline.py führt
+          # sie mit --inplace aus, wodurch nbconvert die Outputs zurückschreibt
+          # (4,66 MB plotly.js pro Notebook). Mitcommittet wären das ~46 MB neue
+          # Blobs PRO LAUF, bei vier Läufen ~184 MB pro Tag. Der Runner ist
+          # ephemer, also genügt es, sie nicht hinzuzufügen.
+          git add states reports
+          if git diff --cached --quiet; then
+            echo "keine Änderung — nichts zu committen"
+            exit 0
+          fi
+          git commit -m "Auto-run: $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
           git push
+
+      - name: States bei Fehlschlag sichern
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: states-failed-${{ github.run_id }}
+          path: |
+            states/current
+            reports
+          retention-days: 14
+          if-no-files-found: ignore
