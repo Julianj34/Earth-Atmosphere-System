@@ -16,6 +16,9 @@ jobs:
     if: ${{ github.event.inputs.confirmation == 'REBUILD' }}
     runs-on: ubuntu-latest
 
+    env:
+      REBUILD_DIR: Earth-Atmosphere-Rebuild
+
     steps:
       - name: Checkout complete repository
         uses: actions/checkout@v4
@@ -27,20 +30,25 @@ jobs:
         run: |
           set -euo pipefail
 
-          if [ ! -d "_rebuild" ]; then
-            echo "ERROR: _rebuild directory does not exist."
+          echo "Repository root contents:"
+          ls -la
+
+          echo "Rebuild directory: $REBUILD_DIR"
+
+          if [ ! -d "$REBUILD_DIR" ]; then
+            echo "ERROR: $REBUILD_DIR directory does not exist."
             exit 1
           fi
 
           required_paths=(
-            "_rebuild/.github/workflows/run_pipeline.yml"
-            "_rebuild/notebooks"
-            "_rebuild/src/atmosphere"
-            "_rebuild/pipeline/run_pipeline.py"
-            "_rebuild/config/meso_feeds.yaml"
-            "_rebuild/README.md"
-            "_rebuild/pyproject.toml"
-            "_rebuild/requirements.txt"
+            "$REBUILD_DIR/.github/workflows/run_pipeline.yml"
+            "$REBUILD_DIR/notebooks"
+            "$REBUILD_DIR/src/atmosphere"
+            "$REBUILD_DIR/pipeline/run_pipeline.py"
+            "$REBUILD_DIR/config/meso_feeds.yaml"
+            "$REBUILD_DIR/README.md"
+            "$REBUILD_DIR/pyproject.toml"
+            "$REBUILD_DIR/requirements.txt"
           )
 
           for path in "${required_paths[@]}"; do
@@ -84,19 +92,23 @@ jobs:
             -mindepth 1 \
             -maxdepth 1 \
             ! -name ".git" \
-            ! -name "_rebuild" \
+            ! -name "$REBUILD_DIR" \
             -exec rm -rf {} +
+
+          echo "Old repository structure removed."
 
       - name: Install new repository structure
         shell: bash
         run: |
           set -euo pipefail
 
-          cp -a _rebuild/. .
-          rm -rf _rebuild
+          cp -a "$REBUILD_DIR"/. .
+          rm -rf "$REBUILD_DIR"
 
           # Required empty repository-root marker
           touch .project-root
+
+          echo "New repository structure installed."
 
       - name: Validate final structure
         shell: bash
@@ -163,6 +175,18 @@ jobs:
           fi
 
           echo "Final repository structure is valid."
+
+      - name: Show final repository structure
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          echo "Final root contents:"
+          find . \
+            -maxdepth 3 \
+            -not -path "./.git/*" \
+            -not -path "./.git" \
+            | sort
 
       - name: Commit rebuilt repository
         shell: bash
