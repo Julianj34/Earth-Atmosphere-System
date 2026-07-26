@@ -18,6 +18,7 @@ Usage:
     python pipeline/run_pipeline.py --only 7 8 9   # run a specific subset
     python pipeline/run_pipeline.py --holarchic    # only the holarchic meta-analysis
     python pipeline/run_pipeline.py --timeout 900  # per-notebook timeout (s)
+    python pipeline/run_pipeline.py --keep-outputs # Grafiken im Notebook behalten
 """
 from __future__ import annotations
 import sys
@@ -45,7 +46,78 @@ ALL_LAYERS = list(range(10))  # L0..L9
 
 
 # --------------------------------------------------------------------------- #
-def run_notebook(n: int, timeout: int = 600) -> bool:
+def strip_outputs(nb_path: pathlib.Path, retries: int = 4, delay: float = 0.3) -> int:
+    """Zell-Outputs nach dem Lauf entfernen. Gibt gesparte Bytes zurueck.
+
+    Warum als Nachschritt: `nbconvert --execute --inplace` schreibt die Outputs
+    immer zurueck, und das erste plotly-Diagramm bettet die komplette
+    plotly.js-Bibliothek (~4,7 MB) als HTML in die Datei ein — pro Notebook, bei
+    jedem Lauf. Beim Pipeline-Betrieb sieht die niemand; sie kosten nur Platz
+    und machen Git-Diffs unlesbar.
+
+    `--ClearOutputPreprocessor.enabled=True` hilft NICHT: nbconvert fuehrt diesen
+    Preprocessor VOR dem Execute-Schritt aus, die Outputs entstehen also danach
+    neu. Deshalb hier, nach erfolgreichem Lauf.
+
+    WINDOWS: `os.replace` scheitert mit "Zugriff verweigert" (WinError 5), sobald
+    irgendein Prozess ein Handle auf die ZIELdatei haelt — Jupyter im Browser,
+    VS Code, OneDrive-Sync oder der Virenscanner, der die eben geschriebene Datei
+    prueft. Unter POSIX ist das erlaubt, unter Windows nicht. Deshalb:
+      1. mehrere Versuche mit wachsender Wartezeit (faengt kurzlebige Scanner-Locks),
+      2. Rueckfall auf direktes Ueberschreiben (nicht atomar, klappt aber, wenn
+         der Lock nur ein LESE-Handle ist — der haeufigste Fall),
+      3. die temporaere Datei wird in JEDEM Fall aufgeraeumt.
+
+    Der Quelltext bleibt unangetastet — nur `outputs` und `execution_count`.
+    """
+    import json
+    import time
+
+    try:
+        before = nb_path.stat().st_size
+        nb = json.loads(nb_path.read_text(encoding="utf-8"))
+        for c in nb.get("cells", []):
+            if c.get("cell_type") == "code":
+                c["outputs"] = []
+                c["execution_count"] = None
+        payload = json.dumps(nb, indent=1, ensure_ascii=False) + "\n"
+    except Exception as e:
+        print(f"      (Outputs konnten nicht gelesen/aufbereitet werden: {e})")
+        return 0
+
+    tmp = nb_path.with_name(nb_path.name + ".tmp")
+    last_err = None
+    try:
+        # 1) bevorzugt: atomar ersetzen, mit Wiederholungen gegen kurzlebige Locks
+        for attempt in range(retries):
+            try:
+                tmp.write_text(payload, encoding="utf-8")
+                tmp.replace(nb_path)
+                return before - nb_path.stat().st_size
+            except OSError as e:
+                last_err = e
+                time.sleep(delay * (attempt + 1))
+        # 2) Rueckfall: direkt schreiben
+        try:
+            nb_path.write_text(payload, encoding="utf-8")
+            return before - nb_path.stat().st_size
+        except OSError as e:
+            last_err = e
+    finally:
+        try:
+            tmp.unlink()               # nie eine verwaiste .tmp zuruecklassen
+        except OSError:
+            pass
+
+    print(f"      (Outputs nicht entfernt: {last_err})")
+    print(f"       Unter Windows haelt meist Jupyter/VS Code die Datei offen, sonst "
+          f"OneDrive oder der Virenscanner.")
+    print(f"       Notebook schliessen und erneut laufen lassen — oder dauerhaft "
+          f"mit --keep-outputs abschalten.")
+    return 0
+
+
+def run_notebook(n: int, timeout: int = 600, strip: bool = True) -> bool:
     """Execute one layer notebook in place via nbconvert. Returns success."""
     nb = NOTEBOOKS / f"atmosphere_analysis_layer{n}.ipynb"
     if not nb.exists():
@@ -63,7 +135,9 @@ def run_notebook(n: int, timeout: int = 600) -> bool:
         tail = (proc.stderr or proc.stdout or "").strip().splitlines()[-25:]
         print("\n".join("      " + l for l in tail))
         return False
-    print(f"ok ({time.time() - t0:.0f}s)")
+    saved = strip_outputs(nb) if strip else 0
+    extra = f", {saved/1e6:.1f} MB Outputs entfernt" if saved > 1e6 else ""
+    print(f"ok ({time.time() - t0:.0f}s{extra})")
     return True
 
 
@@ -108,6 +182,9 @@ def main():
                     help="skip the holarchic step after the notebooks")
     ap.add_argument("--timeout", type=int, default=600,
                     help="per-notebook timeout in seconds (default 600)")
+    ap.add_argument("--keep-outputs", action="store_true",
+                    help="Zell-Outputs im Notebook belassen (Default: nach dem "
+                         "Lauf entfernen — spart ~4,7 MB plotly.js pro Notebook)")
     args = ap.parse_args()
 
     print("=" * 60)
@@ -123,7 +200,7 @@ def main():
 
     t0 = time.time()
     for n in layers:
-        if not run_notebook(n, timeout=args.timeout):
+        if not run_notebook(n, timeout=args.timeout, strip=not args.keep_outputs):
             print(f"\nAborted at L{n}. Fix the error, then resume with "
                   f"`--from {n}`.")
             sys.exit(1)
