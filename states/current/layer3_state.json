@@ -1,13 +1,15 @@
 {
-  "timestamp": "2026-07-26T10:24:57.647524Z",
+  "timestamp": "2026-07-26T10:32:39.532908Z",
   "layer": 3,
   "name": "Atmosphaere / Wetter / Konvektion",
-  "score": 0.1653,
+  "score": 0.1815,
   "level": "ruhig",
-  "confidence": 0.83,
-  "score_basis": "5/5 dynamische Komponenten; 5/6 Atmosphärenpunkte",
+  "confidence": 0.67,
+  "score_basis": "4/5 dynamische Komponenten; 5/6 Atmosphärenpunkte",
   "dominant_component": "Atm. Instabilität (LI)",
-  "missing_components": [],
+  "missing_components": [
+    "Aktive Sturmereignisse (EONET)"
+  ],
   "data_coverage": {
     "open_meteo_points_loaded": 5,
     "open_meteo_points_expected": 6,
@@ -28,18 +30,18 @@
       "dynamic": true
     },
     "Gewitteraktivität": {
-      "score": 0.1358,
+      "score": 0.1357,
       "source": "primary",
       "dynamic": true
     },
     "Schumann-Anregungs-Potenzial": {
-      "score": 0.1824,
+      "score": 0.1819,
       "source": "derived",
       "dynamic": true
     },
     "Aktive Sturmereignisse (EONET)": {
-      "score": 0.1,
-      "source": "primary",
+      "score": null,
+      "source": "missing",
       "dynamic": true
     }
   },
@@ -48,29 +50,29 @@
     "CIN_mean_Jkg": 53.6,
     "CloudCover_mean_pct": 29.4,
     "CloudCover_convective_mean_pct": 11.8,
-    "CloudCover_convective_max_pct": 22.0,
-    "CloudCover_convland_mean_pct": 11.3,
-    "CloudCover_convland_max_pct": 22.0,
+    "CloudCover_convective_max_pct": 27.0,
+    "CloudCover_convland_mean_pct": 13.0,
+    "CloudCover_convland_max_pct": 27.0,
     "LI_mean_K": 2.86,
     "thunder_points_WMO": 0,
-    "storm_events_EONET": 3,
-    "Kp_current": 1.0,
+    "storm_events_EONET": 0,
+    "Kp_current": 2.0,
     "xray_context": {
-      "flux": 1.2874201047452516e-06,
+      "flux": 1.0977119018207304e-06,
       "class": "C"
     },
     "kp_note": "geomagnetischer Kontext, kein Blitz-Proxy",
-    "schumann_potential": 0.1824,
+    "schumann_potential": 0.1819,
     "messpunkte": [
       {
         "point": "Tropen (Kongo)",
         "cape": 0.0,
         "li": 4.3,
         "thunderstorm": false,
-        "thunder_score": 0.037,
-        "cloud": 1.0,
+        "thunder_score": 0.035,
+        "cloud": 0.0,
         "cin": 4.0,
-        "schumann_contribution": 0.035
+        "schumann_contribution": 0.033
       },
       {
         "point": "Arktis",
@@ -87,30 +89,30 @@
         "cape": 1390.0,
         "li": -2.5,
         "thunderstorm": false,
-        "thunder_score": 0.336,
-        "cloud": 13.0,
+        "thunder_score": 0.328,
+        "cloud": 8.0,
         "cin": 0.0,
-        "schumann_contribution": 0.308
+        "schumann_contribution": 0.301
       },
       {
         "point": "Amazonia",
         "cape": 100.0,
         "li": 0.5,
         "thunderstorm": false,
-        "thunder_score": 0.16,
-        "cloud": 22.0,
+        "thunder_score": 0.167,
+        "cloud": 27.0,
         "cin": 194.0,
-        "schumann_contribution": 0.147
+        "schumann_contribution": 0.153
       },
       {
         "point": "Sahel",
         "cape": 710.0,
         "li": -3.6,
         "thunderstorm": false,
-        "thunder_score": 0.287,
-        "cloud": 11.0,
+        "thunder_score": 0.289,
+        "cloud": 12.0,
         "cin": 70.0,
-        "schumann_contribution": 0.225
+        "schumann_contribution": 0.226
       }
     ]
   },
@@ -129,20 +131,20 @@
     "layer6_pattern": "ruhige Atmosphaere – keine starke Mustermodulation"
   },
   "layer0_context": {
-    "score": 0.2468,
+    "score": 0.1812,
     "level": "ruhig",
     "dominant_driver": "none"
   },
   "layer1_context": {
-    "score": 0.498,
+    "score": 0.332,
     "level": "moderat"
   },
   "layer2_context": {
-    "score": 0.5554,
+    "score": 0.5523,
     "level": "moderat",
     "thunderstorm_trigger": true,
-    "conv_potential": 0.578,
+    "conv_potential": 0.574,
     "enso_phase": "strong_el_nino"
   },
-  "state_summary": "Layer-3-Zustand: ruhig. CAPE-Mittel 440 J/kg. LI-Mittel 2.9 K. 0 WMO-Gewitterpunkte, 3 NASA-Sturmereignisse. Schumann-Potenzial: 0.182. Datenvollstaendigkeit: 83%. L2-Eingang: moderat (Conv=0.58, Thunder-Trigger=True)."
+  "state_summary": "Layer-3-Zustand: ruhig. CAPE-Mittel 440 J/kg. LI-Mittel 2.9 K. 0 WMO-Gewitterpunkte, 0 NASA-Sturmereignisse. Schumann-Potenzial: 0.182. Datenvollstaendigkeit: 67%. L2-Eingang: moderat (Conv=0.57, Thunder-Trigger=True)."
 }
