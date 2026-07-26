@@ -84,10 +84,37 @@ def load_cin_from_l3_state(layer3_state: dict) -> Optional[float]:
     return (layer3_state.get("raw_values") or {}).get("CIN_mean_Jkg")
 
 
+# EINZIGER Schalter fuer die Wolken-Aggregation des Organisations-Proxys.
+# Moegliche Werte (L3 persistiert alle drei):
+#   "CloudCover_convective_max_pct"   Max  ueber Kongo/ITCZ/Amazonia/Sahel   [Default]
+#   "CloudCover_convective_mean_pct"  Mean ueber dieselben vier Punkte
+#   "CloudCover_convland_max_pct"     Max  NUR ueber Landkonvektion (ohne ITCZ)
+#   "CloudCover_convland_mean_pct"    Mean NUR ueber Landkonvektion (ohne ITCZ)
+#   "CloudCover_mean_pct"             Mittel ueber ALLE sechs Punkte  (alt)
+#
+# Land vs. mit-ITCZ ist eine PHYSIKALISCHE Wahl, keine technische: die ITCZ ist der
+# Archetyp organisierter Konvektion, mischt aber ein kontinuierlicheres Regime unter
+# die tagesgang-dominierte Landkonvektion.
+#
+# Warum Maximum ueber konvektive Punkte: organisierte Konvektion ist ein LOKALES
+# Phaenomen. Das globale Mittel mischte Svalbard, Mitteleuropa und Wuestenrand
+# hinein und verduennte das Signal. Das Maximum beantwortet "ist IRGENDWO
+# organisiert?" statt "ist es im Schnitt bewoelkt?".
+# Umstellen = diese eine Zeile; L3 muss dafuer NICHT neu laufen.
+_CLOUD_FIELD = "CloudCover_convective_max_pct"
+
+
 def load_cloud_from_l3_state(layer3_state: dict) -> Optional[float]:
-    """Gesamtbewoelkung [%] aus L3s bereits ingestetem Wert (Open-Meteo cloud_cover,
-    gemittelt ueber dieselben OM_POINTS). Uebergangs-Proxy fuer OLR."""
-    return (layer3_state.get("raw_values") or {}).get("CloudCover_mean_pct")
+    """Wolken-Anteil [%] als Organisations-Proxy aus L3s bereits ingestetem Wert.
+
+    Nutzt `_CLOUD_FIELD` (Default: Maximum ueber die konvektiven Punkte) und
+    faellt auf das alte globale Mittel zurueck, damit States aus Laeufen VOR
+    dieser Aenderung weiterhin lesbar bleiben."""
+    rv = layer3_state.get("raw_values") or {}
+    val = rv.get(_CLOUD_FIELD)
+    if val is None:
+        val = rv.get("CloudCover_mean_pct")   # Rueckfall fuer alte States
+    return val
 
 
 # ── OLR-Quelle (Konvektions-/Organisations-Proxy) ───────────────────────────
