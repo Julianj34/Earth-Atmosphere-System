@@ -107,14 +107,26 @@ def _iorg_term(iorg):
     return max(0.0, min(1.0, (iorg - 0.5) / 0.4))   # 0.5 random -> 0 ; 0.9 -> 1
 
 
+# Ankerpunkte der Wolken-Rampe [%]. NICHT kalibriert: es gibt bisher zu wenige
+# Meso-Snapshots fuer eine echte Verteilung. Die Werte sind ein physikalischer
+# Prior fuer die Wolkenfraktion AN EINEM konvektiven Punkt, kein Fit.
+# Sobald `messpunkte[].cloud` genug Historie hat, gehoeren hier Perzentile hin
+# (z.B. p33/p67 der konvektiven Punkte) statt fester Zahlen.
+_CLOUD_RAMP_LO, _CLOUD_RAMP_HI = 50.0, 100.0
+
+
 def _cloud_term(cloud_pct):
-    """UEBERGANGS-Proxy fuer OLR aus Gesamtbewoelkung [%] (Open-Meteo, was L3
-    ohnehin holt). Nur hohe Bewoelkung deutet grob auf konvektive Organisation;
-    bewusst konservativ: <50% -> 0, 100% -> 1. SCHWAECHER als echtes OLR, weil
-    total cloud auch nicht-konvektive Schichtbewoelkung mitzaehlt."""
+    """UEBERGANGS-Proxy fuer OLR aus dem Wolken-Anteil [%].
+
+    Erwartet den Wert der KONVEKTIVEN Punkte (s. _CLOUD_FIELD in meso_ingest);
+    das fruehere globale Mittel ueber alle sechs Punkte mischte Arktis und
+    Mitteleuropa hinein. Bleibt SCHWAECHER als echtes OLR, weil auch
+    nicht-konvektive Schichtbewoelkung mitzaehlt -> Ergebnis wird als
+    construct_status='derived_proxy' gefuehrt, nie als Messung."""
     if cloud_pct is None:
         return None
-    return max(0.0, min(1.0, (cloud_pct - 50.0) / 50.0))
+    span = _CLOUD_RAMP_HI - _CLOUD_RAMP_LO
+    return max(0.0, min(1.0, (cloud_pct - _CLOUD_RAMP_LO) / span))
 
 def cin_gate(cin, soft=25.0, hard=150.0):
     """Multiplicative realisation gate. CIN<soft -> ~1 (open).
