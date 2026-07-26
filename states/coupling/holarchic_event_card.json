@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-07-25T21:14:11.709856Z",
+  "timestamp": "2026-07-26T08:32:19.370311Z",
   "system_state": "seasonal_transition_state",
   "scores": {
-    "L0": 0.1584,
-    "L2": 0.5573,
-    "L3": 0.301,
-    "L5": 0.5119,
-    "L6": 0.3584
+    "L0": 0.2307,
+    "L2": 0.5685,
+    "L3": 0.1754,
+    "L5": 0.3291,
+    "L6": 0.2751
   },
   "macro_context": {
     "band": "high",
-    "score": 0.5573,
+    "score": 0.5685,
     "tags": []
   },
   "meso_organisation": {
@@ -18,37 +18,38 @@
     "note": "no meso-scale layer instrumented (regional convection / MCS)"
   },
   "micro_activation": {
-    "band": "high",
-    "score": 0.301,
+    "band": "low",
+    "score": 0.1754,
     "thunder_pts": 0,
-    "storms_EONET": 4
+    "storms_EONET": 3
   },
   "field_response": {
     "electric": {
-      "band": "high",
-      "score": 0.5119
+      "band": "medium",
+      "score": 0.3291
     },
     "resonance": {
-      "band": "medium",
-      "score": 0.3584,
-      "confirmation": "low_proxy_limited"
+      "band": "low",
+      "score": 0.2751,
+      "confirmation": "partial"
     }
   },
   "chain_break": {
-    "break_at": "none",
-    "localizable": true,
-    "reason": "chain propagated to resonance"
+    "break_at": "macro_to_micro",
+    "localizable": false,
+    "reason": "meso scale uninstrumented; cannot distinguish macro->meso vs meso->micro",
+    "diagnosis": "macro_prepared but micro_activation_low — preparation without activation"
   },
   "external_forcing_mask": {
-    "external_score": 0.158,
+    "external_score": 0.231,
     "externally_driven": false,
     "interpretation": "external forcing low -> absence of activation is NOT due to missing external trigger; internal/scale dynamics dominate"
   },
   "validation_status": {
     "status": "validated_by_L9",
-    "validation_score": 0.875,
+    "validation_score": 1.0,
     "evidence_level": "exploratory_signal",
-    "checks": "3/5 passed",
-    "l9_timestamp": "2026-07-25T21:14:20.121628Z"
+    "checks": "6/7 passed",
+    "l9_timestamp": "2026-07-26T08:32:30.189623Z"
   }
 }
