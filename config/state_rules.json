@@ -1,0 +1,202 @@
+{
+  "rule_version": "1.1.0",
+  "description": "Zustandsregeln des L7-Klassifikators als Daten. Version 1.0.0 bildet die bis 2026-07-26 fest im Code stehende Logik 1:1 ab (regressionsgetestet gegen die aufgezeichneten Labels der History). Jede Aenderung an Schwellen, Prioritaeten oder Zustandsnamen MUSS rule_version erhoehen, damit der Bruch in der History datiert ist statt still zu passieren.",
+  "priority_note": "Die Reihenfolge in `rules` IST die Prioritaet. Die erste Regel, deren Bedingungen alle zutreffen, gewinnt. Das war vorher implizit durch die Reihenfolge der if-Zweige im Code.",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-07-26",
+      "change": "Erstfassung: Extraktion der hartkodierten Regeln aus L7 Zelle 13, verhaltensgleich."
+    },
+    {
+      "version": "1.1.0",
+      "date": "2026-07-26",
+      "change": "Regel `seasonal_transition_enso_backup` prueft zusaetzlich `el_nino_active`.",
+      "reason": "Die Regel deckte nur el_nino_developing und la_nina_active ab. Die Luecke war seit Projektbeginn vorhanden, aber unsichtbar: der defekte ONI-Parser (parts[4] auf einer 4-Spalten-Datei) lieferte immer None, dadurch unterblieb die El-Nino-Hochstufung und el_nino_active war in 174 von 178 Snapshots False. Nach dem Parser-Fix (ONI +0.98, phase_class -> el_nino) kippte el_nino_developing auf False und el_nino_active auf True -- die Regel griff nicht mehr, und der Zustand fiel auf die Default-Regel durch: `normal_background_state` bei preparation 0.56 und aktivem El Nino. Die Physik hatte sich dabei nicht bewegt (downstream 0.3705 -> 0.38), nur das Label.",
+      "expected_impact": "Die 174 Snapshots mit el_nino_active=False bleiben unveraendert; die 4 Snapshots ab 2026-07-26T07:34 kehren von normal_background_state zurueck nach seasonal_transition_state.",
+      "open_question": "Ob 'aktives El Nino mit schwachem Downstream' dieselbe Klasse verdient wie 'sich entwickelndes El Nino', ist eine fachliche Frage und bewusst NICHT mitentschieden. Diese Version stellt nur die Kontinuitaet wieder her: derselbe physische Zustand behaelt dasselbe Label."
+    }
+  ],
+  "rules": [
+    {
+      "id": "low_confidence",
+      "state": "low_confidence_state",
+      "score": "downstream",
+      "confidence": 0.4,
+      "all": [
+        {
+          "var": "avg_conf",
+          "op": "<",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "id": "geomagnetic_disturbance",
+      "state": "geomagnetic_disturbance_state",
+      "score": "max_external_L4",
+      "confidence": 0.85,
+      "all": [
+        {
+          "any_flag": [
+            "L0_external_drivers.geomagnetic_storm",
+            "L4_ionosphere.geomagnetic_storm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anomalous_resonance",
+      "state": "anomalous_resonance_state",
+      "score": "downstream",
+      "confidence": 0.8,
+      "all": [
+        {
+          "metric": "activation_score",
+          "op": ">",
+          "value": 0.4
+        },
+        {
+          "metric": "electric_score",
+          "op": ">",
+          "value": 0.4
+        },
+        {
+          "metric": "resonance_score",
+          "op": ">",
+          "value": 0.4
+        },
+        {
+          "any_flag": [
+            "L6_resonance_field.non_geometric_dominant",
+            "L6_resonance_field.frequency_anomaly",
+            "L6_resonance_field.amplitude_elevated"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "atmospheric_driven_resonance",
+      "state": "atmospheric_driven_resonance_state",
+      "score": "downstream",
+      "confidence": 0.78,
+      "all": [
+        {
+          "metric": "activation_score",
+          "op": ">",
+          "value": 0.4
+        },
+        {
+          "metric": "electric_score",
+          "op": ">",
+          "value": 0.4
+        },
+        {
+          "metric": "resonance_score",
+          "op": ">",
+          "value": 0.4
+        }
+      ]
+    },
+    {
+      "id": "cavity_condition_shift",
+      "state": "cavity_condition_shift_state",
+      "score": "cavity",
+      "confidence": 0.65,
+      "all": [
+        {
+          "metric": "cavity_gate_score",
+          "op": ">",
+          "value": 0.4
+        },
+        {
+          "metric": "downstream_score",
+          "op": "<",
+          "value": 0.45
+        }
+      ]
+    },
+    {
+      "id": "space_weather_driven",
+      "state": "space_weather_driven_ionospheric_state",
+      "score": "mean_external_L4",
+      "confidence": 0.8,
+      "all": [
+        {
+          "metric": "external_score",
+          "op": ">",
+          "value": 0.5
+        },
+        {
+          "layer_score": "L4_ionosphere",
+          "op": ">",
+          "value": 0.4
+        }
+      ]
+    },
+    {
+      "id": "mixed_coupled",
+      "state": "mixed_coupled_state",
+      "score": "downstream",
+      "confidence": 0.7,
+      "all": [
+        {
+          "count": "active_layers",
+          "op": ">=",
+          "value": 3
+        },
+        {
+          "count": "strong_couplings",
+          "op": ">=",
+          "value": 2,
+          "strength_min": 0.5
+        }
+      ]
+    },
+    {
+      "id": "seasonal_transition",
+      "state": "seasonal_transition_state",
+      "score": "preparation",
+      "confidence": 0.7,
+      "all": [
+        {
+          "metric": "preparation_score",
+          "op": ">",
+          "value": 0.45
+        },
+        {
+          "metric": "downstream_score",
+          "op": "<",
+          "value": 0.35
+        }
+      ]
+    },
+    {
+      "id": "seasonal_transition_enso_backup",
+      "state": "seasonal_transition_state",
+      "score": "preparation",
+      "confidence": 0.65,
+      "all": [
+        {
+          "any_flag": [
+            "L2_surface_zone.el_nino_active",
+            "L2_surface_zone.el_nino_developing",
+            "L2_surface_zone.la_nina_active"
+          ]
+        },
+        {
+          "metric": "downstream_score",
+          "op": "<",
+          "value": 0.4
+        }
+      ]
+    },
+    {
+      "id": "default",
+      "state": "normal_background_state",
+      "score": "downstream",
+      "confidence": 0.85,
+      "all": []
+    }
+  ]
+}
