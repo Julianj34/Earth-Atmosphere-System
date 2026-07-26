@@ -89,26 +89,37 @@ CIRCULAR_COUPLINGS = {
 # helpers
 # --------------------------------------------------------------------------- #
 def _pearson(xs, ys):
+    """Returns (r, n, reason). reason ist None bei Erfolg, sonst WARUM r fehlt.
+
+    "Zu wenige Punkte" und "keine Varianz" sind verschiedene Zustaende und
+    duerfen nicht dieselbe Meldung erzeugen: bei insufficient_n hilft
+    Nachsammeln, bei Nullvarianz nicht -- da ist die Groesse konstant und
+    Pearson mathematisch undefiniert. Frueher gab beides (None, n) zurueck,
+    und eine konstante Reihe las sich in der Matrix wie fehlende Daten."""
     pts = [(x, y) for x, y in zip(xs, ys) if x is not None and y is not None
            and not (isinstance(x, float) and math.isnan(x))
            and not (isinstance(y, float) and math.isnan(y))]
     n = len(pts)
     if n < 3:
-        return None, n
+        return None, n, "insufficient_n"
     mx = sum(p[0] for p in pts) / n
     my = sum(p[1] for p in pts) / n
     sx = math.sqrt(sum((p[0]-mx)**2 for p in pts))
     sy = math.sqrt(sum((p[1]-my)**2 for p in pts))
-    if sx == 0 or sy == 0:
-        return None, n
+    if sx == 0 and sy == 0:
+        return None, n, "zero_variance_both"
+    if sx == 0:
+        return None, n, "zero_variance_in_source"
+    if sy == 0:
+        return None, n, "zero_variance_in_target"
     cov = sum((p[0]-mx)*(p[1]-my) for p in pts)
-    return cov/(sx*sy), n
+    return cov/(sx*sy), n, None
 
-def _evidence_level(r, n, observable=True):
+def _evidence_level(r, n, observable=True, reason=None):
     if not observable:
         return "unobservable_no_meso_data"
     if r is None:
-        return "insufficient_n"
+        return reason or "insufficient_n"
     a = abs(r)
     base = ("strong" if a >= 0.6 else "moderate" if a >= 0.4
             else "weak" if a >= 0.2 else "negligible")
@@ -151,15 +162,15 @@ def build_coupling_matrix(recs):
         r0 = r1 = None; n0 = n1 = 0; lag = 0
         if observable:
             s_src, s_tgt = _layer_series(recs, ls), _layer_series(recs, lt_)
-            r0, n0 = _pearson(s_src, s_tgt)
-            r1, n1 = _pearson(s_src[:-1], s_tgt[1:])
+            r0, n0, why0 = _pearson(s_src, s_tgt)
+            r1, n1, why1 = _pearson(s_src[:-1], s_tgt[1:])
             # pick the stronger of lag0 / lag1
             if r1 is not None and (r0 is None or abs(r1) > abs(r0)):
-                lag, r_best, n_best = 1, r1, n1
+                lag, r_best, n_best, why_best = 1, r1, n1, why1
             else:
-                lag, r_best, n_best = 0, r0, n0
+                lag, r_best, n_best, why_best = 0, r0, n0, why0
         else:
-            r_best, n_best = None, 0
+            r_best, n_best, why_best = None, 0, None
         # confound classification: circular = target derived from source (audited);
         #                          proxy    = source or target is a modelled proxy
         if (src, tgt) in CIRCULAR_COUPLINGS:
@@ -178,7 +189,7 @@ def build_coupling_matrix(recs):
             "expected_lag_snapshots": lag,
             "pearson_r": None if r_best is None else round(r_best, 3),
             "n": n_best,
-            "evidence_level": _evidence_level(r_best, n_best, observable),
+            "evidence_level": _evidence_level(r_best, n_best, observable, why_best),
             "src_role": role_of[src],
             "tgt_role": role_of[tgt],
             "confounded": confound,
@@ -436,9 +447,14 @@ def write_report_md(path, recs, rows, card, break_dist):
 # --------------------------------------------------------------------------- #
 def run(history_path, l8_path=None, outdir=".", l9_path=None):
     out = Path(outdir); out.mkdir(parents=True, exist_ok=True)
-    recs = [json.loads(l) for l in open(history_path) if l.strip()]
-    l8 = json.load(open(l8_path)) if l8_path and Path(l8_path).exists() else None
-    l9 = json.load(open(l9_path)) if l9_path and Path(l9_path).exists() else None
+    # KANONISCHE Stichprobe (dedupliziert, sortiert) statt eigener Rohleser.
+    # Vorher las dieses Modul die Datei roh und meldete damit eine andere
+    # Snapshot-Zahl als L8 -- aus derselben Datei. `meta` wandert in das
+    # Ergebnis-Dict, damit im Report steht, worueber gerechnet wurde.
+    from atmosphere.history import load_history, sample_signature
+    recs, hist_meta = load_history(history_path)
+    l8 = json.loads(Path(l8_path).read_text(encoding="utf-8")) if l8_path and Path(l8_path).exists() else None
+    l9 = json.loads(Path(l9_path).read_text(encoding="utf-8")) if l9_path and Path(l9_path).exists() else None
 
     rows = build_coupling_matrix(recs)
     card = build_event_card(recs, l8, l9)
@@ -449,6 +465,7 @@ def run(history_path, l8_path=None, outdir=".", l9_path=None):
     write_event_card_json(out / "holarchic_event_card.json", card)
     write_report_md(out / "holarchic_analysis_report.md", recs, rows, card, break_dist)
     return {"n_snapshots": len(recs), "coupling_rows": len(rows),
+            "history_meta": hist_meta,
             "chain_break_distribution": break_dist, "outdir": str(out)}
 
 if __name__ == "__main__":

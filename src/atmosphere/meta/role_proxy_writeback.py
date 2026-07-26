@@ -259,8 +259,9 @@ def annotate_l8(state: dict) -> dict:
 # --------------------------------------------------------------------------- #
 def run(l7_path, l8_path, outdir="."):
     out = Path(outdir); out.mkdir(parents=True, exist_ok=True)
-    l7 = annotate_l7(json.load(open(l7_path)))
-    l8 = annotate_l8(json.load(open(l8_path)))
+    # encoding explizit (Windows-Default ist cp1252, nicht UTF-8)
+    l7 = annotate_l7(json.loads(Path(l7_path).read_text(encoding="utf-8")))
+    l8 = annotate_l8(json.loads(Path(l8_path).read_text(encoding="utf-8")))
     (out / "layer7_state.annotated.json").write_text(
         json.dumps(l7, indent=2, ensure_ascii=False), encoding="utf-8")
     (out / "layer8_state.annotated.json").write_text(
