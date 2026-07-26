@@ -10,7 +10,10 @@ Marker file  :  drop an empty `.project-root` (or keep `pyproject.toml`) at the 
 
 Usage in any notebook:
     from atmosphere.paths import layer_state, HISTORY, REPORTS
-    json.dump(state, open(layer_state(0), "w"), indent=2, ensure_ascii=False)
+    # encoding IMMER explizit angeben — der open()-Default ist plattformabhaengig
+    # (Windows: cp1252). Ohne das brechen Umlaute/Emoji beim Lesen und Schreiben.
+    with open(layer_state(0), "w", encoding="utf-8") as f:
+        json.dump(state, f, indent=2, ensure_ascii=False)
 """
 from __future__ import annotations
 from pathlib import Path
