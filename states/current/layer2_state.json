@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-07-27T11:46:01.629924Z",
+  "timestamp": "2026-07-27T16:36:27.633654Z",
   "layer": 2,
   "name": "Oberfläche & Biosphärennahe Kontaktzone",
-  "score": 0.5543,
+  "score": 0.5366,
   "level": "moderat",
   "confidence": 0.8,
   "score_basis": "4/5 dynamische Komponenten",
@@ -12,7 +12,7 @@
   ],
   "components": {
     "Konvektions-Potential": {
-      "score": 0.5695,
+      "score": 0.545,
       "source": "primary",
       "dynamic": true
     },
@@ -27,12 +27,12 @@
       "dynamic": true
     },
     "Elektr. Bodenkopplung": {
-      "score": 0.5015,
+      "score": 0.4688,
       "source": "primary",
       "dynamic": true
     },
     "Bodenfeuchte (global)": {
-      "score": 0.1463,
+      "score": 0.1327,
       "source": "primary",
       "dynamic": true
     }
@@ -51,78 +51,78 @@
       "note": "phase_forecast nicht im Score verwendet",
       "source": "cpc_weekly"
     },
-    "conv_potential_mean": 0.57,
-    "elec_coupling_mean": 0.501,
+    "conv_potential_mean": 0.545,
+    "elec_coupling_mean": 0.469,
     "surface_points": [
       {
         "point": "Mitteleuropa",
-        "temp_2m": 20.9,
-        "rh": 62,
-        "conv": 0.604,
-        "elec": 0.536
+        "temp_2m": 21.8,
+        "rh": 48,
+        "conv": 0.567,
+        "elec": 0.464
       },
       {
         "point": "Tropen (Kongo)",
-        "temp_2m": 34.6,
-        "rh": 33,
-        "conv": 0.542,
-        "elec": 0.234
+        "temp_2m": 29.7,
+        "rh": 46,
+        "conv": 0.522,
+        "elec": 0.275
       },
       {
         "point": "Arktis",
-        "temp_2m": 4.9,
-        "rh": 73,
-        "conv": 0.331,
-        "elec": 0.467
+        "temp_2m": 3.7,
+        "rh": 74,
+        "conv": 0.334,
+        "elec": 0.471
       },
       {
         "point": "Pazifik (ITCZ)",
-        "temp_2m": 27.3,
-        "rh": 82,
-        "conv": 0.532,
-        "elec": 0.753
+        "temp_2m": 26.1,
+        "rh": 87,
+        "conv": 0.539,
+        "elec": 0.773
       },
       {
         "point": "Amazonia",
-        "temp_2m": 25.6,
-        "rh": 92,
-        "conv": 0.817,
-        "elec": 0.705
+        "temp_2m": 30.9,
+        "rh": 62,
+        "conv": 0.75,
+        "elec": 0.571
       },
       {
         "point": "Sahel",
-        "temp_2m": 36.7,
-        "rh": 41,
-        "conv": 0.591,
-        "elec": 0.314
+        "temp_2m": 35.8,
+        "rh": 37,
+        "conv": 0.558,
+        "elec": 0.259
       }
     ]
   },
   "flags": {
-    "elevated_convection": true,
+    "elevated_convection": false,
     "el_nino_active": true,
     "el_nino_developing": false,
     "la_nina_active": false,
     "la_nina_developing": false,
     "sst_anomaly_high": null,
-    "thunderstorm_trigger": true,
-    "bz_orientation": "northward"
+    "thunderstorm_trigger": false,
+    "bz_orientation": "weak_southward"
   },
   "downstream_expectation": {
-    "layer3_weather": "erhoehtes Gewitterpotential – Konvektion und E-Kopplung aktiv",
-    "layer5_gec": "erhoehter Energieeintrag in GEC durch Gewitteraktivitaet moeglich",
+    "layer3_weather": "moderate Konvektion – normale Gewitteraktivitaet",
+    "layer5_gec": "normaler GEC-Grundzustand erwartet",
     "schumann_resonance": "moderate Konvektion – leichte Schumann-Modulation moeglich",
     "layer4_ionosphere": "ENSO-modulierte Konvektion beeinflusst troposphaerische Wellenausbreitung"
   },
   "layer0_context": {
-    "score": 0.1724,
+    "score": 0.2245,
     "level": "ruhig",
     "dominant_driver": "none"
   },
   "layer1_context": {
-    "score": 0.3382,
+    "score": 0.3752,
     "level": "moderat",
     "seismic_elevated": true
   },
-  "state_summary": "Layer-2-Zustand: moderat. SST nicht verfuegbar. ENSO: strong_el_nino / el_nino_active (weekly Nino3.4=+2.20, ONI=+0.98; Forecast nicht im Score). Konvektions-Potential: 0.57. Datenvollstaendigkeit: 80%. L1-Eingang: moderat (Score 0.338)."
+  "state_summary": "Layer-2-Zustand: moderat. SST nicht verfuegbar. ENSO: strong_el_nino / el_nino_active (weekly Nino3.4=+2.20, ONI=+0.98; Forecast nicht im Score). Konvektions-Potential: 0.55. Datenvollstaendigkeit: 80%. L1-Eingang: moderat (Score 0.375)."
 }
