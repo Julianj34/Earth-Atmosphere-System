@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-27T21:35:10.451313Z",
+  "timestamp": "2026-07-28T05:28:39.958481Z",
   "engine_version": "1.0",
   "layer": 9,
   "name": "External Grounding & Validation",
@@ -30,7 +30,7 @@
         "model_kp_used": 1.0,
         "model_kp_method": "unknown",
         "noaa_kp_current": 1.0,
-        "noaa_kp_max_60min": 2.0,
+        "noaa_kp_max_60min": 1.0,
         "delta": 0.0,
         "window_used": "current_1m",
         "interpretation": "Kp-Werte konsistent innerhalb Toleranz (current_1m)",
@@ -78,7 +78,7 @@
       "confidence": 0.95,
       "external_source": "NOAA CPC ONI",
       "details": "NOAA ONI=+0.98°C → erwartet el_nino. Modell=el_nino (ONI=0.98).",
-      "timestamp": "2026-07-27T21:35:10.451313Z"
+      "timestamp": "2026-07-28T05:28:39.958481Z"
     },
     {
       "id": "V_kp_consistency",
@@ -90,19 +90,19 @@
       "confidence": 0.9,
       "external_source": "NOAA SWPC",
       "details": "Kp-Werte konsistent innerhalb Toleranz (current_1m)",
-      "timestamp": "2026-07-27T21:35:10.451313Z"
+      "timestamp": "2026-07-28T05:28:39.958481Z"
     },
     {
       "id": "V_storm_atmosphere",
       "module": "storm_validation",
       "goal": "Bei >= 5 offenen Sturm-Events weltweit ist L3 >= 0.3",
       "expected": "L3 >= 0.3",
-      "observed": "L3 = 0.268",
+      "observed": "L3 = 0.221",
       "status": "uncertain",
       "confidence": 0.6,
       "external_source": "NASA EONET",
-      "details": "EONET open storms=5. L3=0.268, active_thunderstorms=True",
-      "timestamp": "2026-07-27T21:35:10.451313Z"
+      "details": "EONET open storms=5. L3=0.221, active_thunderstorms=False",
+      "timestamp": "2026-07-28T05:28:39.958481Z"
     },
     {
       "id": "V_schumann_data_availability",
@@ -114,7 +114,7 @@
       "confidence": 0.0,
       "external_source": "none",
       "details": "Layer 6 läuft als modelliert, nicht gemessen. Validierung blockiert.",
-      "timestamp": "2026-07-27T21:35:10.451313Z"
+      "timestamp": "2026-07-28T05:28:39.958481Z"
     },
     {
       "id": "V_consistency_tags",
@@ -125,20 +125,20 @@
       "status": "passed",
       "confidence": null,
       "external_source": "internal",
-      "details": "baseline_n=2, signal_n=5",
-      "timestamp": "2026-07-27T21:35:10.451313Z"
+      "details": "baseline_n=2, signal_n=4",
+      "timestamp": "2026-07-28T05:28:39.958481Z"
     },
     {
       "id": "V_consistency_seasonal",
       "module": "consistency_validation",
       "goal": "seasonal_transition_state: preparation > 0.45 und downstream < 0.35",
       "expected": "prep > 0.45 AND downstream < 0.35",
-      "observed": "prep=0.625, downstream=0.374",
-      "status": "uncertain",
+      "observed": "prep=0.619, downstream=0.281",
+      "status": "passed",
       "confidence": null,
       "external_source": "internal",
       "details": "Meta-Score-Konsistenz für seasonal_transition_state",
-      "timestamp": "2026-07-27T21:35:10.451313Z"
+      "timestamp": "2026-07-28T05:28:39.958481Z"
     },
     {
       "id": "V_backtest_carnegie_anomalous",
@@ -150,28 +150,28 @@
       "confidence": 0.85,
       "external_source": "internal",
       "details": "Carnegie-Tagesgang-Backtest aus History. n=6.",
-      "timestamp": "2026-07-27T21:35:10.451313Z"
+      "timestamp": "2026-07-28T05:28:39.958481Z"
     },
     {
       "id": "V_backtest_enso_consistency",
       "module": "known_event_backtest",
       "goal": "Bei externem ONI >= 0.2 sind >= 50% der Snapshots warm-klassifiziert",
       "expected": ">= 50% warm",
-      "observed": "82.6% warm",
+      "observed": "82.7% warm",
       "status": "passed",
       "confidence": 0.85,
       "external_source": "internal",
-      "details": "ONI=+0.98, warm_snaps=152/184",
-      "timestamp": "2026-07-27T21:35:10.451313Z"
+      "details": "ONI=+0.98, warm_snaps=153/185",
+      "timestamp": "2026-07-28T05:28:39.958481Z"
     }
   ],
   "aggregate": {
     "n_total": 8,
-    "n_passed": 5,
+    "n_passed": 6,
     "n_failed": 0,
-    "n_uncertain": 2,
+    "n_uncertain": 1,
     "n_inconclusive": 1,
-    "validation_score": 0.8571,
+    "validation_score": 0.9286,
     "evidence_level": "exploratory_signal"
   },
   "failed_checks": [],
@@ -181,24 +181,12 @@
       "module": "storm_validation",
       "goal": "Bei >= 5 offenen Sturm-Events weltweit ist L3 >= 0.3",
       "expected": "L3 >= 0.3",
-      "observed": "L3 = 0.268",
+      "observed": "L3 = 0.221",
       "status": "uncertain",
       "confidence": 0.6,
       "external_source": "NASA EONET",
-      "details": "EONET open storms=5. L3=0.268, active_thunderstorms=True",
-      "timestamp": "2026-07-27T21:35:10.451313Z"
-    },
-    {
-      "id": "V_consistency_seasonal",
-      "module": "consistency_validation",
-      "goal": "seasonal_transition_state: preparation > 0.45 und downstream < 0.35",
-      "expected": "prep > 0.45 AND downstream < 0.35",
-      "observed": "prep=0.625, downstream=0.374",
-      "status": "uncertain",
-      "confidence": null,
-      "external_source": "internal",
-      "details": "Meta-Score-Konsistenz für seasonal_transition_state",
-      "timestamp": "2026-07-27T21:35:10.451313Z"
+      "details": "EONET open storms=5. L3=0.221, active_thunderstorms=False",
+      "timestamp": "2026-07-28T05:28:39.958481Z"
     }
   ],
   "validated_hypotheses": [],

@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-07-27T21:34:59.612968Z",
+  "timestamp": "2026-07-28T05:28:31.884176Z",
   "system_state": "seasonal_transition_state",
   "scores": {
-    "L0": 0.2052,
-    "L2": 0.6245,
-    "L3": 0.2676,
-    "L5": 0.4847,
-    "L6": 0.3706
+    "L0": 0.2243,
+    "L2": 0.6191,
+    "L3": 0.2208,
+    "L5": 0.326,
+    "L6": 0.2966
   },
   "macro_context": {
     "band": "high",
-    "score": 0.6245,
+    "score": 0.6191,
     "tags": []
   },
   "meso_organisation": {
@@ -18,37 +18,38 @@
     "note": "no meso-scale layer instrumented (regional convection / MCS)"
   },
   "micro_activation": {
-    "band": "medium",
-    "score": 0.2676,
-    "thunder_pts": 1,
+    "band": "low",
+    "score": 0.2208,
+    "thunder_pts": 0,
     "storms_EONET": 5
   },
   "field_response": {
     "electric": {
       "band": "medium",
-      "score": 0.4847
+      "score": 0.326
     },
     "resonance": {
-      "band": "medium",
-      "score": 0.3706,
+      "band": "low",
+      "score": 0.2966,
       "confirmation": "low_proxy_limited"
     }
   },
   "chain_break": {
-    "break_at": "none",
-    "localizable": true,
-    "reason": "chain propagated to resonance"
+    "break_at": "macro_to_micro",
+    "localizable": false,
+    "reason": "meso scale uninstrumented; cannot distinguish macro->meso vs meso->micro",
+    "diagnosis": "macro_prepared but micro_activation_low — preparation without activation"
   },
   "external_forcing_mask": {
-    "external_score": 0.205,
+    "external_score": 0.224,
     "externally_driven": false,
     "interpretation": "external forcing low -> absence of activation is NOT due to missing external trigger; internal/scale dynamics dominate"
   },
   "validation_status": {
     "status": "validated_by_L9",
-    "validation_score": 0.8571,
+    "validation_score": 0.9286,
     "evidence_level": "exploratory_signal",
-    "checks": "5/8 passed",
-    "l9_timestamp": "2026-07-27T21:35:10.451313Z"
+    "checks": "6/8 passed",
+    "l9_timestamp": "2026-07-28T05:28:39.958481Z"
   }
 }
