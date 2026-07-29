@@ -1,15 +1,15 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-07-29T11:01:16.453507Z
-**Snapshots analysiert:** 190
+**Run:** 2026-07-29T16:01:44.664848Z
+**Snapshots analysiert:** 191
 **Vollständige Tagespaare:** 25
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 175× (92.1%)
-- `cavity_condition_shift_state` — 6× (3.2%)
-- `anomalous_resonance_state` — 6× (3.2%)
-- `normal_background_state` — 2× (1.1%)
+- `seasonal_transition_state` — 176× (92.1%)
+- `cavity_condition_shift_state` — 6× (3.1%)
+- `anomalous_resonance_state` — 6× (3.1%)
+- `normal_background_state` — 2× (1.0%)
 - `geomagnetic_disturbance_state` — 1× (0.5%)
 
 ## Tagespaare (ΔL3 Aktivierung)
@@ -46,24 +46,24 @@
 
 ## L2 ↔ L3 Beziehung
 
-- Pearson: **+0.064**
+- Pearson: **+0.062**
 - L2 Trend: +0.00007 / Snapshot
 - L3 Trend: +0.00017 / Snapshot
-- Gap-Trend: -0.00011 / Snapshot
+- Gap-Trend: -0.00010 / Snapshot
 - Schwache Kopplung sichtbar — mehr Daten nötig.
 
 ## Field Operators
 
-Coverage: 172/190 Snapshots
+Coverage: 173/191 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
-- **thermal**: 0.444 — moderate thermische Vorbereitung vorhanden
-- **resonance_model**: 0.418 — Resonanzfeld ruhig, schwache modellierte Modulation
-- **ionization**: 0.334 — moderate ionosphärische Modulation
-- **electric**: 0.242 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
-- **cross_layer_activation**: 0.232 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
-- **geomagnetic**: 0.164 — ruhige geomagnetische Bedingungen
+- **thermal**: 0.442 — moderate thermische Vorbereitung vorhanden
+- **resonance_model**: 0.423 — Resonanzfeld ruhig, schwache modellierte Modulation
+- **ionization**: 0.318 — moderate ionosphärische Modulation
+- **electric**: 0.247 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
+- **cross_layer_activation**: 0.230 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
+- **geomagnetic**: 0.116 — ruhige geomagnetische Bedingungen
 
 ### Operator ↔ ΔL3 Korrelation
 
