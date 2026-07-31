@@ -1,14 +1,14 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-07-30T21:37:38.602550Z
-**Snapshots analysiert:** 196
+**Run:** 2026-07-31T05:48:44.689367Z
+**Snapshots analysiert:** 197
 **Vollständige Tagespaare:** 27
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 181× (92.3%)
-- `cavity_condition_shift_state` — 6× (3.1%)
-- `anomalous_resonance_state` — 6× (3.1%)
+- `seasonal_transition_state` — 182× (92.4%)
+- `cavity_condition_shift_state` — 6× (3.0%)
+- `anomalous_resonance_state` — 6× (3.0%)
 - `normal_background_state` — 2× (1.0%)
 - `geomagnetic_disturbance_state` — 1× (0.5%)
 
@@ -48,24 +48,24 @@
 
 ## L2 ↔ L3 Beziehung
 
-- Pearson: **+0.058**
-- L2 Trend: +0.00006 / Snapshot
-- L3 Trend: +0.00014 / Snapshot
-- Gap-Trend: -0.00007 / Snapshot
+- Pearson: **+0.056**
+- L2 Trend: +0.00007 / Snapshot
+- L3 Trend: +0.00013 / Snapshot
+- Gap-Trend: -0.00006 / Snapshot
 - Schwache Kopplung sichtbar — mehr Daten nötig.
 
 ## Field Operators
 
-Coverage: 178/196 Snapshots
+Coverage: 179/197 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
-- **thermal**: 0.448 — moderate thermische Vorbereitung vorhanden
-- **resonance_model**: 0.433 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
-- **ionization**: 0.311 — moderate ionosphärische Modulation
-- **electric**: 0.221 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
-- **cross_layer_activation**: 0.209 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
-- **geomagnetic**: 0.107 — ruhige geomagnetische Bedingungen
+- **thermal**: 0.446 — moderate thermische Vorbereitung vorhanden
+- **resonance_model**: 0.418 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
+- **ionization**: 0.324 — moderate ionosphärische Modulation
+- **electric**: 0.225 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
+- **cross_layer_activation**: 0.222 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
+- **geomagnetic**: 0.164 — ruhige geomagnetische Bedingungen
 
 ### Operator ↔ ΔL3 Korrelation
 
