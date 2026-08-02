@@ -1,6 +1,6 @@
 # Layer 9 — External Grounding & Validation
 
-**Run:** 2026-08-02T05:41:14.338110Z
+**Run:** 2026-08-02T10:13:09.129790Z
 **Validation Score:** 1.0  (exploratory_signal)
 
 ## Aggregat
@@ -24,7 +24,7 @@
   - Beobachtet: el_nino
 - ✅ **V_kp_consistency**: Modell-Kp und NOAA-Kp im gleichen Zeitfenster konsistent
   - Erwartet: |Δ Kp| <= 1.0  (Fenster: current_1m)
-  - Beobachtet: model_current=1.0  vs  noaa_current=1.0  →  |Δ|=0.00
+  - Beobachtet: model_current=0.0  vs  noaa_current=0.0  →  |Δ|=0.00
 - ❓ **V_schumann_data_availability**: Externe Schumann-Resonanz-Messdaten für Vergleich verfügbar
   - Erwartet: real-time SR1 amplitude/frequency feed
   - Beobachtet: no public feed available
@@ -33,10 +33,10 @@
   - Beobachtet: overlap = []
 - ✅ **V_consistency_seasonal**: seasonal_transition_state: preparation > 0.45 und downstream < 0.35
   - Erwartet: prep > 0.45 AND downstream < 0.35
-  - Beobachtet: prep=0.610, downstream=0.238
+  - Beobachtet: prep=0.578, downstream=0.243
 - ✅ **V_backtest_carnegie_anomalous**: anomalous_resonance_state tritt überwiegend (>= 80%) abends auf
   - Erwartet: >= 80% evening
   - Beobachtet: 100.0% evening (6/6)
 - ✅ **V_backtest_enso_consistency**: Bei externem ONI >= 0.2 sind >= 50% der Snapshots warm-klassifiziert
   - Erwartet: >= 50% warm
-  - Beobachtet: 84.4% warm
+  - Beobachtet: 84.5% warm
