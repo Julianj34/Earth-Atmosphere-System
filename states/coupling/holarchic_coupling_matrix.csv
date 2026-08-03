@@ -1,9 +1,9 @@
 source_holon,target_holon,coupling_type,expected_lag_snapshots,pearson_r,n,evidence_level,src_role,tgt_role,confounded,confound_type,mechanism
-H_macro_ocean,H_meso_conv,top_down_constraint,0,0.117,38,negligible,constraint,mediator,True,proxy,"ENSO/SST setzt regionale Konvektionswahrscheinlichkeit (Meso: Wolken-Proxy, s. confound_type=proxy)"
-H_meso_conv,H_micro_storm,bottom_up_aggregation,1,-0.257,37,weak,mediator,response,True,proxy,"Organisierte Konvektionssysteme -> einzelne Gewitterzellen/Lightning (Meso: Wolken-Proxy, s. confound_type=proxy)"
-H_micro_storm,H_field_gec,bottom_up_aggregation,0,0.529,208,moderate,response,response,True,circular,Gewitter laden Generator (CAPE -> V_iono) [WARN: Ziel aus Quelle abgeleitet -> zirkulaer]
-H_micro_storm,H_field_reso,bottom_up_aggregation,0,0.4,208,moderate,response,response,True,proxy,Blitze regen Schumann-Resonanz an
-H_field_iono,H_field_reso,field_feedback,0,0.179,208,negligible,mediator,response,True,proxy,Cavity-Hoehe/Leitfaehigkeit moduliert Frequenz und Q
-H_field_gec,H_field_reso,field_feedback,0,0.527,208,moderate,response,response,True,proxy,GEC ist die elektrische Architektur der Resonanz
-H_external,H_field_iono,top_down_constraint,0,0.437,208,moderate,driver,mediator,False,none,Solarwind/F10.7/X-Ray ionisieren Ionosphaere
-H_external,H_field_gec,top_down_constraint,0,0.169,208,negligible,driver,response,False,none,Kp moduliert ionosph. Leitfaehigkeit (GEC-Widerstand)
+H_macro_ocean,H_meso_conv,top_down_constraint,0,0.119,39,negligible,constraint,mediator,True,proxy,"ENSO/SST setzt regionale Konvektionswahrscheinlichkeit (Meso: Wolken-Proxy, s. confound_type=proxy)"
+H_meso_conv,H_micro_storm,bottom_up_aggregation,1,-0.244,38,weak,mediator,response,True,proxy,"Organisierte Konvektionssysteme -> einzelne Gewitterzellen/Lightning (Meso: Wolken-Proxy, s. confound_type=proxy)"
+H_micro_storm,H_field_gec,bottom_up_aggregation,0,0.528,209,moderate,response,response,True,circular,Gewitter laden Generator (CAPE -> V_iono) [WARN: Ziel aus Quelle abgeleitet -> zirkulaer]
+H_micro_storm,H_field_reso,bottom_up_aggregation,0,0.401,209,moderate,response,response,True,proxy,Blitze regen Schumann-Resonanz an
+H_field_iono,H_field_reso,field_feedback,0,0.179,209,negligible,mediator,response,True,proxy,Cavity-Hoehe/Leitfaehigkeit moduliert Frequenz und Q
+H_field_gec,H_field_reso,field_feedback,0,0.524,209,moderate,response,response,True,proxy,GEC ist die elektrische Architektur der Resonanz
+H_external,H_field_iono,top_down_constraint,0,0.436,209,moderate,driver,mediator,False,none,Solarwind/F10.7/X-Ray ionisieren Ionosphaere
+H_external,H_field_gec,top_down_constraint,0,0.166,209,negligible,driver,response,False,none,Kp moduliert ionosph. Leitfaehigkeit (GEC-Widerstand)
