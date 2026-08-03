@@ -1,15 +1,15 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-08-03T11:52:09.536535Z
-**Snapshots analysiert:** 210
+**Run:** 2026-08-03T16:45:35.824875Z
+**Snapshots analysiert:** 211
 **Vollständige Tagespaare:** 30
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 195× (92.9%)
-- `cavity_condition_shift_state` — 6× (2.9%)
-- `anomalous_resonance_state` — 6× (2.9%)
-- `normal_background_state` — 2× (1.0%)
+- `seasonal_transition_state` — 196× (92.9%)
+- `cavity_condition_shift_state` — 6× (2.8%)
+- `anomalous_resonance_state` — 6× (2.8%)
+- `normal_background_state` — 2× (0.9%)
 - `geomagnetic_disturbance_state` — 1× (0.5%)
 
 ## Tagespaare (ΔL3 Aktivierung)
@@ -51,24 +51,24 @@
 
 ## L2 ↔ L3 Beziehung
 
-- Pearson: **+0.044**
+- Pearson: **+0.043**
 - L2 Trend: +0.00007 / Snapshot
 - L3 Trend: +0.00010 / Snapshot
-- Gap-Trend: -0.00003 / Snapshot
+- Gap-Trend: -0.00004 / Snapshot
 - Schwache Kopplung sichtbar — mehr Daten nötig.
 
 ## Field Operators
 
-Coverage: 192/210 Snapshots
+Coverage: 193/211 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
-- **resonance_model**: 0.482 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
-- **ionization**: 0.433 — Ionosphärenstörung: starker Strahlungseffekt auf Ausbreitung
-- **thermal**: 0.426 — moderate thermische Vorbereitung vorhanden
-- **geomagnetic**: 0.366 — ruhige geomagnetische Bedingungen
-- **electric**: 0.355 — moderate elektrische Kopplung  ⚠️ confounded_circular
-- **cross_layer_activation**: 0.201 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
+- **thermal**: 0.419 — moderate thermische Vorbereitung vorhanden
+- **resonance_model**: 0.418 — Resonanzfeld ruhig, schwache modellierte Modulation
+- **ionization**: 0.354 — moderate ionosphärische Modulation
+- **geomagnetic**: 0.241 — ruhige geomagnetische Bedingungen
+- **cross_layer_activation**: 0.189 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
+- **electric**: 0.172 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
 
 ### Operator ↔ ΔL3 Korrelation
 
