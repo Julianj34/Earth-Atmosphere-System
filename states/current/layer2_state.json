@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-08-03T05:54:53.137640Z",
+  "timestamp": "2026-08-03T11:50:34.941737Z",
   "layer": 2,
   "name": "Oberfläche & Biosphärennahe Kontaktzone",
-  "score": 0.6166,
-  "level": "aktiv",
+  "score": 0.5575,
+  "level": "moderat",
   "confidence": 0.8,
   "score_basis": "4/5 dynamische Komponenten",
   "dominant_component": "ENSO-Phase (Nino3.4)",
@@ -12,7 +12,7 @@
   ],
   "components": {
     "Konvektions-Potential": {
-      "score": 0.6377,
+      "score": 0.588,
       "source": "primary",
       "dynamic": true
     },
@@ -27,12 +27,12 @@
       "dynamic": true
     },
     "Elektr. Bodenkopplung": {
-      "score": 0.6328,
+      "score": 0.4673,
       "source": "primary",
       "dynamic": true
     },
     "Bodenfeuchte (global)": {
-      "score": 0.196,
+      "score": 0.1747,
       "source": "primary",
       "dynamic": true
     }
@@ -40,7 +40,7 @@
   "raw_values": {
     "SST_anomaly_degC": null,
     "ENSO": {
-      "weekly_nino34_anomaly_degC": 2.2,
+      "weekly_nino34_anomaly_degC": 2.3,
       "oni_3month_degC": 0.98,
       "phase_class": "el_nino",
       "macro_phase": "el_nino",
@@ -51,50 +51,50 @@
       "note": "phase_forecast nicht im Score verwendet",
       "source": "cpc_weekly"
     },
-    "conv_potential_mean": 0.638,
-    "elec_coupling_mean": 0.633,
+    "conv_potential_mean": 0.588,
+    "elec_coupling_mean": 0.467,
     "surface_points": [
       {
         "point": "Mitteleuropa",
-        "temp_2m": 19.2,
-        "rh": 90,
-        "conv": 0.698,
-        "elec": 0.836
+        "temp_2m": 33.1,
+        "rh": 32,
+        "conv": 0.604,
+        "elec": 0.335
       },
       {
         "point": "Tropen (Kongo)",
-        "temp_2m": 23.4,
-        "rh": 74,
-        "conv": 0.583,
-        "elec": 0.421
+        "temp_2m": 33.5,
+        "rh": 39,
+        "conv": 0.544,
+        "elec": 0.247
       },
       {
         "point": "Arktis",
-        "temp_2m": 3.3,
-        "rh": 70,
-        "conv": 0.34,
-        "elec": 0.455
+        "temp_2m": 6.2,
+        "rh": 58,
+        "conv": 0.285,
+        "elec": 0.407
       },
       {
         "point": "Pazifik (ITCZ)",
-        "temp_2m": 27.8,
-        "rh": 80,
-        "conv": 0.524,
-        "elec": 0.668
+        "temp_2m": 27.3,
+        "rh": 82,
+        "conv": 0.527,
+        "elec": 0.623
       },
       {
         "point": "Amazonia",
-        "temp_2m": 24.6,
-        "rh": 89,
-        "conv": 0.8,
-        "elec": 0.645
+        "temp_2m": 25.6,
+        "rh": 86,
+        "conv": 0.794,
+        "elec": 0.631
       },
       {
         "point": "Sahel",
-        "temp_2m": 23.5,
-        "rh": 92,
-        "conv": 0.881,
-        "elec": 0.772
+        "temp_2m": 31.6,
+        "rh": 56,
+        "conv": 0.774,
+        "elec": 0.561
       }
     ]
   },
@@ -106,7 +106,7 @@
     "la_nina_developing": false,
     "sst_anomaly_high": null,
     "thunderstorm_trigger": true,
-    "bz_orientation": "weak_southward"
+    "bz_orientation": "southward"
   },
   "downstream_expectation": {
     "layer3_weather": "erhoehtes Gewitterpotential – Konvektion und E-Kopplung aktiv",
@@ -115,14 +115,14 @@
     "layer4_ionosphere": "ENSO-modulierte Konvektion beeinflusst troposphaerische Wellenausbreitung"
   },
   "layer0_context": {
-    "score": 0.298,
-    "level": "ruhig",
-    "dominant_driver": "none"
+    "score": 0.3583,
+    "level": "moderat",
+    "dominant_driver": "imf_southward"
   },
   "layer1_context": {
     "score": 0.4742,
     "level": "moderat",
     "seismic_elevated": true
   },
-  "state_summary": "Layer-2-Zustand: aktiv. SST nicht verfuegbar. ENSO: strong_el_nino / el_nino_active (weekly Nino3.4=+2.20, ONI=+0.98; Forecast nicht im Score). Konvektions-Potential: 0.64. Datenvollstaendigkeit: 80%. L1-Eingang: moderat (Score 0.474)."
+  "state_summary": "Layer-2-Zustand: moderat. SST nicht verfuegbar. ENSO: strong_el_nino / el_nino_active (weekly Nino3.4=+2.30, ONI=+0.98; Forecast nicht im Score). Konvektions-Potential: 0.59. Datenvollstaendigkeit: 80%. L1-Eingang: moderat (Score 0.474)."
 }
