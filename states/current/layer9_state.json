@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-08T14:55:08.415473Z",
+  "timestamp": "2026-08-08T20:54:51.767920Z",
   "engine_version": "1.0",
   "layer": 9,
   "name": "External Grounding & Validation",
@@ -26,12 +26,12 @@
         "V_storm_flag"
       ],
       "kp_validation_context": {
-        "model_kp_current_1m": 5.0,
+        "model_kp_current_1m": 6.0,
         "model_kp_max_60min": null,
-        "model_kp_used": 5.0,
+        "model_kp_used": 6.0,
         "model_kp_method": "unknown",
-        "noaa_kp_current": 5.0,
-        "noaa_kp_max_60min": 5.0,
+        "noaa_kp_current": 6.0,
+        "noaa_kp_max_60min": 6.0,
         "delta": 0.0,
         "window_used": "current_1m",
         "interpretation": "Kp-Werte konsistent innerhalb Toleranz (current_1m)",
@@ -76,19 +76,19 @@
       "confidence": 0.95,
       "external_source": "NOAA CPC ONI",
       "details": "NOAA ONI=+1.39°C → erwartet el_nino. Modell=el_nino (ONI=1.39).",
-      "timestamp": "2026-08-08T14:55:08.415473Z"
+      "timestamp": "2026-08-08T20:54:51.767920Z"
     },
     {
       "id": "V_kp_consistency",
       "module": "space_weather_validation",
       "goal": "Modell-Kp und NOAA-Kp im gleichen Zeitfenster konsistent",
       "expected": "|Δ Kp| <= 1.0  (Fenster: current_1m)",
-      "observed": "model_current=5.0  vs  noaa_current=5.0  →  |Δ|=0.00",
+      "observed": "model_current=6.0  vs  noaa_current=6.0  →  |Δ|=0.00",
       "status": "passed",
       "confidence": 0.9,
       "external_source": "NOAA SWPC",
       "details": "Kp-Werte konsistent innerhalb Toleranz (current_1m)",
-      "timestamp": "2026-08-08T14:55:08.415473Z"
+      "timestamp": "2026-08-08T20:54:51.767920Z"
     },
     {
       "id": "V_storm_flag",
@@ -99,8 +99,8 @@
       "status": "passed",
       "confidence": 0.95,
       "external_source": "NOAA SWPC",
-      "details": "NOAA Kp=5.00 → Sturm. Modell-Flag=True",
-      "timestamp": "2026-08-08T14:55:08.415473Z"
+      "details": "NOAA Kp=6.00 → Sturm. Modell-Flag=True",
+      "timestamp": "2026-08-08T20:54:51.767920Z"
     },
     {
       "id": "V_schumann_data_availability",
@@ -112,7 +112,7 @@
       "confidence": 0.0,
       "external_source": "none",
       "details": "Layer 6 läuft als modelliert, nicht gemessen. Validierung blockiert.",
-      "timestamp": "2026-08-08T14:55:08.415473Z"
+      "timestamp": "2026-08-08T20:54:51.767920Z"
     },
     {
       "id": "V_consistency_tags",
@@ -123,8 +123,8 @@
       "status": "passed",
       "confidence": null,
       "external_source": "internal",
-      "details": "baseline_n=2, signal_n=8",
-      "timestamp": "2026-08-08T14:55:08.415473Z"
+      "details": "baseline_n=2, signal_n=5",
+      "timestamp": "2026-08-08T20:54:51.767920Z"
     },
     {
       "id": "V_backtest_carnegie_anomalous",
@@ -136,7 +136,7 @@
       "confidence": 0.85,
       "external_source": "internal",
       "details": "Carnegie-Tagesgang-Backtest aus History. n=6.",
-      "timestamp": "2026-08-08T14:55:08.415473Z"
+      "timestamp": "2026-08-08T20:54:51.767920Z"
     },
     {
       "id": "V_backtest_enso_consistency",
@@ -147,8 +147,8 @@
       "status": "passed",
       "confidence": 0.85,
       "external_source": "internal",
-      "details": "ONI=+1.39, warm_snaps=198/230",
-      "timestamp": "2026-08-08T14:55:08.415473Z"
+      "details": "ONI=+1.39, warm_snaps=199/231",
+      "timestamp": "2026-08-08T20:54:51.767920Z"
     }
   ],
   "aggregate": {

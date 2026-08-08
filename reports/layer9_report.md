@@ -1,6 +1,6 @@
 # Layer 9 — External Grounding & Validation
 
-**Run:** 2026-08-08T14:55:08.415473Z
+**Run:** 2026-08-08T20:54:51.767920Z
 **Validation Score:** 1.0  (exploratory_signal)
 
 ## Aggregat
@@ -24,7 +24,7 @@
   - Beobachtet: el_nino
 - ✅ **V_kp_consistency**: Modell-Kp und NOAA-Kp im gleichen Zeitfenster konsistent
   - Erwartet: |Δ Kp| <= 1.0  (Fenster: current_1m)
-  - Beobachtet: model_current=5.0  vs  noaa_current=5.0  →  |Δ|=0.00
+  - Beobachtet: model_current=6.0  vs  noaa_current=6.0  →  |Δ|=0.00
 - ✅ **V_storm_flag**: Bei Kp >= 5 ist geomagnetic_storm-Flag gesetzt
   - Erwartet: True
   - Beobachtet: True

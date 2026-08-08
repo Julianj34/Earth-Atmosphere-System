@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-08-08T14:53:07.789695Z",
+  "timestamp": "2026-08-08T20:52:51.797712Z",
   "layer": 0,
   "name": "Externe kosmische Treiber",
-  "score": 0.3893,
+  "score": 0.5122,
   "level": "moderat",
   "confidence": 0.75,
   "score_basis": "3/4 Komponenten verfügbar",
@@ -11,8 +11,8 @@
   ],
   "components": {
     "Sonnenstrahlung (F10.7)": 0.4001,
-    "Geomagn. Aktivität (Kp)": 0.5556,
-    "IMF Bz (südwärts)": 0.2123,
+    "Geomagn. Aktivität (Kp)": 0.6667,
+    "IMF Bz (südwärts)": 0.47,
     "Solarwind Geschwindigkeit": null
   },
   "raw_values": {
@@ -21,11 +21,11 @@
       "source": "primary"
     },
     "Kp_index": {
-      "value": 5.0,
+      "value": 6.0,
       "source": "primary"
     },
     "IMF_Bz_nT": {
-      "value": -2.4,
+      "value": -11.4,
       "source": "primary"
     },
     "SW_speed_kms": {
@@ -34,19 +34,19 @@
     }
   },
   "kp_context": {
-    "Kp_current_1m": 5.0,
-    "Kp_max_60min": 5.0,
-    "Kp_max_3h": 5.0,
-    "Kp_mean_3h": 4.59,
-    "Kp_used_for_score": 5.0,
+    "Kp_current_1m": 6.0,
+    "Kp_max_60min": 6.0,
+    "Kp_max_3h": 6.0,
+    "Kp_mean_3h": 3.49,
+    "Kp_used_for_score": 6.0,
     "Kp_score_method": "primary"
   },
   "flags": {
     "geomagnetic_storm": true,
     "solar_flux_high": false,
-    "bz_strongly_southward": false,
-    "bz_geoeffective": false,
-    "bz_orientation": "southward",
+    "bz_strongly_southward": true,
+    "bz_geoeffective": true,
+    "bz_orientation": "strongly_southward",
     "fast_solar_wind": null
   },
   "dominant_driver": "geomagnetic",
@@ -56,5 +56,5 @@
     "schumann_resonance": "erhöhte Amplitude möglich",
     "lithosphere_currents": "erhöhte Induktionsströme"
   },
-  "state_summary": "Layer-0-Zustand: moderat. Sonnenstrahlung moderat (F10.7=136 sfu). Kp=5.0 (Sturm). IMF Bz=-2.4 nT – schwach südwärts, nicht geoeffektiv. Solarwind-Geschwindigkeit fehlt. Datenvollständigkeit: 75%."
+  "state_summary": "Layer-0-Zustand: moderat. Sonnenstrahlung moderat (F10.7=136 sfu). Kp=6.0 (Sturm). IMF Bz=-11.4 nT – stark südwärts, geoeffektiv. Solarwind-Geschwindigkeit fehlt. Datenvollständigkeit: 75%."
 }
