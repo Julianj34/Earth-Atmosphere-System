@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-08-08T09:06:56.224881Z",
-  "system_state": "seasonal_transition_state",
+  "timestamp": "2026-08-08T14:54:58.553607Z",
+  "system_state": "geomagnetic_disturbance_state",
   "scores": {
-    "L0": 0.247,
-    "L2": 0.5936,
-    "L3": 0.1444,
-    "L5": 0.3235,
-    "L6": 0.2473
+    "L0": 0.3893,
+    "L2": 0.5727,
+    "L3": 0.1911,
+    "L5": 0.3457,
+    "L6": 0.2838
   },
   "macro_context": {
     "band": "high",
-    "score": 0.5936,
+    "score": 0.5727,
     "tags": []
   },
   "meso_organisation": {
@@ -19,19 +19,19 @@
   },
   "micro_activation": {
     "band": "low",
-    "score": 0.1444,
+    "score": 0.1911,
     "thunder_pts": 0,
     "storms_EONET": 2
   },
   "field_response": {
     "electric": {
       "band": "medium",
-      "score": 0.3235
+      "score": 0.3457
     },
     "resonance": {
       "band": "low",
-      "score": 0.2473,
-      "confirmation": "partial"
+      "score": 0.2838,
+      "confirmation": "low_proxy_limited"
     }
   },
   "chain_break": {
@@ -41,15 +41,15 @@
     "diagnosis": "macro_prepared but micro_activation_low — preparation without activation"
   },
   "external_forcing_mask": {
-    "external_score": 0.247,
-    "externally_driven": false,
-    "interpretation": "external forcing low -> absence of activation is NOT due to missing external trigger; internal/scale dynamics dominate"
+    "external_score": 0.389,
+    "externally_driven": true,
+    "interpretation": "external forcing non-trivial -> check L0 contribution"
   },
   "validation_status": {
     "status": "validated_by_L9",
     "validation_score": 1.0,
     "evidence_level": "exploratory_signal",
     "checks": "6/7 passed",
-    "l9_timestamp": "2026-08-08T09:07:07.800381Z"
+    "l9_timestamp": "2026-08-08T14:55:08.415473Z"
   }
 }
