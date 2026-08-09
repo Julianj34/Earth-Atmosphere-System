@@ -1,6 +1,6 @@
 # Layer 9 — External Grounding & Validation
 
-**Run:** 2026-08-09T03:57:05.415676Z
+**Run:** 2026-08-09T09:08:49.859511Z
 **Validation Score:** 1.0  (exploratory_signal)
 
 ## Aggregat
@@ -33,10 +33,10 @@
   - Beobachtet: overlap = []
 - ✅ **V_consistency_seasonal**: seasonal_transition_state: preparation > 0.45 und downstream < 0.35
   - Erwartet: prep > 0.45 AND downstream < 0.35
-  - Beobachtet: prep=0.603, downstream=0.212
+  - Beobachtet: prep=0.572, downstream=0.291
 - ✅ **V_backtest_carnegie_anomalous**: anomalous_resonance_state tritt überwiegend (>= 80%) abends auf
   - Erwartet: >= 80% evening
   - Beobachtet: 100.0% evening (6/6)
 - ✅ **V_backtest_enso_consistency**: Bei externem ONI >= 0.2 sind >= 50% der Snapshots warm-klassifiziert
   - Erwartet: >= 50% warm
-  - Beobachtet: 86.2% warm
+  - Beobachtet: 86.3% warm
