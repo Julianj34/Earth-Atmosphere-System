@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-08-10T15:27:12.658275Z",
+  "timestamp": "2026-08-10T21:06:17.569940Z",
   "layer": 2,
   "name": "Oberfläche & Biosphärennahe Kontaktzone",
-  "score": 0.5357,
-  "level": "moderat",
+  "score": 0.6185,
+  "level": "aktiv",
   "confidence": 0.8,
   "score_basis": "4/5 dynamische Komponenten",
   "dominant_component": "ENSO-Phase (Nino3.4)",
@@ -12,7 +12,7 @@
   ],
   "components": {
     "Konvektions-Potential": {
-      "score": 0.5565,
+      "score": 0.6423,
       "source": "primary",
       "dynamic": true
     },
@@ -27,12 +27,12 @@
       "dynamic": true
     },
     "Elektr. Bodenkopplung": {
-      "score": 0.4372,
+      "score": 0.6127,
       "source": "primary",
       "dynamic": true
     },
     "Bodenfeuchte (global)": {
-      "score": 0.149,
+      "score": 0.219,
       "source": "primary",
       "dynamic": true
     }
@@ -51,50 +51,50 @@
       "note": "phase_forecast nicht im Score verwendet",
       "source": "cpc_weekly"
     },
-    "conv_potential_mean": 0.556,
-    "elec_coupling_mean": 0.437,
+    "conv_potential_mean": 0.642,
+    "elec_coupling_mean": 0.613,
     "surface_points": [
       {
         "point": "Mitteleuropa",
-        "temp_2m": 30.6,
-        "rh": 28,
-        "conv": 0.503,
-        "elec": 0.27
+        "temp_2m": 21.5,
+        "rh": 58,
+        "conv": 0.539,
+        "elec": 0.406
       },
       {
         "point": "Tropen (Kongo)",
-        "temp_2m": 32.2,
-        "rh": 46,
-        "conv": 0.664,
-        "elec": 0.439
+        "temp_2m": 23.2,
+        "rh": 87,
+        "conv": 0.829,
+        "elec": 0.704
       },
       {
         "point": "Arktis",
-        "temp_2m": -1.0,
-        "rh": 58,
-        "conv": 0.284,
-        "elec": 0.423
+        "temp_2m": -2.3,
+        "rh": 73,
+        "conv": 0.35,
+        "elec": 0.491
       },
       {
         "point": "Pazifik (ITCZ)",
-        "temp_2m": 26.8,
-        "rh": 83,
-        "conv": 0.551,
-        "elec": 0.631
+        "temp_2m": 27.9,
+        "rh": 76,
+        "conv": 0.515,
+        "elec": 0.561
       },
       {
         "point": "Amazonia",
-        "temp_2m": 33.0,
-        "rh": 51,
-        "conv": 0.714,
-        "elec": 0.481
+        "temp_2m": 31.1,
+        "rh": 67,
+        "conv": 0.756,
+        "elec": 0.525
       },
       {
         "point": "Sahel",
-        "temp_2m": 33.4,
-        "rh": 54,
-        "conv": 0.623,
-        "elec": 0.379
+        "temp_2m": 25.5,
+        "rh": 88,
+        "conv": 0.865,
+        "elec": 0.989
       }
     ]
   },
@@ -105,24 +105,24 @@
     "la_nina_active": false,
     "la_nina_developing": false,
     "sst_anomaly_high": null,
-    "thunderstorm_trigger": false,
+    "thunderstorm_trigger": true,
     "bz_orientation": "northward"
   },
   "downstream_expectation": {
-    "layer3_weather": "moderate Konvektion – normale Gewitteraktivitaet",
-    "layer5_gec": "normaler GEC-Grundzustand erwartet",
+    "layer3_weather": "erhoehtes Gewitterpotential – Konvektion und E-Kopplung aktiv",
+    "layer5_gec": "erhoehter Energieeintrag in GEC durch Gewitteraktivitaet moeglich",
     "schumann_resonance": "moderate Konvektion – leichte Schumann-Modulation moeglich",
     "layer4_ionosphere": "ENSO-modulierte Konvektion beeinflusst troposphaerische Wellenausbreitung"
   },
   "layer0_context": {
-    "score": 0.1607,
+    "score": 0.1759,
     "level": "ruhig",
     "dominant_driver": "none"
   },
   "layer1_context": {
-    "score": 0.3109,
+    "score": 0.3151,
     "level": "moderat",
     "seismic_elevated": true
   },
-  "state_summary": "Layer-2-Zustand: moderat. SST nicht verfuegbar. ENSO: strong_el_nino / el_nino_active (weekly Nino3.4=+2.60, ONI=+1.39; Forecast nicht im Score). Konvektions-Potential: 0.56. Datenvollstaendigkeit: 80%. L1-Eingang: moderat (Score 0.311)."
+  "state_summary": "Layer-2-Zustand: aktiv. SST nicht verfuegbar. ENSO: strong_el_nino / el_nino_active (weekly Nino3.4=+2.60, ONI=+1.39; Forecast nicht im Score). Konvektions-Potential: 0.64. Datenvollstaendigkeit: 80%. L1-Eingang: moderat (Score 0.315)."
 }
