@@ -1,12 +1,12 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-08-12T09:37:04.546139Z
-**Snapshots analysiert:** 245
+**Run:** 2026-08-12T15:20:09.363498Z
+**Snapshots analysiert:** 246
 **Vollständige Tagespaare:** 38
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 228× (93.1%)
+- `seasonal_transition_state` — 229× (93.1%)
 - `cavity_condition_shift_state` — 6× (2.4%)
 - `anomalous_resonance_state` — 6× (2.4%)
 - `geomagnetic_disturbance_state` — 3× (1.2%)
@@ -59,24 +59,24 @@
 
 ## L2 ↔ L3 Beziehung
 
-- Pearson: **-0.008**
+- Pearson: **-0.013**
 - L2 Trend: +0.00009 / Snapshot
 - L3 Trend: +0.00006 / Snapshot
-- Gap-Trend: +0.00003 / Snapshot
+- Gap-Trend: +0.00002 / Snapshot
 - Schwache Kopplung sichtbar — mehr Daten nötig.
 
 ## Field Operators
 
-Coverage: 227/245 Snapshots
+Coverage: 228/246 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
-- **thermal**: 0.440 — moderate thermische Vorbereitung vorhanden
-- **resonance_model**: 0.420 — Resonanzfeld ruhig, schwache modellierte Modulation
-- **ionization**: 0.294 — ruhige Ionosphäre, minimaler Strahlungseffekt
-- **electric**: 0.262 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
-- **cross_layer_activation**: 0.167 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
-- **geomagnetic**: 0.141 — ruhige geomagnetische Bedingungen
+- **resonance_model**: 0.439 — Resonanzfeld ruhig, schwache modellierte Modulation
+- **thermal**: 0.419 — moderate thermische Vorbereitung vorhanden
+- **ionization**: 0.315 — moderate ionosphärische Modulation
+- **electric**: 0.308 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
+- **cross_layer_activation**: 0.150 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
+- **geomagnetic**: 0.127 — ruhige geomagnetische Bedingungen
 
 ### Operator ↔ ΔL3 Korrelation
 

@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-08-12T09:37:04.546139Z",
+  "timestamp": "2026-08-12T15:20:09.363498Z",
   "engine_version": "1.0",
   "layer": 8,
-  "n_snapshots": 245,
+  "n_snapshots": 246,
   "n_pairs": 38,
   "state_profile": {
     "seasonal_transition_state": {
-      "count": 228,
+      "count": 229,
       "pct": 93.1
     },
     "cavity_condition_shift_state": {
@@ -29,49 +29,49 @@
   "layer_stats": {
     "L0_external_drivers": {
       "mean": 0.2111,
-      "std": 0.0582,
+      "std": 0.0581,
       "min": 0.1053,
       "max": 0.5122,
       "range": 0.4069
     },
     "L1_planetary_body": {
       "mean": 0.3784,
-      "std": 0.0589,
+      "std": 0.0587,
       "min": 0.2235,
       "max": 0.5757,
       "range": 0.3522
     },
     "L2_surface_zone": {
       "mean": 0.5745,
-      "std": 0.0301,
+      "std": 0.03,
       "min": 0.4762,
       "max": 0.6594,
       "range": 0.1832
     },
     "L3_atmosphere": {
-      "mean": 0.1962,
-      "std": 0.0413,
+      "mean": 0.1965,
+      "std": 0.0415,
       "min": 0.0804,
       "max": 0.3422,
       "range": 0.2618
     },
     "L4_ionosphere": {
       "mean": 0.3241,
-      "std": 0.0426,
+      "std": 0.0425,
       "min": 0.22,
       "max": 0.4824,
       "range": 0.2624
     },
     "L5_global_electric_circuit": {
-      "mean": 0.3592,
-      "std": 0.0812,
+      "mean": 0.3591,
+      "std": 0.081,
       "min": 0.2188,
       "max": 0.557,
       "range": 0.3382
     },
     "L6_resonance_field": {
       "mean": 0.3002,
-      "std": 0.0455,
+      "std": 0.0454,
       "min": 0.2235,
       "max": 0.5167,
       "range": 0.2932
@@ -828,111 +828,111 @@
     "top_predictor": "L6_evening"
   },
   "l2_l3_paradox": {
-    "pearson": -0.0076,
+    "pearson": -0.0129,
     "l2_trend": 9e-05,
     "l3_trend": 6e-05,
-    "gap_trend": 3e-05,
-    "gap_mean": 0.3783,
+    "gap_trend": 2e-05,
+    "gap_mean": 0.3779,
     "gap_max": 0.5016,
     "interpretation": "Schwache Kopplung sichtbar — mehr Daten nötig."
   },
   "coupling_summary": {
     "L0→L4": {
       "mean": 0.2,
-      "std": 0.0443,
+      "std": 0.0442,
       "min": 0.11,
       "max": 0.372,
-      "volatility": 0.2214
+      "volatility": 0.2211
     },
     "L3→L5": {
-      "mean": 0.3462,
-      "std": 0.1732,
+      "mean": 0.3455,
+      "std": 0.1731,
       "min": 0.091,
       "max": 1.0,
-      "volatility": 0.5002
+      "volatility": 0.5011
     },
     "L3→L6": {
-      "mean": 0.4021,
+      "mean": 0.4024,
       "std": 0.0791,
       "min": 0.246,
       "max": 0.765,
-      "volatility": 0.1968
+      "volatility": 0.1966
     },
     "L4→L6": {
-      "mean": 0.3924,
+      "mean": 0.3927,
       "std": 0.0705,
       "min": 0.242,
       "max": 0.562,
-      "volatility": 0.1797
+      "volatility": 0.1796
     },
     "L5→L6": {
-      "mean": 0.4449,
-      "std": 0.2557,
+      "mean": 0.4444,
+      "std": 0.2553,
       "min": 0.093,
       "max": 1.0,
-      "volatility": 0.5747
+      "volatility": 0.5744
     },
     "L0→L5": {
-      "mean": 0.1369,
+      "mean": 0.1366,
       "std": 0.0746,
       "min": 0.049,
       "max": 0.479,
-      "volatility": 0.5449
+      "volatility": 0.5459
     },
     "L2→L3": {
       "mean": 0.4935,
       "std": 0.0282,
       "min": 0.435,
       "max": 0.585,
-      "volatility": 0.0572
+      "volatility": 0.0571
     }
   },
   "operator_analysis": {
-    "snapshots_with_operators": 227,
-    "total_snapshots": 245,
+    "snapshots_with_operators": 228,
+    "total_snapshots": 246,
     "coverage_pct": 92.7,
     "coverage_regime": "transition_analysis",
     "coverage_note": "brauchbare Übergangsanalyse möglich",
     "operator_stats": {
       "thermal_operator": {
-        "count": 227,
-        "mean": 0.4397,
+        "count": 228,
+        "mean": 0.4396,
         "std": 0.0294,
         "min": 0.2436,
         "max": 0.519
       },
       "electric_operator": {
-        "count": 227,
-        "mean": 0.3194,
-        "std": 0.1038,
+        "count": 228,
+        "mean": 0.3193,
+        "std": 0.1035,
         "min": 0.1506,
         "max": 0.5432
       },
       "ionization_operator": {
-        "count": 227,
+        "count": 228,
         "mean": 0.3146,
-        "std": 0.0372,
+        "std": 0.0371,
         "min": 0.2291,
         "max": 0.4631
       },
       "geomagnetic_operator": {
-        "count": 227,
-        "mean": 0.1856,
-        "std": 0.0739,
+        "count": 228,
+        "mean": 0.1854,
+        "std": 0.0738,
         "min": 0.0935,
         "max": 0.5622
       },
       "resonance_model_operator": {
-        "count": 227,
-        "mean": 0.4534,
-        "std": 0.0326,
+        "count": 228,
+        "mean": 0.4533,
+        "std": 0.0325,
         "min": 0.3927,
         "max": 0.5863
       },
       "tidal_gravity_operator": null,
       "cross_layer_activation_operator": {
-        "count": 227,
-        "mean": 0.2021,
+        "count": 228,
+        "mean": 0.2019,
         "std": 0.0517,
         "min": 0.0965,
         "max": 0.5
@@ -940,111 +940,101 @@
     },
     "operator_trends": {
       "thermal_operator": {
-        "current": 0.4395,
-        "previous": 0.4589,
-        "delta": -0.0194,
-        "rolling_1d": 0.4506,
-        "rolling_3d": 0.4452,
+        "current": 0.4194,
+        "previous": 0.4395,
+        "delta": -0.0201,
+        "rolling_1d": 0.4436,
+        "rolling_3d": 0.4459,
         "direction": "stable"
       },
       "electric_operator": {
-        "current": 0.2618,
-        "previous": 0.2459,
-        "delta": 0.0159,
-        "rolling_1d": 0.3002,
-        "rolling_3d": 0.2702,
-        "direction": "stable"
+        "current": 0.3081,
+        "previous": 0.2618,
+        "delta": 0.0463,
+        "rolling_1d": 0.2661,
+        "rolling_3d": 0.2777,
+        "direction": "rising"
       },
       "ionization_operator": {
-        "current": 0.2936,
-        "previous": 0.3117,
-        "delta": -0.0181,
-        "rolling_1d": 0.2973,
-        "rolling_3d": 0.305,
+        "current": 0.3154,
+        "previous": 0.2936,
+        "delta": 0.0218,
+        "rolling_1d": 0.3005,
+        "rolling_3d": 0.3023,
         "direction": "stable"
       },
       "geomagnetic_operator": {
-        "current": 0.1414,
-        "previous": 0.2224,
-        "delta": -0.081,
-        "rolling_1d": 0.1556,
-        "rolling_3d": 0.1499,
-        "direction": "falling"
+        "current": 0.1267,
+        "previous": 0.1414,
+        "delta": -0.0147,
+        "rolling_1d": 0.1515,
+        "rolling_3d": 0.1461,
+        "direction": "stable"
       },
       "resonance_model_operator": {
-        "current": 0.4205,
-        "previous": 0.4315,
-        "delta": -0.011,
-        "rolling_1d": 0.4346,
-        "rolling_3d": 0.4331,
+        "current": 0.4388,
+        "previous": 0.4205,
+        "delta": 0.0183,
+        "rolling_1d": 0.4296,
+        "rolling_3d": 0.4332,
         "direction": "stable"
       },
       "tidal_gravity_operator": null,
       "cross_layer_activation_operator": {
-        "current": 0.1673,
-        "previous": 0.2182,
-        "delta": -0.0509,
-        "rolling_1d": 0.1874,
-        "rolling_3d": 0.1913,
-        "direction": "falling"
+        "current": 0.15,
+        "previous": 0.1673,
+        "delta": -0.0173,
+        "rolling_1d": 0.1851,
+        "rolling_3d": 0.1882,
+        "direction": "stable"
       }
     },
     "lead_lag": {
-      "electric_t__L3_atmosphere_t+1": {
-        "pearson": 0.3063,
-        "n_pairs": 226,
-        "lag_snapshots": 1
-      },
-      "electric_t__L3_atmosphere_t+2": {
-        "pearson": 0.3062,
-        "n_pairs": 225,
-        "lag_snapshots": 2
-      },
       "electric_t__L5_global_electric_circuit_t+1": {
-        "pearson": 0.4722,
-        "n_pairs": 226,
+        "pearson": 0.4723,
+        "n_pairs": 227,
         "lag_snapshots": 1
       },
       "electric_t__L5_global_electric_circuit_t+2": {
-        "pearson": 0.4049,
-        "n_pairs": 225,
+        "pearson": 0.4051,
+        "n_pairs": 226,
         "lag_snapshots": 2
       },
       "electric_t__L5_global_electric_circuit_t+4": {
-        "pearson": 0.3659,
-        "n_pairs": 223,
+        "pearson": 0.3635,
+        "n_pairs": 224,
         "lag_snapshots": 4
       },
       "resonance_model_t__L5_global_electric_circuit_t+1": {
-        "pearson": 0.3219,
-        "n_pairs": 226,
+        "pearson": 0.322,
+        "n_pairs": 227,
         "lag_snapshots": 1
       },
       "resonance_model_t__L5_global_electric_circuit_t+2": {
-        "pearson": 0.3092,
-        "n_pairs": 225,
+        "pearson": 0.3095,
+        "n_pairs": 226,
         "lag_snapshots": 2
       },
       "resonance_model_t__L5_global_electric_circuit_t+4": {
-        "pearson": 0.3252,
-        "n_pairs": 223,
+        "pearson": 0.325,
+        "n_pairs": 224,
         "lag_snapshots": 4
       },
       "cross_layer_activation_t__L3_atmosphere_t+2": {
-        "pearson": -0.3539,
-        "n_pairs": 225,
+        "pearson": -0.3491,
+        "n_pairs": 226,
         "lag_snapshots": 2
       },
       "cross_layer_activation_t__L3_atmosphere_t+4": {
-        "pearson": -0.3315,
-        "n_pairs": 223,
+        "pearson": -0.3352,
+        "n_pairs": 224,
         "lag_snapshots": 4
       }
     },
     "operator_regimes": {
       "counts": {
         "surface_prepared_delayed": 40,
-        "mixed": 82,
+        "mixed": 83,
         "space_weather_mode": 71,
         "thermal_electric_resonance_coupled": 22,
         "thermal_prepared": 3,
@@ -1058,10 +1048,10 @@
         },
         "electric_operator": {
           "p33": 0.246,
-          "p67": 0.358
+          "p67": 0.357
         },
         "ionization_operator": {
-          "p33": 0.296,
+          "p33": 0.297,
           "p67": 0.329
         },
         "geomagnetic_operator": {
@@ -2439,6 +2429,12 @@
           "slot": "morning",
           "state": "seasonal_transition_state",
           "regime": "mixed"
+        },
+        {
+          "date": "2026-08-12",
+          "slot": "midday",
+          "state": "seasonal_transition_state",
+          "regime": "mixed"
         }
       ]
     },
@@ -2492,44 +2488,44 @@
         "all_operators": {
           "thermal_operator": {
             "mean_t_minus_1": 0.4403,
-            "n": 214
+            "n": 215
           },
           "electric_operator": {
-            "mean_t_minus_1": 0.3213,
-            "n": 214
+            "mean_t_minus_1": 0.3211,
+            "n": 215
           },
           "ionization_operator": {
-            "mean_t_minus_1": 0.3132,
-            "n": 214
+            "mean_t_minus_1": 0.3131,
+            "n": 215
           },
           "geomagnetic_operator": {
-            "mean_t_minus_1": 0.1833,
-            "n": 214
+            "mean_t_minus_1": 0.1831,
+            "n": 215
           },
           "resonance_model_operator": {
-            "mean_t_minus_1": 0.4538,
-            "n": 214
+            "mean_t_minus_1": 0.4537,
+            "n": 215
           },
           "cross_layer_activation_operator": {
-            "mean_t_minus_1": 0.1983,
-            "n": 214
+            "mean_t_minus_1": 0.1982,
+            "n": 215
           }
         },
         "top_3": [
           {
             "op": "resonance_model_operator",
-            "mean_t_minus_1": 0.4538,
-            "n": 214
+            "mean_t_minus_1": 0.4537,
+            "n": 215
           },
           {
             "op": "thermal_operator",
             "mean_t_minus_1": 0.4403,
-            "n": 214
+            "n": 215
           },
           {
             "op": "electric_operator",
-            "mean_t_minus_1": 0.3213,
-            "n": 214
+            "mean_t_minus_1": 0.3211,
+            "n": 215
           }
         ]
       },
@@ -2727,33 +2723,33 @@
     },
     "latest_ranking": [
       {
-        "operator": "thermal_operator",
-        "score": 0.4395,
-        "interpretation": "moderate thermische Vorbereitung vorhanden"
-      },
-      {
         "operator": "resonance_model_operator",
-        "score": 0.4205,
+        "score": 0.4388,
         "interpretation": "Resonanzfeld ruhig, schwache modellierte Modulation"
       },
       {
+        "operator": "thermal_operator",
+        "score": 0.4194,
+        "interpretation": "moderate thermische Vorbereitung vorhanden"
+      },
+      {
         "operator": "ionization_operator",
-        "score": 0.2936,
-        "interpretation": "ruhige Ionosphäre, minimaler Strahlungseffekt"
+        "score": 0.3154,
+        "interpretation": "moderate ionosphärische Modulation"
       },
       {
         "operator": "electric_operator",
-        "score": 0.2618,
+        "score": 0.3081,
         "interpretation": "GEC nahe Referenz, keine elektrische Aktivierung"
       },
       {
         "operator": "cross_layer_activation_operator",
-        "score": 0.1673,
+        "score": 0.15,
         "interpretation": "schwache Übergangsspannung bei L2_to_L3"
       },
       {
         "operator": "geomagnetic_operator",
-        "score": 0.1414,
+        "score": 0.1267,
         "interpretation": "ruhige geomagnetische Bedingungen"
       }
     ],
@@ -2764,7 +2760,7 @@
     "phase_distribution": {
       "warm_neutral": 32,
       "el_nino_candidate": 142,
-      "el_nino": 71
+      "el_nino": 72
     },
     "nino34_trend_per_snap": 0.00807,
     "layer_scores_by_phase": {
@@ -2824,29 +2820,29 @@
       },
       "el_nino": {
         "L2": {
-          "mean": 0.5814,
+          "mean": 0.581,
           "std": 0.0263,
-          "n": 71
+          "n": 72
         },
         "L3": {
-          "mean": 0.1925,
-          "std": 0.0328,
-          "n": 71
+          "mean": 0.1936,
+          "std": 0.0338,
+          "n": 72
         },
         "L4": {
-          "mean": 0.3241,
-          "std": 0.0459,
-          "n": 71
+          "mean": 0.324,
+          "std": 0.0456,
+          "n": 72
         },
         "L5": {
-          "mean": 0.3201,
-          "std": 0.0476,
-          "n": 71
+          "mean": 0.3204,
+          "std": 0.0473,
+          "n": 72
         },
         "L6": {
-          "mean": 0.2813,
-          "std": 0.0399,
-          "n": 71
+          "mean": 0.2812,
+          "std": 0.0396,
+          "n": 72
         }
       }
     },
@@ -2862,9 +2858,9 @@
         "mean_L3_after": 0.2027
       },
       "el_nino": {
-        "n": 70,
-        "pearson_L2_L3_lag1": -0.0816,
-        "mean_L3_after": 0.1928
+        "n": 71,
+        "pearson_L2_L3_lag1": -0.0785,
+        "mean_L3_after": 0.1938
       }
     },
     "l5_after_l3_active_by_phase": {},
@@ -2880,7 +2876,7 @@
         "normal_background_state": 2
       },
       "el_nino": {
-        "seasonal_transition_state": 68,
+        "seasonal_transition_state": 69,
         "geomagnetic_disturbance_state": 2,
         "cavity_condition_shift_state": 1
       }
@@ -3157,8 +3153,8 @@
       "include_in_report": false,
       "include_in_model_logic": false,
       "promotion_blocked_reason": "confound:confounded_circular",
-      "generated_at": "2026-08-12T09:37:04.546139Z",
-      "source_snapshots": 245,
+      "generated_at": "2026-08-12T15:20:09.363498Z",
+      "source_snapshots": 246,
       "reviewer_notes": "",
       "evidence_independence": "confounded_circular",
       "independence_reason": "composite of L3+L5+L6 used to predict a state derived from the same layers",
@@ -3184,8 +3180,8 @@
       "include_in_report": true,
       "include_in_model_logic": false,
       "promotion_blocked_reason": "not_manually_reviewed",
-      "generated_at": "2026-08-12T09:37:04.546139Z",
-      "source_snapshots": 245,
+      "generated_at": "2026-08-12T15:20:09.363498Z",
+      "source_snapshots": 246,
       "reviewer_notes": "Backbone-Review: unabhaengiges Abendmuster (anomalous_resonance nur abends), aber nur ~6 Ereignisse. Nur als Untersuchungs-/Beobachtungsfilter nutzen (\"Abendfenster erhoeht Prioritaet\"), nicht als Regel \"Abend=Anomalie\".",
       "evidence_independence": "independent",
       "independence_reason": "temporal pattern on external time-of-day annotation",
@@ -3211,8 +3207,8 @@
       "include_in_report": false,
       "include_in_model_logic": false,
       "promotion_blocked_reason": "confound:confounded_proxy",
-      "generated_at": "2026-08-12T09:37:04.546139Z",
-      "source_snapshots": 245,
+      "generated_at": "2026-08-12T15:20:09.363498Z",
+      "source_snapshots": 246,
       "reviewer_notes": "",
       "evidence_independence": "confounded_proxy",
       "independence_reason": "raw correlation but involves a proxy layer (L6/resonance): pearson_L5evening_vs_L6_evening",
@@ -3238,8 +3234,8 @@
       "include_in_report": false,
       "include_in_model_logic": false,
       "promotion_blocked_reason": "confound:confounded_circular",
-      "generated_at": "2026-08-12T09:37:04.546139Z",
-      "source_snapshots": 245,
+      "generated_at": "2026-08-12T15:20:09.363498Z",
+      "source_snapshots": 246,
       "reviewer_notes": "",
       "evidence_independence": "confounded_circular",
       "independence_reason": "cross_layer_activation_operator is composed from L3_atmosphere; cannot be an independent predictor of L3_atmosphere",
@@ -3265,8 +3261,8 @@
       "include_in_report": false,
       "include_in_model_logic": false,
       "promotion_blocked_reason": "confound:confounded_proxy",
-      "generated_at": "2026-08-12T09:37:04.546139Z",
-      "source_snapshots": 245,
+      "generated_at": "2026-08-12T15:20:09.363498Z",
+      "source_snapshots": 246,
       "reviewer_notes": "",
       "evidence_independence": "confounded_proxy",
       "independence_reason": "cavity_gate built from L4 + L6(proxy); also very low n",
@@ -3278,13 +3274,13 @@
       "question": "Sagt electric_t(t) den Wert L5_global_electric_circuit_t+1 voraus?",
       "pattern_status": "unclear",
       "evidence_level": "robust_candidate",
-      "n": 226,
+      "n": 227,
       "effect_size": null,
-      "pearson": 0.4722,
+      "pearson": 0.4723,
       "lag": 1,
       "source_metric": "electric_t__L5_global_electric_circuit_t+1",
       "mechanism": null,
-      "evidence": "Pearson=+0.472, n=226, Lag=1 Snapshots (~6h).",
+      "evidence": "Pearson=+0.472, n=227, Lag=1 Snapshots (~6h).",
       "next_step": "Mechanismus identifizieren. n >= 10 abwarten.",
       "priority": "low",
       "category": "exploratory_leadlag",
@@ -3292,8 +3288,8 @@
       "include_in_report": false,
       "include_in_model_logic": false,
       "promotion_blocked_reason": "confound:confounded_circular",
-      "generated_at": "2026-08-12T09:37:04.546139Z",
-      "source_snapshots": 245,
+      "generated_at": "2026-08-12T15:20:09.363498Z",
+      "source_snapshots": 246,
       "reviewer_notes": "",
       "evidence_independence": "confounded_circular",
       "independence_reason": "electric_operator is composed from L5_global_electric_circuit; predicting L5_global_electric_circuit_t+1 is partly self-prediction (layer autocorrelated; lag reduces but does not remove the confound)",
@@ -3305,13 +3301,13 @@
       "question": "Sagt electric_t(t) den Wert L5_global_electric_circuit_t+2 voraus?",
       "pattern_status": "unclear",
       "evidence_level": "robust_candidate",
-      "n": 225,
+      "n": 226,
       "effect_size": null,
-      "pearson": 0.4049,
+      "pearson": 0.4051,
       "lag": 2,
       "source_metric": "electric_t__L5_global_electric_circuit_t+2",
       "mechanism": null,
-      "evidence": "Pearson=+0.405, n=225, Lag=2 Snapshots (~12h).",
+      "evidence": "Pearson=+0.405, n=226, Lag=2 Snapshots (~12h).",
       "next_step": "Mechanismus identifizieren. n >= 10 abwarten.",
       "priority": "low",
       "category": "exploratory_leadlag",
@@ -3319,8 +3315,8 @@
       "include_in_report": false,
       "include_in_model_logic": false,
       "promotion_blocked_reason": "confound:confounded_circular",
-      "generated_at": "2026-08-12T09:37:04.546139Z",
-      "source_snapshots": 245,
+      "generated_at": "2026-08-12T15:20:09.363498Z",
+      "source_snapshots": 246,
       "reviewer_notes": "",
       "evidence_independence": "confounded_circular",
       "independence_reason": "electric_operator is composed from L5_global_electric_circuit; predicting L5_global_electric_circuit_t+2 is partly self-prediction (layer autocorrelated; lag reduces but does not remove the confound)",
@@ -3334,12 +3330,12 @@
         "L0_external_drivers": 0.2111,
         "L1_planetary_body": 0.3784,
         "L2_surface_zone": 0.5745,
-        "L3_atmosphere": 0.1962,
+        "L3_atmosphere": 0.1965,
         "L4_ionosphere": 0.3241,
-        "L5_global_electric_circuit": 0.3592,
+        "L5_global_electric_circuit": 0.3591,
         "L6_resonance_field": 0.3002
       },
-      "downstream_score": 0.2852,
+      "downstream_score": 0.2853,
       "preparation_score": 0.5745,
       "external_score": 0.2111
     },
@@ -3358,33 +3354,33 @@
     "field_activation": {
       "operator_vector": [
         {
-          "operator": "thermal_operator",
-          "score": 0.4395,
-          "interpretation": "moderate thermische Vorbereitung vorhanden"
-        },
-        {
           "operator": "resonance_model_operator",
-          "score": 0.4205,
+          "score": 0.4388,
           "interpretation": "Resonanzfeld ruhig, schwache modellierte Modulation"
         },
         {
+          "operator": "thermal_operator",
+          "score": 0.4194,
+          "interpretation": "moderate thermische Vorbereitung vorhanden"
+        },
+        {
           "operator": "ionization_operator",
-          "score": 0.2936,
-          "interpretation": "ruhige Ionosphäre, minimaler Strahlungseffekt"
+          "score": 0.3154,
+          "interpretation": "moderate ionosphärische Modulation"
         },
         {
           "operator": "electric_operator",
-          "score": 0.2618,
+          "score": 0.3081,
           "interpretation": "GEC nahe Referenz, keine elektrische Aktivierung"
         },
         {
           "operator": "cross_layer_activation_operator",
-          "score": 0.1673,
+          "score": 0.15,
           "interpretation": "schwache Übergangsspannung bei L2_to_L3"
         },
         {
           "operator": "geomagnetic_operator",
-          "score": 0.1414,
+          "score": 0.1267,
           "interpretation": "ruhige geomagnetische Bedingungen"
         }
       ],
@@ -3397,7 +3393,7 @@
     },
     "confidence": "robust_candidate",
     "ready_for_macro_layer": true,
-    "n_snapshots": 245
+    "n_snapshots": 246
   },
   "independence_audit": {
     "version": "1.1",
