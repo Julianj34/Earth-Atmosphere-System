@@ -1,6 +1,6 @@
 # Layer 9 — External Grounding & Validation
 
-**Run:** 2026-08-13T15:19:54.620340Z
+**Run:** 2026-08-13T21:10:16.221345Z
 **Validation Score:** 0.9286  (exploratory_signal)
 
 ## Aggregat
@@ -13,7 +13,7 @@
 - keine
 
 ## Uncertain Checks
-- **V_storm_atmosphere** (storm_validation): EONET open storms=5. L3=0.225, active_thunderstorms=False
+- **V_storm_atmosphere** (storm_validation): EONET open storms=8. L3=0.202, active_thunderstorms=False
 
 ## Model Adjustment Suggestions
 - keine
@@ -27,7 +27,7 @@
   - Beobachtet: model_current=0.0  vs  noaa_current=0.0  →  |Δ|=0.00
 - ⚠️ **V_storm_atmosphere**: Bei >= 5 offenen Sturm-Events weltweit ist L3 >= 0.3
   - Erwartet: L3 >= 0.3
-  - Beobachtet: L3 = 0.225
+  - Beobachtet: L3 = 0.202
 - ❓ **V_schumann_data_availability**: Externe Schumann-Resonanz-Messdaten für Vergleich verfügbar
   - Erwartet: real-time SR1 amplitude/frequency feed
   - Beobachtet: no public feed available
@@ -36,10 +36,10 @@
   - Beobachtet: overlap = []
 - ✅ **V_consistency_seasonal**: seasonal_transition_state: preparation > 0.45 und downstream < 0.35
   - Erwartet: prep > 0.45 AND downstream < 0.35
-  - Beobachtet: prep=0.556, downstream=0.258
+  - Beobachtet: prep=0.582, downstream=0.264
 - ✅ **V_backtest_carnegie_anomalous**: anomalous_resonance_state tritt überwiegend (>= 80%) abends auf
   - Erwartet: >= 80% evening
   - Beobachtet: 100.0% evening (6/6)
 - ✅ **V_backtest_enso_consistency**: Bei externem ONI >= 0.2 sind >= 50% der Snapshots warm-klassifiziert
   - Erwartet: >= 50% warm
-  - Beobachtet: 87.2% warm
+  - Beobachtet: 87.3% warm
