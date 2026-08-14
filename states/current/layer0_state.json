@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-08-13T21:08:09.154267Z",
+  "timestamp": "2026-08-14T04:19:57.069689Z",
   "layer": 0,
   "name": "Externe kosmische Treiber",
-  "score": 0.225,
+  "score": 0.2411,
   "level": "ruhig",
   "confidence": 0.75,
   "score_basis": "3/4 Komponenten verfügbar",
@@ -12,7 +12,7 @@
   "components": {
     "Sonnenstrahlung (F10.7)": 0.4001,
     "Geomagn. Aktivität (Kp)": 0.0,
-    "IMF Bz (südwärts)": 0.2749,
+    "IMF Bz (südwärts)": 0.3231,
     "Solarwind Geschwindigkeit": null
   },
   "raw_values": {
@@ -25,7 +25,7 @@
       "source": "primary"
     },
     "IMF_Bz_nT": {
-      "value": -4.6,
+      "value": -6.3,
       "source": "primary"
     },
     "SW_speed_kms": {
@@ -35,9 +35,9 @@
   },
   "kp_context": {
     "Kp_current_1m": 0.0,
-    "Kp_max_60min": 2.0,
-    "Kp_max_3h": 2.0,
-    "Kp_mean_3h": 0.68,
+    "Kp_max_60min": 1.0,
+    "Kp_max_3h": 3.0,
+    "Kp_mean_3h": 1.69,
     "Kp_used_for_score": 0.0,
     "Kp_score_method": "primary"
   },
@@ -45,16 +45,16 @@
     "geomagnetic_storm": false,
     "solar_flux_high": false,
     "bz_strongly_southward": false,
-    "bz_geoeffective": false,
+    "bz_geoeffective": true,
     "bz_orientation": "southward",
     "fast_solar_wind": null
   },
-  "dominant_driver": "none",
+  "dominant_driver": "imf_southward",
   "downstream_expectation": {
-    "magnetosphere": "ruhig",
-    "ionosphere": "ruhig",
-    "schumann_resonance": "unverändert",
+    "magnetosphere": "Energie-Einkopplung aktiv",
+    "ionosphere": "erhöhte Elektrondichte möglich",
+    "schumann_resonance": "leichte Modulation möglich",
     "lithosphere_currents": "niedrig"
   },
-  "state_summary": "Layer-0-Zustand: ruhig. Sonnenstrahlung moderat (F10.7=136 sfu). Kp=0.0 (ruhig). IMF Bz=-4.6 nT – schwach südwärts, nicht geoeffektiv. Solarwind-Geschwindigkeit fehlt. Datenvollständigkeit: 75%."
+  "state_summary": "Layer-0-Zustand: ruhig. Sonnenstrahlung moderat (F10.7=136 sfu). Kp=0.0 (ruhig). IMF Bz=-6.3 nT – südwärts, geoeffektiv. Solarwind-Geschwindigkeit fehlt. Datenvollständigkeit: 75%."
 }
