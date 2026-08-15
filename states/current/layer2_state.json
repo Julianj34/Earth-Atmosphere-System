@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-08-15T08:49:49.176698Z",
+  "timestamp": "2026-08-15T14:43:16.294749Z",
   "layer": 2,
   "name": "Oberfläche & Biosphärennahe Kontaktzone",
-  "score": 0.5613,
+  "score": 0.5276,
   "level": "moderat",
   "confidence": 0.8,
   "score_basis": "4/5 dynamische Komponenten",
@@ -12,7 +12,7 @@
   ],
   "components": {
     "Konvektions-Potential": {
-      "score": 0.5842,
+      "score": 0.5538,
       "source": "primary",
       "dynamic": true
     },
@@ -27,12 +27,12 @@
       "dynamic": true
     },
     "Elektr. Bodenkopplung": {
-      "score": 0.5107,
+      "score": 0.4218,
       "source": "primary",
       "dynamic": true
     },
     "Bodenfeuchte (global)": {
-      "score": 0.1503,
+      "score": 0.135,
       "source": "primary",
       "dynamic": true
     }
@@ -51,50 +51,50 @@
       "note": "phase_forecast nicht im Score verwendet",
       "source": "cpc_weekly"
     },
-    "conv_potential_mean": 0.584,
-    "elec_coupling_mean": 0.511,
+    "conv_potential_mean": 0.554,
+    "elec_coupling_mean": 0.422,
     "surface_points": [
       {
         "point": "Mitteleuropa",
-        "temp_2m": 28.0,
-        "rh": 34,
-        "conv": 0.501,
-        "elec": 0.269
+        "temp_2m": 33.2,
+        "rh": 18,
+        "conv": 0.478,
+        "elec": 0.196
       },
       {
         "point": "Tropen (Kongo)",
-        "temp_2m": 31.2,
-        "rh": 39,
-        "conv": 0.577,
-        "elec": 0.314
+        "temp_2m": 34.3,
+        "rh": 25,
+        "conv": 0.509,
+        "elec": 0.21
       },
       {
         "point": "Arktis",
-        "temp_2m": 0.7,
-        "rh": 92,
-        "conv": 0.392,
-        "elec": 0.574
+        "temp_2m": 0.5,
+        "rh": 90,
+        "conv": 0.397,
+        "elec": 0.566
       },
       {
         "point": "Pazifik (ITCZ)",
-        "temp_2m": 28.2,
-        "rh": 81,
-        "conv": 0.546,
-        "elec": 0.588
+        "temp_2m": 27.5,
+        "rh": 84,
+        "conv": 0.55,
+        "elec": 0.59
       },
       {
         "point": "Amazonia",
-        "temp_2m": 22.4,
-        "rh": 90,
-        "conv": 0.762,
-        "elec": 0.628
+        "temp_2m": 31.8,
+        "rh": 48,
+        "conv": 0.693,
+        "elec": 0.448
       },
       {
         "point": "Sahel",
-        "temp_2m": 26.1,
-        "rh": 85,
-        "conv": 0.727,
-        "elec": 0.691
+        "temp_2m": 31.0,
+        "rh": 60,
+        "conv": 0.696,
+        "elec": 0.521
       }
     ]
   },
@@ -105,24 +105,24 @@
     "la_nina_active": false,
     "la_nina_developing": false,
     "sst_anomaly_high": null,
-    "thunderstorm_trigger": true,
-    "bz_orientation": "southward"
+    "thunderstorm_trigger": false,
+    "bz_orientation": "weak_southward"
   },
   "downstream_expectation": {
-    "layer3_weather": "erhoehtes Gewitterpotential – Konvektion und E-Kopplung aktiv",
-    "layer5_gec": "erhoehter Energieeintrag in GEC durch Gewitteraktivitaet moeglich",
+    "layer3_weather": "moderate Konvektion – normale Gewitteraktivitaet",
+    "layer5_gec": "normaler GEC-Grundzustand erwartet",
     "schumann_resonance": "moderate Konvektion – leichte Schumann-Modulation moeglich",
     "layer4_ionosphere": "ENSO-modulierte Konvektion beeinflusst troposphaerische Wellenausbreitung"
   },
   "layer0_context": {
-    "score": 0.2027,
+    "score": 0.2246,
     "level": "ruhig",
     "dominant_driver": "none"
   },
   "layer1_context": {
-    "score": 0.3976,
+    "score": 0.4347,
     "level": "moderat",
     "seismic_elevated": true
   },
-  "state_summary": "Layer-2-Zustand: moderat. SST nicht verfuegbar. ENSO: strong_el_nino / el_nino_active (weekly Nino3.4=+2.60, ONI=+1.39; Forecast nicht im Score). Konvektions-Potential: 0.58. Datenvollstaendigkeit: 80%. L1-Eingang: moderat (Score 0.398)."
+  "state_summary": "Layer-2-Zustand: moderat. SST nicht verfuegbar. ENSO: strong_el_nino / el_nino_active (weekly Nino3.4=+2.60, ONI=+1.39; Forecast nicht im Score). Konvektions-Potential: 0.55. Datenvollstaendigkeit: 80%. L1-Eingang: moderat (Score 0.435)."
 }
