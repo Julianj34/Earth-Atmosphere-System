@@ -1,14 +1,14 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-08-14T20:52:14.345349Z
-**Snapshots analysiert:** 255
+**Run:** 2026-08-15T03:09:42.916748Z
+**Snapshots analysiert:** 256
 **Vollständige Tagespaare:** 41
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 238× (93.3%)
-- `cavity_condition_shift_state` — 6× (2.4%)
-- `anomalous_resonance_state` — 6× (2.4%)
+- `seasonal_transition_state` — 239× (93.4%)
+- `cavity_condition_shift_state` — 6× (2.3%)
+- `anomalous_resonance_state` — 6× (2.3%)
 - `geomagnetic_disturbance_state` — 3× (1.2%)
 - `normal_background_state` — 2× (0.8%)
 
@@ -63,23 +63,23 @@
 ## L2 ↔ L3 Beziehung
 
 - Pearson: **-0.014**
-- L2 Trend: +0.00008 / Snapshot
+- L2 Trend: +0.00007 / Snapshot
 - L3 Trend: +0.00006 / Snapshot
-- Gap-Trend: +0.00001 / Snapshot
+- Gap-Trend: +0.00002 / Snapshot
 - Schwache Kopplung sichtbar — mehr Daten nötig.
 
 ## Field Operators
 
-Coverage: 237/255 Snapshots
+Coverage: 238/256 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
-- **resonance_model**: 0.443 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
-- **thermal**: 0.421 — moderate thermische Vorbereitung vorhanden
-- **ionization**: 0.329 — ruhige Ionosphäre, minimaler Strahlungseffekt
-- **electric**: 0.234 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
-- **geomagnetic**: 0.212 — ruhige geomagnetische Bedingungen
-- **cross_layer_activation**: 0.192 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
+- **thermal**: 0.439 — moderate thermische Vorbereitung vorhanden
+- **resonance_model**: 0.400 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
+- **ionization**: 0.284 — ruhige Ionosphäre, minimaler Strahlungseffekt
+- **cross_layer_activation**: 0.219 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
+- **electric**: 0.176 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
+- **geomagnetic**: 0.100 — ruhige geomagnetische Bedingungen
 
 ### Operator ↔ ΔL3 Korrelation
 
