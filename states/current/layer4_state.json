@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-08-18T14:57:54.754067Z",
+  "timestamp": "2026-08-18T20:45:25.606034Z",
   "layer": 4,
   "name": "Ionosphaere",
-  "score": 0.4018,
+  "score": 0.4142,
   "level": "moderat",
   "confidence": 1.0,
   "score_basis": "5/5 dynamische Komponenten",
-  "dominant_component": "Cavity-Hoehen-Abweichung",
+  "dominant_component": "X-Ray Absorption (D-Schicht)",
   "missing_components": [],
   "components": {
     "Ionisierungsgrad (F10.7)": {
@@ -15,33 +15,33 @@
       "dynamic": true
     },
     "Stoerungsgrad (Kp)": {
-      "score": 0.333,
+      "score": 0.556,
       "source": "primary",
       "dynamic": true
     },
     "Cavity-Hoehen-Abweichung": {
-      "score": 0.645,
+      "score": 0.125,
       "source": "derived",
       "dynamic": true
     },
     "X-Ray Absorption (D-Schicht)": {
-      "score": 0.631,
+      "score": 0.656,
       "source": "primary",
       "dynamic": true
     },
     "IMF Bz Kopplung": {
-      "score": 0.0,
+      "score": 0.334,
       "source": "primary",
       "dynamic": true
     }
   },
   "raw_values": {
     "F10.7_sfu": 136.01,
-    "Kp_current": 3.0,
-    "Kp_max_24h": 3.0,
-    "xray_flux_Wm2": 1.422369564352266e-06,
+    "Kp_current": 5.0,
+    "Kp_max_24h": 5.0,
+    "xray_flux_Wm2": 1.9024477069251589e-06,
     "xray_class": "C",
-    "IMF_Bz_nT": 7.48,
+    "IMF_Bz_nT": -6.68,
     "wwv_solar_flux": 124,
     "wwv_a_index": 11,
     "wwv_k_index": null,
@@ -50,16 +50,16 @@
     ]
   },
   "resonance_system": {
-    "cavity_height_km": 67.1,
+    "cavity_height_km": 82.5,
     "cavity_height_ref_km": 80.0,
-    "cavity_delta_km": -12.9,
-    "day_night": "day",
-    "d_layer_active": true,
+    "cavity_delta_km": 2.5,
+    "day_night": "night",
+    "d_layer_active": false,
     "schumann_frequencies_Hz": {
-      "SR_1": 10.4809,
-      "SR_2": 18.1534,
-      "SR_3": 25.6728,
-      "SR_4": 33.1435
+      "SR_1": 10.4559,
+      "SR_2": 18.1101,
+      "SR_3": 25.6116,
+      "SR_4": 33.0644
     },
     "schumann_ref_Hz": {
       "SR_1": 10.4599,
@@ -80,50 +80,50 @@
       "layer7_feature": "non_geometric_dominance = observed_delta_mHz >> geometric_delta_mHz"
     },
     "schumann_delta_mHz": {
-      "SR_1": 20.96,
-      "SR_2": 36.3,
-      "SR_3": 51.34,
-      "SR_4": 66.28
+      "SR_1": -4.05,
+      "SR_2": -7.02,
+      "SR_3": -9.93,
+      "SR_4": -12.81
     },
-    "propagation_conditions": "unsettled"
+    "propagation_conditions": "gestört"
   },
   "flags": {
-    "geomagnetic_storm": false,
+    "geomagnetic_storm": true,
     "radio_blackout": false,
     "ionospheric_disturbed": true,
-    "cavity_elevated": true,
-    "bz_southward_coupled": false,
+    "cavity_elevated": false,
+    "bz_southward_coupled": true,
     "iono_alerts_active": true
   },
   "downstream_expectation": {
     "layer5_gec": "normale Ionosphaeren-Leitfaehigkeit",
-    "schumann_resonance": "Cavity-Hoehenabweichung >10 km – SR-Frequenzverschiebung moeglich",
+    "schumann_resonance": "SR-1 bei 10.456 Hz (Δ -4.1 mHz) – geringe Verschiebung",
     "layer6_pattern": "Ionosphärenstruktur gestört – Resonanzmuster verändert"
   },
   "layer_context": {
     "L0": {
-      "score": 0.2147,
-      "level": "ruhig",
-      "dominant_driver": "none"
+      "score": 0.338,
+      "level": "moderat",
+      "dominant_driver": "geomagnetic"
     },
     "L1": {
-      "score": 0.5394,
+      "score": 0.5983,
       "level": "moderat"
     },
     "L2": {
-      "score": 0.5631,
-      "level": "moderat",
+      "score": 0.6082,
+      "level": "aktiv",
       "enso_phase": "strong_el_nino"
     },
     "L3": {
-      "score": 0.2089,
+      "score": 0.1781,
       "level": "ruhig",
-      "schumann_potential": 0.2208,
+      "schumann_potential": 0.2347,
       "xray_context": {
-        "flux": 1.422369564352266e-06,
+        "flux": 1.9024477069251589e-06,
         "class": "C"
       }
     }
   },
-  "state_summary": "Layer-4-Zustand: moderat. F10.7=136 sfu. Kp=3.0 (max 24h: 3.0). X-Ray C-Klasse. IMF Bz=+7.5 nT. Cavity-Hoehe 67.1 km (Ref 80 km, Δ -12.9 km). SR-1=10.481 Hz (Δ +21.0 mHz). Propagation: unsettled. Datenvollstaendigkeit: 100%."
+  "state_summary": "Layer-4-Zustand: moderat. F10.7=136 sfu. Kp=5.0 (max 24h: 5.0). X-Ray C-Klasse. IMF Bz=-6.7 nT. Cavity-Hoehe 82.5 km (Ref 80 km, Δ +2.5 km). SR-1=10.456 Hz (Δ -4.1 mHz). Propagation: gestört. Datenvollstaendigkeit: 100%."
 }
