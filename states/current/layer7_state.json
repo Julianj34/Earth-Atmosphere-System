@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-08-18T08:59:34.312352Z",
+  "timestamp": "2026-08-18T14:58:08.269525Z",
   "engine_version": "2.0",
   "layer": 7,
   "name": "Earth Field State Engine",
   "system_state": "seasonal_transition_state",
-  "state_score": 0.5972,
+  "state_score": 0.5631,
   "state_score_method": "preparation_score",
   "state_confidence": 0.7,
-  "avg_score": 0.3716,
+  "avg_score": 0.3572,
   "avg_score_method": "mean_of_available_layers_excl_mediator_proxies",
   "state_rule_version": "1.1.0",
   "state_rule_id": "seasonal_transition",
@@ -16,13 +16,13 @@
   ],
   "avg_confidence": 0.9114,
   "meta_scores": {
-    "preparation_score": 0.5972,
-    "activation_score": 0.1978,
-    "electric_score": 0.3126,
-    "resonance_score": 0.2774,
-    "downstream_score": 0.2626,
-    "cavity_gate_score": 0.3548,
-    "external_score": 0.2445
+    "preparation_score": 0.5631,
+    "activation_score": 0.2089,
+    "electric_score": 0.2913,
+    "resonance_score": 0.2809,
+    "downstream_score": 0.2604,
+    "cavity_gate_score": 0.3413,
+    "external_score": 0.2147
   },
   "enso_context": {
     "phase_class": "el_nino",
@@ -34,7 +34,7 @@
     "used_in_score": true,
     "source": "cpc_weekly"
   },
-  "state_confidence_reason": "downstream_score=0.263 (L3=0.198, L5=0.313, L6=0.277). preparation_score=0.597. Downstream schwach — Vorbereitung ohne Aktivierung.",
+  "state_confidence_reason": "downstream_score=0.260 (L3=0.209, L5=0.291, L6=0.281). preparation_score=0.563. Downstream schwach — Vorbereitung ohne Aktivierung.",
   "dominance": {
     "dominant_layer": "L2_surface_zone",
     "secondary_layer": "L1_planetary_body",
@@ -43,6 +43,7 @@
       "L1_planetary_body"
     ],
     "weak_layers": [
+      "L5_global_electric_circuit",
       "L6_resonance_field",
       "L0_external_drivers",
       "L3_atmosphere"
@@ -50,7 +51,7 @@
   },
   "layers": {
     "L0_external_drivers": {
-      "score": 0.2445,
+      "score": 0.2147,
       "level": "ruhig",
       "confidence": 0.75,
       "dominant_component": "none",
@@ -64,15 +65,15 @@
       },
       "key_metrics": {
         "F10.7": 136.0,
-        "Kp": 3.0,
-        "IMF_Bz": 8.5
+        "Kp": 2.0,
+        "IMF_Bz": 4.2
       },
       "available": true,
       "delta_1h": null,
-      "delta_6h": -0.0261,
-      "delta_24h": 0.0704,
+      "delta_6h": -0.0298,
+      "delta_24h": -0.0683,
       "trend": "stable",
-      "volatility": 0.0384,
+      "volatility": 0.0348,
       "holon_role": "driver",
       "holon_status": "measured",
       "evidence_status": "measured"
@@ -95,16 +96,16 @@
       },
       "available": true,
       "delta_1h": null,
-      "delta_6h": 0.074,
-      "delta_24h": 0.1084,
-      "trend": "rising",
-      "volatility": 0.0317,
+      "delta_6h": 0.0,
+      "delta_24h": 0.0344,
+      "trend": "stable",
+      "volatility": 0.0386,
       "holon_role": "driver",
       "holon_status": "measured",
       "evidence_status": "measured"
     },
     "L2_surface_zone": {
-      "score": 0.5972,
+      "score": 0.5631,
       "level": "moderat",
       "confidence": 0.8,
       "dominant_component": "ENSO-Phase (Nino3.4)",
@@ -121,20 +122,20 @@
       "key_metrics": {
         "SST_anomaly": null,
         "ENSO_phase": "strong_el_nino",
-        "conv_pot": 0.618
+        "conv_pot": 0.582
       },
       "available": true,
       "delta_1h": null,
-      "delta_6h": -0.0099,
-      "delta_24h": 0.0375,
+      "delta_6h": -0.0341,
+      "delta_24h": -0.0343,
       "trend": "stable",
-      "volatility": 0.0227,
+      "volatility": 0.0215,
       "holon_role": "constraint",
       "holon_status": "measured",
       "evidence_status": "measured"
     },
     "L3_atmosphere": {
-      "score": 0.1978,
+      "score": 0.2089,
       "level": "ruhig",
       "confidence": 0.83,
       "dominant_component": "Atm. Instabilität (LI)",
@@ -147,14 +148,14 @@
         "l2_thunder_confirmed": true
       },
       "key_metrics": {
-        "CAPE": 394.0,
+        "CAPE": 412.0,
         "thunder_pts": 0,
         "storms_EONET": 5
       },
       "available": true,
       "delta_1h": null,
-      "delta_6h": 0.0257,
-      "delta_24h": -0.0286,
+      "delta_6h": 0.0111,
+      "delta_24h": -0.0191,
       "trend": "stable",
       "volatility": 0.0237,
       "holon_role": "response",
@@ -162,7 +163,7 @@
       "evidence_status": "measured"
     },
     "L4_ionosphere": {
-      "score": 0.4322,
+      "score": 0.4018,
       "level": "moderat",
       "confidence": 1.0,
       "dominant_component": "Cavity-Hoehen-Abweichung",
@@ -177,21 +178,21 @@
       "key_metrics": {
         "Kp": 3.0,
         "cavity_h": 67.1,
-        "xray_class": "B"
+        "xray_class": "C"
       },
       "available": true,
       "delta_1h": null,
-      "delta_6h": 0.1064,
-      "delta_24h": 0.1116,
-      "trend": "rising",
-      "volatility": 0.0353,
+      "delta_6h": -0.0304,
+      "delta_24h": 0.0166,
+      "trend": "stable",
+      "volatility": 0.0454,
       "holon_role": "mediator",
       "holon_status": "measured",
       "evidence_status": "measured"
     },
     "L5_global_electric_circuit": {
-      "score": 0.3126,
-      "level": "moderat",
+      "score": 0.2913,
+      "level": "ruhig",
       "confidence": 1.0,
       "dominant_component": "Iono-Leitfaehigkeit (L4)",
       "flags": {
@@ -203,16 +204,16 @@
         "bz_southward_coupled": false
       },
       "key_metrics": {
-        "V_iono": 306.0,
-        "delta_V_pct": 2.0,
-        "generator": 0.9
+        "V_iono": 312.5,
+        "delta_V_pct": 4.2,
+        "generator": 0.919
       },
       "available": true,
       "delta_1h": null,
-      "delta_6h": 0.0198,
-      "delta_24h": -0.0221,
+      "delta_6h": -0.0213,
+      "delta_24h": -0.0307,
       "trend": "stable",
-      "volatility": 0.0238,
+      "volatility": 0.022,
       "holon_role": "response",
       "holon_status": "derived_proxy",
       "evidence_status": "derived_proxy",
@@ -229,10 +230,10 @@
       "directly_observed": false
     },
     "L6_resonance_field": {
-      "score": 0.2774,
+      "score": 0.2809,
       "level": "ruhig",
       "confidence": 1.0,
-      "dominant_component": "Chimney-Aktivitaet",
+      "dominant_component": "Anregungs-Staerke (Amplitude)",
       "flags": {
         "amplitude_elevated": false,
         "amplitude_suppressed": false,
@@ -243,80 +244,80 @@
       },
       "key_metrics": {
         "SR1_Hz": 7.786,
-        "SR1_amp_pT": 0.9208,
+        "SR1_amp_pT": 0.9436,
         "non_geom_ratio": 3.1
       },
       "available": true,
       "delta_1h": null,
-      "delta_6h": 0.0276,
-      "delta_24h": 0.0007,
+      "delta_6h": 0.0035,
+      "delta_24h": -0.0033,
       "trend": "stable",
-      "volatility": 0.0439,
+      "volatility": 0.0355,
       "holon_role": "response",
       "holon_status": "proxy",
       "evidence_status": "proxy"
     },
     "L2p5_meso": {
-      "score": 0.7437,
-      "level": "aktiv",
+      "score": 0.12,
+      "level": "ruhig",
       "confidence": 0.2,
       "dominant_component": "organisation(cloud_proxy)",
       "flags": {
         "mjo_active": false,
-        "mcs_organised": true,
+        "mcs_organised": false,
         "cin_capped": false,
         "shear_supportive": false,
         "midlevel_dry": false,
         "organised_but_capped": false
       },
       "key_metrics": {
-        "organisation": 1.0,
-        "cin_gate": 0.7437,
+        "organisation": 0.12,
+        "cin_gate": 1.0,
         "organisation_source": "cloud_proxy",
         "construct_status": "derived_proxy",
-        "CIN": 47.8,
-        "cloud_cover": 100.0
+        "CIN": 15.6,
+        "cloud_cover": 56.0
       },
       "available": true,
       "delta_1h": null,
-      "delta_6h": 0.6168,
-      "delta_24h": 0.4139,
-      "trend": "rising",
-      "volatility": 0.2965,
+      "delta_6h": -0.6237,
+      "delta_24h": -0.88,
+      "trend": "falling",
+      "volatility": 0.2985,
       "holon_role": "mediator",
       "holon_status": "derived_proxy",
       "evidence_status": "derived_proxy"
     }
   },
   "cavity_gate": {
-    "active": true,
-    "score": 0.3548,
-    "type": "weak",
+    "active": false,
+    "score": 0.3413,
+    "type": "inactive",
     "inputs": {
-      "L4_score": 0.4322,
-      "L6_score": 0.2774,
+      "L4_score": 0.4018,
+      "L6_score": 0.2809,
       "L4_to_L6_coupling": 0.522,
-      "resonance_model_operator": 0.4504
+      "resonance_model_operator": 0.4444
     },
     "downstream_confirmation": {
-      "L3": 0.1978,
-      "L5": 0.3126,
-      "L6": 0.2774
+      "L3": 0.2089,
+      "L5": 0.2913,
+      "L6": 0.2809
     },
-    "downstream_mean": 0.2626,
-    "interpretation": "cavity-Verschiebung schwach"
+    "downstream_mean": 0.2604,
+    "interpretation": "cavity ruhig — keine Verschiebung"
   },
   "diagnostic_features": {
-    "surface_atmosphere_gap": 0.3994,
-    "surface_to_resonance_gap": 0.3198,
-    "atmosphere_to_gec_gap": -0.1148,
+    "surface_atmosphere_gap": 0.3542,
+    "surface_to_resonance_gap": 0.2822,
+    "atmosphere_to_gec_gap": -0.0824,
     "external_pressure_low": true,
     "resonance_confirmed": false,
     "transition_state": true,
     "interpretation": "surface_prepared_but_atmosphere_not_activated"
   },
   "kp_context": {
-    "L0_Kp_used": 3.0,
+    "L0_Kp_used": 2.0,
     "L4_Kp_current": 3.0,
     "note": "Different Kp windows/sources: L0 uses broader context (Layer-0-Score-Kp), L4 uses current 1-min ionospheric state."
   },
@@ -324,7 +325,7 @@
     {
       "from": "L0_external_drivers",
       "to": "L4_ionosphere",
-      "strength": 0.239,
+      "strength": 0.212,
       "lag_hours": 0,
       "confidence": 0.75,
       "mechanism": "Solarwind, F10.7, X-Ray ionisieren Ionosphäre",
@@ -334,7 +335,7 @@
     {
       "from": "L3_atmosphere",
       "to": "L5_global_electric_circuit",
-      "strength": 0.277,
+      "strength": 0.243,
       "lag_hours": 0,
       "confidence": 0.83,
       "mechanism": "Gewitter laden Ionosphäre (CAPE → V_iono)",
@@ -345,7 +346,7 @@
     {
       "from": "L3_atmosphere",
       "to": "L6_resonance_field",
-      "strength": 0.339,
+      "strength": 0.356,
       "lag_hours": 0,
       "confidence": 0.83,
       "mechanism": "Blitze regen Schumann-Resonanz an",
@@ -365,7 +366,7 @@
     {
       "from": "L5_global_electric_circuit",
       "to": "L6_resonance_field",
-      "strength": 0.165,
+      "strength": 0.201,
       "lag_hours": 0,
       "confidence": 1.0,
       "mechanism": "GEC ist die elektrische Architektur der Resonanz",
@@ -375,7 +376,7 @@
     {
       "from": "L0_external_drivers",
       "to": "L5_global_electric_circuit",
-      "strength": 0.263,
+      "strength": 0.192,
       "lag_hours": 0,
       "confidence": 0.75,
       "mechanism": "Kp moduliert ionosphärische Leitfähigkeit (GEC-Widerstand)",
@@ -385,7 +386,7 @@
     {
       "from": "L2_surface_zone",
       "to": "L3_atmosphere",
-      "strength": 0.492,
+      "strength": 0.47,
       "lag_hours": 1,
       "confidence": 0.8,
       "mechanism": "Oberflächenkonvektion → atmosphärische Gewitterbildung",
@@ -395,13 +396,13 @@
   ],
   "field_operators": {
     "thermal_operator": {
-      "score": 0.4531,
+      "score": 0.4271,
       "level": "moderat",
       "interpretation": "moderate thermische Vorbereitung vorhanden",
       "inputs": {
-        "L2_score": 0.597,
+        "L2_score": 0.563,
         "SST_anomaly_norm": 0.0,
-        "conv_potential": 0.618
+        "conv_potential": 0.582
       },
       "evidence": [
         "L2 Score erhöht",
@@ -419,13 +420,13 @@
       ]
     },
     "electric_operator": {
-      "score": 0.2175,
+      "score": 0.2281,
       "level": "ruhig",
       "interpretation": "GEC nahe Referenz, keine elektrische Aktivierung",
       "inputs": {
-        "L3_score": 0.198,
-        "L5_score": 0.313,
-        "delta_V_norm": 0.067
+        "L3_score": 0.209,
+        "L5_score": 0.291,
+        "delta_V_norm": 0.14
       },
       "evidence": [
         "kein elektrisches Signal"
@@ -444,12 +445,12 @@
       ]
     },
     "ionization_operator": {
-      "score": 0.3816,
+      "score": 0.3575,
       "level": "moderat",
       "interpretation": "Ionosphärenstörung: starker Strahlungseffekt auf Ausbreitung",
       "inputs": {
-        "L0_score": 0.244,
-        "L4_score": 0.432,
+        "L0_score": 0.215,
+        "L4_score": 0.402,
         "F107_norm": 0.508
       },
       "evidence": [
@@ -469,13 +470,13 @@
       ]
     },
     "geomagnetic_operator": {
-      "score": 0.3537,
-      "level": "moderat",
+      "score": 0.2542,
+      "level": "ruhig",
       "interpretation": "ruhige geomagnetische Bedingungen",
       "inputs": {
-        "Kp_norm": 0.333,
-        "Bz_norm": 0.425,
-        "L0_score": 0.244
+        "Kp_norm": 0.222,
+        "Bz_norm": 0.21,
+        "L0_score": 0.215
       },
       "evidence": [
         "keine geomagnetische Anregung"
@@ -496,13 +497,13 @@
       ]
     },
     "resonance_model_operator": {
-      "score": 0.4504,
+      "score": 0.4444,
       "level": "moderat",
       "interpretation": "modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus",
       "inputs": {
-        "L4_score": 0.432,
-        "L5_score": 0.313,
-        "L6_score": 0.277,
+        "L4_score": 0.402,
+        "L5_score": 0.291,
+        "L6_score": 0.281,
         "non_geom_ratio": 1.0
       },
       "evidence": [
@@ -540,16 +541,16 @@
       ]
     },
     "cross_layer_activation_operator": {
-      "score": 0.2307,
+      "score": 0.2013,
       "level": "schwache_übergangsspannung",
       "interpretation": "schwache Übergangsspannung bei L2_to_L3",
       "inputs": {
-        "L2_to_L3": 0.3994,
+        "L2_to_L3": 0.3542,
         "L3_to_L5": 0,
-        "L4_to_L6": 0.1548
+        "L4_to_L6": 0.1209
       },
       "evidence": [
-        "L2→L3 Gap: 0.40 (Oberfläche vorbereitet, Atmosphäre nicht aktiviert)"
+        "L2→L3 Gap: 0.35 (Oberfläche vorbereitet, Atmosphäre nicht aktiviert)"
       ],
       "primary_gap": "L2_to_L3",
       "primary_driver": "L2_to_L3",
@@ -573,13 +574,13 @@
     }
   },
   "field_operator_vector": {
-    "thermal": 0.4531,
-    "electric": 0.2175,
-    "ionization": 0.3816,
-    "geomagnetic": 0.3537,
-    "resonance_model": 0.4504,
+    "thermal": 0.4271,
+    "electric": 0.2281,
+    "ionization": 0.3575,
+    "geomagnetic": 0.2542,
+    "resonance_model": 0.4444,
     "tidal_gravity": null,
-    "cross_layer_activation": 0.2307
+    "cross_layer_activation": 0.2013
   },
   "baseline_tags": [
     "elevated_seismicity",
@@ -617,7 +618,7 @@
     "cavity_gate_threshold": 0.35
   },
   "layer8_handoff": {
-    "state_summary": "System-State: seasonal_transition_state | Score 0.597 | Conf 70% | Dom: L2_surface_zone | Downstream: 0.263 | CavityGate: weak | Signal-Tags: 7 | Baseline-Tags: 2 | History: 272 snapshots",
+    "state_summary": "System-State: seasonal_transition_state | Score 0.563 | Conf 70% | Dom: L2_surface_zone | Downstream: 0.260 | CavityGate: inactive | Signal-Tags: 7 | Baseline-Tags: 2 | History: 273 snapshots",
     "research_questions": [
       "Welche Signal-Tag-Kombinationen treten vor anomalous_resonance_state auf?",
       "Wie entwickelt sich cavity_gate_type über Zeit?",
