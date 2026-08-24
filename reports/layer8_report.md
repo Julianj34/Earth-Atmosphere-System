@@ -1,14 +1,14 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-08-24T03:20:45.199129Z
-**Snapshots analysiert:** 292
+**Run:** 2026-08-24T09:09:26.728667Z
+**Snapshots analysiert:** 293
 **Vollständige Tagespaare:** 50
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 274× (93.8%)
-- `cavity_condition_shift_state` — 6× (2.1%)
-- `anomalous_resonance_state` — 6× (2.1%)
+- `seasonal_transition_state` — 275× (93.9%)
+- `cavity_condition_shift_state` — 6× (2.0%)
+- `anomalous_resonance_state` — 6× (2.0%)
 - `geomagnetic_disturbance_state` — 4× (1.4%)
 - `normal_background_state` — 2× (0.7%)
 
@@ -71,24 +71,24 @@
 
 ## L2 ↔ L3 Beziehung
 
-- Pearson: **-0.062**
-- L2 Trend: +0.00007 / Snapshot
+- Pearson: **-0.065**
+- L2 Trend: +0.00008 / Snapshot
 - L3 Trend: +0.00001 / Snapshot
-- Gap-Trend: +0.00006 / Snapshot
+- Gap-Trend: +0.00007 / Snapshot
 - Schwache Kopplung sichtbar — mehr Daten nötig.
 
 ## Field Operators
 
-Coverage: 274/292 Snapshots
+Coverage: 275/293 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
-- **thermal**: 0.474 — moderate thermische Vorbereitung vorhanden
-- **resonance_model**: 0.402 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
-- **ionization**: 0.292 — ruhige Ionosphäre, minimaler Strahlungseffekt
-- **electric**: 0.252 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
-- **cross_layer_activation**: 0.251 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
-- **geomagnetic**: 0.106 — ruhige geomagnetische Bedingungen
+- **thermal**: 0.452 — moderate thermische Vorbereitung vorhanden
+- **resonance_model**: 0.419 — Resonanzfeld ruhig, schwache modellierte Modulation
+- **ionization**: 0.309 — moderate ionosphärische Modulation
+- **electric**: 0.283 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
+- **cross_layer_activation**: 0.252 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
+- **geomagnetic**: 0.116 — ruhige geomagnetische Bedingungen
 
 ### Operator ↔ ΔL3 Korrelation
 
