@@ -1,39 +1,37 @@
 {
-  "timestamp": "2026-08-25T03:16:21.308432Z",
+  "timestamp": "2026-08-25T09:04:48.451320Z",
   "layer": 3,
   "name": "Atmosphaere / Wetter / Konvektion",
-  "score": 0.1718,
+  "score": 0.1919,
   "level": "ruhig",
-  "confidence": 0.83,
-  "score_basis": "5/5 dynamische Komponenten; 5/6 Atmosphärenpunkte",
-  "dominant_component": "Schumann-Anregungs-Potenzial",
+  "confidence": 1.0,
+  "score_basis": "5/5 dynamische Komponenten; 6/6 Atmosphärenpunkte",
+  "dominant_component": "Atm. Instabilität (LI)",
   "missing_components": [],
   "data_coverage": {
-    "open_meteo_points_loaded": 5,
+    "open_meteo_points_loaded": 6,
     "open_meteo_points_expected": 6,
-    "open_meteo_fraction": 0.8333,
-    "open_meteo_errors": [
-      "Mitteleuropa: ConnectionError: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/gfs?latitude=48.0&longitude=11.0&current=temperature_2m%2Crelative_humidity_2m%2Csurface_pressure%2Cwind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Ccloud_cover%2Cprecipitation%2Crain%2Cshowers%2Cweather_code&hourly=cape%2Cconvective_inhibition%2Clifted_index%2Ccloud_cover%2Cprecipitation_probability&forecast_hours=6&timezone=UTC (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='api.open-meteo.com', port=443): Read timed out. (read timeout=10)\"))"
-    ]
+    "open_meteo_fraction": 1.0,
+    "open_meteo_errors": []
   },
   "components": {
     "Konvektions-Intensität (CAPE)": {
-      "score": 0.122,
+      "score": 0.1256,
       "source": "primary",
       "dynamic": true
     },
     "Atm. Instabilität (LI)": {
-      "score": 0.17,
+      "score": 0.2778,
       "source": "primary",
       "dynamic": true
     },
     "Gewitteraktivität": {
-      "score": 0.1564,
+      "score": 0.1597,
       "source": "primary",
       "dynamic": true
     },
     "Schumann-Anregungs-Potenzial": {
-      "score": 0.2105,
+      "score": 0.1962,
       "source": "derived",
       "dynamic": true
     },
@@ -44,73 +42,83 @@
     }
   },
   "raw_values": {
-    "CAPE_mean_Jkg": 366.0,
-    "CIN_mean_Jkg": 61.4,
-    "CloudCover_mean_pct": 67.6,
-    "CloudCover_convective_mean_pct": 59.5,
+    "CAPE_mean_Jkg": 376.7,
+    "CIN_mean_Jkg": 14.3,
+    "CloudCover_mean_pct": 67.7,
+    "CloudCover_convective_mean_pct": 52.8,
     "CloudCover_convective_max_pct": 100.0,
-    "CloudCover_convland_mean_pct": 46.0,
-    "CloudCover_convland_max_pct": 91.0,
-    "LI_mean_K": 3.96,
+    "CloudCover_convland_mean_pct": 37.0,
+    "CloudCover_convland_max_pct": 96.0,
+    "LI_mean_K": 2.67,
     "thunder_points_WMO": 0,
     "storm_events_EONET": 6,
-    "Kp_current": 1.0,
+    "Kp_current": 0.0,
     "xray_context": {
-      "flux": 1.8948292108689202e-06,
+      "flux": 1.489268584009551e-06,
       "class": "C"
     },
     "kp_note": "geomagnetischer Kontext, kein Blitz-Proxy",
-    "schumann_potential": 0.2105,
+    "schumann_potential": 0.1962,
     "messpunkte": [
       {
-        "point": "Tropen (Kongo)",
-        "cape": 0.0,
-        "li": 10.5,
-        "thunderstorm": false,
-        "thunder_score": 0.009,
-        "cloud": 6.0,
-        "cin": 0.0,
-        "schumann_contribution": 0.008
-      },
-      {
-        "point": "Arktis",
+        "point": "Mitteleuropa",
         "cape": 10.0,
-        "li": 7.2,
+        "li": 4.3,
         "thunderstorm": false,
-        "thunder_score": 0.151,
+        "thunder_score": 0.186,
         "cloud": 100.0,
-        "cin": 0.0,
-        "schumann_contribution": 0.045
-      },
-      {
-        "point": "Pazifik (ITCZ)",
-        "cape": 1310.0,
-        "li": -4.3,
-        "thunderstorm": false,
-        "thunder_score": 0.496,
-        "cloud": 100.0,
-        "cin": 2.0,
-        "schumann_contribution": 0.455
-      },
-      {
-        "point": "Amazonia",
-        "cape": 0.0,
-        "li": 10.6,
-        "thunderstorm": false,
-        "thunder_score": 0.061,
-        "cloud": 41.0,
         "cin": 0.0,
         "schumann_contribution": 0.056
       },
       {
-        "point": "Sahel",
-        "cape": 510.0,
-        "li": -4.2,
+        "point": "Tropen (Kongo)",
+        "cape": 20.0,
+        "li": 3.0,
         "thunderstorm": false,
-        "thunder_score": 0.4,
-        "cloud": 91.0,
-        "cin": 305.0,
-        "schumann_contribution": 0.313
+        "thunder_score": 0.08,
+        "cloud": 10.0,
+        "cin": 4.0,
+        "schumann_contribution": 0.075
+      },
+      {
+        "point": "Arktis",
+        "cape": 10.0,
+        "li": 6.4,
+        "thunderstorm": false,
+        "thunder_score": 0.143,
+        "cloud": 95.0,
+        "cin": 0.0,
+        "schumann_contribution": 0.043
+      },
+      {
+        "point": "Pazifik (ITCZ)",
+        "cape": 710.0,
+        "li": -3.0,
+        "thunderstorm": false,
+        "thunder_score": 0.408,
+        "cloud": 100.0,
+        "cin": 1.0,
+        "schumann_contribution": 0.374
+      },
+      {
+        "point": "Amazonia",
+        "cape": 0.0,
+        "li": 11.3,
+        "thunderstorm": false,
+        "thunder_score": 0.007,
+        "cloud": 5.0,
+        "cin": 0.0,
+        "schumann_contribution": 0.006
+      },
+      {
+        "point": "Sahel",
+        "cape": 1510.0,
+        "li": -6.0,
+        "thunderstorm": false,
+        "thunder_score": 0.545,
+        "cloud": 96.0,
+        "cin": 81.0,
+        "schumann_contribution": 0.427
       }
     ]
   },
@@ -129,20 +137,20 @@
     "layer6_pattern": "ruhige Atmosphaere – keine starke Mustermodulation"
   },
   "layer0_context": {
-    "score": 0.182,
+    "score": 0.1679,
     "level": "ruhig",
     "dominant_driver": "none"
   },
   "layer1_context": {
-    "score": 0.3857,
+    "score": 0.3487,
     "level": "moderat"
   },
   "layer2_context": {
-    "score": 0.6126,
+    "score": 0.6292,
     "level": "aktiv",
     "thunderstorm_trigger": true,
-    "conv_potential": 0.627,
+    "conv_potential": 0.653,
     "enso_phase": "strong_el_nino"
   },
-  "state_summary": "Layer-3-Zustand: ruhig. CAPE-Mittel 366 J/kg. LI-Mittel 4.0 K. 0 WMO-Gewitterpunkte, 6 NASA-Sturmereignisse. Schumann-Potenzial: 0.210. Datenvollstaendigkeit: 83%. L2-Eingang: aktiv (Conv=0.63, Thunder-Trigger=True)."
+  "state_summary": "Layer-3-Zustand: ruhig. CAPE-Mittel 377 J/kg. LI-Mittel 2.7 K. 0 WMO-Gewitterpunkte, 6 NASA-Sturmereignisse. Schumann-Potenzial: 0.196. Datenvollstaendigkeit: 100%. L2-Eingang: aktiv (Conv=0.65, Thunder-Trigger=True)."
 }
