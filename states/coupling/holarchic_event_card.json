@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-08-26T23:46:06.516198Z",
+  "timestamp": "2026-08-27T12:52:29.869392Z",
   "system_state": "seasonal_transition_state",
   "scores": {
-    "L0": 0.199,
-    "L2": 0.6049,
-    "L3": 0.2001,
-    "L5": 0.3031,
-    "L6": 0.2528
+    "L0": 0.1809,
+    "L2": 0.554,
+    "L3": 0.2622,
+    "L5": 0.4114,
+    "L6": 0.2898
   },
   "macro_context": {
     "band": "high",
-    "score": 0.6049,
+    "score": 0.554,
     "tags": []
   },
   "meso_organisation": {
@@ -18,38 +18,37 @@
     "note": "no meso-scale layer instrumented (regional convection / MCS)"
   },
   "micro_activation": {
-    "band": "low",
-    "score": 0.2001,
+    "band": "medium",
+    "score": 0.2622,
     "thunder_pts": 0,
     "storms_EONET": 7
   },
   "field_response": {
     "electric": {
       "band": "medium",
-      "score": 0.3031
+      "score": 0.4114
     },
     "resonance": {
       "band": "low",
-      "score": 0.2528,
-      "confirmation": "low_proxy_limited"
+      "score": 0.2898,
+      "confirmation": "partial"
     }
   },
   "chain_break": {
-    "break_at": "macro_to_micro",
-    "localizable": false,
-    "reason": "meso scale uninstrumented; cannot distinguish macro->meso vs meso->micro",
-    "diagnosis": "macro_prepared but micro_activation_low — preparation without activation"
+    "break_at": "electric_to_resonance",
+    "localizable": true,
+    "reason": "GEC active but resonance not confirmed"
   },
   "external_forcing_mask": {
-    "external_score": 0.199,
+    "external_score": 0.181,
     "externally_driven": false,
     "interpretation": "external forcing low -> absence of activation is NOT due to missing external trigger; internal/scale dynamics dominate"
   },
   "validation_status": {
     "status": "validated_by_L9",
-    "validation_score": 0.9167,
+    "validation_score": 0.9286,
     "evidence_level": "exploratory_signal",
-    "checks": "5/7 passed",
-    "l9_timestamp": "2026-08-26T23:46:18.056813Z"
+    "checks": "6/8 passed",
+    "l9_timestamp": "2026-08-27T12:52:39.399747Z"
   }
 }
