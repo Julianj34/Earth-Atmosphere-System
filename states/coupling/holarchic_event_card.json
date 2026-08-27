@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-08-27T12:52:29.869392Z",
+  "timestamp": "2026-08-27T19:10:43.946354Z",
   "system_state": "seasonal_transition_state",
   "scores": {
-    "L0": 0.1809,
-    "L2": 0.554,
-    "L3": 0.2622,
-    "L5": 0.4114,
-    "L6": 0.2898
+    "L0": 0.1766,
+    "L2": 0.5596,
+    "L3": 0.1914,
+    "L5": 0.283,
+    "L6": 0.3007
   },
   "macro_context": {
     "band": "high",
-    "score": 0.554,
+    "score": 0.5596,
     "tags": []
   },
   "meso_organisation": {
@@ -18,29 +18,30 @@
     "note": "no meso-scale layer instrumented (regional convection / MCS)"
   },
   "micro_activation": {
-    "band": "medium",
-    "score": 0.2622,
+    "band": "low",
+    "score": 0.1914,
     "thunder_pts": 0,
     "storms_EONET": 7
   },
   "field_response": {
     "electric": {
-      "band": "medium",
-      "score": 0.4114
+      "band": "low",
+      "score": 0.283
     },
     "resonance": {
-      "band": "low",
-      "score": 0.2898,
-      "confirmation": "partial"
+      "band": "medium",
+      "score": 0.3007,
+      "confirmation": "low_proxy_limited"
     }
   },
   "chain_break": {
-    "break_at": "electric_to_resonance",
-    "localizable": true,
-    "reason": "GEC active but resonance not confirmed"
+    "break_at": "macro_to_micro",
+    "localizable": false,
+    "reason": "meso scale uninstrumented; cannot distinguish macro->meso vs meso->micro",
+    "diagnosis": "macro_prepared but micro_activation_low — preparation without activation"
   },
   "external_forcing_mask": {
-    "external_score": 0.181,
+    "external_score": 0.177,
     "externally_driven": false,
     "interpretation": "external forcing low -> absence of activation is NOT due to missing external trigger; internal/scale dynamics dominate"
   },
@@ -49,6 +50,6 @@
     "validation_score": 0.9286,
     "evidence_level": "exploratory_signal",
     "checks": "6/8 passed",
-    "l9_timestamp": "2026-08-27T12:52:39.399747Z"
+    "l9_timestamp": "2026-08-27T19:10:54.894857Z"
   }
 }
