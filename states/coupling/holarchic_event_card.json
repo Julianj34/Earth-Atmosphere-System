@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-08-28T04:25:46.056764Z",
+  "timestamp": "2026-08-28T14:26:07.042790Z",
   "system_state": "seasonal_transition_state",
   "scores": {
-    "L0": 0.2043,
-    "L2": 0.6165,
-    "L3": 0.1533,
-    "L5": 0.334,
-    "L6": 0.2328
+    "L0": 0.331,
+    "L2": 0.6102,
+    "L3": 0.2461,
+    "L5": 0.2844,
+    "L6": 0.2767
   },
   "macro_context": {
     "band": "high",
-    "score": 0.6165,
+    "score": 0.6102,
     "tags": []
   },
   "meso_organisation": {
@@ -18,38 +18,37 @@
     "note": "no meso-scale layer instrumented (regional convection / MCS)"
   },
   "micro_activation": {
-    "band": "low",
-    "score": 0.1533,
+    "band": "medium",
+    "score": 0.2461,
     "thunder_pts": 0,
     "storms_EONET": 7
   },
   "field_response": {
     "electric": {
-      "band": "medium",
-      "score": 0.334
+      "band": "low",
+      "score": 0.2844
     },
     "resonance": {
       "band": "low",
-      "score": 0.2328,
+      "score": 0.2767,
       "confirmation": "low_proxy_limited"
     }
   },
   "chain_break": {
-    "break_at": "macro_to_micro",
-    "localizable": false,
-    "reason": "meso scale uninstrumented; cannot distinguish macro->meso vs meso->micro",
-    "diagnosis": "macro_prepared but micro_activation_low — preparation without activation"
+    "break_at": "micro_to_electric",
+    "localizable": true,
+    "reason": "atmosphere active but GEC not responding"
   },
   "external_forcing_mask": {
-    "external_score": 0.204,
-    "externally_driven": false,
-    "interpretation": "external forcing low -> absence of activation is NOT due to missing external trigger; internal/scale dynamics dominate"
+    "external_score": 0.331,
+    "externally_driven": true,
+    "interpretation": "external forcing non-trivial -> check L0 contribution"
   },
   "validation_status": {
     "status": "validated_by_L9",
     "validation_score": 0.9286,
     "evidence_level": "exploratory_signal",
     "checks": "6/8 passed",
-    "l9_timestamp": "2026-08-28T04:25:56.542150Z"
+    "l9_timestamp": "2026-08-28T14:26:17.189262Z"
   }
 }
