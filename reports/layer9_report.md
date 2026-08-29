@@ -1,6 +1,6 @@
 # Layer 9 — External Grounding & Validation
 
-**Run:** 2026-08-29T13:54:54.172844Z
+**Run:** 2026-08-29T17:46:59.922884Z
 **Validation Score:** 0.9286  (exploratory_signal)
 
 ## Aggregat
@@ -24,7 +24,7 @@
   - Beobachtet: el_nino
 - ✅ **V_kp_consistency**: Modell-Kp und NOAA-Kp im gleichen Zeitfenster konsistent
   - Erwartet: |Δ Kp| <= 1.0  (Fenster: current_1m)
-  - Beobachtet: model_current=2.0  vs  noaa_current=2.0  →  |Δ|=0.00
+  - Beobachtet: model_current=1.0  vs  noaa_current=2.0  →  |Δ|=1.00
 - ⚠️ **V_storm_atmosphere**: Bei >= 5 offenen Sturm-Events weltweit ist L3 >= 0.3
   - Erwartet: L3 >= 0.3
   - Beobachtet: L3 = 0.233
@@ -36,7 +36,7 @@
   - Beobachtet: overlap = []
 - ✅ **V_consistency_seasonal**: seasonal_transition_state: preparation > 0.45 und downstream < 0.35
   - Erwartet: prep > 0.45 AND downstream < 0.35
-  - Beobachtet: prep=0.557, downstream=0.261
+  - Beobachtet: prep=0.568, downstream=0.256
 - ✅ **V_backtest_carnegie_anomalous**: anomalous_resonance_state tritt überwiegend (>= 80%) abends auf
   - Erwartet: >= 80% evening
   - Beobachtet: 100.0% evening (6/6)

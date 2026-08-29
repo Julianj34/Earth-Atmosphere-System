@@ -1,12 +1,12 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-08-29T13:54:49.352473Z
-**Snapshots analysiert:** 313
+**Run:** 2026-08-29T17:46:55.092107Z
+**Snapshots analysiert:** 314
 **Vollständige Tagespaare:** 54
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 295× (94.2%)
+- `seasonal_transition_state` — 296× (94.3%)
 - `cavity_condition_shift_state` — 6× (1.9%)
 - `anomalous_resonance_state` — 6× (1.9%)
 - `geomagnetic_disturbance_state` — 4× (1.3%)
@@ -75,24 +75,24 @@
 
 ## L2 ↔ L3 Beziehung
 
-- Pearson: **-0.071**
-- L2 Trend: +0.00009 / Snapshot
+- Pearson: **-0.072**
+- L2 Trend: +0.00008 / Snapshot
 - L3 Trend: +0.00001 / Snapshot
-- Gap-Trend: +0.00008 / Snapshot
+- Gap-Trend: +0.00007 / Snapshot
 - Schwache Kopplung sichtbar — mehr Daten nötig.
 
 ## Field Operators
 
-Coverage: 295/313 Snapshots
+Coverage: 296/314 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
-- **resonance_model**: 0.433 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
-- **thermal**: 0.424 — moderate thermische Vorbereitung vorhanden
-- **ionization**: 0.355 — moderate ionosphärische Modulation
-- **electric**: 0.230 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
-- **geomagnetic**: 0.229 — ruhige geomagnetische Bedingungen
-- **cross_layer_activation**: 0.178 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
+- **resonance_model**: 0.434 — Resonanzfeld ruhig, schwache modellierte Modulation
+- **thermal**: 0.433 — moderate thermische Vorbereitung vorhanden
+- **ionization**: 0.346 — moderate ionosphärische Modulation
+- **electric**: 0.200 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
+- **geomagnetic**: 0.198 — ruhige geomagnetische Bedingungen
+- **cross_layer_activation**: 0.194 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
 
 ### Operator ↔ ΔL3 Korrelation
 
@@ -122,3 +122,9 @@ Coverage: 295/313 Snapshots
 - **Status:** confound_blocked (confounded_circular) — nicht promotbar, nur exploratorisch
 - **Evidenz:** combined Overlap=True vs ΔL3 Overlap=True. combined Schwelle=0.4200.
 - **Nächster Schritt:** Mehr Tagespaare für robuste Trennung. ROC-Analyse ab n>=20.
+
+### ❓ H8: Ist "mixed" das dominante Operator-Regime?
+
+- **Status:** open
+- **Evidenz:** 119/296 Snapshots (40.2%) im Regime "mixed".
+- **Nächster Schritt:** Übergangsmuster zwischen Regimen analysieren (Layer 9?).
