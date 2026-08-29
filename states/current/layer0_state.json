@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-08-29T17:45:09.955057Z",
+  "timestamp": "2026-08-29T22:41:47.862476Z",
   "layer": 0,
   "name": "Externe kosmische Treiber",
-  "score": 0.1825,
-  "level": "ruhig",
+  "score": 0.3095,
+  "level": "moderat",
   "confidence": 0.75,
   "score_basis": "3/4 Komponenten verfügbar",
   "missing_components": [
@@ -12,7 +12,7 @@
   "components": {
     "Sonnenstrahlung (F10.7)": 0.4001,
     "Geomagn. Aktivität (Kp)": 0.1111,
-    "IMF Bz (südwärts)": 0.0363,
+    "IMF Bz (südwärts)": 0.4174,
     "Solarwind Geschwindigkeit": null
   },
   "raw_values": {
@@ -25,7 +25,7 @@
       "source": "primary"
     },
     "IMF_Bz_nT": {
-      "value": 3.7,
+      "value": -9.6,
       "source": "primary"
     },
     "SW_speed_kms": {
@@ -36,8 +36,8 @@
   "kp_context": {
     "Kp_current_1m": 1.0,
     "Kp_max_60min": 2.0,
-    "Kp_max_3h": 3.0,
-    "Kp_mean_3h": 1.5,
+    "Kp_max_3h": 4.0,
+    "Kp_mean_3h": 2.47,
     "Kp_used_for_score": 1.0,
     "Kp_score_method": "primary"
   },
@@ -45,16 +45,16 @@
     "geomagnetic_storm": false,
     "solar_flux_high": false,
     "bz_strongly_southward": false,
-    "bz_geoeffective": false,
-    "bz_orientation": "northward",
+    "bz_geoeffective": true,
+    "bz_orientation": "southward",
     "fast_solar_wind": null
   },
-  "dominant_driver": "none",
+  "dominant_driver": "imf_southward",
   "downstream_expectation": {
-    "magnetosphere": "ruhig",
-    "ionosphere": "ruhig",
-    "schumann_resonance": "unverändert",
+    "magnetosphere": "Energie-Einkopplung aktiv",
+    "ionosphere": "erhöhte Elektrondichte möglich",
+    "schumann_resonance": "leichte Modulation möglich",
     "lithosphere_currents": "niedrig"
   },
-  "state_summary": "Layer-0-Zustand: ruhig. Sonnenstrahlung moderat (F10.7=136 sfu). Kp=1.0 (ruhig). IMF Bz=3.7 nT – nordwärts, keine Kopplung. Solarwind-Geschwindigkeit fehlt. Datenvollständigkeit: 75%."
+  "state_summary": "Layer-0-Zustand: moderat. Sonnenstrahlung moderat (F10.7=136 sfu). Kp=1.0 (ruhig). IMF Bz=-9.6 nT – südwärts, geoeffektiv. Solarwind-Geschwindigkeit fehlt. Datenvollständigkeit: 75%."
 }
