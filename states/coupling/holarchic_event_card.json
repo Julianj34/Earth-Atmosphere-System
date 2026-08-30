@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-08-30T18:07:31.737280Z",
+  "timestamp": "2026-08-30T22:51:15.469759Z",
   "system_state": "seasonal_transition_state",
   "scores": {
-    "L0": 0.2128,
-    "L2": 0.5824,
-    "L3": 0.2504,
-    "L5": 0.3247,
-    "L6": 0.2731
+    "L0": 0.3327,
+    "L2": 0.5998,
+    "L3": 0.2034,
+    "L5": 0.3666,
+    "L6": 0.3561
   },
   "macro_context": {
     "band": "high",
-    "score": 0.5824,
+    "score": 0.5998,
     "tags": []
   },
   "meso_organisation": {
@@ -18,37 +18,38 @@
     "note": "no meso-scale layer instrumented (regional convection / MCS)"
   },
   "micro_activation": {
-    "band": "medium",
-    "score": 0.2504,
+    "band": "low",
+    "score": 0.2034,
     "thunder_pts": 0,
-    "storms_EONET": 7
+    "storms_EONET": 6
   },
   "field_response": {
     "electric": {
       "band": "medium",
-      "score": 0.3247
+      "score": 0.3666
     },
     "resonance": {
-      "band": "low",
-      "score": 0.2731,
-      "confirmation": "partial"
+      "band": "medium",
+      "score": 0.3561,
+      "confirmation": "low_proxy_limited"
     }
   },
   "chain_break": {
-    "break_at": "electric_to_resonance",
-    "localizable": true,
-    "reason": "GEC active but resonance not confirmed"
+    "break_at": "macro_to_micro",
+    "localizable": false,
+    "reason": "meso scale uninstrumented; cannot distinguish macro->meso vs meso->micro",
+    "diagnosis": "macro_prepared but micro_activation_low — preparation without activation"
   },
   "external_forcing_mask": {
-    "external_score": 0.213,
-    "externally_driven": false,
-    "interpretation": "external forcing low -> absence of activation is NOT due to missing external trigger; internal/scale dynamics dominate"
+    "external_score": 0.333,
+    "externally_driven": true,
+    "interpretation": "external forcing non-trivial -> check L0 contribution"
   },
   "validation_status": {
     "status": "validated_by_L9",
-    "validation_score": 0.9286,
+    "validation_score": 0.7857,
     "evidence_level": "exploratory_signal",
-    "checks": "6/8 passed",
-    "l9_timestamp": "2026-08-30T18:07:39.145776Z"
+    "checks": "5/8 passed",
+    "l9_timestamp": "2026-08-30T22:51:25.216342Z"
   }
 }
