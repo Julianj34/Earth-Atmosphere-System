@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-08-29T22:43:42.463325Z",
+  "timestamp": "2026-08-30T08:24:02.788724Z",
   "system_state": "seasonal_transition_state",
   "scores": {
-    "L0": 0.3095,
-    "L2": 0.5911,
-    "L3": 0.2076,
-    "L5": 0.2926,
-    "L6": 0.3175
+    "L0": 0.2558,
+    "L2": 0.5959,
+    "L3": 0.2531,
+    "L5": 0.3461,
+    "L6": 0.2937
   },
   "macro_context": {
     "band": "high",
-    "score": 0.5911,
+    "score": 0.5959,
     "tags": []
   },
   "meso_organisation": {
@@ -18,38 +18,37 @@
     "note": "no meso-scale layer instrumented (regional convection / MCS)"
   },
   "micro_activation": {
-    "band": "low",
-    "score": 0.2076,
+    "band": "medium",
+    "score": 0.2531,
     "thunder_pts": 0,
     "storms_EONET": 7
   },
   "field_response": {
     "electric": {
-      "band": "low",
-      "score": 0.2926
+      "band": "medium",
+      "score": 0.3461
     },
     "resonance": {
-      "band": "medium",
-      "score": 0.3175,
+      "band": "low",
+      "score": 0.2937,
       "confirmation": "low_proxy_limited"
     }
   },
   "chain_break": {
-    "break_at": "macro_to_micro",
-    "localizable": false,
-    "reason": "meso scale uninstrumented; cannot distinguish macro->meso vs meso->micro",
-    "diagnosis": "macro_prepared but micro_activation_low — preparation without activation"
+    "break_at": "electric_to_resonance",
+    "localizable": true,
+    "reason": "GEC active but resonance not confirmed"
   },
   "external_forcing_mask": {
-    "external_score": 0.309,
-    "externally_driven": true,
-    "interpretation": "external forcing non-trivial -> check L0 contribution"
+    "external_score": 0.256,
+    "externally_driven": false,
+    "interpretation": "external forcing low -> absence of activation is NOT due to missing external trigger; internal/scale dynamics dominate"
   },
   "validation_status": {
     "status": "validated_by_L9",
     "validation_score": 0.9286,
     "evidence_level": "exploratory_signal",
     "checks": "6/8 passed",
-    "l9_timestamp": "2026-08-29T22:43:52.628286Z"
+    "l9_timestamp": "2026-08-30T08:24:13.708596Z"
   }
 }
