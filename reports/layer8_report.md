@@ -1,12 +1,12 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-08-31T20:13:12.857413Z
-**Snapshots analysiert:** 321
+**Run:** 2026-08-31T23:57:33.079121Z
+**Snapshots analysiert:** 322
 **Vollständige Tagespaare:** 55
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 303× (94.4%)
+- `seasonal_transition_state` — 304× (94.4%)
 - `cavity_condition_shift_state` — 6× (1.9%)
 - `anomalous_resonance_state` — 6× (1.9%)
 - `geomagnetic_disturbance_state` — 4× (1.2%)
@@ -84,16 +84,16 @@
 
 ## Field Operators
 
-Coverage: 303/321 Snapshots
+Coverage: 304/322 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
-- **resonance_model**: 0.449 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
-- **thermal**: 0.429 — moderate thermische Vorbereitung vorhanden
-- **ionization**: 0.312 — moderate ionosphärische Modulation
-- **electric**: 0.258 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
-- **cross_layer_activation**: 0.180 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
-- **geomagnetic**: 0.168 — ruhige geomagnetische Bedingungen
+- **thermal**: 0.440 — moderate thermische Vorbereitung vorhanden
+- **resonance_model**: 0.403 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
+- **ionization**: 0.275 — ruhige Ionosphäre, minimaler Strahlungseffekt
+- **electric**: 0.251 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
+- **cross_layer_activation**: 0.193 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
+- **geomagnetic**: 0.151 — ruhige geomagnetische Bedingungen
 
 ### Operator ↔ ΔL3 Korrelation
 
@@ -123,3 +123,9 @@ Coverage: 303/321 Snapshots
 - **Status:** confound_blocked (confounded_circular) — nicht promotbar, nur exploratorisch
 - **Evidenz:** combined Overlap=True vs ΔL3 Overlap=True. combined Schwelle=0.4200.
 - **Nächster Schritt:** Mehr Tagespaare für robuste Trennung. ROC-Analyse ab n>=20.
+
+### ❓ H8: Ist "mixed" das dominante Operator-Regime?
+
+- **Status:** open
+- **Evidenz:** 122/304 Snapshots (40.1%) im Regime "mixed".
+- **Nächster Schritt:** Übergangsmuster zwischen Regimen analysieren (Layer 9?).
