@@ -1,14 +1,14 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-09-06T07:11:57.816300Z
-**Snapshots analysiert:** 342
+**Run:** 2026-09-06T12:13:49.189693Z
+**Snapshots analysiert:** 343
 **Vollständige Tagespaare:** 55
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 324× (94.7%)
-- `cavity_condition_shift_state` — 6× (1.8%)
-- `anomalous_resonance_state` — 6× (1.8%)
+- `seasonal_transition_state` — 325× (94.8%)
+- `cavity_condition_shift_state` — 6× (1.7%)
+- `anomalous_resonance_state` — 6× (1.7%)
 - `geomagnetic_disturbance_state` — 4× (1.2%)
 - `normal_background_state` — 2× (0.6%)
 
@@ -76,24 +76,24 @@
 
 ## L2 ↔ L3 Beziehung
 
-- Pearson: **-0.060**
+- Pearson: **-0.063**
 - L2 Trend: +0.00007 / Snapshot
 - L3 Trend: +0.00006 / Snapshot
-- Gap-Trend: +0.00001 / Snapshot
+- Gap-Trend: +0.00000 / Snapshot
 - Schwache Kopplung sichtbar — mehr Daten nötig.
 
 ## Field Operators
 
-Coverage: 324/342 Snapshots
+Coverage: 325/343 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
-- **thermal**: 0.451 — moderate thermische Vorbereitung vorhanden
-- **resonance_model**: 0.414 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
-- **ionization**: 0.241 — ruhige Ionosphäre, minimaler Strahlungseffekt
-- **electric**: 0.230 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
-- **cross_layer_activation**: 0.178 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
-- **geomagnetic**: 0.127 — ruhige geomagnetische Bedingungen
+- **thermal**: 0.426 — moderate thermische Vorbereitung vorhanden
+- **resonance_model**: 0.420 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
+- **ionization**: 0.238 — ruhige Ionosphäre, minimaler Strahlungseffekt
+- **electric**: 0.223 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
+- **cross_layer_activation**: 0.151 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
+- **geomagnetic**: 0.111 — ruhige geomagnetische Bedingungen
 
 ### Operator ↔ ΔL3 Korrelation
 
