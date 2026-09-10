@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-09-10T17:45:25.711655Z",
+  "timestamp": "2026-09-10T22:40:39.470139Z",
   "layer": 2,
   "name": "Oberfläche & Biosphärennahe Kontaktzone",
-  "score": 0.5915,
-  "level": "moderat",
+  "score": 0.6198,
+  "level": "aktiv",
   "confidence": 0.8,
   "score_basis": "4/5 dynamische Komponenten",
   "dominant_component": "ENSO-Phase (Nino3.4)",
@@ -12,7 +12,7 @@
   ],
   "components": {
     "Konvektions-Potential": {
-      "score": 0.5847,
+      "score": 0.646,
       "source": "primary",
       "dynamic": true
     },
@@ -27,12 +27,12 @@
       "dynamic": true
     },
     "Elektr. Bodenkopplung": {
-      "score": 0.6112,
+      "score": 0.6137,
       "source": "primary",
       "dynamic": true
     },
     "Bodenfeuchte (global)": {
-      "score": 0.17,
+      "score": 0.2193,
       "source": "primary",
       "dynamic": true
     }
@@ -51,36 +51,50 @@
       "note": "phase_forecast nicht im Score verwendet",
       "source": "cpc_weekly"
     },
-    "conv_potential_mean": 0.585,
-    "elec_coupling_mean": 0.611,
+    "conv_potential_mean": 0.646,
+    "elec_coupling_mean": 0.614,
     "surface_points": [
       {
         "point": "Mitteleuropa",
-        "temp_2m": 13.9,
-        "rh": 73,
-        "conv": 0.682,
-        "elec": 0.633
+        "temp_2m": 10.8,
+        "rh": 86,
+        "conv": 0.698,
+        "elec": 0.687
       },
       {
         "point": "Tropen (Kongo)",
-        "temp_2m": 26.6,
-        "rh": 65,
-        "conv": 0.703,
-        "elec": 0.579
+        "temp_2m": 24.1,
+        "rh": 74,
+        "conv": 0.674,
+        "elec": 0.576
       },
       {
         "point": "Arktis",
-        "temp_2m": 1.1,
+        "temp_2m": -0.4,
         "rh": 99,
         "conv": 0.43,
-        "elec": 0.595
+        "elec": 0.59
       },
       {
         "point": "Pazifik (ITCZ)",
-        "temp_2m": 27.2,
-        "rh": 82,
-        "conv": 0.524,
-        "elec": 0.638
+        "temp_2m": 27.1,
+        "rh": 83,
+        "conv": 0.518,
+        "elec": 0.606
+      },
+      {
+        "point": "Amazonia",
+        "temp_2m": 27.0,
+        "rh": 87,
+        "conv": 0.872,
+        "elec": 0.726
+      },
+      {
+        "point": "Sahel",
+        "temp_2m": 27.9,
+        "rh": 67,
+        "conv": 0.684,
+        "elec": 0.497
       }
     ]
   },
@@ -92,7 +106,7 @@
     "la_nina_developing": false,
     "sst_anomaly_high": null,
     "thunderstorm_trigger": true,
-    "bz_orientation": "northward"
+    "bz_orientation": "weak_southward"
   },
   "downstream_expectation": {
     "layer3_weather": "erhoehtes Gewitterpotential – Konvektion und E-Kopplung aktiv",
@@ -101,14 +115,14 @@
     "layer4_ionosphere": "ENSO-modulierte Konvektion beeinflusst troposphaerische Wellenausbreitung"
   },
   "layer0_context": {
-    "score": 0.1791,
+    "score": 0.2708,
     "level": "ruhig",
     "dominant_driver": "none"
   },
   "layer1_context": {
-    "score": 0.3797,
+    "score": 0.4538,
     "level": "moderat",
     "seismic_elevated": true
   },
-  "state_summary": "Layer-2-Zustand: moderat. SST nicht verfuegbar. ENSO: strong_el_nino / el_nino_active (weekly Nino3.4=+2.70, ONI=+1.80; Forecast nicht im Score). Konvektions-Potential: 0.58. Datenvollstaendigkeit: 80%. L1-Eingang: moderat (Score 0.380)."
+  "state_summary": "Layer-2-Zustand: aktiv. SST nicht verfuegbar. ENSO: strong_el_nino / el_nino_active (weekly Nino3.4=+2.70, ONI=+1.80; Forecast nicht im Score). Konvektions-Potential: 0.65. Datenvollstaendigkeit: 80%. L1-Eingang: moderat (Score 0.454)."
 }
