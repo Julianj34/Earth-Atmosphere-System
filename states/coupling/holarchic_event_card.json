@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-09-12T07:14:20.194000Z",
+  "timestamp": "2026-09-12T12:15:41.262201Z",
   "system_state": "seasonal_transition_state",
   "scores": {
-    "L0": 0.214,
-    "L2": 0.6273,
-    "L3": 0.229,
-    "L5": 0.2913,
-    "L6": 0.2612
+    "L0": 0.166,
+    "L2": 0.5803,
+    "L3": 0.3096,
+    "L5": 0.3192,
+    "L6": 0.2997
   },
   "macro_context": {
     "band": "high",
-    "score": 0.6273,
+    "score": 0.5803,
     "tags": []
   },
   "meso_organisation": {
@@ -18,38 +18,37 @@
     "note": "no meso-scale layer instrumented (regional convection / MCS)"
   },
   "micro_activation": {
-    "band": "low",
-    "score": 0.229,
+    "band": "high",
+    "score": 0.3096,
     "thunder_pts": 0,
     "storms_EONET": 5
   },
   "field_response": {
     "electric": {
-      "band": "low",
-      "score": 0.2913
+      "band": "medium",
+      "score": 0.3192
     },
     "resonance": {
       "band": "low",
-      "score": 0.2612,
+      "score": 0.2997,
       "confirmation": "low_proxy_limited"
     }
   },
   "chain_break": {
-    "break_at": "macro_to_micro",
-    "localizable": false,
-    "reason": "meso scale uninstrumented; cannot distinguish macro->meso vs meso->micro",
-    "diagnosis": "macro_prepared but micro_activation_low — preparation without activation"
+    "break_at": "electric_to_resonance",
+    "localizable": true,
+    "reason": "GEC active but resonance not confirmed"
   },
   "external_forcing_mask": {
-    "external_score": 0.214,
+    "external_score": 0.166,
     "externally_driven": false,
     "interpretation": "external forcing low -> absence of activation is NOT due to missing external trigger; internal/scale dynamics dominate"
   },
   "validation_status": {
     "status": "validated_by_L9",
-    "validation_score": 0.9286,
+    "validation_score": 1.0,
     "evidence_level": "exploratory_signal",
-    "checks": "6/8 passed",
-    "l9_timestamp": "2026-09-12T07:14:26.797438Z"
+    "checks": "6/7 passed",
+    "l9_timestamp": "2026-09-12T12:15:47.929711Z"
   }
 }
