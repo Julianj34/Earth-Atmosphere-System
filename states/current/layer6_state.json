@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-18T13:01:38.421204Z",
+  "timestamp": "2026-09-18T17:45:39.687977Z",
   "layer": 6,
   "name": "Resonanzfeld / Schumann-Resonanz",
   "measurement_status": "model_expected_not_observed",
@@ -18,7 +18,7 @@
   "missing_components": [],
   "components": {
     "Anregungs-Staerke (Amplitude)": {
-      "score": 0.4177,
+      "score": 0.4178,
       "source": "derived_from_L3_L5",
       "dynamic": true
     },
@@ -99,7 +99,7 @@
     "SR_1": {
       "freq_Hz": 7.7962,
       "freq_shift_mHz": -33.8,
-      "amplitude_pT": 1.043,
+      "amplitude_pT": 1.0431,
       "amplitude_factor": 1.043,
       "Q_factor": 4.3,
       "Q_factor_change": -4.4
@@ -107,7 +107,7 @@
     "SR_2": {
       "freq_Hz": 14.2781,
       "freq_shift_mHz": -21.9,
-      "amplitude_pT": 0.4693,
+      "amplitude_pT": 0.4694,
       "amplitude_factor": 1.043,
       "Q_factor": 4.587,
       "Q_factor_change": -4.4
@@ -150,9 +150,9 @@
       "xray_effect": 0
     },
     "amplitude_factor": {
-      "total": 1.043,
-      "gec_generator": 0.986,
-      "thunder_l3": 1.113,
+      "total": 1.0431,
+      "gec_generator": 0.998,
+      "thunder_l3": 1.1,
       "chimney_factor": 0.95
     },
     "q_factor_modulation": {
@@ -162,11 +162,15 @@
     }
   },
   "diurnal_pattern": {
-    "utc_hour": 13,
+    "utc_hour": 17,
     "active_chimneys": [
       {
         "name": "Afrika",
-        "activity": 0.833
+        "activity": 0.5
+      },
+      {
+        "name": "Amerika",
+        "activity": 0.5
       }
     ],
     "global_activity": 1.0
@@ -221,27 +225,27 @@
   },
   "layer_context": {
     "L0": {
-      "score": 0.1292,
+      "score": 0.1192,
       "level": "ruhig"
     },
     "L1": {
-      "score": 0.3484,
+      "score": 0.3243,
       "level": "moderat"
     },
     "L2": {
-      "score": 0.578,
+      "score": 0.5916,
       "level": "moderat"
     },
     "L3": {
-      "score": 0.2232,
+      "score": 0.2044,
       "level": "ruhig",
-      "thunder_score": 0.2269,
-      "CAPE_mean": 415.0,
+      "thunder_score": 0.2005,
+      "CAPE_mean": 476.0,
       "n_thunder": 0
     },
     "L4": {
-      "score": 0.3036,
-      "level": "moderat",
+      "score": 0.2816,
+      "level": "ruhig",
       "cavity_height_km": 70.0,
       "cavity_delta_km": -10.0,
       "day_night": "day",
@@ -259,12 +263,12 @@
       }
     },
     "L5": {
-      "score": 0.2784,
+      "score": 0.2511,
       "level": "ruhig",
-      "V_iono_kV": 286.5,
-      "delta_V_pct": -4.5,
-      "generator_strength": 0.986
+      "V_iono_kV": 290.0,
+      "delta_V_pct": -3.3,
+      "generator_strength": 0.998
     }
   },
-  "state_summary": "Layer-6-Zustand: ruhig. SR-1 erwartet 7.796 Hz (Δ -33.8 mHz vs Referenz 7.83 Hz). Amplitude-Faktor 1.04 (normale Anregung). Q-Faktor SR-1 4.30 (-4.4%). Aktive Chimneys: ['Afrika']. Nicht-geometrische Dominanz: 3.1x. Datenvollstaendigkeit: 100%."
+  "state_summary": "Layer-6-Zustand: ruhig. SR-1 erwartet 7.796 Hz (Δ -33.8 mHz vs Referenz 7.83 Hz). Amplitude-Faktor 1.04 (normale Anregung). Q-Faktor SR-1 4.30 (-4.4%). Aktive Chimneys: ['Afrika', 'Amerika']. Nicht-geometrische Dominanz: 3.1x. Datenvollstaendigkeit: 100%."
 }
