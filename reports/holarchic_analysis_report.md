@@ -1,7 +1,7 @@
 # Holarchic Coupling Analysis — Report V1
 
-**Run:** 2026-09-19T07:25:16.697514+00:00  
-**Snapshots:** 394  
+**Run:** 2026-09-19T12:36:01.643327+00:00  
+**Snapshots:** 395  
 **Holons:** 11 (0 uninstrumented)
 
 ## 1. Welche Skala dominiert?
@@ -11,15 +11,15 @@
 | H_external | L0 | global | 0.209 | measured |
 | H_lithosphere | L1 | global | 0.384 | measured |
 | H_macro_ocean | L2 | basin/global | 0.581 | measured |
-| H_meso_conv | L2p5 | regional | 0.655 | proxy |
+| H_meso_conv | L2p5 | regional | 0.656 | proxy |
 | H_micro_storm | L3 | local | 0.202 | measured |
 | H_field_iono | L4 | global | 0.322 | measured |
-| H_field_gec | L5 | global | 0.338 | measured |
+| H_field_gec | L5 | global | 0.337 | measured |
 | H_field_reso | L6 | global | 0.291 | proxy |
 | H_obs_diag | L7 | system | **n/a** | measured (keine Werte) |
 | H_obs_learn | L8 | system | **n/a** | measured (keine Werte) |
 | H_obs_valid | L9 | system | **n/a** | measured (keine Werte) |
-Makro-Vorbereitung (`H_macro_ocean`) ist der höchste physische Score, Mikro-Aktivierung (`H_micro_storm`) der niedrigste. Die Meso-Skala ist instrumentiert (Wolken-Uebergangsproxy, `confound_type=proxy`); n=224 Snapshots mit Meso-Daten, s. Kopplungstabelle unten.
+Makro-Vorbereitung (`H_macro_ocean`) ist der höchste physische Score, Mikro-Aktivierung (`H_micro_storm`) der niedrigste. Die Meso-Skala ist instrumentiert (Wolken-Uebergangsproxy, `confound_type=proxy`); n=225 Snapshots mit Meso-Daten, s. Kopplungstabelle unten.
 
 ## 2. Wo bricht die Kette?
 
@@ -27,14 +27,14 @@ Empirische Kopplungsstärken entlang der Aktivierungskette:
 
 | Span | Typ | r | n | Evidenz |
 |---|---|---|---|---|
-| H_macro_ocean→H_meso_conv | top_down_constraint | -0.259 | 224 | weak |
-| H_meso_conv→H_micro_storm | bottom_up_aggregation | -0.196 | 223 | negligible |
-| H_micro_storm→H_field_gec | bottom_up_aggregation | +0.269 | 394 | weak |
-| H_field_gec→H_field_reso | field_feedback | +0.497 | 394 | moderate |
+| H_macro_ocean→H_meso_conv | top_down_constraint | -0.259 | 225 | weak |
+| H_meso_conv→H_micro_storm | bottom_up_aggregation | -0.196 | 224 | negligible |
+| H_micro_storm→H_field_gec | bottom_up_aggregation | +0.267 | 395 | weak |
+| H_field_gec→H_field_reso | field_feedback | +0.497 | 395 | moderate |
 
-**Befund:** Der Downstream-Abschnitt (micro→electric→resonance) ist intakt und stark. Der einzige Bruch sitzt bei **macro→micro** und ist in 327/394 Snapshots (83%) die dominante Bruchstelle. Er ist **nicht lokalisierbar**, weil die Meso-Ebene keine Datenquelle hat.
+**Befund:** Der Downstream-Abschnitt (micro→electric→resonance) ist intakt und stark. Der einzige Bruch sitzt bei **macro→micro** und ist in 328/395 Snapshots (83%) die dominante Bruchstelle. Er ist **nicht lokalisierbar**, weil die Meso-Ebene keine Datenquelle hat.
 
-Break-Verteilung über die History: `macro_to_micro`=327, `none`=26, `micro_to_electric`=21, `electric_to_resonance`=20
+Break-Verteilung über die History: `macro_to_micro`=328, `none`=26, `micro_to_electric`=21, `electric_to_resonance`=20
 
 ## 3. Welche Rückkopplung ist plausibel?
 
