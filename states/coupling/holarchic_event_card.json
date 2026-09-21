@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-09-21T15:12:12.505411Z",
+  "timestamp": "2026-09-21T19:35:43.748444Z",
   "system_state": "seasonal_transition_state",
   "scores": {
-    "L0": 0.1562,
-    "L2": 0.5681,
-    "L3": 0.2673,
-    "L5": 0.3586,
-    "L6": 0.3129
+    "L0": 0.1758,
+    "L2": 0.5972,
+    "L3": 0.2371,
+    "L5": 0.2714,
+    "L6": 0.3206
   },
   "macro_context": {
     "band": "high",
-    "score": 0.5681,
+    "score": 0.5972,
     "tags": []
   },
   "meso_organisation": {
@@ -18,29 +18,30 @@
     "note": "no meso-scale layer instrumented (regional convection / MCS)"
   },
   "micro_activation": {
-    "band": "medium",
-    "score": 0.2673,
+    "band": "low",
+    "score": 0.2371,
     "thunder_pts": 0,
     "storms_EONET": 1
   },
   "field_response": {
     "electric": {
-      "band": "medium",
-      "score": 0.3586
+      "band": "low",
+      "score": 0.2714
     },
     "resonance": {
       "band": "medium",
-      "score": 0.3129,
+      "score": 0.3206,
       "confirmation": "low_proxy_limited"
     }
   },
   "chain_break": {
-    "break_at": "none",
-    "localizable": true,
-    "reason": "chain propagated to resonance"
+    "break_at": "macro_to_micro",
+    "localizable": false,
+    "reason": "meso scale uninstrumented; cannot distinguish macro->meso vs meso->micro",
+    "diagnosis": "macro_prepared but micro_activation_low — preparation without activation"
   },
   "external_forcing_mask": {
-    "external_score": 0.156,
+    "external_score": 0.176,
     "externally_driven": false,
     "interpretation": "external forcing low -> absence of activation is NOT due to missing external trigger; internal/scale dynamics dominate"
   },
@@ -49,6 +50,6 @@
     "validation_score": 1.0,
     "evidence_level": "exploratory_signal",
     "checks": "6/7 passed",
-    "l9_timestamp": "2026-09-21T15:12:22.588404Z"
+    "l9_timestamp": "2026-09-21T19:35:53.434596Z"
   }
 }
