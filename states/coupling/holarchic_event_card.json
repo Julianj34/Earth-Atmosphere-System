@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-09-24T07:40:12.288904Z",
+  "timestamp": "2026-09-24T13:38:33.419142Z",
   "system_state": "seasonal_transition_state",
   "scores": {
-    "L0": 0.299,
-    "L2": 0.5596,
-    "L3": 0.2056,
-    "L5": 0.3085,
-    "L6": 0.2492
+    "L0": 0.2908,
+    "L2": 0.5461,
+    "L3": 0.2727,
+    "L5": 0.2434,
+    "L6": 0.2964
   },
   "macro_context": {
     "band": "high",
-    "score": 0.5596,
+    "score": 0.5461,
     "tags": []
   },
   "meso_organisation": {
@@ -18,30 +18,29 @@
     "note": "no meso-scale layer instrumented (regional convection / MCS)"
   },
   "micro_activation": {
-    "band": "low",
-    "score": 0.2056,
+    "band": "medium",
+    "score": 0.2727,
     "thunder_pts": 0,
     "storms_EONET": 5
   },
   "field_response": {
     "electric": {
-      "band": "medium",
-      "score": 0.3085
+      "band": "low",
+      "score": 0.2434
     },
     "resonance": {
       "band": "low",
-      "score": 0.2492,
+      "score": 0.2964,
       "confirmation": "low_proxy_limited"
     }
   },
   "chain_break": {
-    "break_at": "macro_to_micro",
-    "localizable": false,
-    "reason": "meso scale uninstrumented; cannot distinguish macro->meso vs meso->micro",
-    "diagnosis": "macro_prepared but micro_activation_low — preparation without activation"
+    "break_at": "micro_to_electric",
+    "localizable": true,
+    "reason": "atmosphere active but GEC not responding"
   },
   "external_forcing_mask": {
-    "external_score": 0.299,
+    "external_score": 0.291,
     "externally_driven": false,
     "interpretation": "external forcing low -> absence of activation is NOT due to missing external trigger; internal/scale dynamics dominate"
   },
@@ -50,6 +49,6 @@
     "validation_score": 0.9286,
     "evidence_level": "exploratory_signal",
     "checks": "6/8 passed",
-    "l9_timestamp": "2026-09-24T07:40:19.086909Z"
+    "l9_timestamp": "2026-09-24T13:38:39.991043Z"
   }
 }
