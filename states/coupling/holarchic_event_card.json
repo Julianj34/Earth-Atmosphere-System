@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-09-25T13:57:38.385575Z",
+  "timestamp": "2026-09-25T18:44:43.156001Z",
   "system_state": "seasonal_transition_state",
   "scores": {
-    "L0": 0.3125,
-    "L2": 0.5447,
-    "L3": 0.2453,
-    "L5": 0.3063,
-    "L6": 0.2838
+    "L0": 0.2061,
+    "L2": 0.5763,
+    "L3": 0.1627,
+    "L5": 0.3604,
+    "L6": 0.2439
   },
   "macro_context": {
     "band": "high",
-    "score": 0.5447,
+    "score": 0.5763,
     "tags": []
   },
   "meso_organisation": {
@@ -18,37 +18,38 @@
     "note": "no meso-scale layer instrumented (regional convection / MCS)"
   },
   "micro_activation": {
-    "band": "medium",
-    "score": 0.2453,
+    "band": "low",
+    "score": 0.1627,
     "thunder_pts": 0,
-    "storms_EONET": 7
+    "storms_EONET": 8
   },
   "field_response": {
     "electric": {
       "band": "medium",
-      "score": 0.3063
+      "score": 0.3604
     },
     "resonance": {
       "band": "low",
-      "score": 0.2838,
+      "score": 0.2439,
       "confirmation": "low_proxy_limited"
     }
   },
   "chain_break": {
-    "break_at": "electric_to_resonance",
-    "localizable": true,
-    "reason": "GEC active but resonance not confirmed"
+    "break_at": "macro_to_micro",
+    "localizable": false,
+    "reason": "meso scale uninstrumented; cannot distinguish macro->meso vs meso->micro",
+    "diagnosis": "macro_prepared but micro_activation_low — preparation without activation"
   },
   "external_forcing_mask": {
-    "external_score": 0.312,
-    "externally_driven": true,
-    "interpretation": "external forcing non-trivial -> check L0 contribution"
+    "external_score": 0.206,
+    "externally_driven": false,
+    "interpretation": "external forcing low -> absence of activation is NOT due to missing external trigger; internal/scale dynamics dominate"
   },
   "validation_status": {
     "status": "validated_by_L9",
     "validation_score": 0.9286,
     "evidence_level": "exploratory_signal",
     "checks": "6/8 passed",
-    "l9_timestamp": "2026-09-25T13:57:45.861156Z"
+    "l9_timestamp": "2026-09-25T18:44:52.686646Z"
   }
 }

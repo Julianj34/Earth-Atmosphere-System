@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-09-25T13:56:16.538704Z",
+  "timestamp": "2026-09-25T18:43:26.509734Z",
   "layer": 0,
   "name": "Externe kosmische Treiber",
-  "score": 0.3125,
-  "level": "moderat",
+  "score": 0.2061,
+  "level": "ruhig",
   "confidence": 0.75,
   "score_basis": "3/4 Komponenten verfügbar",
   "missing_components": [
@@ -11,8 +11,8 @@
   ],
   "components": {
     "Sonnenstrahlung (F10.7)": 0.2959,
-    "Geomagn. Aktivität (Kp)": 0.3333,
-    "IMF Bz (südwärts)": 0.3083,
+    "Geomagn. Aktivität (Kp)": 0.1111,
+    "IMF Bz (südwärts)": 0.2114,
     "Solarwind Geschwindigkeit": null
   },
   "raw_values": {
@@ -21,11 +21,11 @@
       "source": "primary"
     },
     "Kp_index": {
-      "value": 3.0,
+      "value": 1.0,
       "source": "primary"
     },
     "IMF_Bz_nT": {
-      "value": -5.8,
+      "value": -2.4,
       "source": "primary"
     },
     "SW_speed_kms": {
@@ -34,27 +34,27 @@
     }
   },
   "kp_context": {
-    "Kp_current_1m": 3.0,
-    "Kp_max_60min": 4.0,
-    "Kp_max_3h": 4.0,
-    "Kp_mean_3h": 3.02,
-    "Kp_used_for_score": 3.0,
+    "Kp_current_1m": 1.0,
+    "Kp_max_60min": 3.0,
+    "Kp_max_3h": 3.0,
+    "Kp_mean_3h": 1.81,
+    "Kp_used_for_score": 1.0,
     "Kp_score_method": "primary"
   },
   "flags": {
     "geomagnetic_storm": false,
     "solar_flux_high": false,
     "bz_strongly_southward": false,
-    "bz_geoeffective": true,
+    "bz_geoeffective": false,
     "bz_orientation": "southward",
     "fast_solar_wind": null
   },
-  "dominant_driver": "imf_southward",
+  "dominant_driver": "none",
   "downstream_expectation": {
-    "magnetosphere": "Energie-Einkopplung aktiv",
-    "ionosphere": "erhöhte Elektrondichte möglich",
-    "schumann_resonance": "leichte Modulation möglich",
+    "magnetosphere": "ruhig",
+    "ionosphere": "ruhig",
+    "schumann_resonance": "unverändert",
     "lithosphere_currents": "niedrig"
   },
-  "state_summary": "Layer-0-Zustand: moderat. Sonnenstrahlung moderat (F10.7=116 sfu). Kp=3.0 (moderat aktiv). IMF Bz=-5.8 nT – südwärts, geoeffektiv. Solarwind-Geschwindigkeit fehlt. Datenvollständigkeit: 75%."
+  "state_summary": "Layer-0-Zustand: ruhig. Sonnenstrahlung moderat (F10.7=116 sfu). Kp=1.0 (ruhig). IMF Bz=-2.4 nT – schwach südwärts, nicht geoeffektiv. Solarwind-Geschwindigkeit fehlt. Datenvollständigkeit: 75%."
 }
