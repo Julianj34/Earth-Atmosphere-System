@@ -1,6 +1,6 @@
 # Layer 9 — External Grounding & Validation
 
-**Run:** 2026-09-29T08:40:18.566634Z
+**Run:** 2026-09-29T14:56:02.534421Z
 **Validation Score:** 1.0  (exploratory_signal)
 
 ## Aggregat
@@ -27,7 +27,7 @@
   - Beobachtet: model_current=0.0  vs  noaa_current=0.0  →  |Δ|=0.00
 - ✅ **V_storm_atmosphere**: Bei >= 5 offenen Sturm-Events weltweit ist L3 >= 0.3
   - Erwartet: L3 >= 0.3
-  - Beobachtet: L3 = 0.311
+  - Beobachtet: L3 = 0.321
 - ❓ **V_schumann_data_availability**: Externe Schumann-Resonanz-Messdaten für Vergleich verfügbar
   - Erwartet: real-time SR1 amplitude/frequency feed
   - Beobachtet: no public feed available
@@ -36,7 +36,7 @@
   - Beobachtet: overlap = []
 - ✅ **V_consistency_seasonal**: seasonal_transition_state: preparation > 0.45 und downstream < 0.35
   - Erwartet: prep > 0.45 AND downstream < 0.35
-  - Beobachtet: prep=0.619, downstream=0.282
+  - Beobachtet: prep=0.610, downstream=0.314
 - ✅ **V_backtest_carnegie_anomalous**: anomalous_resonance_state tritt überwiegend (>= 80%) abends auf
   - Erwartet: >= 80% evening
   - Beobachtet: 100.0% evening (6/6)

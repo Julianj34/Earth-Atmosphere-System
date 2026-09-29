@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-09-29T08:40:08.975391Z",
+  "timestamp": "2026-09-29T14:55:52.442224Z",
   "system_state": "seasonal_transition_state",
   "scores": {
-    "L0": 0.1523,
-    "L2": 0.6194,
-    "L3": 0.311,
-    "L5": 0.2586,
-    "L6": 0.2777
+    "L0": 0.1254,
+    "L2": 0.6103,
+    "L3": 0.3208,
+    "L5": 0.3225,
+    "L6": 0.2993
   },
   "macro_context": {
     "band": "high",
-    "score": 0.6194,
+    "score": 0.6103,
     "tags": []
   },
   "meso_organisation": {
@@ -19,28 +19,28 @@
   },
   "micro_activation": {
     "band": "high",
-    "score": 0.311,
+    "score": 0.3208,
     "thunder_pts": 0,
-    "storms_EONET": 9
+    "storms_EONET": 8
   },
   "field_response": {
     "electric": {
-      "band": "low",
-      "score": 0.2586
+      "band": "medium",
+      "score": 0.3225
     },
     "resonance": {
       "band": "low",
-      "score": 0.2777,
+      "score": 0.2993,
       "confirmation": "low_proxy_limited"
     }
   },
   "chain_break": {
-    "break_at": "micro_to_electric",
+    "break_at": "electric_to_resonance",
     "localizable": true,
-    "reason": "atmosphere active but GEC not responding"
+    "reason": "GEC active but resonance not confirmed"
   },
   "external_forcing_mask": {
-    "external_score": 0.152,
+    "external_score": 0.125,
     "externally_driven": false,
     "interpretation": "external forcing low -> absence of activation is NOT due to missing external trigger; internal/scale dynamics dominate"
   },
@@ -49,6 +49,6 @@
     "validation_score": 1.0,
     "evidence_level": "exploratory_signal",
     "checks": "7/8 passed",
-    "l9_timestamp": "2026-09-29T08:40:18.566634Z"
+    "l9_timestamp": "2026-09-29T14:56:02.534421Z"
   }
 }

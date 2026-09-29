@@ -1,12 +1,12 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-09-29T08:40:13.712177Z
-**Snapshots analysiert:** 434
+**Run:** 2026-09-29T14:55:57.477155Z
+**Snapshots analysiert:** 435
 **Vollständige Tagespaare:** 55
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 416× (95.9%)
+- `seasonal_transition_state` — 417× (95.9%)
 - `cavity_condition_shift_state` — 6× (1.4%)
 - `anomalous_resonance_state` — 6× (1.4%)
 - `geomagnetic_disturbance_state` — 4× (0.9%)
@@ -76,24 +76,24 @@
 
 ## L2 ↔ L3 Beziehung
 
-- Pearson: **-0.001**
+- Pearson: **+0.004**
 - L2 Trend: +0.00009 / Snapshot
 - L3 Trend: +0.00010 / Snapshot
-- Gap-Trend: -0.00001 / Snapshot
+- Gap-Trend: -0.00002 / Snapshot
 - Schwache Kopplung sichtbar — mehr Daten nötig.
 
 ## Field Operators
 
-Coverage: 416/434 Snapshots
+Coverage: 417/435 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
-- **thermal**: 0.474 — moderate thermische Vorbereitung vorhanden
-- **resonance_model**: 0.407 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
-- **electric**: 0.248 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
-- **ionization**: 0.211 — ruhige Ionosphäre, minimaler Strahlungseffekt
-- **cross_layer_activation**: 0.170 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
-- **geomagnetic**: 0.088 — ruhige geomagnetische Bedingungen
+- **thermal**: 0.468 — moderate thermische Vorbereitung vorhanden
+- **resonance_model**: 0.444 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
+- **electric**: 0.325 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
+- **ionization**: 0.252 — moderate ionosphärische Modulation
+- **cross_layer_activation**: 0.146 — keine Übergangsspannung — Layer kohärent  ⚠️ confounded_circular
+- **geomagnetic**: 0.112 — ruhige geomagnetische Bedingungen
 
 ### Operator ↔ ΔL3 Korrelation
 
