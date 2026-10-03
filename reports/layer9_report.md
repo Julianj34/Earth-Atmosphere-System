@@ -1,6 +1,6 @@
 # Layer 9 — External Grounding & Validation
 
-**Run:** 2026-10-03T18:03:50.678494Z
+**Run:** 2026-10-03T23:11:49.169425Z
 **Validation Score:** 0.9286  (exploratory_signal)
 
 ## Aggregat
@@ -13,7 +13,7 @@
 - keine
 
 ## Uncertain Checks
-- **V_storm_atmosphere** (storm_validation): EONET open storms=8. L3=0.258, active_thunderstorms=False
+- **V_storm_atmosphere** (storm_validation): EONET open storms=8. L3=0.259, active_thunderstorms=False
 
 ## Model Adjustment Suggestions
 - keine
@@ -27,7 +27,7 @@
   - Beobachtet: model_current=0.0  vs  noaa_current=0.0  →  |Δ|=0.00
 - ⚠️ **V_storm_atmosphere**: Bei >= 5 offenen Sturm-Events weltweit ist L3 >= 0.3
   - Erwartet: L3 >= 0.3
-  - Beobachtet: L3 = 0.258
+  - Beobachtet: L3 = 0.259
 - ❓ **V_schumann_data_availability**: Externe Schumann-Resonanz-Messdaten für Vergleich verfügbar
   - Erwartet: real-time SR1 amplitude/frequency feed
   - Beobachtet: no public feed available
@@ -36,7 +36,7 @@
   - Beobachtet: overlap = []
 - ✅ **V_consistency_seasonal**: seasonal_transition_state: preparation > 0.45 und downstream < 0.35
   - Erwartet: prep > 0.45 AND downstream < 0.35
-  - Beobachtet: prep=0.642, downstream=0.290
+  - Beobachtet: prep=0.651, downstream=0.286
 - ✅ **V_backtest_carnegie_anomalous**: anomalous_resonance_state tritt überwiegend (>= 80%) abends auf
   - Erwartet: >= 80% evening
   - Beobachtet: 100.0% evening (6/6)
