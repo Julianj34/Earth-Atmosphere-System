@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-04T23:18:04.917939Z",
+  "timestamp": "2026-10-05T09:11:11.917270Z",
   "layer": 1,
   "name": "Geophysikalischer Grundzustand",
-  "score": 0.458,
+  "score": 0.3112,
   "level": "moderat",
   "confidence": 1.0,
   "score_basis": "3/3 dynamische Komponenten verfuegbar",
@@ -10,7 +10,7 @@
   "missing_components": [],
   "components": {
     "Seismische Aktivität": {
-      "score": 0.7833,
+      "score": 0.7875,
       "source": "primary",
       "dynamic": true
     },
@@ -20,7 +20,7 @@
       "dynamic": true
     },
     "Magnetfeld-Variation (Kp)": {
-      "score": 0.4444,
+      "score": 0.0,
       "source": "primary",
       "dynamic": true
     }
@@ -37,30 +37,30 @@
     "Schumann_Ref_Hz": 7.83
   },
   "raw_values": {
-    "seismic_events_7d": 129,
+    "seismic_events_7d": 130,
     "seismic_max_mag": 5.9,
     "seismic_M6plus": 0,
     "LOD_anomaly_ms": 0.4385,
     "LOD_source": "primary",
-    "Kp_index": 4.0
+    "Kp_index": 0.0
   },
   "flags": {
     "strong_earthquake": false,
     "elevated_seismicity": true,
-    "mag_field_disturbed": true,
+    "mag_field_disturbed": false,
     "lod_anomaly_high": false
   },
   "downstream_expectation": {
     "layer2_surface": "normal",
-    "layer4_ionosphere": "Ionosphaeren-Modifikation durch Kp moeglich",
+    "layer4_ionosphere": "normal",
     "layer5_gec": "Grundleitfaehigkeit stabil – 71% Ozeane (Randbedingung)",
-    "schumann_resonance": "nur geringe indirekte Modulation moeglich (Kp < 5, kein starker Layer-1-Treiber)"
+    "schumann_resonance": "Grundmode stabil ~7.83 Hz – keine Modulation aus Layer 1 erwartet"
   },
   "layer0_context": {
-    "score": 0.3259,
-    "level": "moderat",
-    "dominant_driver": "geomagnetic",
+    "score": 0.1172,
+    "level": "ruhig",
+    "dominant_driver": "none",
     "confidence": 0.75
   },
-  "state_summary": "Layer-1-Zustand: moderat. Seismik: 129 Ereignisse M>=4.5 in 7 Tagen, staerkste M5.9. LOD-Anomalie: +0.439 ms [primary]. Magnetfeld-Variation Kp=4.0. Datenvollstaendigkeit: 100%. Layer-0-Modulator: moderat (Score 0.33)."
+  "state_summary": "Layer-1-Zustand: moderat. Seismik: 130 Ereignisse M>=4.5 in 7 Tagen, staerkste M5.9. LOD-Anomalie: +0.439 ms [primary]. Magnetfeld-Variation Kp=0.0. Datenvollstaendigkeit: 100%. Layer-0-Modulator: ruhig (Score 0.12)."
 }
