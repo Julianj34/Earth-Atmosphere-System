@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-07T20:01:53.217721Z",
+  "timestamp": "2026-10-08T00:17:43.791560Z",
   "layer": 5,
   "name": "Global Electric Circuit",
-  "score": 0.3474,
+  "score": 0.379,
   "level": "moderat",
   "confidence": 1.0,
   "score_basis": "5/5 dynamische Komponenten",
@@ -15,7 +15,7 @@
   "missing_components": [],
   "components": {
     "Generator-Potenzial (aus L3)": {
-      "score": 0.3088,
+      "score": 0.3035,
       "source": "derived_from_layer3",
       "dynamic": true,
       "note": "Potenzial aus CAPE/Instabilitaet; keine bestaetigte aktive Gewitterlage"
@@ -26,31 +26,31 @@
       "dynamic": true
     },
     "GEC-Potential-Abweichung": {
-      "score": 0.9167,
+      "score": 0.9433,
       "source": "derived",
       "dynamic": true
     },
     "Geomag. Stoerung (Kp)": {
-      "score": 0.1111,
+      "score": 0.2222,
       "source": "primary",
       "dynamic": true
     },
     "IMF Bz Kopplung": {
-      "score": 0.1454,
+      "score": 0.1709,
       "source": "primary",
       "dynamic": true
     }
   },
   "gec_state": {
-    "V_ionosphere_kV": 217.4,
-    "I_total_A": 724.7,
-    "E_fair_weather_Vm": 94.2,
-    "J_fair_weather_pAm2": 1.65,
-    "generator_strength": 0.825,
+    "V_ionosphere_kV": 215.0,
+    "I_total_A": 716.8,
+    "E_fair_weather_Vm": 93.2,
+    "J_fair_weather_pAm2": 1.632,
+    "generator_strength": 0.816,
     "iono_cond_factor": 0.878,
     "kp_cond_mod": 1.0,
-    "delta_V_pct": -27.5,
-    "delta_I_pct": -27.5
+    "delta_V_pct": -28.3,
+    "delta_I_pct": -28.3
   },
   "gec_reference": {
     "V_iono_kV": 300.0,
@@ -63,18 +63,18 @@
     "tau_relax_min": 10.0
   },
   "coupling_matrix": {
-    "L3 → GEC\n(Gewitter/Generator)": 0.1752,
+    "L3 → GEC\n(Gewitter/Generator)": 0.1657,
     "L4 → GEC\n(Iono-Leitfähigkeit)": 0.239,
     "L1 → GEC\n(Boden-Leitfähigkeit)": 0.71,
-    "L0 → GEC\n(Solar/Kp-Modulator)": 0.191,
-    "L2 → GEC\n(Oberfl.-Kopplung)": 0.534
+    "L0 → GEC\n(Solar/Kp-Modulator)": 0.1398,
+    "L2 → GEC\n(Oberfl.-Kopplung)": 0.6293
   },
   "raw_values": {
-    "Kp_current_1m": 1.0,
-    "Kp_used_for_score": 1.0,
+    "Kp_current_1m": 0.0,
+    "Kp_used_for_score": 2.0,
     "Kp_source": "primary",
-    "Kp_max_24h": 3.0,
-    "IMF_Bz_nT": -0.09,
+    "Kp_max_24h": 2.0,
+    "IMF_Bz_nT": -0.98,
     "SW_speed_kms": null,
     "SW_density_cm3": null,
     "xray_class": "B",
@@ -97,37 +97,37 @@
   "downstream_expectation": {
     "layer6_schumann": "GEC-Potential erniedrigt – gedaempfte Schumann-Anregung",
     "schumann_amplitude": "gedaempfte Amplitude moeglich",
-    "layer7_engine": "GEC-Score 0.347 (moderat) – dominant: GEC-Potential-Abweichung"
+    "layer7_engine": "GEC-Score 0.379 (moderat) – dominant: GEC-Potential-Abweichung"
   },
   "layer_context": {
     "L0": {
-      "score": 0.191,
+      "score": 0.1398,
       "level": "ruhig"
     },
     "L1": {
-      "score": 0.3996,
+      "score": 0.3598,
       "level": "moderat",
       "ocean_conductivity": 3.2
     },
     "L2": {
-      "score": 0.5873,
-      "level": "moderat"
+      "score": 0.6506,
+      "level": "aktiv"
     },
     "L3": {
-      "score": 0.182,
+      "score": 0.1644,
       "level": "ruhig",
-      "thunder_score": 0.1752,
+      "thunder_score": 0.1657,
       "CAPE_mean": 153.3,
       "thunder_trigger": false
     },
     "L4": {
-      "score": 0.2802,
+      "score": 0.269,
       "level": "ruhig",
-      "cavity_height_km": 86.2,
-      "ideal_cavity_mode1_Hz": 10.4499,
+      "cavity_height_km": 87.0,
+      "ideal_cavity_mode1_Hz": 10.4486,
       "real_SR1_reference_Hz": 7.83,
       "ioniz_score": 0.239
     }
   },
-  "state_summary": "Layer-5-Zustand: moderat. Generator-Staerke 0.82 (CAPE=153 J/kg). V_iono=217 kV (Δ -27.5% vs. Carnegie). I_total=725 A (Δ -27.5%). Kp_1m=1.0 (score_Kp=1.0). IMF Bz=-0.1 nT. Datenvollstaendigkeit: 100%."
+  "state_summary": "Layer-5-Zustand: moderat. Generator-Staerke 0.82 (CAPE=153 J/kg). V_iono=215 kV (Δ -28.3% vs. Carnegie). I_total=717 A (Δ -28.3%). Kp_1m=0.0 (score_Kp=2.0). IMF Bz=-1.0 nT. Datenvollstaendigkeit: 100%."
 }
