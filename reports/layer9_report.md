@@ -1,6 +1,6 @@
 # Layer 9 — External Grounding & Validation
 
-**Run:** 2026-10-10T18:43:51.347899Z
+**Run:** 2026-10-10T23:41:27.680574Z
 **Validation Score:** 0.9286  (exploratory_signal)
 
 ## Aggregat
@@ -13,7 +13,7 @@
 - keine
 
 ## Uncertain Checks
-- **V_storm_atmosphere** (storm_validation): EONET open storms=8. L3=0.161, active_thunderstorms=False
+- **V_storm_atmosphere** (storm_validation): EONET open storms=8. L3=0.135, active_thunderstorms=False
 
 ## Model Adjustment Suggestions
 - keine
@@ -24,13 +24,13 @@
   - Beobachtet: el_nino
 - ✅ **V_kp_consistency**: Modell-Kp und NOAA-Kp im gleichen Zeitfenster konsistent
   - Erwartet: |Δ Kp| <= 1.0  (Fenster: current_1m)
-  - Beobachtet: model_current=6.0  vs  noaa_current=6.0  →  |Δ|=0.00
+  - Beobachtet: model_current=5.0  vs  noaa_current=5.0  →  |Δ|=0.00
 - ✅ **V_storm_flag**: Bei Kp >= 5 ist geomagnetic_storm-Flag gesetzt
   - Erwartet: True
   - Beobachtet: True
 - ⚠️ **V_storm_atmosphere**: Bei >= 5 offenen Sturm-Events weltweit ist L3 >= 0.3
   - Erwartet: L3 >= 0.3
-  - Beobachtet: L3 = 0.161
+  - Beobachtet: L3 = 0.135
 - ❓ **V_schumann_data_availability**: Externe Schumann-Resonanz-Messdaten für Vergleich verfügbar
   - Erwartet: real-time SR1 amplitude/frequency feed
   - Beobachtet: no public feed available
