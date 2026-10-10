@@ -1,15 +1,15 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-10-10T14:33:44.776026Z
-**Snapshots analysiert:** 479
+**Run:** 2026-10-10T18:43:47.169484Z
+**Snapshots analysiert:** 480
 **Vollständige Tagespaare:** 59
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 460× (96.0%)
-- `cavity_condition_shift_state` — 6× (1.3%)
-- `anomalous_resonance_state` — 6× (1.3%)
-- `geomagnetic_disturbance_state` — 5× (1.0%)
+- `seasonal_transition_state` — 460× (95.8%)
+- `cavity_condition_shift_state` — 6× (1.2%)
+- `anomalous_resonance_state` — 6× (1.2%)
+- `geomagnetic_disturbance_state` — 6× (1.2%)
 - `normal_background_state` — 2× (0.4%)
 
 ## Tagespaare (ΔL3 Aktivierung)
@@ -80,7 +80,7 @@
 
 ## L2 ↔ L3 Beziehung
 
-- Pearson: **+0.048**
+- Pearson: **+0.045**
 - L2 Trend: +0.00010 / Snapshot
 - L3 Trend: +0.00009 / Snapshot
 - Gap-Trend: +0.00001 / Snapshot
@@ -88,16 +88,16 @@
 
 ## Field Operators
 
-Coverage: 461/479 Snapshots
+Coverage: 462/480 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
-- **thermal**: 0.463 — moderate thermische Vorbereitung vorhanden
-- **resonance_model**: 0.421 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
-- **electric**: 0.376 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
-- **ionization**: 0.271 — moderate ionosphärische Modulation
-- **cross_layer_activation**: 0.242 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
-- **geomagnetic**: 0.169 — ruhige geomagnetische Bedingungen
+- **resonance_model**: 0.478 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
+- **thermal**: 0.475 — moderate thermische Vorbereitung vorhanden
+- **geomagnetic**: 0.473 — geomagnetischer Sturm aktiv: starke Space-Weather-Kopplung
+- **electric**: 0.455 — moderate elektrische Kopplung  ⚠️ confounded_circular
+- **ionization**: 0.412 — Ionosphärenstörung: starker Strahlungseffekt auf Ausbreitung
+- **cross_layer_activation**: 0.279 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
 
 ### Operator ↔ ΔL3 Korrelation
 
