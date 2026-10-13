@@ -1,12 +1,12 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-10-13T16:08:37.271677Z
-**Snapshots analysiert:** 491
-**Vollständige Tagespaare:** 60
+**Run:** 2026-10-13T20:19:12.091494Z
+**Snapshots analysiert:** 492
+**Vollständige Tagespaare:** 61
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 470× (95.7%)
+- `seasonal_transition_state` — 471× (95.7%)
 - `geomagnetic_disturbance_state` — 7× (1.4%)
 - `cavity_condition_shift_state` — 6× (1.2%)
 - `anomalous_resonance_state` — 6× (1.2%)
@@ -76,38 +76,39 @@
 | 2026-10-08 | 0.164 | 0.175 | +0.010 | seasonal_transition |
 | 2026-10-09 | 0.198 | 0.119 | -0.079 | seasonal_transition |
 | 2026-10-10 | 0.106 | 0.135 | +0.029 | geomagnetic_disturbance |
+| 2026-10-13 | 0.130 | 0.169 | +0.039 | seasonal_transition |
 
 **ΔL3-Schwelle (empirisch):** +0.049
 
 ## L2 ↔ L3 Beziehung
 
-- Pearson: **-0.034**
-- L2 Trend: +0.00012 / Snapshot
+- Pearson: **-0.042**
+- L2 Trend: +0.00013 / Snapshot
 - L3 Trend: +0.00007 / Snapshot
-- Gap-Trend: +0.00005 / Snapshot
+- Gap-Trend: +0.00006 / Snapshot
 - Schwache Kopplung sichtbar — mehr Daten nötig.
 
 ## Field Operators
 
-Coverage: 473/491 Snapshots
+Coverage: 474/492 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
-- **thermal**: 0.594 — moderate thermische Vorbereitung vorhanden
-- **electric**: 0.416 — moderate elektrische Kopplung  ⚠️ confounded_circular
-- **resonance_model**: 0.415 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
-- **cross_layer_activation**: 0.312 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
-- **ionization**: 0.210 — ruhige Ionosphäre, minimaler Strahlungseffekt
-- **geomagnetic**: 0.164 — ruhige geomagnetische Bedingungen
+- **thermal**: 0.617 — starke thermisch-feuchte Vorbereitung der Oberfläche
+- **resonance_model**: 0.448 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
+- **electric**: 0.413 — moderate elektrische Kopplung  ⚠️ confounded_circular
+- **cross_layer_activation**: 0.317 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
+- **ionization**: 0.244 — ruhige Ionosphäre, minimaler Strahlungseffekt
+- **geomagnetic**: 0.208 — ruhige geomagnetische Bedingungen
 
 ### Operator ↔ ΔL3 Korrelation
 
-- resonance_model: r = +0.318
-- electric: r = +0.219  ⚠️ **confounded_circular** — Operator enthält L3, kein unabhängiger Prädiktor
-- thermal: r = -0.160
-- cross_layer_activation: r = -0.081  ⚠️ **confounded_circular** — Operator enthält L3, kein unabhängiger Prädiktor
-- ionization: r = +0.062
-- geomagnetic: r = -0.010
+- resonance_model: r = +0.314
+- electric: r = +0.225  ⚠️ **confounded_circular** — Operator enthält L3, kein unabhängiger Prädiktor
+- thermal: r = -0.092
+- cross_layer_activation: r = -0.058  ⚠️ **confounded_circular** — Operator enthält L3, kein unabhängiger Prädiktor
+- ionization: r = +0.048
+- geomagnetic: r = -0.009
 
 ## Hypothesen
 
@@ -120,7 +121,7 @@ Coverage: 473/491 Snapshots
 ### 🚫 H4: Moduliert L6_evening die Carnegie-Amplitude (L5 abends)?
 
 - **Status:** confound_blocked (confounded_proxy) — nicht promotbar, nur exploratorisch
-- **Evidenz:** Pearson L5_evening vs L6_evening = +0.683 über 60 Abende.
+- **Evidenz:** Pearson L5_evening vs L6_evening = +0.680 über 61 Abende.
 - **Nächster Schritt:** Korrelation in größerer Stichprobe bestätigen.
 
 ### 🚫 H_combined: Ist combined_activation_score (ΔL3+L5+L6) besser als ΔL3 allein?
