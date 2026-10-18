@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-17T22:28:07.227762Z",
+  "timestamp": "2026-10-18T07:18:35.779868Z",
   "layer": 3,
   "name": "Atmosphaere / Wetter / Konvektion",
-  "score": 0.1532,
+  "score": 0.1756,
   "level": "ruhig",
   "confidence": 0.83,
   "score_basis": "5/5 dynamische Komponenten; 5/6 Atmosphärenpunkte",
@@ -18,22 +18,22 @@
   },
   "components": {
     "Konvektions-Intensität (CAPE)": {
-      "score": 0.0947,
+      "score": 0.168,
       "source": "primary",
       "dynamic": true
     },
     "Atm. Instabilität (LI)": {
-      "score": 0.0817,
+      "score": 0.0,
       "source": "primary",
       "dynamic": true
     },
     "Gewitteraktivität": {
-      "score": 0.1337,
+      "score": 0.1806,
       "source": "primary",
       "dynamic": true
     },
     "Schumann-Anregungs-Potenzial": {
-      "score": 0.1891,
+      "score": 0.2626,
       "source": "derived",
       "dynamic": true
     },
@@ -44,70 +44,73 @@
     }
   },
   "raw_values": {
-    "CAPE_mean_Jkg": 284.0,
-    "CIN_mean_Jkg": 27.2,
-    "CloudCover_mean_pct": 55.4,
-    "CloudCover_convective_mean_pct": 44.2,
+    "CAPE_mean_Jkg": 504.0,
+    "CIN_mean_Jkg": 18.8,
+    "CloudCover_mean_pct": 77.2,
+    "CloudCover_convective_mean_pct": 71.5,
     "CloudCover_convective_max_pct": 100.0,
-    "CloudCover_convland_mean_pct": 38.7,
+    "CloudCover_convland_mean_pct": 73.7,
     "CloudCover_convland_max_pct": 100.0,
-    "LI_mean_K": 5.02,
+    "LI_mean_K": 7.88,
     "thunder_points_WMO": 0,
     "storm_events_EONET": 8,
-    "Kp_current": 0.0,
-    "xray_context": null,
+    "Kp_current": 2.0,
+    "xray_context": {
+      "flux": 1.2096483033019467e-06,
+      "class": "C"
+    },
     "kp_note": "geomagnetischer Kontext, kein Blitz-Proxy",
-    "schumann_potential": 0.1891,
+    "schumann_potential": 0.2626,
     "messpunkte": [
       {
         "point": "Tropen (Kongo)",
-        "cape": 80.0,
-        "li": -1.2,
+        "cape": 1190.0,
+        "li": -5.1,
         "thunderstorm": false,
-        "thunder_score": 0.312,
+        "thunder_score": 0.5,
         "cloud": 100.0,
-        "cin": 113.0,
-        "schumann_contribution": 0.291
+        "cin": 91.0,
+        "schumann_contribution": 0.467
       },
       {
         "point": "Arktis",
         "cape": 0.0,
-        "li": 17.2,
+        "li": 34.6,
         "thunderstorm": false,
         "thunder_score": 0.15,
         "cloud": 100.0,
-        "cin": 4.0,
+        "cin": 0.0,
         "schumann_contribution": 0.045
       },
       {
         "point": "Pazifik (ITCZ)",
-        "cape": 1340.0,
-        "li": -4.7,
+        "cape": 1330.0,
+        "li": -4.0,
         "thunderstorm": false,
-        "thunder_score": 0.448,
-        "cloud": 61.0,
-        "cin": 0.0,
-        "schumann_contribution": 0.411
+        "thunder_score": 0.441,
+        "cloud": 65.0,
+        "cin": 3.0,
+        "schumann_contribution": 0.404
       },
       {
         "point": "Amazonia",
         "cape": 0.0,
-        "li": 5.0,
+        "li": 5.2,
         "thunderstorm": false,
-        "thunder_score": 0.045,
-        "cloud": 16.0,
-        "cin": 19.0,
-        "schumann_contribution": 0.041
+        "thunder_score": 0.167,
+        "cloud": 100.0,
+        "cin": 0.0,
+        "schumann_contribution": 0.153
       },
       {
         "point": "Sahel",
         "cape": 0.0,
-        "li": 8.8,
+        "li": 8.7,
         "thunderstorm": false,
-        "thunder_score": 0.0,
-        "cloud": 0.0,
+        "thunder_score": 0.032,
+        "cloud": 21.0,
         "cin": 0.0,
-        "schumann_contribution": 0.0
+        "schumann_contribution": 0.025
       }
     ]
   },
@@ -126,20 +129,20 @@
     "layer6_pattern": "ruhige Atmosphaere – keine starke Mustermodulation"
   },
   "layer0_context": {
-    "score": 0.121,
+    "score": 0.1498,
     "level": "ruhig",
     "dominant_driver": "none"
   },
   "layer1_context": {
-    "score": 0.3858,
+    "score": 0.4228,
     "level": "moderat"
   },
   "layer2_context": {
-    "score": 0.7476,
+    "score": 0.7642,
     "level": "aktiv",
     "thunderstorm_trigger": true,
-    "conv_potential": 0.794,
+    "conv_potential": 0.796,
     "enso_phase": "strong_el_nino"
   },
-  "state_summary": "Layer-3-Zustand: ruhig. CAPE-Mittel 284 J/kg. LI-Mittel 5.0 K. 0 WMO-Gewitterpunkte, 8 NASA-Sturmereignisse. Schumann-Potenzial: 0.189. Datenvollstaendigkeit: 83%. L2-Eingang: aktiv (Conv=0.79, Thunder-Trigger=True)."
+  "state_summary": "Layer-3-Zustand: ruhig. CAPE-Mittel 504 J/kg. LI-Mittel 7.9 K. 0 WMO-Gewitterpunkte, 8 NASA-Sturmereignisse. Schumann-Potenzial: 0.263. Datenvollstaendigkeit: 83%. L2-Eingang: aktiv (Conv=0.80, Thunder-Trigger=True)."
 }
