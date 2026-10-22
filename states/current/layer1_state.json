@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-22T07:40:48.381810Z",
+  "timestamp": "2026-10-22T13:54:39.205823Z",
   "layer": 1,
   "name": "Geophysikalischer Grundzustand",
-  "score": 0.5175,
+  "score": 0.5916,
   "level": "moderat",
   "confidence": 1.0,
   "score_basis": "3/3 dynamische Komponenten verfuegbar",
@@ -20,7 +20,7 @@
       "dynamic": true
     },
     "Magnetfeld-Variation (Kp)": {
-      "score": 0.2222,
+      "score": 0.4444,
       "source": "primary",
       "dynamic": true
     }
@@ -42,25 +42,25 @@
     "seismic_M6plus": 4,
     "LOD_anomaly_ms": 0.9912,
     "LOD_source": "primary",
-    "Kp_index": 2.0
+    "Kp_index": 4.0
   },
   "flags": {
     "strong_earthquake": true,
     "elevated_seismicity": true,
-    "mag_field_disturbed": false,
+    "mag_field_disturbed": true,
     "lod_anomaly_high": false
   },
   "downstream_expectation": {
     "layer2_surface": "erhoehte Spannung im Untergrund moeglich",
-    "layer4_ionosphere": "normal",
+    "layer4_ionosphere": "Ionosphaeren-Modifikation durch Kp moeglich",
     "layer5_gec": "Grundleitfaehigkeit stabil – 71% Ozeane (Randbedingung)",
-    "schumann_resonance": "Grundmode stabil ~7.83 Hz – keine Modulation aus Layer 1 erwartet"
+    "schumann_resonance": "nur geringe indirekte Modulation moeglich (Kp < 5, kein starker Layer-1-Treiber)"
   },
   "layer0_context": {
-    "score": 0.249,
-    "level": "ruhig",
-    "dominant_driver": "imf_southward",
+    "score": 0.3015,
+    "level": "moderat",
+    "dominant_driver": "geomagnetic",
     "confidence": 0.75
   },
-  "state_summary": "Layer-1-Zustand: moderat. Seismik: 121 Ereignisse M>=4.5 in 7 Tagen, staerkste M6.9. LOD-Anomalie: +0.991 ms [primary]. Magnetfeld-Variation Kp=2.0. Datenvollstaendigkeit: 100%. Layer-0-Modulator: ruhig (Score 0.25)."
+  "state_summary": "Layer-1-Zustand: moderat. Seismik: 121 Ereignisse M>=4.5 in 7 Tagen, staerkste M6.9. LOD-Anomalie: +0.991 ms [primary]. Magnetfeld-Variation Kp=4.0. Datenvollstaendigkeit: 100%. Layer-0-Modulator: moderat (Score 0.30)."
 }

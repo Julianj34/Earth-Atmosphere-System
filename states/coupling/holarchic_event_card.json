@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-10-22T07:42:32.564052Z",
+  "timestamp": "2026-10-22T13:56:22.543399Z",
   "system_state": "seasonal_transition_state",
   "scores": {
-    "L0": 0.249,
-    "L2": 0.7797,
-    "L3": 0.1761,
-    "L5": 0.3418,
-    "L6": 0.2529
+    "L0": 0.3015,
+    "L2": 0.7623,
+    "L3": 0.2221,
+    "L5": 0.311,
+    "L6": 0.3061
   },
   "macro_context": {
     "band": "high",
-    "score": 0.7797,
+    "score": 0.7623,
     "tags": []
   },
   "meso_organisation": {
@@ -19,18 +19,18 @@
   },
   "micro_activation": {
     "band": "low",
-    "score": 0.1761,
+    "score": 0.2221,
     "thunder_pts": 0,
     "storms_EONET": 4
   },
   "field_response": {
     "electric": {
       "band": "medium",
-      "score": 0.3418
+      "score": 0.311
     },
     "resonance": {
-      "band": "low",
-      "score": 0.2529,
+      "band": "medium",
+      "score": 0.3061,
       "confirmation": "low_proxy_limited"
     }
   },
@@ -41,15 +41,15 @@
     "diagnosis": "macro_prepared but micro_activation_low — preparation without activation"
   },
   "external_forcing_mask": {
-    "external_score": 0.249,
-    "externally_driven": false,
-    "interpretation": "external forcing low -> absence of activation is NOT due to missing external trigger; internal/scale dynamics dominate"
+    "external_score": 0.301,
+    "externally_driven": true,
+    "interpretation": "external forcing non-trivial -> check L0 contribution"
   },
   "validation_status": {
     "status": "validated_by_L9",
     "validation_score": 1.0,
     "evidence_level": "exploratory_signal",
     "checks": "6/7 passed",
-    "l9_timestamp": "2026-10-22T07:42:42.997888Z"
+    "l9_timestamp": "2026-10-22T13:56:32.697861Z"
   }
 }
