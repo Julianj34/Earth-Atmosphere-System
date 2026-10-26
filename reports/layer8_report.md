@@ -1,12 +1,12 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-10-26T07:54:26.306107Z
-**Snapshots analysiert:** 542
+**Run:** 2026-10-26T15:18:49.135986Z
+**Snapshots analysiert:** 543
 **Vollständige Tagespaare:** 61
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 520× (95.9%)
+- `seasonal_transition_state` — 521× (95.9%)
 - `geomagnetic_disturbance_state` — 8× (1.5%)
 - `cavity_condition_shift_state` — 6× (1.1%)
 - `anomalous_resonance_state` — 6× (1.1%)
@@ -90,16 +90,16 @@
 
 ## Field Operators
 
-Coverage: 524/542 Snapshots
+Coverage: 525/543 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
 - **thermal**: 0.571 — moderate thermische Vorbereitung vorhanden
-- **resonance_model**: 0.413 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
-- **electric**: 0.390 — moderate elektrische Kopplung  ⚠️ confounded_circular
-- **cross_layer_activation**: 0.319 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
-- **ionization**: 0.243 — ruhige Ionosphäre, minimaler Strahlungseffekt
-- **geomagnetic**: 0.141 — ruhige geomagnetische Bedingungen
+- **resonance_model**: 0.417 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
+- **electric**: 0.400 — moderate elektrische Kopplung  ⚠️ confounded_circular
+- **cross_layer_activation**: 0.288 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
+- **ionization**: 0.231 — ruhige Ionosphäre, minimaler Strahlungseffekt
+- **geomagnetic**: 0.124 — ruhige geomagnetische Bedingungen
 
 ### Operator ↔ ΔL3 Korrelation
 
