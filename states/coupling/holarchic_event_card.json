@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-10-31T08:29:56.749697Z",
+  "timestamp": "2026-10-31T14:38:01.951501Z",
   "system_state": "seasonal_transition_state",
   "scores": {
-    "L0": 0.3024,
-    "L2": 0.7782,
-    "L3": 0.1159,
-    "L5": 0.3838,
-    "L6": 0.2484
+    "L0": 0.2389,
+    "L2": 0.7699,
+    "L3": 0.247,
+    "L5": 0.3049,
+    "L6": 0.2903
   },
   "macro_context": {
     "band": "high",
-    "score": 0.7782,
+    "score": 0.7699,
     "tags": []
   },
   "meso_organisation": {
@@ -18,38 +18,37 @@
     "note": "no meso-scale layer instrumented (regional convection / MCS)"
   },
   "micro_activation": {
-    "band": "low",
-    "score": 0.1159,
+    "band": "medium",
+    "score": 0.247,
     "thunder_pts": 0,
     "storms_EONET": 4
   },
   "field_response": {
     "electric": {
       "band": "medium",
-      "score": 0.3838
+      "score": 0.3049
     },
     "resonance": {
       "band": "low",
-      "score": 0.2484,
+      "score": 0.2903,
       "confirmation": "low_proxy_limited"
     }
   },
   "chain_break": {
-    "break_at": "macro_to_micro",
-    "localizable": false,
-    "reason": "meso scale uninstrumented; cannot distinguish macro->meso vs meso->micro",
-    "diagnosis": "macro_prepared but micro_activation_low — preparation without activation"
+    "break_at": "electric_to_resonance",
+    "localizable": true,
+    "reason": "GEC active but resonance not confirmed"
   },
   "external_forcing_mask": {
-    "external_score": 0.302,
-    "externally_driven": true,
-    "interpretation": "external forcing non-trivial -> check L0 contribution"
+    "external_score": 0.239,
+    "externally_driven": false,
+    "interpretation": "external forcing low -> absence of activation is NOT due to missing external trigger; internal/scale dynamics dominate"
   },
   "validation_status": {
     "status": "validated_by_L9",
     "validation_score": 1.0,
     "evidence_level": "exploratory_signal",
     "checks": "6/7 passed",
-    "l9_timestamp": "2026-10-31T08:30:02.606108Z"
+    "l9_timestamp": "2026-10-31T14:38:12.157404Z"
   }
 }
