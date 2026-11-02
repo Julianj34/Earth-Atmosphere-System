@@ -1,12 +1,12 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-11-01T23:43:04.494624Z
-**Snapshots analysiert:** 569
+**Run:** 2026-11-02T09:36:45.949968Z
+**Snapshots analysiert:** 570
 **Vollständige Tagespaare:** 63
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 547× (96.1%)
+- `seasonal_transition_state` — 548× (96.1%)
 - `geomagnetic_disturbance_state` — 8× (1.4%)
 - `cavity_condition_shift_state` — 6× (1.1%)
 - `anomalous_resonance_state` — 6× (1.1%)
@@ -84,24 +84,24 @@
 
 ## L2 ↔ L3 Beziehung
 
-- Pearson: **-0.257**
+- Pearson: **-0.261**
 - L2 Trend: +0.00029 / Snapshot
-- L3 Trend: +0.00000 / Snapshot
+- L3 Trend: -0.00000 / Snapshot
 - Gap-Trend: +0.00029 / Snapshot
 - NEGATIVE Korrelation: L2 (Wochen-Trend) und L3 (Tagesrhythmus) leben auf verschiedenen Zeitskalen.
 
 ## Field Operators
 
-Coverage: 551/569 Snapshots
+Coverage: 552/570 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
 - **thermal**: 0.585 — moderate thermische Vorbereitung vorhanden
 - **resonance_model**: 0.426 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
-- **electric**: 0.365 — moderate elektrische Kopplung  ⚠️ confounded_circular
 - **cross_layer_activation**: 0.328 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
-- **ionization**: 0.241 — ruhige Ionosphäre, minimaler Strahlungseffekt
-- **geomagnetic**: 0.215 — ruhige geomagnetische Bedingungen
+- **electric**: 0.293 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
+- **ionization**: 0.269 — moderate ionosphärische Modulation
+- **geomagnetic**: 0.155 — ruhige geomagnetische Bedingungen
 
 ### Operator ↔ ΔL3 Korrelation
 
@@ -123,7 +123,7 @@ Coverage: 551/569 Snapshots
 ### ❓ H3: Existiert ein L2→L3 Aktivierungsparadox (steigendes L2, fallendes L3)?  ✓ unabhängig (Backbone)
 
 - **Status:** open
-- **Evidenz:** Pearson L2 vs L3 = -0.257. L2 Trend +0.00029 (steigend). L3 Trend +0.00000. Gap wächst um +0.00029/Snapshot.
+- **Evidenz:** Pearson L2 vs L3 = -0.261. L2 Trend +0.00029 (steigend). L3 Trend -0.00000. Gap wächst um +0.00029/Snapshot.
 - **Nächster Schritt:** Verzögerte Korrelation L2(t) vs L3(t+24h, t+48h, t+7d) prüfen. Möglich: Sättigungseffekt oder fehlender Trigger (Windscherung, Kaltlufteinbruch) im L3-Modell.
 
 ### 🚫 H4: Moduliert L6_evening die Carnegie-Amplitude (L5 abends)?
