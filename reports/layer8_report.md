@@ -1,12 +1,12 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-11-03T16:22:03.624256Z
-**Snapshots analysiert:** 575
-**Vollständige Tagespaare:** 63
+**Run:** 2026-11-03T20:33:06.668759Z
+**Snapshots analysiert:** 576
+**Vollständige Tagespaare:** 64
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 553× (96.2%)
+- `seasonal_transition_state` — 554× (96.2%)
 - `geomagnetic_disturbance_state` — 8× (1.4%)
 - `cavity_condition_shift_state` — 6× (1.0%)
 - `anomalous_resonance_state` — 6× (1.0%)
@@ -79,12 +79,13 @@
 | 2026-10-13 | 0.130 | 0.169 | +0.039 | seasonal_transition |
 | 2026-10-29 | 0.138 | 0.128 | -0.011 | seasonal_transition |
 | 2026-10-30 | 0.113 | 0.122 | +0.009 | seasonal_transition |
+| 2026-11-03 | 0.136 | 0.096 | -0.039 | seasonal_transition |
 
 **ΔL3-Schwelle (empirisch):** +0.049
 
 ## L2 ↔ L3 Beziehung
 
-- Pearson: **-0.274**
+- Pearson: **-0.280**
 - L2 Trend: +0.00029 / Snapshot
 - L3 Trend: -0.00001 / Snapshot
 - Gap-Trend: +0.00030 / Snapshot
@@ -92,25 +93,25 @@
 
 ## Field Operators
 
-Coverage: 557/575 Snapshots
+Coverage: 558/576 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
-- **thermal**: 0.576 — moderate thermische Vorbereitung vorhanden
-- **resonance_model**: 0.424 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
-- **electric**: 0.330 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
-- **cross_layer_activation**: 0.309 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
-- **ionization**: 0.265 — moderate ionosphärische Modulation
-- **geomagnetic**: 0.152 — ruhige geomagnetische Bedingungen
+- **thermal**: 0.577 — moderate thermische Vorbereitung vorhanden
+- **resonance_model**: 0.417 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
+- **electric**: 0.373 — moderate elektrische Kopplung  ⚠️ confounded_circular
+- **cross_layer_activation**: 0.331 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
+- **ionization**: 0.196 — ruhige Ionosphäre, minimaler Strahlungseffekt
+- **geomagnetic**: 0.174 — ruhige geomagnetische Bedingungen
 
 ### Operator ↔ ΔL3 Korrelation
 
-- resonance_model: r = +0.328
-- electric: r = +0.203  ⚠️ **confounded_circular** — Operator enthält L3, kein unabhängiger Prädiktor
-- thermal: r = -0.150
-- cross_layer_activation: r = -0.106  ⚠️ **confounded_circular** — Operator enthält L3, kein unabhängiger Prädiktor
-- ionization: r = +0.098
-- geomagnetic: r = +0.009
+- resonance_model: r = +0.352
+- thermal: r = -0.216
+- electric: r = +0.175  ⚠️ **confounded_circular** — Operator enthält L3, kein unabhängiger Prädiktor
+- cross_layer_activation: r = -0.167  ⚠️ **confounded_circular** — Operator enthält L3, kein unabhängiger Prädiktor
+- ionization: r = +0.161
+- geomagnetic: r = +0.015
 
 ## Hypothesen
 
@@ -123,13 +124,13 @@ Coverage: 557/575 Snapshots
 ### ❓ H3: Existiert ein L2→L3 Aktivierungsparadox (steigendes L2, fallendes L3)?  ✓ unabhängig (Backbone)
 
 - **Status:** open
-- **Evidenz:** Pearson L2 vs L3 = -0.274. L2 Trend +0.00029 (steigend). L3 Trend -0.00001. Gap wächst um +0.00030/Snapshot.
+- **Evidenz:** Pearson L2 vs L3 = -0.280. L2 Trend +0.00029 (steigend). L3 Trend -0.00001. Gap wächst um +0.00030/Snapshot.
 - **Nächster Schritt:** Verzögerte Korrelation L2(t) vs L3(t+24h, t+48h, t+7d) prüfen. Möglich: Sättigungseffekt oder fehlender Trigger (Windscherung, Kaltlufteinbruch) im L3-Modell.
 
 ### 🚫 H4: Moduliert L6_evening die Carnegie-Amplitude (L5 abends)?
 
 - **Status:** confound_blocked (confounded_proxy) — nicht promotbar, nur exploratorisch
-- **Evidenz:** Pearson L5_evening vs L6_evening = +0.653 über 63 Abende.
+- **Evidenz:** Pearson L5_evening vs L6_evening = +0.648 über 64 Abende.
 - **Nächster Schritt:** Korrelation in größerer Stichprobe bestätigen.
 
 ### 🚫 H_combined: Ist combined_activation_score (ΔL3+L5+L6) besser als ΔL3 allein?
