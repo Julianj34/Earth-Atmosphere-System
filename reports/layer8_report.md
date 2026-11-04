@@ -1,12 +1,12 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-11-03T20:33:06.668759Z
-**Snapshots analysiert:** 576
+**Run:** 2026-11-04T00:42:51.832508Z
+**Snapshots analysiert:** 577
 **Vollständige Tagespaare:** 64
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 554× (96.2%)
+- `seasonal_transition_state` — 555× (96.2%)
 - `geomagnetic_disturbance_state` — 8× (1.4%)
 - `cavity_condition_shift_state` — 6× (1.0%)
 - `anomalous_resonance_state` — 6× (1.0%)
@@ -85,24 +85,24 @@
 
 ## L2 ↔ L3 Beziehung
 
-- Pearson: **-0.280**
-- L2 Trend: +0.00029 / Snapshot
+- Pearson: **-0.286**
+- L2 Trend: +0.00030 / Snapshot
 - L3 Trend: -0.00001 / Snapshot
 - Gap-Trend: +0.00030 / Snapshot
 - NEGATIVE Korrelation: L2 (Wochen-Trend) und L3 (Tagesrhythmus) leben auf verschiedenen Zeitskalen.
 
 ## Field Operators
 
-Coverage: 558/576 Snapshots
+Coverage: 559/577 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
 - **thermal**: 0.577 — moderate thermische Vorbereitung vorhanden
-- **resonance_model**: 0.417 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
-- **electric**: 0.373 — moderate elektrische Kopplung  ⚠️ confounded_circular
+- **resonance_model**: 0.395 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
+- **electric**: 0.374 — moderate elektrische Kopplung  ⚠️ confounded_circular
 - **cross_layer_activation**: 0.331 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
-- **ionization**: 0.196 — ruhige Ionosphäre, minimaler Strahlungseffekt
-- **geomagnetic**: 0.174 — ruhige geomagnetische Bedingungen
+- **ionization**: 0.207 — ruhige Ionosphäre, minimaler Strahlungseffekt
+- **geomagnetic**: 0.105 — ruhige geomagnetische Bedingungen
 
 ### Operator ↔ ΔL3 Korrelation
 
@@ -124,7 +124,7 @@ Coverage: 558/576 Snapshots
 ### ❓ H3: Existiert ein L2→L3 Aktivierungsparadox (steigendes L2, fallendes L3)?  ✓ unabhängig (Backbone)
 
 - **Status:** open
-- **Evidenz:** Pearson L2 vs L3 = -0.280. L2 Trend +0.00029 (steigend). L3 Trend -0.00001. Gap wächst um +0.00030/Snapshot.
+- **Evidenz:** Pearson L2 vs L3 = -0.286. L2 Trend +0.00030 (steigend). L3 Trend -0.00001. Gap wächst um +0.00030/Snapshot.
 - **Nächster Schritt:** Verzögerte Korrelation L2(t) vs L3(t+24h, t+48h, t+7d) prüfen. Möglich: Sättigungseffekt oder fehlender Trigger (Windscherung, Kaltlufteinbruch) im L3-Modell.
 
 ### 🚫 H4: Moduliert L6_evening die Carnegie-Amplitude (L5 abends)?
