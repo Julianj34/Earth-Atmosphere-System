@@ -1,12 +1,12 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-11-07T08:54:28.052919Z
-**Snapshots analysiert:** 590
+**Run:** 2026-11-07T14:59:03.848520Z
+**Snapshots analysiert:** 591
 **Vollständige Tagespaare:** 67
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 568× (96.3%)
+- `seasonal_transition_state` — 569× (96.3%)
 - `geomagnetic_disturbance_state` — 8× (1.4%)
 - `cavity_condition_shift_state` — 6× (1.0%)
 - `anomalous_resonance_state` — 6× (1.0%)
@@ -96,16 +96,16 @@
 
 ## Field Operators
 
-Coverage: 572/590 Snapshots
+Coverage: 573/591 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
-- **thermal**: 0.577 — moderate thermische Vorbereitung vorhanden
-- **resonance_model**: 0.444 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
-- **electric**: 0.360 — moderate elektrische Kopplung  ⚠️ confounded_circular
-- **cross_layer_activation**: 0.328 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
-- **ionization**: 0.319 — Ionosphärenstörung: starker Strahlungseffekt auf Ausbreitung
-- **geomagnetic**: 0.266 — ruhige geomagnetische Bedingungen
+- **thermal**: 0.565 — moderate thermische Vorbereitung vorhanden
+- **resonance_model**: 0.436 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
+- **electric**: 0.372 — moderate elektrische Kopplung  ⚠️ confounded_circular
+- **cross_layer_activation**: 0.302 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
+- **ionization**: 0.301 — Ionosphärenstörung: starker Strahlungseffekt auf Ausbreitung
+- **geomagnetic**: 0.273 — ruhige geomagnetische Bedingungen
 
 ### Operator ↔ ΔL3 Korrelation
 
