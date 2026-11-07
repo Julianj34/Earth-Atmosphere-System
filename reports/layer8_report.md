@@ -1,13 +1,13 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-11-07T18:53:37.368714Z
-**Snapshots analysiert:** 592
-**Vollständige Tagespaare:** 67
+**Run:** 2026-11-07T23:42:32.922640Z
+**Snapshots analysiert:** 593
+**Vollständige Tagespaare:** 68
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 569× (96.1%)
-- `geomagnetic_disturbance_state` — 8× (1.4%)
+- `seasonal_transition_state` — 570× (96.1%)
+- `geomagnetic_disturbance_state` — 8× (1.3%)
 - `cavity_condition_shift_state` — 7× (1.2%)
 - `anomalous_resonance_state` — 6× (1.0%)
 - `normal_background_state` — 2× (0.3%)
@@ -83,37 +83,38 @@
 | 2026-11-04 | 0.103 | 0.137 | +0.034 | seasonal_transition |
 | 2026-11-05 | 0.096 | 0.116 | +0.020 | seasonal_transition |
 | 2026-11-06 | 0.126 | 0.110 | -0.015 | seasonal_transition |
+| 2026-11-07 | 0.078 | 0.100 | +0.022 | seasonal_transition |
 
 **ΔL3-Schwelle (empirisch):** +0.049
 
 ## L2 ↔ L3 Beziehung
 
-- Pearson: **-0.336**
+- Pearson: **-0.340**
 - L2 Trend: +0.00031 / Snapshot
 - L3 Trend: -0.00003 / Snapshot
-- Gap-Trend: +0.00033 / Snapshot
+- Gap-Trend: +0.00034 / Snapshot
 - NEGATIVE Korrelation: L2 (Wochen-Trend) und L3 (Tagesrhythmus) leben auf verschiedenen Zeitskalen.
 
 ## Field Operators
 
-Coverage: 574/592 Snapshots
+Coverage: 575/593 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
-- **thermal**: 0.573 — moderate thermische Vorbereitung vorhanden
-- **resonance_model**: 0.563 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
-- **electric**: 0.374 — moderate elektrische Kopplung  ⚠️ confounded_circular
-- **ionization**: 0.337 — Ionosphärenstörung: starker Strahlungseffekt auf Ausbreitung
-- **cross_layer_activation**: 0.297 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
-- **geomagnetic**: 0.282 — ruhige geomagnetische Bedingungen
+- **thermal**: 0.571 — moderate thermische Vorbereitung vorhanden
+- **resonance_model**: 0.481 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
+- **electric**: 0.407 — moderate elektrische Kopplung  ⚠️ confounded_circular
+- **ionization**: 0.342 — Ionosphärenstörung: starker Strahlungseffekt auf Ausbreitung
+- **geomagnetic**: 0.336 — ruhige geomagnetische Bedingungen
+- **cross_layer_activation**: 0.331 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
 
 ### Operator ↔ ΔL3 Korrelation
 
-- resonance_model: r = +0.340
-- thermal: r = -0.220
-- cross_layer_activation: r = -0.180  ⚠️ **confounded_circular** — Operator enthält L3, kein unabhängiger Prädiktor
-- electric: r = +0.166  ⚠️ **confounded_circular** — Operator enthält L3, kein unabhängiger Prädiktor
-- ionization: r = +0.158
+- resonance_model: r = +0.339
+- thermal: r = -0.212
+- cross_layer_activation: r = -0.174  ⚠️ **confounded_circular** — Operator enthält L3, kein unabhängiger Prädiktor
+- electric: r = +0.164  ⚠️ **confounded_circular** — Operator enthält L3, kein unabhängiger Prädiktor
+- ionization: r = +0.157
 - geomagnetic: r = +0.010
 
 ## Hypothesen
@@ -127,13 +128,13 @@ Coverage: 574/592 Snapshots
 ### ❓ H3: Existiert ein L2→L3 Aktivierungsparadox (steigendes L2, fallendes L3)?  ✓ unabhängig (Backbone)
 
 - **Status:** open
-- **Evidenz:** Pearson L2 vs L3 = -0.336. L2 Trend +0.00031 (steigend). L3 Trend -0.00003. Gap wächst um +0.00033/Snapshot.
+- **Evidenz:** Pearson L2 vs L3 = -0.340. L2 Trend +0.00031 (steigend). L3 Trend -0.00003. Gap wächst um +0.00034/Snapshot.
 - **Nächster Schritt:** Verzögerte Korrelation L2(t) vs L3(t+24h, t+48h, t+7d) prüfen. Möglich: Sättigungseffekt oder fehlender Trigger (Windscherung, Kaltlufteinbruch) im L3-Modell.
 
 ### 🚫 H4: Moduliert L6_evening die Carnegie-Amplitude (L5 abends)?
 
 - **Status:** confound_blocked (confounded_proxy) — nicht promotbar, nur exploratorisch
-- **Evidenz:** Pearson L5_evening vs L6_evening = +0.635 über 67 Abende.
+- **Evidenz:** Pearson L5_evening vs L6_evening = +0.627 über 68 Abende.
 - **Nächster Schritt:** Korrelation in größerer Stichprobe bestätigen.
 
 ### 🚫 H_combined: Ist combined_activation_score (ΔL3+L5+L6) besser als ΔL3 allein?
