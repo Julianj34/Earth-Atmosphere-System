@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-11T09:32:34.078588Z",
+  "timestamp": "2026-11-11T16:20:06.117251Z",
   "layer": 6,
   "name": "Resonanzfeld / Schumann-Resonanz",
   "measurement_status": "model_expected_not_observed",
@@ -10,7 +10,7 @@
     "Q_factor": null,
     "note": "Hier reale Messdaten eintragen wenn verfügbar (z.B. AURA, NASA/MEPAS)"
   },
-  "score": 0.2414,
+  "score": 0.2399,
   "level": "ruhig",
   "confidence": 1.0,
   "score_basis": "5/5 dynamische Komponenten",
@@ -18,7 +18,7 @@
   "missing_components": [],
   "components": {
     "Anregungs-Staerke (Amplitude)": {
-      "score": 0.2461,
+      "score": 0.2386,
       "source": "derived_from_L3_L5",
       "dynamic": true
     },
@@ -99,40 +99,40 @@
     "SR_1": {
       "freq_Hz": 7.7925,
       "freq_shift_mHz": -37.5,
-      "amplitude_pT": 0.8199,
-      "amplitude_factor": 0.82,
+      "amplitude_pT": 0.8102,
+      "amplitude_factor": 0.81,
       "Q_factor": 4.328,
       "Q_factor_change": -3.8
     },
     "SR_2": {
       "freq_Hz": 14.2754,
       "freq_shift_mHz": -24.6,
-      "amplitude_pT": 0.369,
-      "amplitude_factor": 0.82,
+      "amplitude_pT": 0.3646,
+      "amplitude_factor": 0.81,
       "Q_factor": 4.616,
       "Q_factor_change": -3.8
     },
     "SR_3": {
       "freq_Hz": 20.788,
       "freq_shift_mHz": -12.0,
-      "amplitude_pT": 0.246,
-      "amplitude_factor": 0.82,
+      "amplitude_pT": 0.243,
+      "amplitude_factor": 0.81,
       "Q_factor": 4.809,
       "Q_factor_change": -3.8
     },
     "SR_4": {
       "freq_Hz": 27.3005,
       "freq_shift_mHz": 0.5,
-      "amplitude_pT": 0.164,
-      "amplitude_factor": 0.82,
+      "amplitude_pT": 0.162,
+      "amplitude_factor": 0.81,
       "Q_factor": 5.001,
       "Q_factor_change": -3.8
     },
     "SR_5": {
       "freq_Hz": 33.745,
       "freq_shift_mHz": -55.0,
-      "amplitude_pT": 0.1066,
-      "amplitude_factor": 0.82,
+      "amplitude_pT": 0.1053,
+      "amplitude_factor": 0.81,
       "Q_factor": 5.193,
       "Q_factor_change": -3.8
     }
@@ -150,9 +150,9 @@
       "xray_effect": 0
     },
     "amplitude_factor": {
-      "total": 0.8199,
-      "gec_generator": 0.802,
-      "thunder_l3": 1.076,
+      "total": 0.8102,
+      "gec_generator": 0.795,
+      "thunder_l3": 1.073,
       "chimney_factor": 0.95
     },
     "q_factor_modulation": {
@@ -162,11 +162,15 @@
     }
   },
   "diurnal_pattern": {
-    "utc_hour": 9,
+    "utc_hour": 16,
     "active_chimneys": [
       {
-        "name": "Asien/Maritime",
-        "activity": 0.833
+        "name": "Afrika",
+        "activity": 0.667
+      },
+      {
+        "name": "Amerika",
+        "activity": 0.333
       }
     ],
     "global_activity": 1.0
@@ -216,31 +220,31 @@
     "note": "Score 0.30 ist untere Grenze moderat; Werte nahe Schwelle als ruhig_bis_moderat interpretieren"
   },
   "downstream_expectation": {
-    "layer7_engine": "L6-Score 0.241 (ruhig) – SR-1 7.79 Hz | Amp 0.82x | non_geom_dom=3.1x",
+    "layer7_engine": "L6-Score 0.240 (ruhig) – SR-1 7.79 Hz | Amp 0.81x | non_geom_dom=3.1x",
     "layer8_research": "Hypothese: Wenn reale Messungen nicht_geometrische_dominanz bestaetigen, sind aktuell vor allem Tag/Nacht-Struktur, Leitfaehigkeit/Daempfung und Quellenverteilung (Chimneys) fuehrend. Kp und Solarflares werden nur bei aktiver Stoerung relevant."
   },
   "layer_context": {
     "L0": {
-      "score": 0.1977,
+      "score": 0.1701,
       "level": "ruhig"
     },
     "L1": {
-      "score": 0.434,
+      "score": 0.4711,
       "level": "moderat"
     },
     "L2": {
-      "score": 0.7439,
+      "score": 0.7451,
       "level": "aktiv"
     },
     "L3": {
-      "score": 0.1192,
+      "score": 0.1109,
       "level": "ruhig",
-      "thunder_score": 0.1523,
-      "CAPE_mean": 214.0,
+      "thunder_score": 0.1454,
+      "CAPE_mean": 85.0,
       "n_thunder": 0
     },
     "L4": {
-      "score": 0.3418,
+      "score": 0.324,
       "level": "moderat",
       "cavity_height_km": 69.2,
       "cavity_delta_km": -10.8,
@@ -259,12 +263,12 @@
       }
     },
     "L5": {
-      "score": 0.3501,
+      "score": 0.3543,
       "level": "moderat",
-      "V_iono_kV": 217.5,
-      "delta_V_pct": -27.5,
-      "generator_strength": 0.802
+      "V_iono_kV": 215.6,
+      "delta_V_pct": -28.1,
+      "generator_strength": 0.795
     }
   },
-  "state_summary": "Layer-6-Zustand: ruhig. SR-1 erwartet 7.793 Hz (Δ -37.5 mHz vs Referenz 7.83 Hz). Amplitude-Faktor 0.82 (gedaempfte Anregung). Q-Faktor SR-1 4.33 (-3.8%). Aktive Chimneys: ['Asien/Maritime']. Nicht-geometrische Dominanz: 3.1x. Datenvollstaendigkeit: 100%."
+  "state_summary": "Layer-6-Zustand: ruhig. SR-1 erwartet 7.793 Hz (Δ -37.5 mHz vs Referenz 7.83 Hz). Amplitude-Faktor 0.81 (gedaempfte Anregung). Q-Faktor SR-1 4.33 (-3.8%). Aktive Chimneys: ['Afrika', 'Amerika']. Nicht-geometrische Dominanz: 3.1x. Datenvollstaendigkeit: 100%."
 }
