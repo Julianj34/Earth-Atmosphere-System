@@ -1,12 +1,12 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-11-12T09:56:30.759864Z
-**Snapshots analysiert:** 610
+**Run:** 2026-11-12T16:55:18.128657Z
+**Snapshots analysiert:** 611
 **Vollständige Tagespaare:** 70
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 587× (96.2%)
+- `seasonal_transition_state` — 588× (96.2%)
 - `geomagnetic_disturbance_state` — 8× (1.3%)
 - `cavity_condition_shift_state` — 7× (1.1%)
 - `anomalous_resonance_state` — 6× (1.0%)
@@ -91,24 +91,24 @@
 
 ## L2 ↔ L3 Beziehung
 
-- Pearson: **-0.389**
+- Pearson: **-0.392**
 - L2 Trend: +0.00032 / Snapshot
 - L3 Trend: -0.00005 / Snapshot
-- Gap-Trend: +0.00036 / Snapshot
+- Gap-Trend: +0.00037 / Snapshot
 - NEGATIVE Korrelation: L2 (Wochen-Trend) und L3 (Tagesrhythmus) leben auf verschiedenen Zeitskalen.
 
 ## Field Operators
 
-Coverage: 592/610 Snapshots
+Coverage: 593/611 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
-- **thermal**: 0.576 — moderate thermische Vorbereitung vorhanden
-- **resonance_model**: 0.417 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
-- **electric**: 0.388 — moderate elektrische Kopplung  ⚠️ confounded_circular
-- **cross_layer_activation**: 0.353 — moderate Übergangsspannung bei L2_to_L3 — Vorbereitungsphase  ⚠️ confounded_circular
-- **ionization**: 0.234 — ruhige Ionosphäre, minimaler Strahlungseffekt
-- **geomagnetic**: 0.119 — ruhige geomagnetische Bedingungen
+- **thermal**: 0.574 — moderate thermische Vorbereitung vorhanden
+- **resonance_model**: 0.416 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
+- **electric**: 0.364 — moderate elektrische Kopplung  ⚠️ confounded_circular
+- **cross_layer_activation**: 0.327 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
+- **ionization**: 0.236 — ruhige Ionosphäre, minimaler Strahlungseffekt
+- **geomagnetic**: 0.109 — ruhige geomagnetische Bedingungen
 
 ### Operator ↔ ΔL3 Korrelation
 
@@ -130,7 +130,7 @@ Coverage: 592/610 Snapshots
 ### ❓ H3: Existiert ein L2→L3 Aktivierungsparadox (steigendes L2, fallendes L3)?  ✓ unabhängig (Backbone)
 
 - **Status:** open
-- **Evidenz:** Pearson L2 vs L3 = -0.389. L2 Trend +0.00032 (steigend). L3 Trend -0.00005. Gap wächst um +0.00036/Snapshot.
+- **Evidenz:** Pearson L2 vs L3 = -0.392. L2 Trend +0.00032 (steigend). L3 Trend -0.00005. Gap wächst um +0.00037/Snapshot.
 - **Nächster Schritt:** Verzögerte Korrelation L2(t) vs L3(t+24h, t+48h, t+7d) prüfen. Möglich: Sättigungseffekt oder fehlender Trigger (Windscherung, Kaltlufteinbruch) im L3-Modell.
 
 ### 🚫 H4: Moduliert L6_evening die Carnegie-Amplitude (L5 abends)?
