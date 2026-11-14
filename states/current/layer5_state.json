@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-11-14T15:13:03.960462Z",
+  "timestamp": "2026-11-14T19:15:09.837644Z",
   "layer": 5,
   "name": "Global Electric Circuit",
-  "score": 0.2908,
-  "level": "ruhig",
+  "score": 0.3368,
+  "level": "moderat",
   "confidence": 1.0,
   "score_basis": "5/5 dynamische Komponenten",
   "score_note": "Solarwind-Werte (SW_speed, SW_density) sind Kontextdaten, nicht Teil der GEC-Score-Komponenten.",
@@ -11,11 +11,11 @@
     "SW_speed_kms",
     "SW_density_cm3"
   ],
-  "dominant_component": "Generator-Potenzial (aus L3)",
+  "dominant_component": "GEC-Potential-Abweichung",
   "missing_components": [],
   "components": {
     "Generator-Potenzial (aus L3)": {
-      "score": 0.3971,
+      "score": 0.3253,
       "source": "derived_from_layer3",
       "dynamic": true,
       "note": "Potenzial aus CAPE/Instabilitaet; keine bestaetigte aktive Gewitterlage"
@@ -26,7 +26,7 @@
       "dynamic": true
     },
     "GEC-Potential-Abweichung": {
-      "score": 0.3967,
+      "score": 0.7633,
       "source": "derived",
       "dynamic": true
     },
@@ -36,21 +36,21 @@
       "dynamic": true
     },
     "IMF Bz Kopplung": {
-      "score": 0.1469,
+      "score": 0.082,
       "source": "primary",
       "dynamic": true
     }
   },
   "gec_state": {
-    "V_ionosphere_kV": 264.4,
-    "I_total_A": 881.3,
-    "E_fair_weather_Vm": 114.6,
-    "J_fair_weather_pAm2": 1.95,
-    "generator_strength": 0.975,
+    "V_ionosphere_kV": 231.3,
+    "I_total_A": 771.0,
+    "E_fair_weather_Vm": 100.2,
+    "J_fair_weather_pAm2": 1.706,
+    "generator_strength": 0.853,
     "iono_cond_factor": 0.904,
     "kp_cond_mod": 1.0,
-    "delta_V_pct": -11.9,
-    "delta_I_pct": -11.9
+    "delta_V_pct": -22.9,
+    "delta_I_pct": -22.9
   },
   "gec_reference": {
     "V_iono_kV": 300.0,
@@ -63,23 +63,23 @@
     "tau_relax_min": 10.0
   },
   "coupling_matrix": {
-    "L3 → GEC\n(Gewitter/Generator)": 0.1649,
+    "L3 → GEC\n(Gewitter/Generator)": 0.1384,
     "L4 → GEC\n(Iono-Leitfähigkeit)": 0.255,
     "L1 → GEC\n(Boden-Leitfähigkeit)": 0.71,
-    "L0 → GEC\n(Solar/Kp-Modulator)": 0.1264,
-    "L2 → GEC\n(Oberfl.-Kopplung)": 0.7612
+    "L0 → GEC\n(Solar/Kp-Modulator)": 0.128,
+    "L2 → GEC\n(Oberfl.-Kopplung)": 0.7925
   },
   "raw_values": {
     "Kp_current_1m": 0.0,
     "Kp_used_for_score": 2.0,
     "Kp_source": "primary",
     "Kp_max_24h": 2.0,
-    "IMF_Bz_nT": -0.14,
+    "IMF_Bz_nT": 2.13,
     "SW_speed_kms": null,
     "SW_density_cm3": null,
     "xray_class": "B",
     "F10.7_sfu": 108.47,
-    "CAPE_mean_Jkg": 496.0
+    "CAPE_mean_Jkg": 343.3
   },
   "thresholds": {
     "gec_elevated_pct": 15.0,
@@ -88,7 +88,7 @@
   },
   "flags": {
     "gec_elevated": false,
-    "gec_suppressed": false,
+    "gec_suppressed": true,
     "generator_active": false,
     "iono_conductivity_high": false,
     "geomagnetic_storm": false,
@@ -97,37 +97,37 @@
   "downstream_expectation": {
     "layer6_schumann": "GEC-Potential erniedrigt – gedaempfte Schumann-Anregung",
     "schumann_amplitude": "gedaempfte Amplitude moeglich",
-    "layer7_engine": "GEC-Score 0.291 (ruhig) – dominant: Generator-Potenzial (aus L3)"
+    "layer7_engine": "GEC-Score 0.337 (moderat) – dominant: GEC-Potential-Abweichung"
   },
   "layer_context": {
     "L0": {
-      "score": 0.1264,
+      "score": 0.128,
       "level": "ruhig"
     },
     "L1": {
-      "score": 0.3663,
+      "score": 0.3695,
       "level": "moderat",
       "ocean_conductivity": 3.2
     },
     "L2": {
-      "score": 0.7622,
+      "score": 0.7706,
       "level": "aktiv"
     },
     "L3": {
-      "score": 0.1473,
+      "score": 0.1038,
       "level": "ruhig",
-      "thunder_score": 0.1649,
-      "CAPE_mean": 496.0,
+      "thunder_score": 0.1384,
+      "CAPE_mean": 343.3,
       "thunder_trigger": false
     },
     "L4": {
-      "score": 0.2938,
+      "score": 0.2564,
       "level": "ruhig",
-      "cavity_height_km": 70.0,
-      "ideal_cavity_mode1_Hz": 10.4762,
+      "cavity_height_km": 87.0,
+      "ideal_cavity_mode1_Hz": 10.4486,
       "real_SR1_reference_Hz": 7.83,
       "ioniz_score": 0.255
     }
   },
-  "state_summary": "Layer-5-Zustand: ruhig. Generator-Staerke 0.97 (CAPE=496 J/kg). V_iono=264 kV (Δ -11.9% vs. Carnegie). I_total=881 A (Δ -11.9%). Kp_1m=0.0 (score_Kp=2.0). IMF Bz=-0.1 nT. Datenvollstaendigkeit: 100%."
+  "state_summary": "Layer-5-Zustand: moderat. Generator-Staerke 0.85 (CAPE=343 J/kg). V_iono=231 kV (Δ -22.9% vs. Carnegie). I_total=771 A (Δ -22.9%). Kp_1m=0.0 (score_Kp=2.0). IMF Bz=+2.1 nT. Datenvollstaendigkeit: 100%."
 }
