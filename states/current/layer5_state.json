@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-11-20T21:52:58.055480Z",
+  "timestamp": "2026-11-21T01:36:36.402968Z",
   "layer": 5,
   "name": "Global Electric Circuit",
-  "score": 0.3343,
+  "score": 0.3935,
   "level": "moderat",
   "confidence": 1.0,
   "score_basis": "5/5 dynamische Komponenten",
@@ -15,7 +15,7 @@
   "missing_components": [],
   "components": {
     "Generator-Potenzial (aus L3)": {
-      "score": 0.3482,
+      "score": 0.3029,
       "source": "derived_from_layer3",
       "dynamic": true,
       "note": "Potenzial aus CAPE/Instabilitaet; keine bestaetigte aktive Gewitterlage"
@@ -26,12 +26,12 @@
       "dynamic": true
     },
     "GEC-Potential-Abweichung": {
-      "score": 0.6467,
+      "score": 0.8767,
       "source": "derived",
       "dynamic": true
     },
     "Geomag. Stoerung (Kp)": {
-      "score": 0.2222,
+      "score": 0.3333,
       "source": "primary",
       "dynamic": true
     },
@@ -42,15 +42,15 @@
     }
   },
   "gec_state": {
-    "V_ionosphere_kV": 241.9,
-    "I_total_A": 806.3,
-    "E_fair_weather_Vm": 104.8,
-    "J_fair_weather_pAm2": 1.784,
-    "generator_strength": 0.892,
+    "V_ionosphere_kV": 221.0,
+    "I_total_A": 736.7,
+    "E_fair_weather_Vm": 95.8,
+    "J_fair_weather_pAm2": 1.63,
+    "generator_strength": 0.815,
     "iono_cond_factor": 0.904,
     "kp_cond_mod": 1.0,
-    "delta_V_pct": -19.4,
-    "delta_I_pct": -19.4
+    "delta_V_pct": -26.3,
+    "delta_I_pct": -26.3
   },
   "gec_reference": {
     "V_iono_kV": 300.0,
@@ -63,23 +63,23 @@
     "tau_relax_min": 10.0
   },
   "coupling_matrix": {
-    "L3 → GEC\n(Gewitter/Generator)": 0.1652,
+    "L3 → GEC\n(Gewitter/Generator)": 0.1446,
     "L4 → GEC\n(Iono-Leitfähigkeit)": 0.255,
     "L1 → GEC\n(Boden-Leitfähigkeit)": 0.71,
-    "L0 → GEC\n(Solar/Kp-Modulator)": 0.1528,
-    "L2 → GEC\n(Oberfl.-Kopplung)": 0.795
+    "L0 → GEC\n(Solar/Kp-Modulator)": 0.2253,
+    "L2 → GEC\n(Oberfl.-Kopplung)": 0.8135
   },
   "raw_values": {
-    "Kp_current_1m": 0.0,
-    "Kp_used_for_score": 2.0,
+    "Kp_current_1m": 3.0,
+    "Kp_used_for_score": 3.0,
     "Kp_source": "primary",
-    "Kp_max_24h": 2.0,
+    "Kp_max_24h": 3.0,
     "IMF_Bz_nT": -0.71,
     "SW_speed_kms": null,
     "SW_density_cm3": null,
     "xray_class": "B",
     "F10.7_sfu": 108.47,
-    "CAPE_mean_Jkg": 363.3
+    "CAPE_mean_Jkg": 273.3
   },
   "thresholds": {
     "gec_elevated_pct": 15.0,
@@ -97,37 +97,37 @@
   "downstream_expectation": {
     "layer6_schumann": "GEC-Potential erniedrigt – gedaempfte Schumann-Anregung",
     "schumann_amplitude": "gedaempfte Amplitude moeglich",
-    "layer7_engine": "GEC-Score 0.334 (moderat) – dominant: GEC-Potential-Abweichung"
+    "layer7_engine": "GEC-Score 0.394 (moderat) – dominant: GEC-Potential-Abweichung"
   },
   "layer_context": {
     "L0": {
-      "score": 0.1528,
+      "score": 0.2253,
       "level": "ruhig"
     },
     "L1": {
-      "score": 0.4713,
+      "score": 0.5685,
       "level": "moderat",
       "ocean_conductivity": 3.2
     },
     "L2": {
-      "score": 0.7644,
+      "score": 0.7731,
       "level": "aktiv"
     },
     "L3": {
-      "score": 0.1276,
+      "score": 0.0993,
       "level": "ruhig",
-      "thunder_score": 0.1652,
-      "CAPE_mean": 363.3,
+      "thunder_score": 0.1446,
+      "CAPE_mean": 273.3,
       "thunder_trigger": false
     },
     "L4": {
-      "score": 0.252,
+      "score": 0.297,
       "level": "ruhig",
-      "cavity_height_km": 87.0,
-      "ideal_cavity_mode1_Hz": 10.4486,
+      "cavity_height_km": 84.6,
+      "ideal_cavity_mode1_Hz": 10.4525,
       "real_SR1_reference_Hz": 7.83,
       "ioniz_score": 0.255
     }
   },
-  "state_summary": "Layer-5-Zustand: moderat. Generator-Staerke 0.89 (CAPE=363 J/kg). V_iono=242 kV (Δ -19.4% vs. Carnegie). I_total=806 A (Δ -19.4%). Kp_1m=0.0 (score_Kp=2.0). IMF Bz=-0.7 nT. Datenvollstaendigkeit: 100%."
+  "state_summary": "Layer-5-Zustand: moderat. Generator-Staerke 0.81 (CAPE=273 J/kg). V_iono=221 kV (Δ -26.3% vs. Carnegie). I_total=737 A (Δ -26.3%). Kp_1m=3.0 (score_Kp=3.0). IMF Bz=-0.7 nT. Datenvollstaendigkeit: 100%."
 }
