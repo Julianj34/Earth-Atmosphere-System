@@ -1,12 +1,12 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-11-23T00:58:16.568653Z
-**Snapshots analysiert:** 648
-**Vollständige Tagespaare:** 78
+**Run:** 2026-11-23T20:21:16.672821Z
+**Snapshots analysiert:** 649
+**Vollständige Tagespaare:** 79
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 625× (96.5%)
+- `seasonal_transition_state` — 626× (96.5%)
 - `geomagnetic_disturbance_state` — 8× (1.2%)
 - `cavity_condition_shift_state` — 7× (1.1%)
 - `anomalous_resonance_state` — 6× (0.9%)
@@ -94,12 +94,13 @@
 | 2026-11-20 | 0.123 | 0.128 | +0.004 | seasonal_transition |
 | 2026-11-21 | 0.099 | 0.099 | -0.001 | seasonal_transition |
 | 2026-11-22 | 0.091 | 0.108 | +0.017 | seasonal_transition |
+| 2026-11-23 | 0.106 | 0.090 | -0.016 | seasonal_transition |
 
 **ΔL3-Schwelle (empirisch):** +0.049
 
 ## L2 ↔ L3 Beziehung
 
-- Pearson: **-0.474**
+- Pearson: **-0.477**
 - L2 Trend: +0.00034 / Snapshot
 - L3 Trend: -0.00008 / Snapshot
 - Gap-Trend: +0.00042 / Snapshot
@@ -107,25 +108,25 @@
 
 ## Field Operators
 
-Coverage: 630/648 Snapshots
+Coverage: 631/649 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
-- **thermal**: 0.585 — moderate thermische Vorbereitung vorhanden
-- **resonance_model**: 0.387 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
-- **electric**: 0.358 — moderate elektrische Kopplung  ⚠️ confounded_circular
-- **cross_layer_activation**: 0.334 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
-- **ionization**: 0.184 — ruhige Ionosphäre, minimaler Strahlungseffekt
-- **geomagnetic**: 0.104 — ruhige geomagnetische Bedingungen
+- **thermal**: 0.587 — moderate thermische Vorbereitung vorhanden
+- **resonance_model**: 0.429 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
+- **electric**: 0.389 — moderate elektrische Kopplung  ⚠️ confounded_circular
+- **cross_layer_activation**: 0.343 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
+- **ionization**: 0.218 — ruhige Ionosphäre, minimaler Strahlungseffekt
+- **geomagnetic**: 0.106 — ruhige geomagnetische Bedingungen
 
 ### Operator ↔ ΔL3 Korrelation
 
-- resonance_model: r = +0.325
-- thermal: r = -0.265
-- cross_layer_activation: r = -0.236  ⚠️ **confounded_circular** — Operator enthält L3, kein unabhängiger Prädiktor
-- ionization: r = +0.210
-- electric: r = +0.124  ⚠️ **confounded_circular** — Operator enthält L3, kein unabhängiger Prädiktor
-- geomagnetic: r = +0.049
+- resonance_model: r = +0.333
+- thermal: r = -0.282
+- cross_layer_activation: r = -0.254  ⚠️ **confounded_circular** — Operator enthält L3, kein unabhängiger Prädiktor
+- ionization: r = +0.228
+- electric: r = +0.110  ⚠️ **confounded_circular** — Operator enthält L3, kein unabhängiger Prädiktor
+- geomagnetic: r = +0.061
 
 ## Hypothesen
 
@@ -138,13 +139,13 @@ Coverage: 630/648 Snapshots
 ### ❓ H3: Existiert ein L2→L3 Aktivierungsparadox (steigendes L2, fallendes L3)?  ✓ unabhängig (Backbone)
 
 - **Status:** open
-- **Evidenz:** Pearson L2 vs L3 = -0.474. L2 Trend +0.00034 (steigend). L3 Trend -0.00008. Gap wächst um +0.00042/Snapshot.
+- **Evidenz:** Pearson L2 vs L3 = -0.477. L2 Trend +0.00034 (steigend). L3 Trend -0.00008. Gap wächst um +0.00042/Snapshot.
 - **Nächster Schritt:** Verzögerte Korrelation L2(t) vs L3(t+24h, t+48h, t+7d) prüfen. Möglich: Sättigungseffekt oder fehlender Trigger (Windscherung, Kaltlufteinbruch) im L3-Modell.
 
 ### 🚫 H4: Moduliert L6_evening die Carnegie-Amplitude (L5 abends)?
 
 - **Status:** confound_blocked (confounded_proxy) — nicht promotbar, nur exploratorisch
-- **Evidenz:** Pearson L5_evening vs L6_evening = +0.538 über 78 Abende.
+- **Evidenz:** Pearson L5_evening vs L6_evening = +0.523 über 79 Abende.
 - **Nächster Schritt:** Korrelation in größerer Stichprobe bestätigen.
 
 ### 🚫 H_combined: Ist combined_activation_score (ΔL3+L5+L6) besser als ΔL3 allein?
@@ -156,5 +157,5 @@ Coverage: 630/648 Snapshots
 ### 🚫 H_leadlag_cross_layer_activation_t__L3_atmosphere_t+4: Sagt cross_layer_activation_t den Wert L3_atmosphere_t+4 voraus?
 
 - **Status:** confound_blocked (confounded_circular) — nicht promotbar, nur exploratorisch
-- **Evidenz:** Pearson = -0.620 (n=626, Lag 4 Snapshots).
+- **Evidenz:** Pearson = -0.622 (n=627, Lag 4 Snapshots).
 - **Nächster Schritt:** Bestätigung mit mehr Snapshots; Schwelle für Vorhersage definieren.
