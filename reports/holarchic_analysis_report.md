@@ -1,7 +1,7 @@
 # Holarchic Coupling Analysis — Report V1
 
-**Run:** 2026-11-25T03:36:12.607166+00:00  
-**Snapshots:** 655  
+**Run:** 2026-11-25T11:26:04.787743+00:00  
+**Snapshots:** 656  
 **Holons:** 11 (0 uninstrumented)
 
 ## 1. Welche Skala dominiert?
@@ -19,7 +19,7 @@
 | H_obs_diag | L7 | system | **n/a** | measured (keine Werte) |
 | H_obs_learn | L8 | system | **n/a** | measured (keine Werte) |
 | H_obs_valid | L9 | system | **n/a** | measured (keine Werte) |
-Makro-Vorbereitung (`H_macro_ocean`) ist der höchste physische Score, Mikro-Aktivierung (`H_micro_storm`) der niedrigste. Die Meso-Skala ist instrumentiert (Wolken-Uebergangsproxy, `confound_type=proxy`); n=485 Snapshots mit Meso-Daten, s. Kopplungstabelle unten.
+Makro-Vorbereitung (`H_macro_ocean`) ist der höchste physische Score, Mikro-Aktivierung (`H_micro_storm`) der niedrigste. Die Meso-Skala ist instrumentiert (Wolken-Uebergangsproxy, `confound_type=proxy`); n=486 Snapshots mit Meso-Daten, s. Kopplungstabelle unten.
 
 ## 2. Wo bricht die Kette?
 
@@ -27,14 +27,14 @@ Empirische Kopplungsstärken entlang der Aktivierungskette:
 
 | Span | Typ | r | n | Evidenz |
 |---|---|---|---|---|
-| H_macro_ocean→H_meso_conv | top_down_constraint | +0.238 | 485 | weak |
-| H_meso_conv→H_micro_storm | bottom_up_aggregation | -0.277 | 484 | weak |
-| H_micro_storm→H_field_gec | bottom_up_aggregation | -0.059 | 654 | negligible |
-| H_field_gec→H_field_reso | field_feedback | +0.308 | 655 | weak |
+| H_macro_ocean→H_meso_conv | top_down_constraint | +0.240 | 486 | weak |
+| H_meso_conv→H_micro_storm | bottom_up_aggregation | -0.276 | 485 | weak |
+| H_micro_storm→H_field_gec | bottom_up_aggregation | -0.058 | 655 | negligible |
+| H_field_gec→H_field_reso | field_feedback | +0.308 | 656 | weak |
 
-**Befund:** Der Downstream-Abschnitt (micro→electric→resonance) ist intakt und stark. Der einzige Bruch sitzt bei **macro→micro** und ist in 543/655 Snapshots (83%) die dominante Bruchstelle. Er ist **nicht lokalisierbar**, weil die Meso-Ebene keine Datenquelle hat.
+**Befund:** Der Downstream-Abschnitt (micro→electric→resonance) ist intakt und stark. Der einzige Bruch sitzt bei **macro→micro** und ist in 544/656 Snapshots (83%) die dominante Bruchstelle. Er ist **nicht lokalisierbar**, weil die Meso-Ebene keine Datenquelle hat.
 
-Break-Verteilung über die History: `macro_to_micro`=543, `electric_to_resonance`=42, `micro_to_electric`=40, `none`=30
+Break-Verteilung über die History: `macro_to_micro`=544, `electric_to_resonance`=42, `micro_to_electric`=40, `none`=30
 
 ## 3. Welche Rückkopplung ist plausibel?
 
