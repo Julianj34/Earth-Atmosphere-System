@@ -1,12 +1,12 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-11-26T23:04:56.054206Z
-**Snapshots analysiert:** 662
+**Run:** 2026-11-27T10:58:46.037832Z
+**Snapshots analysiert:** 663
 **Vollständige Tagespaare:** 82
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 639× (96.5%)
+- `seasonal_transition_state` — 640× (96.5%)
 - `geomagnetic_disturbance_state` — 8× (1.2%)
 - `cavity_condition_shift_state` — 7× (1.1%)
 - `anomalous_resonance_state` — 6× (0.9%)
@@ -111,16 +111,16 @@
 
 ## Field Operators
 
-Coverage: 644/662 Snapshots
+Coverage: 645/663 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
-- **thermal**: 0.586 — moderate thermische Vorbereitung vorhanden
-- **resonance_model**: 0.409 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
-- **electric**: 0.353 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
-- **cross_layer_activation**: 0.340 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
-- **ionization**: 0.235 — ruhige Ionosphäre, minimaler Strahlungseffekt
-- **geomagnetic**: 0.173 — ruhige geomagnetische Bedingungen
+- **thermal**: 0.590 — moderate thermische Vorbereitung vorhanden
+- **resonance_model**: 0.423 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
+- **cross_layer_activation**: 0.307 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
+- **electric**: 0.253 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
+- **ionization**: 0.222 — ruhige Ionosphäre, minimaler Strahlungseffekt
+- **geomagnetic**: 0.184 — südwärts gerichtetes IMF Bz: offene Magnetosphäre, Energieeinschuss
 
 ### Operator ↔ ΔL3 Korrelation
 
@@ -160,5 +160,5 @@ Coverage: 644/662 Snapshots
 ### 🚫 H_leadlag_cross_layer_activation_t__L3_atmosphere_t+4: Sagt cross_layer_activation_t den Wert L3_atmosphere_t+4 voraus?
 
 - **Status:** confound_blocked (confounded_circular) — nicht promotbar, nur exploratorisch
-- **Evidenz:** Pearson = -0.640 (n=640, Lag 4 Snapshots).
+- **Evidenz:** Pearson = -0.639 (n=641, Lag 4 Snapshots).
 - **Nächster Schritt:** Bestätigung mit mehr Snapshots; Schwelle für Vorhersage definieren.
