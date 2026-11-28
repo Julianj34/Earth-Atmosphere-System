@@ -1,14 +1,14 @@
 # Layer 8 — Research Report
 
-**Run:** 2026-11-28T02:49:28.690865Z
-**Snapshots analysiert:** 666
+**Run:** 2026-11-28T10:34:39.025560Z
+**Snapshots analysiert:** 667
 **Vollständige Tagespaare:** 82
 
 ## System-State Häufigkeit
 
-- `seasonal_transition_state` — 643× (96.5%)
+- `seasonal_transition_state` — 644× (96.6%)
 - `geomagnetic_disturbance_state` — 8× (1.2%)
-- `cavity_condition_shift_state` — 7× (1.1%)
+- `cavity_condition_shift_state` — 7× (1.0%)
 - `anomalous_resonance_state` — 6× (0.9%)
 - `normal_background_state` — 2× (0.3%)
 
@@ -103,7 +103,7 @@
 
 ## L2 ↔ L3 Beziehung
 
-- Pearson: **-0.506**
+- Pearson: **-0.508**
 - L2 Trend: +0.00034 / Snapshot
 - L3 Trend: -0.00009 / Snapshot
 - Gap-Trend: +0.00043 / Snapshot
@@ -111,16 +111,16 @@
 
 ## Field Operators
 
-Coverage: 648/666 Snapshots
+Coverage: 649/667 Snapshots
 
 ### Aktuelle Operator-Rangliste
 
-- **thermal**: 0.533 — moderate thermische Vorbereitung vorhanden
-- **resonance_model**: 0.449 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
-- **electric**: 0.399 — moderate elektrische Kopplung  ⚠️ confounded_circular
-- **geomagnetic**: 0.394 — ruhige geomagnetische Bedingungen
-- **cross_layer_activation**: 0.321 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
-- **ionization**: 0.277 — Ionosphärenstörung: starker Strahlungseffekt auf Ausbreitung
+- **thermal**: 0.568 — moderate thermische Vorbereitung vorhanden
+- **resonance_model**: 0.422 — modellierter nicht-geometrischer Anteil über Cavity-Geometrie hinaus
+- **electric**: 0.344 — GEC nahe Referenz, keine elektrische Aktivierung  ⚠️ confounded_circular
+- **cross_layer_activation**: 0.338 — schwache Übergangsspannung bei L2_to_L3  ⚠️ confounded_circular
+- **ionization**: 0.293 — moderate ionosphärische Modulation
+- **geomagnetic**: 0.271 — ruhige geomagnetische Bedingungen
 
 ### Operator ↔ ΔL3 Korrelation
 
@@ -142,7 +142,7 @@ Coverage: 648/666 Snapshots
 ### ❓ H3: Existiert ein L2→L3 Aktivierungsparadox (steigendes L2, fallendes L3)?  ✓ unabhängig (Backbone)
 
 - **Status:** open
-- **Evidenz:** Pearson L2 vs L3 = -0.506. L2 Trend +0.00034 (steigend). L3 Trend -0.00009. Gap wächst um +0.00043/Snapshot.
+- **Evidenz:** Pearson L2 vs L3 = -0.508. L2 Trend +0.00034 (steigend). L3 Trend -0.00009. Gap wächst um +0.00043/Snapshot.
 - **Nächster Schritt:** Verzögerte Korrelation L2(t) vs L3(t+24h, t+48h, t+7d) prüfen. Möglich: Sättigungseffekt oder fehlender Trigger (Windscherung, Kaltlufteinbruch) im L3-Modell.
 
 ### 🚫 H4: Moduliert L6_evening die Carnegie-Amplitude (L5 abends)?
@@ -160,11 +160,11 @@ Coverage: 648/666 Snapshots
 ### 🚫 H_leadlag_cross_layer_activation_t__L3_atmosphere_t+1: Sagt cross_layer_activation_t den Wert L3_atmosphere_t+1 voraus?
 
 - **Status:** confound_blocked (confounded_circular) — nicht promotbar, nur exploratorisch
-- **Evidenz:** Pearson = -0.604 (n=647, Lag 1 Snapshots).
+- **Evidenz:** Pearson = -0.605 (n=648, Lag 1 Snapshots).
 - **Nächster Schritt:** Bestätigung mit mehr Snapshots; Schwelle für Vorhersage definieren.
 
 ### 🚫 H_leadlag_cross_layer_activation_t__L3_atmosphere_t+4: Sagt cross_layer_activation_t den Wert L3_atmosphere_t+4 voraus?
 
 - **Status:** confound_blocked (confounded_circular) — nicht promotbar, nur exploratorisch
-- **Evidenz:** Pearson = -0.644 (n=644, Lag 4 Snapshots).
+- **Evidenz:** Pearson = -0.645 (n=645, Lag 4 Snapshots).
 - **Nächster Schritt:** Bestätigung mit mehr Snapshots; Schwelle für Vorhersage definieren.
